@@ -1,0 +1,31 @@
+{%- set L = i18n[lang] -%}
+{%- set S = site.sections -%}
+<section class="person-head">
+  <div class="wrap">
+    {% if p.photo %}<figure class="portrait"><img src="{{ ('/assets/img/kisi/' + p.photo) | url }}" alt="{{ p.name }}" width="640" height="800"></figure>
+    {% else %}<div class="portrait empty" aria-hidden="true"><span>{{ p.name | initials }}</span></div>{% endif %}
+    <div>
+      {% if p.bio and p.bio.role %}<p class="kicker">{{ p.bio.role | t(lang) }}</p>{% endif %}
+      <h1>{{ p.name }}</h1>
+    </div>
+  </div>
+</section>
+<section class="section"><div class="wrap cols">
+  <div>
+    <h2 class="sub-h">{{ L.works_with }}</h2>
+    <ul class="roles">
+      {%- for w in p.works %}
+      <li><a href="{{ ('/' + lang + '/' + S.works[lang] + '/' + w.slug + '/') | url }}"><span class="y">{{ w.year }}</span><span class="t">{{ w.title }}</span><span class="r">{% for r in w.roles %}{{ graph.db.roles | roleName(r, lang) }}{% if not loop.last %}, {% endif %}{% endfor %}</span></a></li>
+      {%- endfor %}
+      {%- for c in p.teaches %}{% set co = graph.courseBySlug[c] %}
+      <li><a href="{{ ('/' + lang + '/' + S.edu[lang] + '/') | url }}"><span class="y">{{ co.start | yearOf }}</span><span class="t">{{ co.title | t(lang) }}</span><span class="r">{{ L.teachers }}</span></a></li>
+      {%- endfor %}
+      {%- for pr in p.projects %}{% set po = graph.projectBySlug[pr] %}
+      <li><a href="{{ ('/' + lang + '/' + S.projects[lang] + '/#' + po.slug) | url }}"><span class="y">{{ po.year }}</span><span class="t">{{ po.title }}</span><span class="r">{{ L.nav.projects }}</span></a></li>
+      {%- endfor %}
+    </ul>
+  </div>
+  <div class="prose">
+    {% if p.bio %}{{ p.bio[lang] | paras | safe }}{% endif %}
+  </div>
+</div></section>

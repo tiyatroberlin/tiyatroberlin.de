@@ -1,0 +1,24 @@
+{% macro showRow(s, lang, L, graph, site, idx) %}
+{%- set v = graph.venues[s.venue] -%}
+<li class="show">
+  <div class="show-date">{% if s.approx %}{{ s.date | yearOf }}{% else %}{{ s.date | dm }}<small>{{ s.date | weekday(L) }}{% if s.time %} · {{ s.time }}{% endif %}</small>{% endif %}</div>
+  <div class="show-title">
+    {%- if s.external %}{{ s.title }}<span class="show-sub">{{ s.by }} · {{ s.sub | t(lang) }}</span>
+    {%- else %}<a href="{{ ('/' + lang + '/' + site.sections.works[lang] + '/' + s.work + '/') | url }}">{{ s.title }}</a>
+    <span class="show-sub">{% if s.premiere and s.upcoming %}<span class="dot" aria-hidden="true"></span>{{ L.premiere }} · {% endif %}{{ graph.workBySlug[s.work].form | t(lang) }}</span>{% endif %}
+  </div>
+  <div class="show-where">{{ v.name }}<span>{{ v.district }}{% if v.city and v.city != 'Berlin' %}, {{ v.city }}{% endif %}</span></div>
+  <div class="show-action">
+    {%- if s.upcoming %}
+      {%- if s.eventim %}
+      <button class="btn" type="button" data-eventim="{{ s.eventim }}" data-account="{{ site.eventim_account }}" aria-expanded="false" aria-controls="t-{{ s.eventim }}-{{ idx }}">{{ L.tickets }}</button>
+      {%- elif s.ticket %}
+      <a class="btn" href="{{ s.ticket }}" rel="noopener">{{ L.tickets }}</a>
+      {%- endif %}
+    {%- endif %}
+  </div>
+  {%- if s.upcoming and s.eventim %}
+  <div class="ticket" id="t-{{ s.eventim }}-{{ idx }}" hidden></div>
+  {%- endif %}
+</li>
+{% endmacro %}

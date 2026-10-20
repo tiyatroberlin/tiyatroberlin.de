@@ -1,0 +1,51 @@
+{%- import "macros.njk" as m -%}
+{%- set L = i18n[lang] -%}
+{%- set S = site.sections -%}
+<section class="work-head">
+  <div class="wrap">
+    <div>
+      <p class="kicker">{% if w.upcoming | length %}<span class="dot" aria-hidden="true"></span>{% endif %}{{ w.form | t(lang) }} · {{ w.year }}</p>
+      <h1>{{ w.title }}</h1>
+      <p class="hook">{{ w.hook | t(lang) }}</p>
+      <dl class="facts">
+        {%- if w.premiere %}<dt>{{ L.premiere }}</dt><dd>{% if w.premiere.approx %}{{ w.premiere.date | yearOf }}{% else %}{{ w.premiere.date | dmy }}{% endif %}, {{ graph.venues[w.premiere.venue].name }}{% if graph.venues[w.premiere.venue].city %}, {{ graph.venues[w.premiere.venue].city }}{% endif %}</dd>{% endif %}
+        {%- if w.partners %}<dt>{{ L.partners }}</dt><dd>{% for p in w.partners %}{{ graph.db.partners[p].name }}{% if not loop.last %}, {% endif %}{% endfor %}</dd>{% endif %}
+        {%- if w.funders %}<dt>{{ L.support }}</dt><dd>{% for f in w.funders %}{{ graph.db.funders[f].name }}{% if not loop.last %}, {% endif %}{% endfor %}</dd>{% endif %}
+      </dl>
+    </div>
+    {% if w.image %}<figure class="poster"><img src="{{ ('/assets/img/oyun/' + w.image) | url }}" alt="{{ w.title }}" width="1000" height="1250"></figure>{% endif %}
+  </div>
+</section>
+
+{% if w.upcoming | length %}
+<section class="section tight"><div class="wrap">
+  <h2 class="sub-h">{{ L.upcoming }}</h2>
+  <ul class="shows">{% for s in w.upcoming %}{{ m.showRow(s, lang, L, graph, site, loop.index) }}{% endfor %}</ul>
+</div></section>
+{% endif %}
+
+<section class="section"><div class="wrap cols">
+  <div class="prose">
+    {{ w.text | t(lang) | paras | safe }}
+    {% if w.info %}<p class="note">{{ w.info | t(lang) }}</p>{% endif %}
+    {% if w.sources %}<p class="note">{{ w.sources | t(lang) }}</p>{% endif %}
+  </div>
+  <aside>
+    <h2 class="sub-h">{{ L.credits }}</h2>
+    <dl class="credits">
+      {%- for c in w.credits %}
+      <div><dt>{{ graph.db.roles | roleName(c.role, lang) }}</dt>
+      <dd>{% for s in c.people %}{% set p = graph.people[s] %}{% if p.org %}{% if p.url %}<a href="{{ p.url }}" rel="noopener">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}{% else %}<a href="{{ ('/' + lang + '/' + S.people[lang] + '/' + s + '/') | url }}">{{ p.name }}</a>{% endif %}{% if not loop.last %}, {% endif %}{% endfor %}</dd></div>
+      {%- endfor %}
+    </dl>
+    {% set past = w.shows | rejectattr("upcoming") %}
+    {% if past | length %}
+    <h2 class="sub-h" style="margin-top:2rem">{{ L.dates }}</h2>
+    <ul class="runs">
+      {%- for s in past %}
+      <li><time datetime="{{ s.date }}">{% if s.approx %}{{ s.date | yearOf }}{% else %}{{ s.date | dmy }}{% endif %}</time><span>{{ graph.venues[s.venue].name }}{% if graph.venues[s.venue].city %}, {{ graph.venues[s.venue].city }}{% endif %}{% if s.premiere %} · {{ L.premiere }}{% endif %}</span></li>
+      {%- endfor %}
+    </ul>
+    {% endif %}
+  </aside>
+</div></section>

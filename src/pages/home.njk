@@ -1,0 +1,81 @@
+---
+pagination: {data: site.langs, size: 1, alias: lang}
+permalink: "/{{ lang }}/"
+layout: base.njk
+eleventyComputed:
+  alt: {tr: "/tr/", de: "/de/", en: "/en/"}
+---
+{%- import "macros.njk" as m -%}
+{%- set L = i18n[lang] -%}
+{%- set S = site.sections -%}
+{%- set nxt = graph.program[0] -%}
+{%- set nw = graph.workBySlug[nxt.work] if nxt and not nxt.external else null -%}
+{% if nxt %}
+<section class="lead">
+  <div class="wrap">
+    <div>
+      <p class="lead-when"><span class="dot" aria-hidden="true"></span>{{ L.next }}: {{ nxt.date | dm }} {{ nxt.date | weekday(L) }}{% if nxt.time %}, {{ nxt.time }}{% endif %}</p>
+      <h1 class="lead-title">{% if nw %}<a href="{{ ('/' + lang + '/' + S.works[lang] + '/' + nw.slug + '/') | url }}">{{ nxt.title }}</a>{% else %}{{ nxt.title }}{% endif %}</h1>
+      {% if nw %}<p class="lead-hook">{{ nw.hook | t(lang) }}</p>{% endif %}
+      <dl class="lead-meta">
+        <dt>{{ L.where }}</dt><dd>{{ graph.venues[nxt.venue].name }}, {{ graph.venues[nxt.venue].district }}</dd>
+        {% if nw %}<dt>{{ L.info }}</dt><dd>{{ nw.form | t(lang) }}</dd>{% endif %}
+      </dl>
+      {% if nxt.eventim %}<button class="btn" type="button" data-eventim="{{ nxt.eventim }}" data-account="{{ site.eventim_account }}" aria-expanded="false" aria-controls="t-lead">{{ L.tickets }}</button>
+      {% elif nxt.ticket %}<a class="btn" href="{{ nxt.ticket }}" rel="noopener">{{ L.tickets }}</a>{% endif %}
+      <a class="btn ghost" href="{{ ('/' + lang + '/' + S.program[lang] + '/') | url }}">{{ L.all_program }}</a>
+      {% if nxt.eventim %}<div class="ticket" id="t-lead" hidden></div>{% endif %}
+    </div>
+    {% if nw and nw.image %}<figure class="lead-figure"><img src="{{ ('/assets/img/oyun/' + nw.image) | url }}" alt="{{ nw.title }}" width="1000" height="1250"></figure>{% endif %}
+  </div>
+</section>
+{% endif %}
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>{{ L.nav.program }}</h2><a href="{{ ('/' + lang + '/' + S.program[lang] + '/') | url }}">{{ L.all_program }}</a></div>
+    <ul class="shows">
+      {%- for s in graph.program %}{% if loop.index > 1 and loop.index <= 7 %}{{ m.showRow(s, lang, L, graph, site, loop.index) }}{% endif %}{% endfor %}
+    </ul>
+  </div>
+</section>
+
+{%- set c = graph.courses[0] %}
+<section class="section edu-teaser">
+  <div class="wrap cols">
+    <div>
+      <h2 class="h-big">{{ c.title | t(lang) }}</h2>
+      <p class="prose">{{ pages.edu[lang].lead }}</p>
+    </div>
+    <dl class="facts">
+      <dt>{{ L.when }}</dt><dd>{{ c.when | t(lang) }}</dd>
+      <dt>{{ L.where }}</dt><dd>{{ graph.venues[c.venue].address }}</dd>
+      <dt>{{ L.price }}</dt><dd>{{ c.fee | t(lang) }}</dd>
+      <dt></dt><dd>{{ c.lang | t(lang) }} · {{ c.level | t(lang) }}</dd>
+      <dt></dt><dd><a class="btn" href="{{ c.form }}" rel="noopener">{{ L.register }}</a></dd>
+    </dl>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>{{ L.archive }}</h2><a href="{{ ('/' + lang + '/' + S.works[lang] + '/') | url }}">{{ L.all_works }}</a></div>
+    <div class="years" style="--n:{{ graph.yearList | length }}">
+      {%- for y in graph.yearList %}
+      <div class="year"><h3>{{ y.year }}</h3><ul>{% for w in y.works %}<li><a href="{{ ('/' + lang + '/' + S.works[lang] + '/' + w.slug + '/') | url }}">{{ w.title }}</a></li>{% endfor %}</ul></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <dl class="counts">
+      <div><dt>{{ L.counts.works }}</dt><dd>{{ graph.counts.works }}</dd></div>
+      <div><dt>{{ L.counts.people }}</dt><dd>{{ graph.counts.people }}</dd></div>
+      <div><dt>{{ L.counts.shows }}</dt><dd>{{ graph.counts.shows }}</dd></div>
+      <div><dt>{{ L.counts.venues }}</dt><dd>{{ graph.counts.venues }}</dd></div>
+    </dl>
+    <p class="counts-link"><a href="{{ ('/' + lang + '/' + S.network[lang] + '/') | url }}">{{ L.nav.network }}</a> · <a href="{{ ('/' + lang + '/' + S.people[lang] + '/') | url }}">{{ L.nav.people }}</a></p>
+  </div>
+</section>

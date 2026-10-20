@@ -1,0 +1,19 @@
+---
+pagination: {data: site.langs, size: 1, alias: lang}
+permalink: "/{{ lang }}/{{ site.sections.contact[lang] }}/"
+layout: base.njk
+section: contact
+eleventyComputed:
+  title: "{{ i18n[lang].nav.contact }}"
+  alt: {tr: "/tr/iletisim/", de: "/de/kontakt/", en: "/en/contact/"}
+---
+{%- set L = i18n[lang] -%}
+<section class="page-head"><div class="wrap"><h1 class="h-huge">{{ L.nav.contact }}</h1></div></section>
+<section class="section"><div class="wrap cols">
+  <dl class="facts big">
+    <dt>E-Mail</dt><dd><a href="mailto:{{ site.email }}">{{ site.email }}</a></dd>
+    <dt>Instagram</dt><dd><a href="{{ site.instagram }}" rel="noopener">@tiyatroberlin</a></dd>
+    <dt>{{ contact_labels[lang].press }}</dt><dd><a href="mailto:{{ site.email }}">{{ site.email }}</a></dd>
+  </dl>
+  <div class="prose"><p>{{ contact_labels[lang].text }}</p></div>
+</div></section>

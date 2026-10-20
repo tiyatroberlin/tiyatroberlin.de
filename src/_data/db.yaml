@@ -1,0 +1,93 @@
+# Tiyatro Berlin — veri tabanı
+# Kişiler, mekânlar, oyunlar, gösterimler, projeler ve destekçiler burada.
+# Bir isim bir kez yazılır; geçtiği her sayfada otomatik bağlantı olur.
+
+venues:
+  ballhaus:      {name: Ballhaus Prinzenallee, address: "Prinzenallee 33, 13359 Berlin", district: Wedding, url: "https://www.ballhaus-prinzenallee.de"}
+  moda-bar:      {name: Moda Bar, address: "Weichselstraße 54, 12045 Berlin", district: Neukölln}
+  gorki:         {name: Maxim Gorki Theater, address: "Am Festungsgraben 2, 10117 Berlin", district: Mitte, url: "https://www.gorki.de"}
+  fliegendes:    {name: Fliegendes Theater, address: "Urbanstraße 100, 10967 Berlin", district: Kreuzberg}
+  gropiusstadt:  {name: Gemeinschaftshaus Gropiusstadt, address: "Bat-Yam-Platz 1, 12353 Berlin", district: Neukölln}
+  koernerpark:   {name: Körnerpark, address: "Schierker Straße 8, 12051 Berlin", district: Neukölln}
+  nikolaiviertel: {name: Nikolaiviertel, district: Mitte, city: Berlin, note: {tr: şehirde yürüyüş, de: Stadtraum, en: walk through the city}}
+  bergama:       {name: Kale Mahallesi, city: Bergama, district: "Bergama Tiyatro Festivali"}
+  atolye-moabit: {name: Atölye Moabit, address: "Wiclefstraße 16–17, 10551 Berlin", district: Moabit}
+
+funders:
+  senat:      {name: "Senatsverwaltung für Kultur und Europa", short: "Land Berlin"}
+  fdk:        {name: "Fonds Darstellende Künste"}
+  goethe:     {name: "Goethe-Institut"}
+  48h:        {name: "48 Stunden Neukölln"}
+  ausland:    {name: "Ausland Berlin"}
+  durchstarten: {name: "Durchstarten"}
+
+partners:
+  mekan-arti:    {name: Mekan Artı, url: "https://www.mekanarti.com"}
+  cabinet-novus: {name: "cabinet:novus"}
+  bergama-fest:  {name: Bergama Tiyatro Festivali}
+
+people:
+  ufuk-tan-altunkaya: {name: Ufuk Tan Altunkaya, photo: ufuk.jpg, lead: true}
+  hazal-erdal:        {name: Hazal Erdal, photo: hazal.jpg}
+  egemen-kalyon:      {name: Egemen Kalyon, photo: egemen.jpg}
+  ahmet-ozer:         {name: Ahmet Özer, photo: ahmet-ozer.jpg}
+  aslihan-boruhan:    {name: Aslıhan Börühan, photo: aslihan.jpg}
+  ilayda-fidanlik:    {name: İlayda Fidanlık, photo: ilayda.jpg}
+  emel-turan:         {name: Emel Turan, photo: emel.jpg}
+  merve-ongun:        {name: Merve Öngün, photo: merve.jpg}
+  fatos-uysal:        {name: Fatoş Uysal, photo: fatos.jpg}
+  mesut-gungor:       {name: Mesut Güngör, photo: mesut.jpg}
+  ahmet-ilker-ergin:  {name: Ahmet İlker Ergin, photo: ilker.jpg}
+  sandra-ruffin:      {name: Sandra Ruffin, photo: sandra.jpg}
+  sezer-gunduz:       {name: Sezer Gündüz, photo: sezer.jpg}
+  tamer-serkan-subasi: {name: Tamer Serkan Subaşı, photo: tamer.jpg}
+  taner-senturk:      {name: Taner Şentürk, photo: taner.jpg}
+  didem-kaplan:       {name: Didem Kaplan}
+  zeki-elveris:       {name: Zeki Elveriş}
+  ozan-unlukoc:       {name: Ozan Ünlükoç}
+  emre-akad:          {name: Emre Akad}
+  murat-mahmutyazicioglu: {name: Murat Mahmutyazıcıoğlu}
+  samil-yilmaz:       {name: Şamil Yılmaz}
+  cuneyt-yalaz:       {name: Cüneyt Yalaz}
+  uluc-esen:          {name: Uluç Esen}
+  adalet-agaoglu:     {name: Adalet Ağaoğlu, author: true}
+  siyah-pembe:        {name: Siyah Pembe Üçgen İzmir, org: true, url: "http://www.siyahpembe.org"}
+  cem-ontas:          {name: Cem Öntaş}
+  omer-sarigedik:     {name: Ömer Sarıgedik}
+  rabia-gencer:       {name: Rabia Gençer}
+  gozde-karaoglan:    {name: Gözde Karaoğlan}
+  angelica-germana-bozza: {name: Angelica Germana Bozza}
+  batuhan-kavlak:     {name: Batuhan Kavlak}
+  medya-demirci:      {name: Medya Demirci}
+  mine-cetinkaya:     {name: Mine Çetinkaya}
+  mert-merih:         {name: Mert Merih}
+  ceylan-dizdar:      {name: Ceylan Dizdar}
+  ugur-yuksekol:      {name: Uğur Yüksekol}
+  salihcan-saban:     {name: Salihcan Saban}
+  taha-burak-kirlar:  {name: Taha Burak Kırlar}
+
+# Roller: anahtar -> TR / DE / EN
+roles:
+  text:        [Metin, Text, Text]
+  source:      [Kaynak metin, Textvorlage, Source text]
+  author:      [Yazan, Text, Written by]
+  concept:     [Konsept ve yönetim, Konzept und Regie, Concept and direction]
+  direction:   [Yönetim, Regie, Direction]
+  adaptation:  [Uyarlama ve yönetim, Bearbeitung und Regie, Adaptation and direction]
+  writedirect: [Yazan ve yöneten, Text und Regie, Written and directed by]
+  edit:        [Kurgu ve yönetim, Konzept und Regie, Concept and direction]
+  cast:        [Oyuncular, Mit, Cast]
+  performer:   [Oyun, Performance, Performer]
+  voice:       [Seslendirme, Stimme, Voice]
+  songs:       [Oyun ve şarkılar, Spiel und Gesang, Performance and songs]
+  dramaturgy:  [Dramaturji, Dramaturgie, Dramaturgy]
+  advice:      [Proje danışmanı, Beratung, Advisor]
+  coordination: [Proje koordinasyonu, Projektleitung, Project management]
+  assistant:   [Proje asistanı, Projektassistenz, Project assistant]
+  assistdir:   [Yönetmen yardımcısı, Regieassistenz, Assistant director]
+  sound:       [Ses tasarımı, Sounddesign, Sound design]
+  light:       [Işık, Licht, Light]
+  music:       [Müzik, Musik, Music]
+  theme:       [Tema müziği, Titelmusik, Theme music]
+  video:       [Video, Video, Video]
+  graphic:     [Afiş, Grafik, Poster design]

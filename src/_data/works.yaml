@@ -1,0 +1,374 @@
+# Oyunlar. Sıra önemli değil; site yıla göre sıralar.
+# credits: [rol, kişi(ler)]  · shows: [tarih saat, mekân, bilet]
+
+- slug: yakin
+  title: YAKIN
+  year: 2026
+  image: yakin.jpg
+  form: {tr: Tek kişilik oyun, şarkılarla, de: Solo mit Liedern, en: Solo with songs}
+  hook: {tr: Yakınlık bir bağımlılığa dönüşürse?, de: Wenn Nähe zur Abhängigkeit wird., en: When closeness turns into dependence.}
+  text:
+    tr: |
+      Bir yakınlık ne zaman bağımlılığa dönüşür? Karşımızdaki bir sevgili mi, yoksa bizi bizden iyi tanıyan bir yanılsama mı?
+
+      YAKIN, sahneler arasında canlı söylenen şarkılarla ilerleyen tek kişilik bir oyun. Şarkılar hikâyeyi süslemiyor, onu taşıyor: söylenemeyen her şey bir melodiye sığınıyor.
+    de: |
+      Wann wird Nähe zur Abhängigkeit? Ist das Gegenüber ein geliebter Mensch oder eine Illusion, die uns besser kennt als wir selbst?
+
+      YAKIN ist ein Solo, das von live gesungenen Liedern getragen wird. Die Lieder schmücken die Geschichte nicht aus, sie tragen sie: Was sich nicht sagen lässt, sucht Zuflucht in einer Melodie.
+    en: |
+      When does closeness become dependence? Is the person opposite us a lover, or an illusion that knows us better than we know ourselves?
+
+      YAKIN is a solo carried by songs sung live between the scenes. The songs do not decorate the story, they carry it: whatever cannot be said takes refuge in a melody.
+  credits:
+    - [writedirect, ufuk-tan-altunkaya]
+    - [songs, hazal-erdal]
+  shows:
+    - {date: 2026-11-22, time: "19:00", venue: moda-bar, premiere: true, eventim: 6ace5a69a47cb7abb7b2496e}
+    - {date: 2026-11-29, time: "19:00", venue: moda-bar, eventim: 6ace5aa484ed3c6a8a6549e6}
+
+- slug: kozalar
+  title: Kozalar
+  year: 2025
+  image: kozalar.jpg
+  form: {tr: Adalet Ağaoğlu'nun oyunu, de: Stück von Adalet Ağaoğlu, en: A play by Adalet Ağaoğlu}
+  hook: {tr: Bize ne?, de: Was geht uns das an?, en: What's it to us?}
+  text:
+    tr: |
+      Dışarıda dünya yanarken üç kadın kapıyı kilitliyor, kulaklarını tıkıyor, kendi kozalarına sarılıyor. Adalet Ağaoğlu oyunu 1971'de Ankara'da yazdı.
+
+      Gerçekçi bir çerçevenin içine absürdü yerleştiren Kozalar, kendini terbiye diye sunan bir kayıtsızlığı sahneye taşıyor: karışmayan suçlu da olmaz. Aradan elli yıl geçti, her cümle hâlâ tanıdık.
+    de: |
+      Draußen brennt die Welt. Drinnen verriegeln drei Frauen die Tür, stopfen sich die Ohren zu und spinnen sich in ihre Kokons ein. Adalet Ağaoğlu, eine der prägenden Stimmen der modernen türkischen Literatur, schrieb das Stück 1971 in Ankara.
+
+      Zwischen Realismus und Absurdem zeigt Kozalar eine Gleichgültigkeit, die sich als Anstand ausgibt: Wer sich nicht einmischt, macht sich nicht schuldig. Fünfzig Jahre später klingt jeder Satz vertraut.
+    en: |
+      Outside, the world is burning. Inside, three women lock the door, block their ears and wrap themselves in their cocoons. Adalet Ağaoğlu, one of the defining voices of modern Turkish literature, wrote the play in Ankara in 1971.
+
+      Between realism and the absurd, Kozalar stages an indifference that passes itself off as decency: whoever stays out of it cannot be guilty. Fifty years on, every line still sounds familiar.
+  credits:
+    - [author, adalet-agaoglu]
+    - [concept, ufuk-tan-altunkaya]
+    - [cast, [aslihan-boruhan, ilayda-fidanlik, hazal-erdal]]
+    - [dramaturgy, egemen-kalyon]
+    - [advice, ozan-unlukoc]
+    - [assistant, mert-merih]
+    - [light, zeki-elveris]
+  partners: [cabinet-novus]
+  shows:
+    - {date: 2025-12-20, time: "20:00", venue: ballhaus, premiere: true}
+    - {date: 2026-11-01, time: "18:00", venue: ballhaus, ticket: "https://shop.get-vibe.de/event/KOZALAR/183161", price: {tr: "15 €, indirimli 10 €", de: "15 €, ermäßigt 10 €", en: "€15, reduced €10"}}
+
+- slug: pride-93
+  title: Pride '93
+  year: 2024
+  image: pride-93.jpg
+  form: {tr: Belgesel tiyatro, de: Dokumentartheater, en: Documentary theatre}
+  hook: {tr: "İstanbul, 1993. İlk Onur Yürüyüşü başlamadan yasaklanıyor.", de: "Istanbul, 1993. Der erste Pride wird verboten, bevor er beginnt.", en: "Istanbul, 1993. The first Pride is banned before it begins."}
+  text:
+    tr: |
+      İstanbul, 1993. Küçük bir grup Türkiye'nin ilk Onur Yürüyüşü'nü hazırlıyor. Yürüyüş başlamadan yasaklanıyor.
+
+      Pride '93 o yasaktan önceki haftalara dönüyor: örgütlenmenin ilk denemelerine, Ülker Sokak'ın evlerine, baskıya, korkuya ve henüz adı konmamış bir cesarete. Oyun, Siyah Pembe Üçgen İzmir'in sözlü tarih çalışmasındaki tanıklıklardan ve Kaos GL dergi arşivinden geliştirildi.
+
+      2015'ten beri İstanbul'da Onur Yürüyüşü yapılamıyor. Pride '93 bugünü okuyabilmek için başlangıca bakıyor.
+    de: |
+      Istanbul, 1993. Eine Handvoll Menschen bereitet den ersten Pride der Türkei vor. Er wird verboten, bevor er beginnt.
+
+      Pride '93 kehrt in die Wochen davor zurück: zu den ersten Versuchen, sich zu organisieren, zu den Wohnungen der Ülker Sokak, zu Repression, Angst und einem Übermut, für den es noch keine Sprache gab. Das Stück basiert auf Zeitzeug*innen-Interviews aus dem Oral-History-Projekt von Siyah Pembe Üçgen İzmir und auf dem Archiv der Zeitschrift Kaos GL.
+
+      Seit 2015 kann in Istanbul kein Pride mehr stattfinden. Pride '93 blickt auf den Anfang, um diese Gegenwart lesbar zu machen.
+    en: |
+      Istanbul, 1993. A handful of people prepare Turkey's first Pride. It is banned before it begins.
+
+      Pride '93 returns to the weeks before: the first attempts to organise, the flats of Ülker Sokak, repression, fear and a daring that had no language yet. The piece draws on witness interviews from the oral history project of Siyah Pembe Üçgen İzmir and on the archive of Kaos GL magazine.
+
+      Since 2015, no Pride has been allowed in Istanbul. Pride '93 looks back to the beginning to make the present legible.
+  sources: {tr: "Kaynaklar: 90'larda Lubunya Olmak (Siyah Pembe Üçgen İzmir) · Kaos GL dergi arşivi", de: "Quellen: 90'larda Lubunya Olmak (Siyah Pembe Üçgen İzmir) · Archiv der Zeitschrift Kaos GL", en: "Sources: 90'larda Lubunya Olmak (Siyah Pembe Üçgen İzmir) · Kaos GL magazine archive"}
+  credits:
+    - [text, didem-kaplan]
+    - [concept, ufuk-tan-altunkaya]
+    - [cast, [ufuk-tan-altunkaya, ahmet-ozer, merve-ongun, emel-turan, taner-senturk, ilayda-fidanlik, hazal-erdal, sezer-gunduz]]
+    - [dramaturgy, egemen-kalyon]
+    - [advice, ozan-unlukoc]
+    - [coordination, ahmet-ozer]
+    - [assistant, [batuhan-kavlak, medya-demirci, mine-cetinkaya]]
+    - [light, zeki-elveris]
+  partners: [mekan-arti]
+  funders: [senat]
+  shows:
+    - {date: 2024-03-15, time: "20:00", venue: ballhaus, premiere: true}
+    - {date: 2024-03-28, time: "20:00", venue: ballhaus}
+    - {date: 2024-04-28, time: "18:00", venue: ballhaus}
+    - {date: 2024-05-16, time: "20:00", venue: ballhaus}
+    - {date: 2024-06-16, time: "18:00", venue: ballhaus}
+    - {date: 2024-10-19, time: "20:00", venue: ballhaus}
+
+- slug: uftade
+  title: Üftade
+  year: 2023
+  image: uftade.jpg
+  form: {tr: Oyun, de: Stück, en: Play}
+  hook: {tr: "Haziran 2013. Bir tiyatro sahnesi revire dönüşüyor.", de: "Juni 2013. Eine Theaterbühne wird zum Lazarett.", en: "June 2013. A stage becomes a field hospital."}
+  text:
+    tr: |
+      Haziran 2013. Gezi Parkı'nın hemen yanında, Beyoğlu'nun küçük tiyatrolarından birinin sahnesi yaralılar ve doktorları için bir revire dönüşüyor.
+
+      Üftade, direnişin ilk 48 saatini bir Alman tiyatrocunun ve tiyatro çalışanlarının gözünden anlatıyor. Başlık hem düşkün, yardıma muhtaç olanı hem de tiyatronun bulunduğu sokağı anlatıyor. 2010'larda gençlerin açtığı küçük sahneler o günlerde birer sığınağa dönüşmüştü; oyun onların hatırasını kayda geçiriyor.
+    de: |
+      Juni 2013. Gleich neben dem Gezi-Park wird die Bühne eines kleinen Theaters in Beyoğlu zum Lazarett für Verletzte und ihre Ärzt*innen.
+
+      Üftade erzählt die ersten 48 Stunden des Widerstands aus der Sicht eines deutschen Theatermachers und der Mitarbeiter*innen des Hauses. Der Titel bedeutet die Gefallene, die auf Hilfe Angewiesene, und ist zugleich der Name der Straße, in der das Theater liegt. Die kleinen Bühnen, die junge Leute in den 2010er Jahren eröffnet hatten, wurden damals zu Zufluchtsorten; das Stück hält ihre Erinnerung fest.
+    en: |
+      June 2013. Right next to Gezi Park, the stage of a small theatre in Beyoğlu becomes a field hospital for the wounded and their doctors.
+
+      Üftade tells the first 48 hours of the resistance through the eyes of a German theatre-maker and the theatre's staff. The title means the fallen, the one in need of help, and is also the name of the street where the theatre stands. The small stages young people had opened in the 2010s became shelters in those days; the play keeps their memory on record.
+  credits:
+    - [text, didem-kaplan]
+    - [concept, ufuk-tan-altunkaya]
+    - [cast, [ahmet-ozer, sandra-ruffin, ufuk-tan-altunkaya]]
+    - [dramaturgy, egemen-kalyon]
+    - [coordination, cem-ontas]
+    - [assistant, sezer-gunduz]
+  partners: [mekan-arti, cabinet-novus]
+  shows:
+    - {date: 2023-06-07, time: "20:30", venue: gorki, premiere: true}
+
+- slug: yeni-bir-hayat-icin
+  title: Yeni Bir Hayat İçin
+  year: 2023
+  image: yeni-bir-hayat-icin.jpg
+  form: {tr: Tek kişilik oyun, de: Solo, en: Solo}
+  hook: {tr: Orta yaş, orta sınıf, yeni bir kimlik., de: "Mitte des Lebens, Mittelschicht, neue Identität.", en: "Midlife, middle class, a new identity."}
+  text:
+    tr: |
+      Orta yaş krizindeki Selim Özben yeni bir hayat kurmaya karar veriyor: doğa sporları, internet, gece hayatı, sanat kursları.
+
+      Her yeni uğraş bir kimlik vaadi taşıyor, hiçbiri yüzleşmenin yerini tutmuyor. Cüneyt Yalaz ve Uluç Esen'in tek kişilik oyunu, orta sınıfın kendini yeniden icat etme hevesine acı bir komediyle bakıyor.
+    de: |
+      Mitten in der Midlife-Crisis beschließt Selim Özben, ein neues Leben anzufangen: Outdoorsport, Internet, Nachtleben, Kunstkurse.
+
+      Jede neue Beschäftigung verspricht eine Identität, keine ersetzt die Auseinandersetzung mit sich selbst und mit den Verhältnissen. Das Solo von Cüneyt Yalaz und Uluç Esen blickt mit bitterer Komik auf den Wunsch der Mittelschicht, sich neu zu erfinden.
+    en: |
+      In the middle of a midlife crisis, Selim Özben decides to start a new life: outdoor sports, the internet, nightlife, art classes.
+
+      Each new pursuit promises an identity; none replaces facing himself and his circumstances. Cüneyt Yalaz and Uluç Esen's solo looks at the middle-class urge to reinvent itself with bitter comedy.
+  credits:
+    - [text, [cuneyt-yalaz, uluc-esen]]
+    - [direction, ufuk-tan-altunkaya]
+    - [performer, ahmet-ozer]
+    - [dramaturgy, egemen-kalyon]
+    - [assistant, sezer-gunduz]
+    - [sound, cem-ontas]
+  shows:
+    - {date: 2023-04-22, time: "20:00", venue: fliegendes, premiere: true}
+    - {date: 2023-05-18, time: "20:00", venue: fliegendes}
+    - {date: 2024-01-27, time: "18:30", venue: ballhaus}
+    - {date: 2024-02-24, time: "18:30", venue: ballhaus}
+    - {date: 2024-04-13, time: "18:30", venue: ballhaus}
+    - {date: 2024-05-18, time: "18:30", venue: ballhaus}
+
+- slug: avzer
+  title: Avzer
+  year: 2023
+  image: avzer.jpg
+  form: {tr: Tek kişilik oyun, de: Solo, en: Solo}
+  hook: {tr: "Ankara, Haziran 2013. Bir sokak çocuğu değişmiş bir şehre uyanıyor.", de: "Ankara, Juni 2013. Ein Straßenkind erwacht in einer veränderten Stadt.", en: "Ankara, June 2013. A street kid wakes up in a changed city."}
+  text:
+    tr: |
+      Avzer üç yaşından beri yurtta büyüdü, kaçtı, şimdi sokakta yaşıyor. Haziran 2013'te bir sabah Kızılay'a uyandığında şehir değişmiş: kalabalık, öfke ve hiç tanımadığı bir dayanışma.
+
+      Şamil Yılmaz'ın metni Gezi direnişini, kimsenin hesaba katmadığı birinin gözünden anlatıyor. Bir sokak çocuğu için kamusal alan ilk kez herkesin olduğunda neler değişir?
+    de: |
+      Avzer ist seit seinem dritten Lebensjahr im Heim aufgewachsen, ist weggelaufen und lebt jetzt auf der Straße. Als er im Juni 2013 eines Morgens am Kızılay-Platz aufwacht, hat sich die Stadt verändert: Menschenmengen, Wut und eine Solidarität, die er nicht kennt.
+
+      Der Text von Şamil Yılmaz erzählt die Gezi-Proteste aus der Sicht von jemandem, mit dem niemand gerechnet hat. Was verändert sich für ein Straßenkind, wenn der öffentliche Raum zum ersten Mal allen gehört?
+    en: |
+      Avzer has grown up in care since he was three, ran away, and now lives on the street. One morning in June 2013 he wakes up on Kızılay square and the city has changed: crowds, anger, and a solidarity he has never known.
+
+      Şamil Yılmaz's text tells the Gezi protests through the eyes of someone nobody counted on. What changes for a street kid when public space belongs, for the first time, to everyone?
+  credits:
+    - [text, samil-yilmaz]
+    - [direction, ufuk-tan-altunkaya]
+    - [performer, ahmet-ilker-ergin]
+    - [dramaturgy, egemen-kalyon]
+    - [coordination, ahmet-ozer]
+    - [assistant, sezer-gunduz]
+    - [music, omer-sarigedik]
+    - [sound, zeki-elveris]
+    - [graphic, gozde-karaoglan]
+  shows:
+    - {date: 2023-04-21, time: "20:00", venue: fliegendes, premiere: true}
+    - {date: 2023-05-17, time: "20:00", venue: fliegendes}
+    - {date: 2023-06-06, time: "20:30", venue: gorki}
+
+- slug: sen-istanbuldan-daha-guzelsin
+  title: Sen İstanbul'dan Daha Güzelsin
+  year: 2023
+  image: sen-istanbuldan.jpg
+  form: {tr: Oyun, de: Stück, en: Play}
+  hook: {tr: "Büyükanne, anne, torun. Bir şehirde elli yıl.", de: "Großmutter, Mutter, Enkelin. Fünfzig Jahre in einer Stadt.", en: "Grandmother, mother, granddaughter. Fifty years in one city."}
+  text:
+    tr: |
+      Büyükanne, anne, torun: Ayfer, Başak, Melis. Aynı aileden üç kadın ve İstanbul'da geçen yaklaşık elli yıl. Farklı evler, iç sesler, söylenmemiş cümleler.
+
+      Bu kadar kalabalık bir şehirde her yer neden bu kadar boş? Murat Mahmutyazıcıoğlu'nun metni, kuşaktan kuşağa aktarılan suskunluğun izini sürüyor.
+    de: |
+      Großmutter, Mutter, Enkelin: Ayfer, Başak, Melis. Drei Frauen einer Familie und rund fünfzig Jahre in Istanbul. Verschiedene Wohnungen, innere Stimmen, Ungesagtes.
+
+      Eine Stadt mit so vielen Menschen, und doch scheint überall Leere zu sein. Der Text von Murat Mahmutyazıcıoğlu folgt dem Schweigen, das von Generation zu Generation weitergegeben wird.
+    en: |
+      Grandmother, mother, granddaughter: Ayfer, Başak, Melis. Three women of one family and some fifty years in Istanbul. Different homes, inner voices, things left unsaid.
+
+      A city with so many people, and yet emptiness everywhere. Murat Mahmutyazıcıoğlu's text traces the silence handed down from one generation to the next.
+  credits:
+    - [text, murat-mahmutyazicioglu]
+    - [direction, ufuk-tan-altunkaya]
+    - [cast, [merve-ongun, aslihan-boruhan, emel-turan]]
+    - [dramaturgy, egemen-kalyon]
+    - [coordination, ahmet-ozer]
+    - [assistdir, taner-senturk]
+    - [graphic, rabia-gencer]
+  shows:
+    - {date: 2023-04-14, time: "20:00", venue: gropiusstadt, premiere: true}
+    - {date: 2023-05-26, time: "20:00", venue: gropiusstadt}
+    - {date: 2024-01-13, time: "18:30", venue: ballhaus}
+    - {date: 2024-02-17, time: "18:00", venue: ballhaus}
+    - {date: 2024-03-23, time: "18:30", venue: ballhaus}
+    - {date: 2024-04-27, time: "18:30", venue: ballhaus}
+
+- slug: ondan-sonra
+  title: O'ndan Sonra
+  year: 2022
+  image: ondan-sonra.jpg
+  form: {tr: Kulaklıklı şehir yürüyüşü, de: Audiowalk, en: Audio walk}
+  hook: {tr: Dört yabancı ve görünmeyen bir Hanım., de: Vier Fremde und eine unsichtbare Dame., en: Four strangers and an invisible lady.}
+  text:
+    tr: |
+      Kulaklıklar takılıyor, Berlin sokaklarında bir takip başlıyor. Seyirci birbirini hiç tanımayan dört kişinin peşine düşüyor ve aralarındaki bağı arıyor.
+
+      Hepsinin peşinde olduğu biri var: hiç görünmeyen Hanım. Didem Kaplan'ın metni göçü, ötekiliği ve yarım kalmış bir modernleşmeyi bugünün insanları üzerinden soruyor. Şehir dekor değil, oyunun kendisi.
+    de: |
+      Kopfhörer auf, und mitten in Berlin beginnt eine Verfolgung. Das Publikum folgt vier Menschen, die einander nicht kennen, und sucht nach dem, was sie verbindet.
+
+      Alle sind auf der Spur einer Person, die nie zu sehen ist: der Dame. Didem Kaplans Text befragt Migration, Fremdsein und eine unvollendete Moderne an Menschen von heute. Die Stadt ist keine Kulisse, sie ist das Stück.
+    en: |
+      Headphones on, and a pursuit begins on the streets of Berlin. The audience follows four people who do not know each other and looks for what connects them.
+
+      They are all on the trail of someone who never appears: the Lady. Didem Kaplan's text questions migration, otherness and an unfinished modernity through the people of today. The city is not a backdrop; it is the play.
+  info: {tr: "Yaklaşık 60 dakika yürüyüş. Başlangıç ve bitiş noktası farklı. Kulaklık için kimlik bırakılır. Tekerlekli sandalyeyle erişilebilir değil.", de: "Etwa 60 Minuten zu Fuß. Start und Ziel sind verschieden. Für die Kopfhörer wird ein Ausweis hinterlegt. Nicht barrierefrei.", en: "About 60 minutes on foot. Start and end points differ. An ID is left as deposit for the headphones. Not wheelchair accessible."}
+  credits:
+    - [text, didem-kaplan]
+    - [concept, ufuk-tan-altunkaya]
+    - [cast, [ahmet-ozer, aslihan-boruhan, mesut-gungor, fatos-uysal]]
+    - [dramaturgy, egemen-kalyon]
+    - [coordination, ahmet-ozer]
+    - [assistant, sezer-gunduz]
+    - [sound, zeki-elveris]
+  partners: [cabinet-novus]
+  funders: [fdk]
+  shows:
+    - {date: 2022-11-14, venue: nikolaiviertel, premiere: true}
+
+- slug: nested
+  title: Nested
+  year: 2022
+  image: nested.jpg
+  form: {tr: Açık havada performans, de: Performance im Freien, en: Outdoor performance}
+  hook: {tr: Göç sanatçıya ne yapar?, de: Was macht Migration mit Künstler*innen?, en: What does migration do to artists?}
+  text:
+    tr: |
+      Batılı imgelerle biçimlenmiş Doğu kültürlerinden gelen sanatçılar göç ettiklerinde ne olur? Geride ne kalır, yeni şehirde hangi yere yerleşirler?
+
+      Nested, Körnerpark'ın açık havasında beden, video ve ses arasında kurulan bir performans. Göçü bir taşınma olarak değil, bir yuva kurma ve onu yeniden bozma hâli olarak düşünüyor.
+    de: |
+      Was geschieht mit Künstler*innen aus östlichen Kulturen, die selbst von westlichen Bildern geprägt sind, wenn sie migrieren? Was lassen sie zurück, welchen Platz nehmen sie in der neuen Stadt ein?
+
+      Nested ist eine Performance unter freiem Himmel im Körnerpark, zwischen Körper, Video und Klang. Sie denkt Migration nicht als Umzug, sondern als fortwährendes Nestbauen und Wiederauflösen.
+    en: |
+      What happens to artists from Eastern cultures, themselves shaped by Western images, when they migrate? What do they leave behind, and what place do they take in the new city?
+
+      Nested is an open-air performance in Körnerpark, between body, video and sound. It thinks of migration not as a move but as the ongoing making and unmaking of a nest.
+  credits:
+    - [writedirect, ufuk-tan-altunkaya]
+    - [cast, [ahmet-ozer, tamer-serkan-subasi]]
+    - [video, angelica-germana-bozza]
+    - [dramaturgy, egemen-kalyon]
+    - [coordination, ilayda-fidanlik]
+    - [sound, zeki-elveris]
+  partners: [cabinet-novus]
+  funders: [48h, ausland]
+  shows:
+    - {date: 2022-06-24, venue: koernerpark, premiere: true}
+
+- slug: uzak
+  title: Uzak
+  year: 2021
+  image: uzak.jpg
+  form: {tr: Tek seyircilik kulaklıklı yürüyüş, de: Audiowalk für eine Person, en: Audio walk for one}
+  hook: {tr: Tek seyirci, bir mahalle, iki zaman., de: "Eine Person, ein Viertel, zwei Zeiten.", en: "One spectator, one neighbourhood, two times."}
+  text:
+    tr: |
+      Bergama, Kale Mahallesi. Kulaklıklar takılıyor ve tek bir seyirci yola çıkıyor. Chris Marker'ın La Jetée'sinden yola çıkan Uzak, Üçüncü Dünya Savaşı'ndan sonra geçmişe ve geleceğe gönderilen bir tutsağın hikâyesini tarihi bir mahallenin sokaklarına yerleştiriyor.
+
+      Şehir bir zaman makinesine dönüşüyor. Seyirci, ölümle yaşam arasında, amaç ve varoluş üzerine bir anının peşinden yürüyor.
+    de: |
+      Bergama, Kale Mahallesi. Kopfhörer auf, und eine einzige Person macht sich auf den Weg. Ausgehend von Chris Markers La Jetée verlegt Uzak die Geschichte eines Gefangenen, der nach dem Dritten Weltkrieg in Vergangenheit und Zukunft geschickt wird, in die Gassen eines historischen Viertels.
+
+      Die Stadt wird zur Zeitmaschine. Das Publikum folgt einer Erinnerung, zwischen Tod und Leben, auf der Suche nach Sinn.
+    en: |
+      Bergama, Kale Mahallesi. Headphones on, and a single spectator sets off. Starting from Chris Marker's La Jetée, Uzak moves the story of a prisoner sent into the past and the future after the Third World War into the lanes of a historic neighbourhood.
+
+      The city becomes a time machine. The audience follows a memory, between death and life, searching for purpose.
+  info: {tr: "Yaklaşık 40 dakika, arasız. Tek seyirci için.", de: "Etwa 40 Minuten, ohne Pause. Für eine Person.", en: "About 40 minutes, no interval. For one person."}
+  credits:
+    - [text, didem-kaplan]
+    - [edit, ufuk-tan-altunkaya]
+    - [dramaturgy, egemen-kalyon]
+    - [coordination, ceylan-dizdar]
+    - [assistdir, ugur-yuksekol]
+    - [assistant, [salihcan-saban, taha-burak-kirlar]]
+    - [sound, zeki-elveris]
+    - [voice, ahmet-ozer]
+  partners: [mekan-arti, cabinet-novus, bergama-fest]
+  funders: [goethe]
+  shows:
+    - {date: 2021-06-01, venue: bergama, premiere: true, approx: true}
+
+- slug: 80lerde-lubunya-olmak
+  title: 80'lerde Lubunya Olmak
+  year: 2021
+  image: lubunya.jpg
+  form: {tr: Tek kişilik performans, de: Solo-Performance, en: Solo performance}
+  hook: {tr: Bir trans kadın, 1980 darbesinin gölgesinde bir hayat., de: "Eine trans Frau, ein Leben im Schatten des Putsches von 1980.", en: "A trans woman, a life in the shadow of the 1980 coup."}
+  text:
+    tr: |
+      Bugün elli yaşında olan bir trans kadın, 1980 darbesinin gölgesinde lubunya olmanın tarihini anlatıyor: parklar, üçüncü sınıf oteller, gece kulüpleri, Bayram Sokak, Dolapdere, karakollar ve kışlalar.
+
+      Metin, Siyah Pembe Üçgen İzmir'in derlediği gerçek tanıklıklara dayanıyor. Seyirci salaş bir meyhanede oturuyor, arabesk şarkılar geceye eşlik ediyor. Resmî tarihin dışında kalmış bir hayatta kalma ve dayanışma tarihi.
+    de: |
+      Eine heute fünfzigjährige trans Frau erzählt, was es hieß, im Schatten des Militärputsches von 1980 lubunya zu sein: Parks, drittklassige Hotels, Nachtclubs, Polizeiwachen und Kasernen.
+
+      Der Text beruht auf realen Zeitzeug*innen-Interviews, die der Verein Siyah Pembe Üçgen İzmir gesammelt hat. Das Publikum sitzt wie in einer schäbigen Taverne, Arabesk-Lieder begleiten den Abend. Eine Geschichte des Überlebens und der Solidarität, die in keiner offiziellen Chronik steht.
+    en: |
+      A trans woman, now fifty, tells what it meant to be lubunya in the shadow of the 1980 military coup: parks, third-rate hotels, nightclubs, police stations and barracks.
+
+      The text is based on real testimonies collected by Siyah Pembe Üçgen İzmir. The audience sits as if in a run-down tavern, arabesk songs accompany the night. A history of survival and solidarity that no official record holds.
+  credits:
+    - [source, siyah-pembe]
+    - [adaptation, ufuk-tan-altunkaya]
+    - [performer, ufuk-tan-altunkaya]
+    - [dramaturgy, egemen-kalyon]
+    - [coordination, ahmet-ozer]
+    - [assistant, sezer-gunduz]
+    - [advice, ozan-unlukoc]
+    - [theme, emre-akad]
+  partners: [mekan-arti]
+  shows:
+    - {date: 2021-11-20, time: "20:00", venue: ballhaus, premiere: true}
+    - {date: 2022-02-12, time: "20:00", venue: ballhaus}
+    - {date: 2022-04-09, time: "20:00", venue: ballhaus}
+    - {date: 2022-05-13, time: "20:00", venue: ballhaus}
+    - {date: 2022-12-10, time: "20:00", venue: ballhaus}
+    - {date: 2023-04-15, time: "20:00", venue: ballhaus}
+    - {date: 2026-11-13, time: "20:00", venue: moda-bar, eventim: 6ace399da47cb7abb7b242f9}

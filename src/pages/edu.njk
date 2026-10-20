@@ -1,0 +1,32 @@
+---
+pagination: {data: site.langs, size: 1, alias: lang}
+permalink: "/{{ lang }}/{{ site.sections.edu[lang] }}/"
+layout: base.njk
+section: edu
+eleventyComputed:
+  title: "{{ pages.edu[lang].title }}"
+  alt: {tr: "/tr/tiyatro-pedagojisi/", de: "/de/theaterpaedagogik/", en: "/en/education/"}
+---
+{%- set P = pages.edu[lang] -%}
+{%- set L = i18n[lang] -%}
+<section class="page-head"><div class="wrap"><h1 class="h-huge">{{ P.title }}</h1><p class="lede big">{{ P.lead }}</p></div></section>
+<section class="section"><div class="wrap cols">
+  <div class="prose">{{ P.body | paras | safe }}</div>
+  <figure class="poster"><img src="{{ '/assets/img/oyun/atolye.jpg' | url }}" alt="" loading="lazy" width="1000" height="556"></figure>
+</div></section>
+{%- for c in graph.courses %}
+<section class="section"><div class="wrap cols">
+  <div>
+    <h2 class="h-big">{{ c.title | t(lang) }}</h2>
+    {% if c.topics %}<p class="prose">{{ c.topics | t(lang) }}</p>{% endif %}
+  </div>
+  <dl class="facts">
+    <dt>{{ L.when }}</dt><dd>{{ c.when | t(lang) }}</dd>
+    {% if c.venue %}<dt>{{ L.where }}</dt><dd>{{ graph.venues[c.venue].address }}</dd>{% endif %}
+    {% if c.fee %}<dt>{{ L.price }}</dt><dd>{{ c.fee | t(lang) }}</dd>{% endif %}
+    <dt>{{ L.info }}</dt><dd>{{ c.level | t(lang) }}{% if c.lang %} · {{ c.lang | t(lang) }}{% endif %}</dd>
+    <dt>{{ L.teachers }}</dt><dd>{% for t in c.teachers %}<a href="{{ ('/' + lang + '/' + site.sections.people[lang] + '/' + t + '/') | url }}">{{ graph.people[t].name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</dd>
+    {% if c.form %}<dt></dt><dd><a class="btn" href="{{ c.form }}" rel="noopener">{{ L.register }}</a></dd>{% endif %}
+  </dl>
+</div></section>
+{%- endfor %}

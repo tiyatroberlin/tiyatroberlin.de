@@ -1,0 +1,31 @@
+---
+pagination: {data: site.langs, size: 1, alias: lang}
+permalink: "/{{ lang }}/{{ site.sections.program[lang] }}/"
+layout: base.njk
+section: program
+eleventyComputed:
+  title: "{{ i18n[lang].nav.program }}"
+  alt: {tr: "/tr/program/", de: "/de/spielplan/", en: "/en/programme/"}
+---
+{%- import "macros.njk" as m -%}
+{%- set L = i18n[lang] -%}
+<section class="page-head"><div class="wrap"><h1 class="h-huge">{{ L.nav.program }}</h1><p class="lede">{{ L.program_intro }}</p></div></section>
+<section class="section"><div class="wrap">
+  {%- for g in graph.programByMonth %}
+  <h2 class="month">{{ g.month | monthName(L) }} {{ g.month | yearOf }}</h2>
+  <ul class="shows">{% for s in g.shows %}{{ m.showRow(s, lang, L, graph, site, loop.index + loop.length * 0) }}{% endfor %}</ul>
+  {%- endfor %}
+</div></section>
+<section class="section"><div class="wrap">
+  <div class="section-head"><h2>{{ L.nav.edu }}</h2></div>
+  <ul class="shows">
+  {%- for c in graph.courses %}
+    <li class="show">
+      <div class="show-date">{{ c.start | dm }}<small>{{ c.start | weekday(L) }}</small></div>
+      <div class="show-title"><a href="{{ ('/' + lang + '/' + site.sections.edu[lang] + '/') | url }}">{{ c.title | t(lang) }}</a><span class="show-sub">{{ c.when | t(lang) }}</span></div>
+      <div class="show-where">{% if c.venue %}{{ graph.venues[c.venue].name }}<span>{{ graph.venues[c.venue].district }}</span>{% endif %}</div>
+      <div class="show-action">{% if c.form %}<a class="btn" href="{{ c.form }}" rel="noopener">{{ L.register }}</a>{% endif %}</div>
+    </li>
+  {%- endfor %}
+  </ul>
+</div></section>

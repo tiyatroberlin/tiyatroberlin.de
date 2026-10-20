@@ -1,0 +1,27 @@
+---
+pagination: {data: site.langs, size: 1, alias: lang}
+permalink: "/{{ lang }}/{{ site.sections.about[lang] }}/"
+layout: base.njk
+section: about
+eleventyComputed:
+  title: "{{ pages.about[lang].title }}"
+  alt: {tr: "/tr/hakkimizda/", de: "/de/ueber-uns/", en: "/en/about/"}
+---
+{%- set P = pages.about[lang] -%}
+{%- set L = i18n[lang] -%}
+<section class="page-head"><div class="wrap"><h1 class="h-huge">{{ P.title }}</h1><p class="lede big">{{ P.lead }}</p></div></section>
+{%- for s in P.sections %}
+<section class="section"><div class="wrap cols rev">
+  <h2 class="h-big">{{ s.h }}</h2>
+  <div class="prose">{{ s.body | paras | safe }}</div>
+</div></section>
+{%- endfor %}
+<section class="section"><div class="wrap">
+  <dl class="counts">
+    <div><dt>{{ L.counts.works }}</dt><dd>{{ graph.counts.works }}</dd></div>
+    <div><dt>{{ L.counts.people }}</dt><dd>{{ graph.counts.people }}</dd></div>
+    <div><dt>{{ L.counts.shows }}</dt><dd>{{ graph.counts.shows }}</dd></div>
+    <div><dt>{{ L.counts.venues }}</dt><dd>{{ graph.counts.venues }}</dd></div>
+  </dl>
+  <p class="direction">{{ P.direction }}: <a href="{{ ('/' + lang + '/' + site.sections.people[lang] + '/ufuk-tan-altunkaya/') | url }}">Ufuk Tan Altunkaya</a></p>
+</div></section>

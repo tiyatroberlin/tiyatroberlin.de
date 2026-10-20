@@ -1,0 +1,100 @@
+{%- set L = i18n[lang] -%}
+{%- set S = site.sections -%}
+{%- macro u(sec, slug) -%}{{ ("/" + lang + "/" + S[sec][lang] + "/" + (slug + "/" if slug else "")) | url }}{%- endmacro -%}
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if title %}{{ title }} · {% endif %}Tiyatro Berlin</title>
+<meta name="description" content="{{ description or (pages.about[lang].lead | truncate(155)) }}">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | url }}">
+<link rel="icon" href="{{ '/assets/img/favicon.png' | url }}">
+{%- for l in site.langs %}{% if alt and alt[l] %}
+<link rel="alternate" hreflang="{{ l }}" href="{{ alt[l] | url }}">{% endif %}{% endfor %}
+<meta property="og:title" content="{{ title or 'Tiyatro Berlin' }}">
+{% if ogimage %}<meta property="og:image" content="{{ ogimage | url }}">{% endif %}
+</head>
+<body>
+<a class="skip" href="#main">{{ L.skip }}</a>
+<header class="mast">
+  <div class="wrap">
+    <a class="brand" href="{{ ('/' + lang + '/') | url }}" aria-label="Tiyatro Berlin">
+      <img src="{{ '/assets/img/logo.png' | url }}" alt="" width="34" height="34" onerror="this.style.display='none'">
+      <span>Tiyatro Berlin</span>
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav">{{ L.menu }}</button>
+    <nav class="nav" id="nav">
+      {%- for key in ["program","works","people","network","projects","edu","about"] %}
+      <a href="{{ u(key) }}"{% if section == key %} aria-current="page"{% endif %}>{{ L.nav[key] }}</a>
+      {%- endfor %}
+      <span class="langs">
+        {%- for l in site.langs %}
+        <a href="{{ (alt[l] if alt and alt[l] else '/' + l + '/') | url }}" hreflang="{{ l }}" lang="{{ l }}"{% if l == lang %} aria-current="true"{% endif %}>{{ l | upper }}</a>
+        {%- endfor %}
+      </span>
+    </nav>
+  </div>
+</header>
+<main id="main">
+{{ content | safe }}
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h2>Tiyatro Berlin</h2>
+        <p>{{ L.nav.about }}: <a href="{{ u('about') }}">{{ pages.about[lang].title }}</a><br>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+        <ul>
+          <li><a href="{{ site.instagram }}" rel="noopener">Instagram</a></li>
+          <li><a href="{{ site.facebook }}" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>{{ L.nav.program }}</h2>
+        <ul>
+          {%- for key in ["program","works","people","network","projects","edu","contact"] %}
+          <li><a href="{{ u(key) }}">{{ L.nav[key] }}</a></li>
+          {%- endfor %}
+        </ul>
+      </div>
+      <div>
+        <h2>{{ L.newsletter }}</h2>
+        <p>{{ L.newsletter_text }}</p>
+        <form class="signup" action="{{ site.mailchimp }}" method="post" target="_blank">
+          <label class="visually-hidden" for="nl-mail">{{ L.email }}</label>
+          <input id="nl-mail" type="email" name="EMAIL" placeholder="{{ L.email }}" required autocomplete="email">
+          <div class="hp" aria-hidden="true"><input type="text" name="b_4ff8cee3c133c0cb0141ad744_e148b607d0" tabindex="-1" value="" autocomplete="off"></div>
+          <button class="btn" type="submit">{{ L.subscribe }}</button>
+          <label class="consent"><input type="checkbox" name="gdpr" required> {{ consent[lang] }}</label>
+        </form>
+      </div>
+      <div>
+        <h2>{{ L.support }}</h2>
+        <ul class="funders">
+          {%- for f in ["senat","fdk","goethe","48h"] %}
+          <li>{{ graph.db.funders[f].name }}</li>
+          {%- endfor %}
+        </ul>
+      </div>
+    </div>
+    <p class="legal"><span>© 2021–2026 Tiyatro Berlin</span><a href="{{ u('imprint') }}">{{ L.imprint }}</a><a href="{{ u('privacy') }}">{{ L.privacy }}</a></p>
+  </div>
+</footer>
+<script>
+document.querySelector('.menu-btn')?.addEventListener('click',e=>{const n=document.getElementById('nav');const o=n.classList.toggle('open');e.currentTarget.setAttribute('aria-expanded',o)});
+document.querySelectorAll('[data-eventim]').forEach(b=>b.addEventListener('click',()=>{
+  const box=document.getElementById(b.getAttribute('aria-controls'));
+  const open=b.getAttribute('aria-expanded')==='true';
+  b.setAttribute('aria-expanded',!open); box.hidden=open;
+  if(!open && !box.dataset.loaded){
+    box.dataset.loaded=1;
+    const id=b.dataset.eventim, acc=b.dataset.account;
+    box.innerHTML='<iframe id="eventim-light-iframe-v2-'+acc+'-event-'+id+'" name="eventim-light-iframe-v2-'+acc+'-event-'+id+'" src="https://www.eventim-light.com/de/a/'+acc+'/iframe/e/'+id+'/" width="100%" data-scroll="true" data-scroll-offset-y="0" scrolling="no" frameborder="0" title="Eventim"></iframe>';
+    const s=document.createElement('script'); s.src='https://www.eventim-light.com/de/a/'+acc+'/public/iframe/el-shop.js'; box.appendChild(s);
+  }
+}));
+</script>
+</body>
+</html>

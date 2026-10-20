@@ -1,0 +1,29 @@
+{
+  "name": "tiyatroberlin.de",
+  "version": "1.0.0",
+  "description": "Tiyatro Berlin",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiyatroberlin/tiyatroberlin.de.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tiyatroberlin/tiyatroberlin.de/issues"
+  },
+  "homepage": "https://github.com/tiyatroberlin/tiyatroberlin.de#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@fontsource-variable/source-sans-3": "^5.1.0",
+    "@fontsource-variable/source-serif-4": "^5.1.0",
+    "d3": "^7.9.0",
+    "js-yaml": "^4.1.0"
+  },
+  "type": "module"
+}

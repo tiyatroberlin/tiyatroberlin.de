@@ -1,0 +1,55 @@
+---
+pagination: {data: site.langs, size: 1, alias: lang}
+permalink: "/{{ lang }}/{{ site.sections.network[lang] }}/"
+layout: base.njk
+section: network
+eleventyComputed:
+  title: "{{ i18n[lang].nav.network }}"
+  alt: {tr: "/tr/ag/", de: "/de/netzwerk/", en: "/en/network/"}
+---
+{%- set L = i18n[lang] -%}
+<section class="page-head"><div class="wrap"><h1 class="h-huge">{{ L.nav.network }}</h1><p class="lede">{{ L.network_intro }}</p></div></section>
+<div class="wrap">
+  <svg class="net" id="net" role="img" aria-label="{{ L.nav.network }}"></svg>
+  <p class="net-legend"><span><span class="dot" aria-hidden="true"></span>{{ L.nav.works }}</span><span><span class="dot ink" aria-hidden="true"></span>{{ L.nav.people }}</span></p>
+</div>
+<section class="section"><div class="wrap">
+  <dl class="counts">
+    <div><dt>{{ L.counts.works }}</dt><dd>{{ graph.counts.works }}</dd></div>
+    <div><dt>{{ L.counts.people }}</dt><dd>{{ graph.counts.people }}</dd></div>
+    <div><dt>{{ L.counts.shows }}</dt><dd>{{ graph.counts.shows }}</dd></div>
+    <div><dt>{{ L.counts.venues }}</dt><dd>{{ graph.counts.venues }}</dd></div>
+  </dl>
+</div></section>
+<script src="{{ '/assets/js/d3.min.js' | url }}"></script>
+<script>
+(function(){
+const data={{ graph.network | json | safe }};
+const base={{ ('/' + lang + '/') | url | json | safe }};
+const sec={works:{{ site.sections.works[lang] | json | safe }},people:{{ site.sections.people[lang] | json | safe }}};
+const svg=d3.select('#net'), el=svg.node();
+const W=()=>el.clientWidth, H=()=>el.clientHeight;
+const g=svg.append('g');
+svg.call(d3.zoom().scaleExtent([.4,3]).on('zoom',e=>g.attr('transform',e.transform)));
+const sim=d3.forceSimulation(data.nodes)
+  .force('link',d3.forceLink(data.links).id(d=>d.id).distance(60).strength(.6))
+  .force('charge',d3.forceManyBody().strength(d=>d.type==='work'?-420:-120))
+  .force('center',d3.forceCenter(W()/2,H()/2))
+  .force('collide',d3.forceCollide(d=>d.type==='work'?34:14));
+const link=g.append('g').attr('stroke','#1e1e1e').attr('stroke-opacity',.22).selectAll('line').data(data.links).join('line');
+const node=g.append('g').selectAll('a').data(data.nodes).join('a')
+  .attr('href',d=>base+(d.type==='work'?sec.works:sec.people)+'/'+d.slug+'/');
+node.append('circle').attr('r',d=>d.type==='work'?9:3+Math.sqrt(d.n)*2.2)
+  .attr('fill',d=>d.type==='work'?'#e32b2b':'#1e1e1e');
+node.append('text').text(d=>d.label).attr('x',d=>d.type==='work'?13:8).attr('y',4)
+  .attr('font-size',d=>d.type==='work'?15:11.5).attr('font-weight',d=>d.type==='work'?700:400)
+  .attr('fill','#1e1e1e').attr('paint-order','stroke').attr('stroke','#fff').attr('stroke-width',3);
+node.on('mouseenter',(e,d)=>{const nb=new Set([d.id]);data.links.forEach(l=>{if(l.source.id===d.id)nb.add(l.target.id);if(l.target.id===d.id)nb.add(l.source.id)});
+  node.attr('opacity',n=>nb.has(n.id)?1:.15);link.attr('stroke-opacity',l=>l.source.id===d.id||l.target.id===d.id?.7:.05)})
+ .on('mouseleave',()=>{node.attr('opacity',1);link.attr('stroke-opacity',.22)});
+node.call(d3.drag().on('start',(e,d)=>{if(!e.active)sim.alphaTarget(.3).restart();d.fx=d.x;d.fy=d.y})
+ .on('drag',(e,d)=>{d.fx=e.x;d.fy=e.y}).on('end',(e,d)=>{if(!e.active)sim.alphaTarget(0);d.fx=null;d.fy=null}));
+sim.on('tick',()=>{link.attr('x1',d=>d.source.x).attr('y1',d=>d.source.y).attr('x2',d=>d.target.x).attr('y2',d=>d.target.y);node.attr('transform',d=>`translate(${d.x},${d.y})`)});
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){sim.stop();for(let i=0;i<300;i++)sim.tick();sim.on('tick')();}
+})();
+</script>

@@ -1,0 +1,36 @@
+# Programda görünen ama Tiyatro Berlin oyunu olmayan etkinlikler ve kurslar
+events:
+  - title: NAMELESS
+    by: cabinet:novus
+    date: 2026-11-14
+    time: "20:00"
+    venue: ballhaus
+    sub: {tr: "Kulaklıklı şehir yürüyüşü · Türkçe dinleme seçeneği", de: "Audiowalk · auch auf Türkisch", en: "Audio walk · also in Turkish"}
+    ticket: "https://www.ballhaus-prinzenallee.de"
+  - title: NAMELESS
+    by: cabinet:novus
+    date: 2026-11-15
+    time: "20:00"
+    venue: ballhaus
+    sub: {tr: "Kulaklıklı şehir yürüyüşü · Türkçe dinleme seçeneği", de: "Audiowalk · auch auf Türkisch", en: "Audio walk · also in Turkish"}
+    ticket: "https://www.ballhaus-prinzenallee.de"
+
+courses:
+  - slug: oyunculuk-atolyesi
+    title: {tr: Oyunculuk Atölyesi, de: Schauspielensemble, en: Acting ensemble}
+    level: {tr: "Yetişkinler için, deneyim gerekmez", de: "Für Erwachsene, ohne Vorkenntnisse", en: "For adults, no experience needed"}
+    when: {tr: "Her pazartesi 18:30–21:00 · 2 Kasım 2026'dan Mayıs 2027'ye", de: "Montags 18:30–21:00 · 2. November 2026 bis Mai 2027", en: "Mondays 6:30–9 pm · 2 November 2026 to May 2027"}
+    start: 2026-11-02
+    venue: atolye-moabit
+    fee: {tr: "Aylık 80 € · istediğin ay bırakabilirsin", de: "80 € im Monat, monatlich kündbar", en: "€80 per month, cancel any month"}
+    lang: {tr: Türkçe, de: Kurssprache Türkisch, en: Taught in Turkish}
+    teachers: [ufuk-tan-altunkaya, hazal-erdal]
+    topics: {tr: "Ses ve diksiyon · beden ve nefes · doğaçlama · tiyatro tarihi ve dramaturji · metin ve rol çalışması", de: "Stimme und Sprechen · Körper und Atem · Improvisation · Theatergeschichte und Dramaturgie · Arbeit an Text und Rolle", en: "Voice and diction · body and breath · improvisation · theatre history and dramaturgy · text and role work"}
+    form: "https://docs.google.com/forms/d/e/1FAIpQLSddOgOPj7CnL_aH_LfAXcB5XDjTV-HxV_9e07vgNabJOlQtIw/viewform"
+  - slug: ileri-atolye
+    title: {tr: Oyunculuk Atölyesi · İleri, de: Schauspielensemble · Fortgeschrittene, en: Acting ensemble · Advanced}
+    level: {tr: "Önceki dönemlerin katılımcıları için", de: "Für Teilnehmende früherer Jahrgänge", en: "For previous participants"}
+    when: {tr: "20 Kasım 2026'dan itibaren · davetle", de: "Ab 20. November 2026 · auf Einladung", en: "From 20 November 2026 · by invitation"}
+    start: 2026-11-20
+    teachers: [ufuk-tan-altunkaya, hazal-erdal]
+    invite: true

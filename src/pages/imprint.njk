@@ -1,0 +1,15 @@
+---
+pagination: {data: site.langs, size: 1, alias: lang}
+permalink: "/{{ lang }}/{{ site.sections.imprint[lang] }}/"
+layout: base.njk
+eleventyComputed:
+  title: "{{ i18n[lang].imprint }}"
+  alt: {tr: "/tr/impressum/", de: "/de/impressum/", en: "/en/imprint/"}
+---
+<section class="page-head"><div class="wrap"><h1 class="h-huge">Impressum</h1></div></section>
+<section class="section"><div class="wrap prose">
+  <p><strong>Angaben gemäß § 5 DDG</strong><br>Tiyatro Berlin<br>Ufuk Tan Altunkaya<br>Bernauer Str. 79<br>13507 Berlin</p>
+  <p><strong>Kontakt</strong><br>E-Mail: <a href="mailto:info@tiyatroberlin.de">info@tiyatroberlin.de</a></p>
+  <p><strong>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</strong><br>Ufuk Tan Altunkaya, Anschrift wie oben</p>
+  <p>Fotos und Plakate: Tiyatro Berlin und die jeweiligen Künstler*innen.</p>
+</div></section>

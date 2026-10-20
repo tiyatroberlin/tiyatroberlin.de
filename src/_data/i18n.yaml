@@ -1,0 +1,123 @@
+tr:
+  name: Türkçe
+  nav: {program: Program, works: Oyunlar, people: Kişiler, network: Ağ, projects: Projeler, edu: Tiyatro pedagojisi, about: Hakkımızda, contact: İletişim}
+  next: Sıradaki
+  tickets: Bilet al
+  register: Kaydol
+  info: Bilgi
+  all_program: Tüm program
+  all_works: Tüm oyunlar
+  archive: Arşiv
+  premiere: Prömiyer
+  credits: Künye
+  dates: Gösterimler
+  where: Nerede
+  when: Ne zaman
+  price: Bilet
+  support: Destek
+  partners: Ortak yapım
+  works_with: Oyunlar
+  menu: Menü
+  close: Kapat
+  sold_by: Bilet satışı
+  newsletter: Bülten
+  newsletter_text: Program ve atölye duyuruları ayda bir kez.
+  email: E-posta adresi
+  subscribe: Abone ol
+  imprint: Impressum
+  privacy: Gizlilik
+  counts: {works: oyun, people: sanatçı, shows: gösterim, venues: mekân}
+  past: Oynandı
+  upcoming: Yakında
+  year: Yıl
+  people_intro: 2021'den beri Tiyatro Berlin'de çalışan herkes. Bir isme tıkla, yer aldığı bütün işleri gör.
+  works_intro: 2021'den bugüne bütün oyunlar.
+  program_intro: Biletler doğrudan bu sayfadan.
+  network_intro: Her nokta bir kişi ya da bir oyun. Çizgiler birlikte çalışılan işleri gösteriyor.
+  approx: tarih tam bilinmiyor
+  months: [Ocak, Şubat, Mart, Nisan, Mayıs, Haziran, Temmuz, Ağustos, Eylül, Ekim, Kasım, Aralık]
+  days: [Pazar, Pazartesi, Salı, Çarşamba, Perşembe, Cuma, Cumartesi]
+  skip: İçeriğe geç
+  teachers: Eğitmenler
+de:
+  name: Deutsch
+  nav: {program: Spielplan, works: Stücke, people: Menschen, network: Netzwerk, projects: Projekte, edu: Theaterpädagogik, about: Über uns, contact: Kontakt}
+  next: Als Nächstes
+  tickets: Tickets
+  register: Anmelden
+  info: Info
+  all_program: Ganzer Spielplan
+  all_works: Alle Stücke
+  archive: Archiv
+  premiere: Premiere
+  credits: Besetzung und Team
+  dates: Termine
+  where: Ort
+  when: Wann
+  price: Eintritt
+  support: Förderung
+  partners: Koproduktion
+  works_with: Stücke
+  menu: Menü
+  close: Schließen
+  sold_by: Ticketverkauf
+  newsletter: Newsletter
+  newsletter_text: Spielplan und Kurse, einmal im Monat.
+  email: E-Mail-Adresse
+  subscribe: Abonnieren
+  imprint: Impressum
+  privacy: Datenschutz
+  counts: {works: Produktionen, people: Künstler*innen, shows: Vorstellungen, venues: Spielorte}
+  past: Gespielt
+  upcoming: Demnächst
+  year: Jahr
+  people_intro: Alle, die seit 2021 mit Tiyatro Berlin gearbeitet haben. Ein Klick auf einen Namen zeigt alle Arbeiten.
+  works_intro: Alle Produktionen seit 2021.
+  program_intro: Tickets direkt auf dieser Seite.
+  network_intro: Jeder Punkt ist ein Mensch oder ein Stück. Die Linien zeigen gemeinsame Arbeiten.
+  approx: genaues Datum unbekannt
+  months: [Januar, Februar, März, April, Mai, Juni, Juli, August, September, Oktober, November, Dezember]
+  days: [Sonntag, Montag, Dienstag, Mittwoch, Donnerstag, Freitag, Samstag]
+  skip: Zum Inhalt
+  teachers: Leitung
+en:
+  name: English
+  nav: {program: Programme, works: Works, people: People, network: Network, projects: Projects, edu: Theatre education, about: About, contact: Contact}
+  next: Next
+  tickets: Tickets
+  register: Sign up
+  info: Info
+  all_program: Full programme
+  all_works: All works
+  archive: Archive
+  premiere: Premiere
+  credits: Credits
+  dates: Dates
+  where: Where
+  when: When
+  price: Tickets
+  support: Funding
+  partners: Co-production
+  works_with: Works
+  menu: Menu
+  close: Close
+  sold_by: Ticket sales
+  newsletter: Newsletter
+  newsletter_text: Programme and courses, once a month.
+  email: Email address
+  subscribe: Subscribe
+  imprint: Imprint
+  privacy: Privacy
+  counts: {works: productions, people: artists, shows: performances, venues: venues}
+  past: Played
+  upcoming: Coming up
+  year: Year
+  people_intro: Everyone who has worked with Tiyatro Berlin since 2021. Click a name to see all their work.
+  works_intro: Every production since 2021.
+  program_intro: Tickets right on this page.
+  network_intro: Each dot is a person or a production. Lines show work made together.
+  approx: exact date unknown
+  months: [January, February, March, April, May, June, July, August, September, October, November, December]
+  days: [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
+  skip: Skip to content
+  teachers: Led by

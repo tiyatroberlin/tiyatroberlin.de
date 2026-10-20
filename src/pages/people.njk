@@ -1,0 +1,27 @@
+---
+pagination: {data: site.langs, size: 1, alias: lang}
+permalink: "/{{ lang }}/{{ site.sections.people[lang] }}/"
+layout: base.njk
+section: people
+eleventyComputed:
+  title: "{{ i18n[lang].nav.people }}"
+  alt: {tr: "/tr/kisiler/", de: "/de/menschen/", en: "/en/people/"}
+---
+{%- set L = i18n[lang] -%}
+<section class="page-head"><div class="wrap"><h1 class="h-huge">{{ L.nav.people }}</h1><p class="lede">{{ L.people_intro }}</p></div></section>
+<section class="section"><div class="wrap">
+  <ul class="faces">
+  {%- for p in graph.personList %}{% if not p.org and p.photo %}
+    <li><a href="{{ ('/' + lang + '/' + site.sections.people[lang] + '/' + p.slug + '/') | url }}">
+      <img src="{{ ('/assets/img/kisi/' + p.photo) | url }}" alt="" loading="lazy" width="640" height="800">
+      <span class="face-name">{{ p.name }}</span><span class="face-n">{{ p.works | length }} {{ L.counts.works }}</span></a></li>
+  {%- endif %}{% endfor %}
+  </ul>
+  <div class="index-az">
+    <ul>
+    {%- for p in graph.personList %}{% if not p.org and not p.photo %}
+      <li><a href="{{ ('/' + lang + '/' + site.sections.people[lang] + '/' + p.slug + '/') | url }}">{{ p.name }}</a><span class="n">{{ p.works | length }}</span></li>
+    {%- endif %}{% endfor %}
+    </ul>
+  </div>
+</div></section>

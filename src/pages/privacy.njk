@@ -1,0 +1,18 @@
+---
+pagination: {data: site.langs, size: 1, alias: lang}
+permalink: "/{{ lang }}/{{ site.sections.privacy[lang] }}/"
+layout: base.njk
+eleventyComputed:
+  title: "{{ i18n[lang].privacy }}"
+  alt: {tr: "/tr/gizlilik/", de: "/de/datenschutz/", en: "/en/privacy/"}
+---
+<section class="page-head"><div class="wrap"><h1 class="h-huge">Datenschutz</h1>{% if lang != 'de' %}<p class="lede">{{ "Bu metnin bağlayıcı sürümü Almancadır." if lang == 'tr' else "The German version of this text is binding." }}</p>{% endif %}</div></section>
+<section class="section"><div class="wrap prose">
+  <p><strong>Verantwortlich</strong><br>Ufuk Tan Altunkaya, Bernauer Str. 79, 13507 Berlin, info@tiyatroberlin.de</p>
+  <p><strong>Hosting</strong><br>Diese Website wird über GitHub Pages (GitHub Inc., USA) ausgeliefert. Beim Aufruf verarbeitet GitHub technisch notwendige Daten wie die IP-Adresse in Server-Logs. Grundlage ist unser berechtigtes Interesse an einer sicheren Bereitstellung (Art. 6 Abs. 1 lit. f DSGVO).</p>
+  <p><strong>Keine Cookies, kein Tracking</strong><br>Wir setzen keine Cookies und keine Analysewerkzeuge ein. Schriften und Skripte liegen auf unserem eigenen Server.</p>
+  <p><strong>Ticketverkauf</strong><br>Der Ticketshop von EVENTIM.Light (CTS EVENTIM AG & Co. KGaA) wird erst geladen, wenn Sie auf Tickets klicken. Ab dann gelten die Datenschutzbestimmungen von EVENTIM. Bei Vorstellungen im Ballhaus Prinzenallee führt der Link zu dessen Ticketanbieter.</p>
+  <p><strong>Newsletter</strong><br>Für den Newsletter nutzen wir Mailchimp (Intuit Inc., USA). Wir speichern Ihre E-Mail-Adresse nur mit Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können sich über den Link in jeder Ausgabe jederzeit abmelden.</p>
+  <p><strong>Kursanmeldung</strong><br>Die Anmeldung erfolgt über Google Forms (Google Ireland Ltd.). Die Angaben nutzen wir ausschließlich zur Organisation des Kurses.</p>
+  <p><strong>Ihre Rechte</strong><br>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch sowie das Recht, sich bei einer Aufsichtsbehörde zu beschweren, in Berlin bei der Berliner Beauftragten für Datenschutz und Informationsfreiheit.</p>
+</div></section>
