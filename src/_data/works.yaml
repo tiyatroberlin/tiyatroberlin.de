@@ -5,6 +5,7 @@
   title: YAKIN
   year: 2026
   image: foto/yakin-yuz.jpg
+  hero_fit: true
   form: {tr: "Tek kişilik oyun, şarkılarla", de: "Solo mit Liedern", en: "Solo with songs"}
   hook: {tr: "Yakınlık bir bağımlılığa dönüşürse?", de: "Wenn Nähe zur Abhängigkeit wird.", en: "When closeness turns into dependence."}
   text:
@@ -423,9 +424,11 @@
 - slug: 80lerde-lubunya-olmak
   title: 80'lerde Lubunya Olmak
   year: 2021
-  image: foto/lubunya-sahne.jpg
+  image: foto/lubunya-eldiven-hd.jpg
+  hero: foto/lubunya-eldiven-hd.jpg
+  hero_fit: true
   poster: oyun/lubunya.jpg
-  gallery: [foto/lubunya-eldiven.jpg]
+  gallery: [foto/lubunya-sahne.jpg]
   form: {tr: "Tek kişilik performans", de: "Solo-Performance", en: "Solo performance"}
   hook: {tr: Bir trans kadın, 1980 darbesinin gölgesinde bir hayat., de: "Eine trans Frau, ein Leben im Schatten des Putsches von 1980.", en: "A trans woman, a life in the shadow of the 1980 coup."}
   text:

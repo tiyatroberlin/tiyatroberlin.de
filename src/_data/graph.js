@@ -12,7 +12,7 @@ export default function () {
   const extras = load("./extras.yaml");
   const projects = load("./projects.yaml");
   const soon = load("./soon.yaml");
-  const today = new Date().toISOString().slice(0, 10);
+  const today = process.env.SITE_TODAY || new Date().toISOString().slice(0, 10);
 
   const people = Object.fromEntries(
     Object.entries(db.people).map(([slug, p]) => [slug, { slug, ...p, bio: bios[slug] || null, works: [], teaches: [], projects: [] }])
