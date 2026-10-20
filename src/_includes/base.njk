@@ -64,6 +64,8 @@
         <p>{{ L.newsletter_text }}</p>
         <form class="signup" action="{{ site.mailchimp }}" method="post" target="_blank">
           <label class="visually-hidden" for="nl-mail">{{ L.email }}</label>
+          <label class="visually-hidden" for="nl-name">{{ L.fname }}</label>
+          <input id="nl-name" type="text" name="FNAME" placeholder="{{ L.fname }}" autocomplete="given-name">
           <input id="nl-mail" type="email" name="EMAIL" placeholder="{{ L.email }}" required autocomplete="email">
           <div class="hp" aria-hidden="true"><input type="text" name="b_4ff8cee3c133c0cb0141ad744_e148b607d0" tabindex="-1" value="" autocomplete="off"></div>
           <button class="btn" type="submit">{{ L.subscribe }}</button>

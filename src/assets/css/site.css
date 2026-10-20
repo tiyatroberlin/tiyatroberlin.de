@@ -210,7 +210,7 @@ p{margin:0 0 1em}
 .signup{display:flex;gap:.5rem;flex-wrap:wrap}
 .consent{flex-basis:100%;display:flex;gap:.5rem;align-items:flex-start;font-size:.85rem;color:var(--mute);line-height:1.35}
 .consent input{margin-top:.2rem}
-.signup input[type=email]{flex:1 1 12rem;font:inherit;padding:.7em .8em;border:2px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:0}
+.signup input[type=email],.signup input[type=text]{flex:1 1 12rem;font:inherit;padding:.7em .8em;border:2px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:0}
 
 /* ---------- bilet modülü ---------- */
 .ticket{grid-column:1/-1;border:2px solid var(--ink);padding:.5rem;background:var(--paper)}
