@@ -93,8 +93,14 @@ export default function () {
     v.courses = extras.courses.filter((c) => c.venue === v.slug);
   }
   const venuePages = Object.values(venues).filter((v) => v.address);
+  // en aktif / en yeni mekândan en eskiye: son (ya da yaklaşan) gösterim veya kurs tarihine göre
+  for (const v of Object.values(venues)) {
+    const dates = allShows.filter((sh) => sh.venue === v.slug).map((sh) => sh.date)
+      .concat(v.courses.map((c) => c.start));
+    v.last = dates.sort().at(-1) || "";
+  }
   const venueList = Object.values(venues).filter((v) => v.shows || v.courses.length)
-    .sort((a, b) => (b.upcoming.length - a.upcoming.length) || (b.shows - a.shows));
+    .sort((a, b) => b.last.localeCompare(a.last) || b.shows - a.shows);
 
   return {
     db, works, workBySlug: Object.fromEntries(works.map((w) => [w.slug, w])), people, venues, program, yearList, projects, courses: extras.courses,
