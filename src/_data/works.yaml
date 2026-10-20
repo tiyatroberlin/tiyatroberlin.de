@@ -22,10 +22,10 @@
       YAKIN is a solo carried by songs sung live between the scenes. The songs do not decorate the story, they carry it: whatever cannot be said takes refuge in a melody.
   credits:
     - [writedirect, ufuk-tan-altunkaya]
-    - [songs, hazal-erdal]
+    - [performer, hazal-erdal]
   shows:
-    - {date: 2026-11-22, time: "19:00", venue: moda-bar, premiere: true, eventim: 6ace5a69a47cb7abb7b2496e}
-    - {date: 2026-11-29, time: "19:00", venue: moda-bar, eventim: 6ace5aa484ed3c6a8a6549e6}
+    - {date: 2026-11-22, time: "19:00", venue: moda-bar, premiere: true, eventim: 6ace5a69a47cb7abb7b2496e, price: {tr: "20 €", de: "20 €", en: "€20"}}
+    - {date: 2026-11-29, time: "19:00", venue: moda-bar, eventim: 6ace5aa484ed3c6a8a6549e6, price: {tr: "20 €", de: "20 €", en: "€20"}}
 
 - slug: kozalar
   title: Kozalar
@@ -371,4 +371,4 @@
     - {date: 2022-05-13, time: "20:00", venue: ballhaus}
     - {date: 2022-12-10, time: "20:00", venue: ballhaus}
     - {date: 2023-04-15, time: "20:00", venue: ballhaus}
-    - {date: 2026-11-13, time: "20:00", venue: moda-bar, eventim: 6ace399da47cb7abb7b242f9}
+    - {date: 2026-11-13, time: "20:00", venue: moda-bar, eventim: 6ace399da47cb7abb7b242f9, price: {tr: "20 €", de: "20 €", en: "€20"}}
