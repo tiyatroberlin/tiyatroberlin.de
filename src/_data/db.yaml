@@ -104,7 +104,18 @@ people:
   taha-burak-kirlar:  {name: Taha Burak Kırlar}
 
 # Roller: anahtar -> TR / DE / EN
+roles_plural:
+  assistant:   [Proje asistanları, Projektassistenz, Project assistants]
+roles_person:
+  cast:        [Oyuncu, Spiel, Performer]
+  performer:   [Oyuncu, Spiel, Performer]
+  songs:       [Oyuncu ve şarkılar, Spiel und Gesang, Performance and songs]
+  writedirect: [Metin ve reji, Text und Regie, Text and direction]
+  author:      [Metin, Text, Text]
+  direction:   [Reji, Regie, Direction]
+  adaptation:  [Uyarlama ve reji, Bearbeitung und Regie, Adaptation and direction]
 roles:
+  textconceptdir: ["Metin, konsept ve reji", "Text, Konzept und Regie", "Text, concept and direction"]
   text:        [Metin, Text, Text]
   source:      [Kaynak metin, Textvorlage, Source text]
   author:      [Yazan, Text, Written by]
@@ -113,7 +124,7 @@ roles:
   adaptation: ["Uyarlayan ve yöneten", "Bearbeitung und Regie", "Adaptation and direction"]
   writedirect: [Yazan ve yöneten, Text und Regie, Written and directed by]
   conceditdir: ["Konsept, kurgu ve reji", "Konzept, Fassung und Regie", "Concept, arrangement and direction"]
-  edit: ["Kurgu ve reji", "Konzept und Regie", "Concept and direction"]
+  edit: ["Kurgu ve reji", "Fassung und Regie", "Arrangement and direction"]
   cast:        [Oyuncular, Mit, Cast]
   performer: ["Oynayan", "Spiel", "Performer"]
   voice:       [Seslendirme, Stimme, Voice]

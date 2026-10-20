@@ -33,11 +33,11 @@
   image: oyun/zwei-staedte.jpg
   poster: oyun/zwei-staedte.jpg
   year: 2026
-  form: {tr: "Mekâna özgü ses yürüyüşü", de: "Ortsspezifischer Audiowalk", en: "Site-specific audio walk"}
-  info: {tr: "Proud Haram Festival 2026 programında. Almanca.", de: "Im Rahmen des Proud Haram Festivals 2026. Auf Deutsch.", en: "Part of Proud Haram Festival 2026. In German."}
+  form: {tr: "Mekâna özgü kulaklıklı yürüyüş", de: "Ortsspezifischer Audiowalk", en: "Site-specific audio walk"}
+  info: {tr: "Proud Haram Festivali 2026 programında. Almanca.", de: "Im Rahmen des Proud Haram Festivals 2026. Auf Deutsch.", en: "Part of Proud Haram Festival 2026. In German."}
   text:
     tr: |
-      Zwei Städte, Ein Körper, Wedding'deki Ballhaus Prinzenallee'den yola çıkan ve seyircinin kulaklıktaki seslere eşlik ederek yürüdüğü mekâna özgü bir ses yürüyüşü. İstanbul'da yürümek gergin ve tetikte bir eylem olarak hatırlanırken Berlin, özgürlüğün kendiliğinden var sayıldığı, rahat ama steril bir alan olarak beliriyor.
+      Zwei Städte, Ein Körper, Wedding'deki Ballhaus Prinzenallee'den yola çıkan ve seyircinin kulaklıktaki seslere eşlik ederek yürüdüğü mekâna özgü bir kulaklıklı yürüyüş. İstanbul'da yürümek gergin ve tetikte bir eylem olarak hatırlanırken Berlin, özgürlüğün kendiliğinden varsayıldığı, rahat ama steril bir alan olarak beliriyor.
 
       Yürüyüş, elinde Fiktionsbescheinigung'la kulüp kuyruklarında bekleyen bir göçmenin izini sürüyor. Onun bakışından Berlin'in sunduğu cool ve hazır queer konfor sorgulanıyor, evini yanında taşıyan insanların yalnızlığına kulak veriliyor.
     de: |
@@ -49,8 +49,7 @@
 
       The walk follows a migrant waiting in club queues with a Fiktionsbescheinigung. Through his eyes it questions the cool, ready-made queer comfort Berlin offers, and listens to the loneliness of those who carry their home with them.
   credits:
-    - [writedirect, egemen-kalyon]
-    - [concept, egemen-kalyon]
+    - [textconceptdir, egemen-kalyon]
     - [dramaturgy, nesrin-karadag]
     - [sound, yigit-tanel-kackaya]
   shows:
@@ -60,25 +59,25 @@
 - slug: the-monologue-box
   title: The Monologue Box
   year: 2026
-  form: {tr: "Bire bir performans", de: "One-on-One-Performance", en: "One-to-one performance"}
-  info: {tr: "Proud Haram Festival 2026 programında. İngilizce.", de: "Im Rahmen des Proud Haram Festivals 2026. Auf Englisch.", en: "Part of Proud Haram Festival 2026. In English."}
+  form: {tr: "Birebir performans", de: "One-on-One-Performance", en: "One-to-one performance"}
+  info: {tr: "Proud Haram Festivali 2026 programında. İngilizce.", de: "Im Rahmen des Proud Haram Festivals 2026. Auf Englisch.", en: "Part of Proud Haram Festival 2026. In English."}
   text:
     tr: |
-      The Monologue Box, kapalı bir odada tek bir seyirciyle tek bir anlatıcıyı baş başa bırakan bire bir bir karşılaşma. Ziyaretçi ne zaman gireceğine, ne kadar kalacağına ve ne zaman çıkacağına kendisi karar veriyor. Kutunun iki bölmesi var: ilkinde bir oyuncu doğrudan ziyaretçiye bir monolog anlatıyor, ikincisinde ziyaretçiler yüzlerini göstermeden ve adlarını vermeden kendi hikâyelerini yüksek sesle bırakıyor.
+      The Monologue Box, kapalı bir odada tek bir seyirciyle tek bir anlatıcıyı baş başa bırakan birebir karşılaşma. Ziyaretçi ne zaman gireceğine, ne kadar kalacağına ve ne zaman çıkacağına kendisi karar veriyor. Kutunun iki bölmesi var: ilkinde bir oyuncu doğrudan ziyaretçiye bir monolog anlatıyor, ikincisinde ziyaretçiler yüzlerini göstermeden ve adlarını vermeden kendi hikâyelerini sesli olarak anlatıyor.
 
-      İkinci bölmede bırakılan hikâyeler sonra ilk bölmede oyuncunun ağzından yeniden anlatılıyor; birinin hikâyesi böylece bir başkasının dinlediği monologa dönüşüyor. Festivalin görünür kılmakla yanında durmak arasındaki sorusundan yola çıkan iş, kaynağından koptuğunda bir hikâyenin kime ait olduğunu soruyor.
+      İkinci bölmede bırakılan hikâyeler sonra ilk bölmede oyuncunun ağzından yeniden anlatılıyor; birinin hikâyesi böylece bir başkasının dinlediği monologa dönüşüyor. Proud Haram Festivali'nin görünür kılmakla yanında durmak arasındaki sorusundan yola çıkan iş, kaynağından koptuğunda bir hikâyenin kime ait olduğunu soruyor.
     de: |
-      The Monologue Box ist eine Eins-zu-eins-Begegnung in einem geschlossenen Raum, in dem eine Zuschauerin oder ein Zuschauer mit einer erzählenden Person allein ist. Wann man hineingeht, wie lange man bleibt und wann man wieder geht, entscheiden die Besuchenden selbst. Die Box hat zwei Kammern: In der ersten spricht eine Performerin oder ein Performer einen Monolog direkt an die Besuchenden, in der zweiten hinterlassen diese anonym und laut ihre eigenen Geschichten, ohne Gesicht und ohne Namen.
+      The Monologue Box ist eine Eins-zu-eins-Begegnung in einem geschlossenen Raum, in dem eine Zuschauerin oder ein Zuschauer mit einer erzählenden Person allein ist. Wann man hineingeht, wie lange man bleibt und wann man wieder geht, entscheiden die Besuchenden selbst. Die Box hat zwei Kammern: In der ersten spricht eine Performerin oder ein Performer einen Monolog direkt an die Besuchenden, in der zweiten sprechen diese ihre eigenen Geschichten ein, ohne Gesicht und Namen preiszugeben.
 
-      Die Geschichten aus der zweiten Kammer werden später in der ersten neu erzählt; so wird die Geschichte des einen zum Monolog, den ein anderer hört. Im Spannungsfeld des Festivals zwischen Sichtbarmachen und Beistand fragt die Arbeit, wem eine Geschichte gehört, wenn sie sich von ihrem Ursprung löst.
+      Die Geschichten aus der zweiten Kammer werden später in der ersten neu erzählt; so wird die Geschichte des einen zum Monolog, den ein anderer hört. Ausgehend von der Festivalfrage nach Sichtbarmachen und Solidarität fragt die Arbeit, wem eine Geschichte gehört, wenn sie sich von ihrem Ursprung löst.
     en: |
-      The Monologue Box is a one-to-one encounter in a closed room where a single spectator and a single narrator are alone together. Visitors decide for themselves when to enter, how long to stay and when to leave. The box has two chambers: in the first a performer delivers a monologue directly to the visitor, in the second visitors leave their own stories aloud and anonymously, without showing their faces or giving their names.
+      The Monologue Box is a one-to-one encounter in a closed room where a single spectator and a single narrator are alone together. Visitors decide for themselves when to enter, how long to stay and when to leave. The box has two chambers: in the first a performer delivers a monologue directly to the visitor, in the second visitors record their own stories anonymously, without showing their faces or giving their names.
 
-      The stories left in the second chamber are later retold in the first, so that one person's account becomes the monologue another person hears. Within the festival's tension between making visible and standing in solidarity, the work asks to whom a story belongs once it has come loose from its origin.
+      The stories left in the second chamber are later retold in the first, so that one person's account becomes the monologue another person hears. Starting from the festival's question of visibility versus solidarity, the work asks to whom a story belongs once it has come loose from its origin.
   credits:
     - [conceditdir, ufuk-tan-altunkaya]
     - [text, didem-kaplan]
-    - [cast, hazal-erdal]
+    - [performer, hazal-erdal]
   shows:
     - {date: 2026-06-12, time: "18:00", venue: ballhaus, premiere: true}
     - {date: 2026-06-13, time: "18:00", venue: ballhaus}
@@ -88,7 +87,7 @@
   year: 2026
   image: foto/same-ayak.jpg
   form: {tr: "Fiziksel tiyatro", de: "Physisches Theater", en: "Physical theatre"}
-  info: {tr: "Proud Haram Festival 2026 programında. Türkçe, Almanca ve İngilizce üstyazılı.", de: "Im Rahmen des Proud Haram Festivals 2026. Auf Türkisch mit deutschen und englischen Übertiteln.", en: "Part of Proud Haram Festival 2026. In Turkish with German and English surtitles."}
+  info: {tr: "Proud Haram Festivali 2026 programında. Türkçe; Almanca ve İngilizce üstyazılı.", de: "Im Rahmen des Proud Haram Festivals 2026. Auf Türkisch mit deutschen und englischen Übertiteln.", en: "Part of Proud Haram Festival 2026. In Turkish with German and English surtitles."}
   text:
     tr: |
       SAME, dijital çağın görünürlük rejimini, kimliklerin nasıl üretildiğini ve gündelik hayatın sessizce nasıl dönüştüğünü bedenden yola çıkarak düşünen bir fiziksel tiyatro işi. Sosyal medya, algoritmalar, queer varoluş, toplumsal kutuplaşma ve bir yere ait olma ihtiyacı, elektronik ritimlerin eşliğinde giderek daralan bir oyun alanında birbirine dolanıyor.
@@ -147,7 +146,7 @@
   partners: [cabinet-novus]
   shows:
     - {date: 2025-12-20, time: "20:00", venue: ballhaus, premiere: true}
-    - {date: 2026-11-01, time: "18:00", venue: ballhaus, ticket: "https://shop.get-vibe.de/event/KOZALAR/183161", price: {tr: "15 €, indirimli 10 €", de: "15 €, ermäßigt 10 €", en: "€15, reduced €10"}}
+    - {date: 2026-11-01, time: "18:00", venue: ballhaus, ticket: "https://shop.get-vibe.de/event/KOZALAR/183161", price: {tr: "15 €, indirimli 10 €", de: "15 €, ermäßigt 10 €", en: "€15 / €10 concessions"}}
 
 - slug: pride-93
   title: Pride '93
@@ -239,7 +238,7 @@
 
       Her yeni uğraş bir kimlik vaadi taşıyor, hiçbiri yüzleşmenin yerini tutmuyor. Cüneyt Yalaz ve Uluç Esen'in tek kişilik oyunu, orta sınıfın kendini yeniden icat etme hevesine acı bir komediyle bakıyor.
     de: |
-      Mitten in der Midlife-Crisis beschließt Selim Özben, ein neues Leben anzufangen: Extremsport, Internet, Nachtleben, Kunstkurse.
+      Mitten in der Midlife-Crisis beschließt Selim Özben, ein neues Leben anzufangen: Outdoor-Sport, Internet, Nachtleben, Kunstkurse.
 
       Jede neue Beschäftigung verspricht eine Identität, keine ersetzt die Auseinandersetzung mit sich selbst und mit den Verhältnissen. Das Solo von Cüneyt Yalaz und Uluç Esen blickt mit bitterer Komik auf den Wunsch der Mittelschicht, sich neu zu erfinden.
     en: |
@@ -277,7 +276,7 @@
 
       Der Text von Şamil Yılmaz erzählt die Gezi-Proteste aus der Sicht von jemandem, mit dem niemand gerechnet hat. Was verändert sich für ein Straßenkind, wenn der öffentliche Raum zum ersten Mal allen gehört?
     en: |
-      Avzer has grown up in care since he was three, ran away, and now lives on the street. One morning in June 2013 he wakes up on Kızılay square and the city has changed: crowds, anger, and a solidarity he has never known.
+      Avzer grew up in care from the age of three, ran away, and now lives on the street. One morning in June 2013 he wakes up on Kızılay square and the city has changed: crowds, anger, and a solidarity he has never known.
 
       Şamil Yılmaz's text tells the Gezi protests through the eyes of someone nobody counted on. What changes for a street kid when public space belongs, for the first time, to everyone?
   credits:
@@ -333,7 +332,7 @@
   title: O'ndan Sonra
   year: 2022
   image: oyun/ondan-sonra.jpg
-  form: {tr: "Kulaklıklı şehir yürüyüşü", de: "Audiowalk", en: "Audio walk"}
+  form: {tr: "Kulaklıklı yürüyüş", de: "Audiowalk", en: "Audio walk"}
   hook: {tr: "Dört yabancı ve görünmeyen bir Hanım.", de: "Vier Fremde und eine unsichtbare Dame.", en: "Four strangers and an invisible lady."}
   text:
     tr: |
@@ -348,7 +347,7 @@
       Headphones on, and a pursuit begins on the streets of Berlin. The audience follows four people who do not know each other and looks for what connects them.
 
       They are all on the trail of someone who never appears: the Lady. Didem Kaplan's text explores migration, otherness and an unfinished modernity through present-day lives. The city is not a backdrop; it is the play.
-  info: {tr: "Yaklaşık 60 dakika yürüyüş. Başlangıç ve bitiş noktası farklı. Kulaklık için kimlik bırakılır. Tekerlekli sandalyeyle erişilebilir değil.", de: "Etwa 60 Minuten zu Fuß. Start und Ziel sind verschieden. Für die Kopfhörer wird ein Ausweis hinterlegt. Nicht barrierefrei.", en: "About 60 minutes on foot. Start and end points differ. An ID is left as deposit for the headphones. Not wheelchair accessible."}
+  info: {tr: "Yaklaşık 60 dakika yürüyüş. Başlangıç ve bitiş noktası farklı. Kulaklık için kimlik bırakılır. Tekerlekli sandalyeyle erişilebilir değil.", de: "Etwa 60 Minuten zu Fuß. Start und Ziel sind verschieden. Für die Kopfhörer wird ein Ausweis hinterlegt. Nicht rollstuhlgerecht.", en: "About 60 minutes on foot. Start and end points differ. Photo ID required as a deposit for the headphones. Not wheelchair accessible."}
   credits:
     - [text, didem-kaplan]
     - [concept, ufuk-tan-altunkaya]
@@ -436,15 +435,15 @@
   hook: {tr: "Bir trans kadın, 1980 darbesinin gölgesinde bir hayat.", de: "Eine trans Frau, ein Leben im Schatten des Putsches von 1980.", en: "A trans woman, a life in the shadow of the 1980 coup."}
   text:
     tr: |
-      Bugün elli yaşında olan bir trans kadın, 1980 darbesinin gölgesinde lubunya olmanın tarihini anlatıyor: parklar, üçüncü sınıf oteller, gece kulüpleri, Bayram Sokak, Dolapdere, karakollar ve kışlalar.
+      Bir trans kadın, 1980 darbesinin gölgesinde lubunya olmanın tarihini anlatıyor: parklar, üçüncü sınıf oteller, gece kulüpleri, Bayram Sokak, Dolapdere, karakollar ve kışlalar.
 
       Metin, Siyah Pembe Üçgen İzmir'in derlediği gerçek tanıklıklara dayanıyor. Seyirci salaş bir meyhanede oturuyor, arabesk şarkılar geceye eşlik ediyor. Resmî tarihin dışında kalmış bir hayatta kalma ve dayanışma tarihi.
     de: |
-      Eine heute fünfzigjährige trans Frau erzählt, was es hieß, im Schatten des Militärputsches von 1980 lubunya zu sein: Parks, drittklassige Hotels, Nachtclubs, Polizeiwachen und Kasernen.
+      Eine trans Frau erzählt, was es hieß, im Schatten des Militärputsches von 1980 lubunya zu sein: Parks, drittklassige Hotels, Nachtclubs, Polizeiwachen und Kasernen.
 
       Der Text beruht auf realen Zeitzeug*innen-Interviews, die der Verein Siyah Pembe Üçgen İzmir gesammelt hat. Das Publikum sitzt wie in einer Kaschemme, Arabesk-Lieder begleiten den Abend. Eine Geschichte des Überlebens und der Solidarität, die in keiner offiziellen Chronik steht.
     en: |
-      A trans woman, now fifty, tells what it meant to be lubunya in the shadow of the 1980 military coup: parks, third-rate hotels, nightclubs, police stations and barracks.
+      A trans woman tells what it meant to be lubunya in the shadow of the 1980 military coup: parks, third-rate hotels, nightclubs, police stations and barracks.
 
       The text is based on real testimonies collected by Siyah Pembe Üçgen İzmir. The audience sits as if in a run-down tavern, arabesk songs accompany the night. A history of survival and solidarity that no official record holds.
   credits:

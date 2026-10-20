@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% if title %}{{ title }} · {% endif %}Tiyatro Berlin</title>
-<meta name="description" content="{{ description or (pages.about[lang].lead | truncate(155)) }}">
+<meta name="description" content="{{ description or i18n[lang].site_desc }}">
 <link rel="stylesheet" href="{{ '/assets/css/site.css' | url }}?v={{ build }}">
 <meta name="theme-color" content="#0b0b0b">
 <link rel="icon" href="{{ '/assets/img/favicon.png' | url }}?v={{ build }}">
@@ -52,7 +52,7 @@
         </ul>
       </div>
       <div>
-        <h2>{{ L.nav.program }}</h2>
+        <h2>{{ L.pages_h }}</h2>
         <ul>
           {%- for key in ["program","works","people","venues","network","projects","edu","contact"] %}
           <li><a href="{{ u(key) }}">{{ L.nav[key] }}</a></li>

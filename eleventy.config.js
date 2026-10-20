@@ -25,6 +25,10 @@ export default function (cfg) {
   const siteData = yaml.load(fs.readFileSync("src/_data/site.yaml", "utf8"));
   const prefix = (process.env.PATH_PREFIX || "/").replace(/\/?$/, "/");
   cfg.addFilter("venueHref", (slug, lang) => `${prefix}${lang}/${siteData.sections.venues[lang]}/${slug}/`);
+  const MON_EN = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  cfg.addFilter("dmL", (iso, lang) => { const [, m, d] = iso.split("-"); return lang === "en" ? `${+d} ${MON_EN[+m - 1]}` : `${d}.${m}.`; });
+  cfg.addFilter("dmyL", (iso, lang, i18n) => { const [y, m, d] = iso.split("-"); return lang === "en" ? `${+d} ${i18n.months[+m - 1]} ${y}` : `${d}.${m}.${y}`; });
+  cfg.addFilter("firstSentence", (s) => { const t = (s || "").replace(/\s+/g, " ").trim(); const m = t.match(/^.{20,180}?[.?!](?=\s|$)/); return m ? m[0] : t.slice(0, 157) + (t.length > 157 ? "…" : ""); });
   cfg.addFilter("md", (s) => md.render(s || ""));
   cfg.addFilter("urlenc", (s) => encodeURIComponent(s || ""));
   cfg.addFilter("initials", (n) => n.split(" ").map((w) => w[0]).slice(0, 2).join(""));

@@ -56,6 +56,13 @@ tr:
   days: [Pazar, Pazartesi, Salı, Çarşamba, Perşembe, Cuma, Cumartesi]
   skip: İçeriğe geç
   teachers: Eğitmenler
+  teacher_one: Eğitmen
+  project_lead: Proje yürütücüsü
+  email_label: E-posta
+  pages_h: Sayfalar
+  counts_one: {works: oyun}
+  support_program: Destekleyen program
+  site_desc: "Tiyatro Berlin, 2021'den beri Berlin'de Türkçe ve çok dilli oyunlar, kulaklıklı yürüyüşler ve oyunculuk kursları üreten bağımsız bir tiyatro kolektifi."
 de:
   name: Deutsch
   nav: {program: Spielplan, works: Produktionen, people: Ensemble, network: Netzwerk, projects: Projekte, edu: "Theaterpädagogik – Kurse", about: Über uns, contact: Kontakt, venues: Spielorte}
@@ -114,6 +121,13 @@ de:
   days: [Sonntag, Montag, Dienstag, Mittwoch, Donnerstag, Freitag, Samstag]
   skip: Zum Inhalt
   teachers: Leitung
+  teacher_one: Kursleitung
+  project_lead: Projektleitung
+  email_label: E-Mail
+  pages_h: Seiten
+  counts_one: {works: Produktion}
+  support_program: Gefördert durch
+  site_desc: "Tiyatro Berlin ist ein freies Theaterkollektiv in Berlin: Produktionen auf Türkisch und mehrsprachig, Audiowalks und Schauspielkurse, seit 2021."
 en:
   name: English
   nav: {program: Programme, works: Productions, people: Ensemble, network: Network, projects: Projects, edu: "Theatre education – Courses", about: About, contact: Contact, venues: Venues}
@@ -172,3 +186,10 @@ en:
   days: [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
   skip: Skip to content
   teachers: Led by
+  teacher_one: Teacher
+  project_lead: Project lead
+  email_label: Email
+  pages_h: Pages
+  counts_one: {works: production}
+  support_program: Supported by
+  site_desc: "Tiyatro Berlin is an independent theatre collective in Berlin, making Turkish-language and multilingual productions, audio walks and acting courses since 2021."

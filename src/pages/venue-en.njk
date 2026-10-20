@@ -5,6 +5,7 @@ permalink: "/en/venues/{{ v.slug }}/"
 layout: base.njk
 eleventyComputed:
   title: "{{ v.name }}"
+  description: "{{ v.name }}, {{ v.address }}"
   alt: {tr: "/tr/mekanlar/{{ v.slug }}/", de: "/de/spielorte/{{ v.slug }}/", en: "/en/venues/{{ v.slug }}/"}
 ---
 {% include "venue-body.njk" %}

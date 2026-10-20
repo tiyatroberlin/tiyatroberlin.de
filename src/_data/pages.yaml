@@ -27,6 +27,10 @@ about:
         Oyunların yanında yıl boyu süren bir tiyatro pedagojisi programı da yürütülüyor: yetişkinler için bir oyunculuk atölyesi ile reji, kuram ve seyir üzerine bir okuma atölyesi.
 
         '
+    - h: Destek ve davetler
+      body: 'Tiyatro Berlin''in yapımları, aralarında Berlin Senatosu Kültür ve Avrupa İdaresi (Senatsverwaltung für Kultur und Europa), Fonds Darstellende Künste ve Goethe-Institut''ün bulunduğu kurumlar tarafından desteklendi. Kolektifin ve üyelerinin işleri 48 Stunden Neukölln, Berlin''deki Proud Haram Festivali, Türk-Alman Tiyatro Festivali, Bergama Tiyatro Festivali ve İstanbul Tiyatro Festivali''ne davet edildi.
+
+        '
     direction: Genel sanat yönetmeni
   de:
     title: Über uns
@@ -57,7 +61,7 @@ about:
 
         '
     - h: Förderung und Einladungen
-      body: 'Produktionen von Tiyatro Berlin wurden unter anderem von der Senatsverwaltung für Kultur und Europa, dem Fonds Darstellende Künste und dem Goethe-Institut gefördert. Arbeiten des Kollektivs und seiner Mitglieder waren bei 48 Stunden Neukölln, beim Proud Haram Festival Berlin, beim Türkisch-Deutschen Theaterfestival, beim Theaterfestival Bergama und beim Internationalen Theaterfestival Istanbul eingeladen.
+      body: 'Produktionen von Tiyatro Berlin wurden unter anderem von der Senatsverwaltung für Kultur und Europa, dem Fonds Darstellende Künste und dem Goethe-Institut gefördert. Arbeiten des Kollektivs und seiner Mitglieder waren bei 48 Stunden Neukölln, beim Proud Haram Festival Berlin, beim Türkisch-Deutschen Theaterfestival, beim Bergama Tiyatro Festivali und beim Internationalen Theaterfestival Istanbul eingeladen.
 
         '
     direction: Künstlerische Leitung
@@ -83,7 +87,11 @@ about:
 
         '
     - h: How it works
-      body: 'Tiyatro Berlin has no office and no administrative staff; everyone here is an artist, and organising the work is part of the artistic process. Some productions were funded, others made entirely on the collective''s own means, but the programme has never been shaped by what gets approved. Ticket prices stay deliberately low, because theatre should remain open to everyone. Alongside the productions, the collective runs a year-round theatre education programme for adults.
+      body: 'Tiyatro Berlin has no office and no administrative staff; everyone here is an artist, and organising the work is part of the artistic process. Some productions were funded, others entirely self-funded, but the programme has never been shaped by what gets approved. Ticket prices stay deliberately low, because theatre should remain open to everyone. Alongside the productions, the collective runs a year-round theatre education programme for adults.
+
+        '
+    - h: Support and invitations
+      body: 'Tiyatro Berlin''s productions have been supported by, among others, the Senate Department for Culture and Europe, the Fonds Darstellende Künste and the Goethe-Institut. Work by the collective and its members has been invited to 48 Stunden Neukölln, Proud Haram Festival Berlin, the Turkish-German Theatre Festival, the Bergama Theatre Festival and the Istanbul Theatre Festival.
 
         '
     direction: Artistic director
@@ -94,16 +102,16 @@ edu:
     body: 'Haftalık oyunculuk atölyesi bütün bir sezon boyunca sürüyor; ses, beden, nefes, doğaçlama ve metin çalışması, tiyatro tarihi ve dramaturji okumalarıyla iç içe ilerliyor. Tiyatroyu Okumak atölyesi ise reji anlayışlarını, tiyatro kuramlarını ve oyun metinlerini birlikte izlenen gösterilerle buluşturuyor.
 
 
-      Bu odalarda tiyatroyu içeriden tanıyan ve sahneye eleştirel bir gözle bakan bir topluluk oluşuyor. Kolektif için atölyeler, oyunlarla aynı düşünce alanının parçası.
+      Bu atölyelerde tiyatroyu içeriden tanıyan ve sahneye eleştirel bir gözle bakan bir topluluk oluşuyor. Kolektif için atölyeler, oyunlarla aynı düşünce alanının parçası.
 
       '
   de:
     title: Theaterpädagogik
-    lead: Tiyatro Berlin versteht Theaterpädagogik als Teil seiner künstlerischen Praxis. In den Kursen teilt das Kollektiv die Methoden, die es in seinen Proben entwickelt, und seine Auseinandersetzung mit Dramaturgie und Stückanalyse, und erprobt sie gemeinsam mit Erwachsenen mit und ohne Bühnenerfahrung.
+    lead: Tiyatro Berlin versteht Theaterpädagogik als Teil seiner künstlerischen Praxis. In den Kursen gibt das Kollektiv Methoden aus seiner Probenarbeit und seine Auseinandersetzung mit Dramaturgie und Stückanalyse weiter und erprobt sie mit Erwachsenen mit und ohne Bühnenerfahrung.
     body: 'Der wöchentliche Schauspielkurs läuft über eine ganze Spielzeit; die Arbeit an Stimme, Körper, Atem, Improvisation und Text ist dabei eng mit der Lektüre von Theatergeschichte und Dramaturgie verbunden. Die Werkstatt Theater lesen verbindet Regieansätze, Theatertheorie und Stückanalyse mit gemeinsamen Aufführungsbesuchen.
 
 
-      In diesen Räumen entsteht eine Gemeinschaft, die Theater von innen kennt und mit kritischem Blick auf die Bühne schaut. Für das Kollektiv gehören die Kurse zum selben Denkraum wie die Produktionen.
+      In den Kursen entsteht eine Gemeinschaft, die Theater von innen kennt und mit kritischem Blick auf die Bühne schaut. Für das Kollektiv gehören die Kurse zum selben Denkraum wie die Produktionen.
 
       '
   en:
@@ -112,6 +120,6 @@ edu:
     body: 'The weekly acting course runs across a whole season, with work on voice, body, breath, improvisation and text closely tied to readings in theatre history and dramaturgy. The Reading Theatre workshop brings approaches to directing, theatre theory and play analysis together with performances seen as a group.
 
 
-      These rooms give rise to a community that knows theatre from the inside and looks at the stage with a critical eye. For the collective, the courses belong to the same space of thought as the productions.
+      Through the courses, a community forms that knows theatre from the inside and looks at the stage with a critical eye. For the collective, the courses belong to the same space of thought as the productions.
 
       '

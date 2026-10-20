@@ -5,7 +5,7 @@ courses:
   - slug: oyunculuk-atolyesi
     title: {tr: Oyunculuk Atölyesi, de: Schauspielkurs für Erwachsene, en: Acting course for adults}
     level: {tr: "Yetişkinler için, deneyim gerekmez", de: "Für Erwachsene, ohne Vorkenntnisse", en: "For adults, no experience needed"}
-    when: {tr: "Her pazartesi 18:30–21:00 · 2 Kasım 2026'dan Mayıs 2027'ye", de: "Montags 18:30–21:00 · 2. November 2026 bis Mai 2027", en: "Mondays 6:30–9 pm · 2 November 2026 to May 2027"}
+    when: {tr: "Her pazartesi 18:30–21:00 · 2 Kasım 2026'dan Mayıs 2027'ye", de: "Montags 18:30–21:00 · 2. November 2026 bis Mai 2027", en: "Mondays 18:30–21:00 · 2 November 2026 to May 2027"}
     start: 2026-11-02
     venue: interkulturell-aktiv
     fee: {tr: "Aylık 80 € · istediğiniz ay bırakabilirsiniz", de: "80 € im Monat, monatlich kündbar", en: "€80 per month, cancel monthly"}
@@ -17,19 +17,19 @@ courses:
     title: {tr: "Tiyatroyu Okumak · Reji, kuram ve seyir atölyesi", de: "Theater lesen · Werkstatt für Regie, Theorie und Zuschauen", en: "Reading Theatre · A workshop in directing, theory and spectatorship"}
     text:
       tr: |
-        Bir oyunu izlerken neyin bizi yakaladığını, bir metnin sahnede nasıl başka bir şeye dönüştüğünü, bir rejinin hangi kararlarla kurulduğunu birlikte soran bu atölye, tiyatroya sahnenin hem önünden hem arkasından bakmak isteyenler için kuruldu. On iki hafta boyunca reji anlayışları ve tiyatro kuramları konuşuluyor, oyun metinleri satır satır çözümleniyor, oyunlar birlikte izlenip ardından tartışılıyor.
+        Bir oyunu izlerken seyirciyi neyin yakaladığını, bir metnin sahnede nasıl başka bir şeye dönüştüğünü, bir rejinin hangi kararlarla kurulduğunu birlikte soran bu atölye, tiyatroya sahnenin hem önünden hem arkasından bakmak isteyenler için kuruldu. On bir ders boyunca reji anlayışları ve tiyatro kuramları konuşuluyor, oyun metinleri satır satır çözümleniyor, oyunlar birlikte izlenip ardından tartışılıyor.
 
         Atölyenin ufkunda iyi bir seyirci olmak var: gördüğünü okuyabilen, bir gösterinin nasıl kurulduğunu fark eden ve üzerine söz alabilen bir seyirci. Ön bilgi gerekmiyor; yönetmenliğe, yazarlığa ya da eleştiriye merak duyanlar kadar tiyatroyu yalnızca daha derinden izlemek isteyenler de davetli.
       de: |
-        Was uns an einer Aufführung packt, wie sich ein Text auf der Bühne in etwas anderes verwandelt, aus welchen Entscheidungen eine Inszenierung entsteht: Diesen Fragen geht die Werkstatt gemeinsam nach, für alle, die Theater zugleich von vorne und von hinten sehen wollen. Zwölf Wochen lang geht es um Regieansätze und Theatertheorien, Stücktexte werden Zeile für Zeile gelesen, Aufführungen gemeinsam besucht und danach diskutiert.
+        Was uns an einer Aufführung packt, wie sich ein Text auf der Bühne in etwas anderes verwandelt, aus welchen Entscheidungen eine Inszenierung entsteht: Diesen Fragen geht die Werkstatt gemeinsam nach, für alle, die Theater aus dem Zuschauerraum und von der Probebühne aus kennenlernen wollen. In elf Terminen geht es um Regieansätze und Theatertheorien, Stücktexte werden Zeile für Zeile gelesen, Aufführungen gemeinsam besucht und danach diskutiert.
 
-        Am Horizont steht das gute Zuschauen: ein Publikum, das lesen kann, was es sieht, erkennt, wie eine Aufführung gebaut ist, und darüber sprechen kann. Vorkenntnisse sind nicht nötig; eingeladen sind alle, die sich für Regie, Schreiben oder Kritik interessieren, ebenso wie alle, die Theater einfach genauer sehen möchten.
+        Ziel ist ein genaueres Zuschauen: ein Publikum, das lesen kann, was es sieht, erkennt, wie eine Aufführung gebaut ist, und darüber sprechen kann. Vorkenntnisse sind nicht nötig; eingeladen sind alle, die sich für Regie, Schreiben oder Kritik interessieren, ebenso wie alle, die Theater einfach genauer sehen möchten.
       en: |
-        What grips us in a performance, how a text turns into something else on stage, which decisions a production is built from: the workshop asks these questions together, for anyone who wants to see theatre from the front and from behind at the same time. Over twelve weeks it covers approaches to directing and theories of theatre, reads play texts line by line, and goes to see performances together to discuss them afterwards.
+        What grips us in a performance, how a text turns into something else on stage, which decisions a production is built from: the workshop asks these questions together, for anyone who wants to see theatre from both the auditorium and backstage. Over eleven sessions it covers approaches to directing and theories of theatre, reads play texts line by line, and goes to see performances together to discuss them afterwards.
 
-        On its horizon is good spectatorship: an audience that can read what it sees, notices how a performance is built and can speak about it. No prior knowledge is needed; the workshop is open to anyone curious about directing, writing or criticism, and just as much to those who simply want to watch theatre more closely.
+        The aim is a sharper eye as a spectator: an audience that can read what it sees, notices how a performance is built and can speak about it. No prior knowledge is needed; the workshop is open to anyone curious about directing, writing or criticism, and just as much to those who simply want to watch theatre more closely.
     level: {tr: "Yetişkinler için, ön bilgi gerekmez", de: "Für Erwachsene, ohne Vorkenntnisse", en: "For adults, no prior knowledge needed"}
-    when: {tr: "Her salı 19:00–21:00 · 12 Ocak – 30 Mart 2027, 12 hafta", de: "Dienstags 19:00–21:00 · 12. Januar bis 30. März 2027, 12 Wochen", en: "Tuesdays 7–9 pm · 12 January to 30 March 2027, 12 weeks"}
+    when: {tr: "Her salı 19:00–21:00 · 12 Ocak – 30 Mart 2027, 11 ders", de: "Dienstags 19:00–21:00 · 12. Januar bis 30. März 2027, 11 Termine", en: "Tuesdays 19:00–21:00 · 12 January to 30 March 2027, 11 sessions"}
     start: 2027-01-12
     where: {tr: Daha sonra duyurulacak, de: Wird noch bekanntgegeben, en: To be announced}
     fee: {tr: "Aylık 80 €", de: "80 € im Monat", en: "€80 per month"}

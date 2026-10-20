@@ -1,7 +1,7 @@
 {% macro showRow(s, lang, L, graph, site, idx) %}
 {%- set v = graph.venues[s.venue] -%}
 <li class="show">
-  <div class="show-date">{% if s.approx %}{{ s.date | yearOf }}{% else %}{{ s.date | dm }}<small>{{ s.date | weekday(L) }}{% if s.time %} · {{ s.time }}{% endif %}</small>{% endif %}</div>
+  <div class="show-date">{% if s.approx %}{{ s.date | yearOf }}{% else %}{{ s.date | dmL(lang) }}<small>{{ s.date | weekday(L) }}{% if s.time %} · {{ s.time }}{% endif %}</small>{% endif %}</div>
   <div class="show-title">
     {%- if s.external %}{{ s.title }}<span class="show-sub">{{ s.by }} · {{ s.sub | t(lang) }}</span>
     {%- else %}<a href="{{ ('/' + lang + '/' + site.sections.works[lang] + '/' + s.work + '/') | url }}">{{ s.title }}<span class="pt">.</span></a>

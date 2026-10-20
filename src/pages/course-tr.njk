@@ -6,6 +6,7 @@ layout: base.njk
 section: edu
 eleventyComputed:
   title: "{{ (graph.courseBySlug[cp.slug].title.tr.split(' · '))[0] }}"
+  description: "{{ cp.subtitle }}"
   alt: {tr: "/tr/tiyatro-pedagojisi/{{ cp.slug }}/", de: "/de/theaterpaedagogik/", en: "/en/education/"}
 ---
 {%- set c = graph.courseBySlug[cp.slug] -%}

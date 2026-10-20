@@ -6,6 +6,7 @@ layout: base.njk
 section: works
 eleventyComputed:
   title: "{{ w.title }}"
+  description: "{{ (w.text[lang] if w.text else '') | firstSentence }}"
   alt: {tr: "/tr/oyunlar/{{ w.slug }}/", de: "/de/stuecke/{{ w.slug }}/", en: "/en/works/{{ w.slug }}/"}
 ---
 {% include "work-body.njk" %}

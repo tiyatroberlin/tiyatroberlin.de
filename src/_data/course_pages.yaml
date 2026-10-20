@@ -111,9 +111,9 @@
       h: Kayıt adımları
       md: |
         1. Kayıt formu doldurulur.
-        2. Tiyatro Berlin 24 saat içinde kişisel olarak döner.
+        2. Tiyatro Berlin 24 saat içinde size kişisel olarak yanıt verir.
         3. Katılımcıya ödeme bilgileri ve hoş geldin e-postası gönderilir.
-        4. Katılımcı kurs grubunun WhatsApp grubuna eklenir.
+        4. Katılımcı kursun WhatsApp grubuna eklenir.
         5. İlk derste katılım sözleşmesi imzalanır.
     - id: ilk-ders
       h: İlk ders günü
@@ -134,7 +134,6 @@
       h: Dönem sonu
       md: |
         - Her katılımcıya katılım belgesi (Teilnahmebescheinigung) verilir.
-        - Dönemi tamamlayanlar bir sonraki sezonun ileri atölyesine davet edilir.
     - id: mekan
       h: Mekân ve ulaşım
       venue: true
@@ -151,8 +150,8 @@
       title: Yönetmen, dramaturg, oyuncu; Tiyatro Berlin genel sanat yönetmeni
       cv: |
         - **Eğitim:** İstanbul Üniversitesi, tiyatro eleştirmenliği ve dramaturji yüksek lisans; Freie Universität Berlin, doktora (1990 sonrası Türkiye'de tiyatro ve siyaset)
-        - **2008–2010:** garajistanbul, asistan yönetmenlik ve programlama
-        - **2010–2017:** Mekan Artı, İstanbul; kurucu ve sanat yönetmeni; 40'ı aşkın yapım. Türkiye'nin ilk tek seyircili oyunları Takip ve üçKİŞİ, Cumartesi Anneleri üzerine Bizde Yok, düşünce suçları üzerine Kalem; işleri İstanbul Tiyatro Festivali'nde gösterildi
+        - **2008–2010:** garajistanbul, yönetmen yardımcılığı ve programlama
+        - **2010–2017:** Mekan Artı, İstanbul; kurucu ve sanat yönetmeni; 40'ı aşkın yapım. Türkiye'nin ilk tek seyircilik oyunları Takip ve üçKİŞİ, Cumartesi Anneleri üzerine Bizde Yok, düşünce suçları üzerine Kalem; işleri İstanbul Tiyatro Festivali'nde gösterildi
         - **2018–2020:** Theater28 Türk-Alman Tiyatro Festivali, festival yönetmeni
         - **2019–2021:** Ballhaus Prinzenallee, program
         - **Maxim Gorki Theater:** Lola Arias'ın Mother Tongue'unda oyuncu; Üftade ve Avzer'in yönetmeni
@@ -182,7 +181,7 @@
     - id: hakkinda
       h: Kurs hakkında
       md: |
-        Bir gösterinin bizi neden yakaladığını, bir metnin sahnede nasıl başka bir şeye dönüştüğünü, bir rejinin hangi kararlarla kurulduğunu birlikte soran bu atölye, tiyatroya sahnenin hem önünden hem arkasından bakmak isteyenler için kuruldu. On iki hafta boyunca reji anlayışları ve tiyatro kuramları konuşuluyor, oyun metinleri satır satır çözümleniyor, oyunlar birlikte izlenip ardından tartışılıyor.
+        Bir gösterinin seyirciyi neden yakaladığını, bir metnin sahnede nasıl başka bir şeye dönüştüğünü, bir rejinin hangi kararlarla kurulduğunu birlikte soran bu atölye, tiyatroya sahnenin hem önünden hem arkasından bakmak isteyenler için kuruldu. On bir ders boyunca reji anlayışları ve tiyatro kuramları konuşuluyor, oyun metinleri satır satır çözümleniyor, oyunlar birlikte izlenip ardından tartışılıyor.
 
         Atölyenin ufkunda iyi bir seyirci olmak var: gördüğünü okuyabilen, bir gösterinin nasıl kurulduğunu fark eden ve üzerine söz alabilen bir seyirci.
     - id: kimler-icin
@@ -196,7 +195,7 @@
       md: |
         - Bir oyun metnini yapısı, karakterleri ve alt metniyle çözümleyebilmek
         - Bir gösterinin reji kararlarını okuyabilmek: mekân, oyunculuk, ritim, ışık, ses
-        - 20. yüzyılın belli başlı tiyatro kuramlarını ve akımlarını tanımak
+        - 20\. yüzyılın belli başlı tiyatro kuramlarını ve akımlarını tanımak
         - Türkiye tiyatrosunun dönüşümünü tarihsel bir çerçevede görebilmek
         - İzlediği bir gösteri üzerine kısa bir eleştiri metni yazabilmek
     - id: mufredat
@@ -243,9 +242,9 @@
       h: Kayıt adımları
       md: |
         1. Kayıt formu doldurulur.
-        2. Tiyatro Berlin 24 saat içinde kişisel olarak döner.
+        2. Tiyatro Berlin 24 saat içinde size kişisel olarak yanıt verir.
         3. Katılımcıya ödeme bilgileri ve hoş geldin e-postası gönderilir.
-        4. Katılımcı kurs grubunun WhatsApp grubuna eklenir.
+        4. Katılımcı kursun WhatsApp grubuna eklenir.
         5. İlk derste katılım sözleşmesi imzalanır.
     - id: ilk-ders
       h: İlk ders günü
@@ -277,7 +276,6 @@
       cv: |
         - **Eğitim:** İstanbul Üniversitesi
         - Mekan Artı yıllarından bu yana aynı ekiple çalışıyor
-        - **Tiyatro Berlin'de dramaturji:** Kozalar, 80'lerde Lubunya Olmak, Pride '93, Avzer, Üftade, Yeni Bir Hayat İçin, Sen İstanbul'dan Daha Güzelsin, O'ndan Sonra, Nested
+        - **Tiyatro Berlin'de dramaturji:** Kozalar, 80'lerde Lubunya Olmak, Pride '93, Avzer, Üftade, Yeni Bir Hayat İçin, Sen İstanbul'dan Daha Güzelsin, O'ndan Sonra, Nested, Uzak
         - **2026:** Zwei Städte, Ein Körper; metin, konsept ve reji (Proud Haram Festivali, Ballhaus Prinzenallee)
-        - **2025–2026:** Tiyatro Berlin Dramaturji ve Oyun İnceleme Atölyesi
         - 2024'ten beri Berlin'de
