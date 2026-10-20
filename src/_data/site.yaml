@@ -2,6 +2,8 @@ name: Tiyatro Berlin
 email: info@tiyatroberlin.de
 # İletişim formu: FormSubmit (ilk mesajda info@ adresine bir onay e-postası gelir, bir kez onaylanır)
 contact_form: "https://formsubmit.co/ajax/info@tiyatroberlin.de"
+# Web3Forms anahtarı girilirse form Web3Forms üzerinden gönderilir
+web3forms_key: ""
 instagram: https://www.instagram.com/tiyatroberlin
 facebook: https://www.facebook.com/tiyatroberlin
 mailchimp: "https://tiyatroberlin.us14.list-manage.com/subscribe/post?u=4ff8cee3c133c0cb0141ad744&id=e148b607d0&f_id=00e38ee0f0"

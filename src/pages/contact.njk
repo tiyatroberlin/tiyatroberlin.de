@@ -14,7 +14,7 @@ eleventyComputed:
   <div>
     <h2 class="h-big">{{ C.form_h }}<span class="pt">.</span></h2>
     <p class="prose">{{ C.text }}</p>
-    <form class="cform" id="cform" action="{{ site.contact_form }}" method="post" novalidate>
+    <form class="cform" id="cform" action="{{ 'https://api.web3forms.com/submit' if site.web3forms_key else site.contact_form }}" method="post" novalidate data-w3="{{ site.web3forms_key }}">
       <label>{{ C.name }}<input type="text" name="name" autocomplete="name" required></label>
       <label>{{ C.email }}<input type="email" name="email" autocomplete="email" required></label>
       <label>{{ C.topic }}<select name="konu">{% for t in C.topics %}<option>{{ t }}</option>{% endfor %}</select></label>
@@ -39,6 +39,7 @@ eleventyComputed:
 f.addEventListener('submit',async e=>{e.preventDefault();if(!f.reportValidity())return;
 if(f._honey.value){return}
 const d=Object.fromEntries(new FormData(f));d._subject='tiyatroberlin.de · '+d.konu+' · '+d.name;d._replyto=d.email;
+if(f.dataset.w3){d.access_key=f.dataset.w3;d.subject=d._subject;d.from_name='tiyatroberlin.de';d.botcheck='';['_subject','_replyto','_honey','_template','_captcha'].forEach(k=>delete d[k])}
 b.disabled=true;b.textContent={{ C.sending | dump | safe }};m.textContent='';
 try{const r=await fetch(f.action,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(d)});const j=await r.json().catch(()=>({}));
 if(r.ok&&String(j.success)!=='false'){f.reset();m.textContent={{ C.ok | dump | safe }};m.className='cform-msg ok'}else if(/activat/i.test(j.message||'')){m.textContent='FormSubmit: '+j.message;m.className='cform-msg err'}else throw 0}
