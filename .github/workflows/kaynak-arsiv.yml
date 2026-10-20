@@ -31,7 +31,7 @@ jobs:
             cd kaynak/ek
             while read -r url; do
               [ -z "$url" ] && continue
-              wget --tries=2 --timeout=30 -e robots=off --adjust-extension -x "$url" || true
+              wget --tries=2 --timeout=30 -e robots=off -x "$url" || echo "BASARISIZ $url"
             done < ../ek-linkler.txt
           fi
       - name: Kaydet
