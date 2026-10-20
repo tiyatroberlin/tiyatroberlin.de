@@ -112,7 +112,8 @@
   title: Kozalar
   year: 2025
   image: foto/kozalar-uc.jpg
-  hero: foto/kozalar-portre.jpg
+  hero: foto/kozalar-genc.jpg
+  hero_pos: "center 15%"
   poster: oyun/kozalar.jpg
   gallery: [foto/kozalar-portre.jpg, foto/kozalar-genc.jpg, foto/kozalar-grotesk.jpg, foto/kozalar-sepya.jpg, foto/kozalar-mavi.jpg, foto/kozalar-cigl.jpg]
   form: {tr: "Adalet Ağaoğlu'nun oyunu", de: "Stück von Adalet Ağaoğlu", en: "A play by Adalet Ağaoğlu"}
