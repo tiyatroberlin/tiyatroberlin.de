@@ -1,0 +1,38 @@
+{%- import "macros.njk" as m -%}
+{%- set L = i18n[lang] -%}
+{%- set S = site.sections -%}
+{%- set q = (v.name + ', ' + v.address) | urlenc -%}
+<section class="page-head"><div class="wrap">
+  <p class="label">{{ L.venue }} · {{ v.district }}</p>
+  <h1 class="h-huge">{{ v.name }}<span class="pt">.</span></h1>
+</div></section>
+<section class="section"><div class="wrap cols">
+  <div>
+    <dl class="facts big">
+      <dt>{{ L.address }}</dt><dd>{{ v.address }}</dd>
+      {% if v.transit %}<dt>{{ L.transit }}</dt><dd>{% for t in v.transit %}{{ t }}{% if not loop.last %}<br>{% endif %}{% endfor %}</dd>{% endif %}
+      {% if v.access %}<dt>{{ L.access }}</dt><dd>{{ v.access | t(lang) }}</dd>{% endif %}
+      {% if v.url %}<dt>{{ L.website }}</dt><dd><a href="{{ v.url }}" rel="noopener">{{ v.url | replace("https://", "") | replace("www.", "") }}</a></dd>{% endif %}
+    </dl>
+    <p style="margin-top:1.4rem"><a class="btn" href="https://www.google.com/maps/search/?api=1&query={{ q }}" rel="noopener">{{ L.map_open }}</a></p>
+  </div>
+  <div class="map" data-map="https://www.google.com/maps?q={{ q }}&output=embed">
+    <button class="btn ghost" type="button">{{ L.map_show }}</button>
+    <p class="note">{{ L.map_note }}</p>
+  </div>
+</div></section>
+{% if v.upcoming | length %}
+<section class="section"><div class="wrap">
+  <div class="section-head"><h2>{{ L.here_next }}<span class="pt">.</span></h2></div>
+  <ul class="shows">{% for s in v.upcoming %}{{ m.showRow(s, lang, L, graph, site, loop.index) }}{% endfor %}</ul>
+</div></section>
+{% endif %}
+{% if v.works | length %}
+<section class="section"><div class="wrap">
+  <div class="section-head"><h2>{{ L.here_works }}<span class="pt">.</span></h2></div>
+  <ul class="venue-works">{% for w in v.works %}<li><a href="{{ ('/' + lang + '/' + S.works[lang] + '/' + w.slug + '/') | url }}">{{ w.title }}<span class="pt">.</span></a> <span class="soon-form">{{ w.year }}</span></li>{% endfor %}</ul>
+</div></section>
+{% endif %}
+<script>
+document.querySelectorAll('[data-map]').forEach(el=>el.querySelector('button').addEventListener('click',()=>{const f=document.createElement('iframe');f.src=el.dataset.map;f.loading='lazy';f.title={{ v.name | dump | safe }};f.referrerPolicy='no-referrer-when-downgrade';el.innerHTML='';el.appendChild(f);el.classList.add('on')}));
+</script>

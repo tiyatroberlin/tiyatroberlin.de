@@ -11,6 +11,7 @@ sections:
   program:  {tr: program, de: spielplan, en: programme}
   works:    {tr: oyunlar, de: stuecke, en: works}
   people:   {tr: kisiler, de: ensemble, en: ensemble}
+  venues:   {tr: mekanlar, de: spielorte, en: venues}
   network:  {tr: ag, de: netzwerk, en: network}
   projects: {tr: projeler, de: projekte, en: projects}
   edu:      {tr: tiyatro-pedagojisi, de: theaterpaedagogik, en: education}

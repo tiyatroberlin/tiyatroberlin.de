@@ -23,7 +23,7 @@ eleventyComputed:
   </div>
   <dl class="facts">
     <dt>{{ L.when }}</dt><dd>{{ c.when | t(lang) }}</dd>
-    {% if c.venue %}<dt>{{ L.where }}</dt><dd>{{ graph.venues[c.venue].address }}</dd>{% endif %}
+    {% if c.venue %}<dt>{{ L.where }}</dt><dd>{% set cv = graph.venues[c.venue] %}{% if cv.address %}<a class="vlink" href="{{ c.venue | venueHref(lang) }}">{{ cv.name }}</a>{% else %}{{ cv.name }}{% endif %}, {{ cv.address }}</dd>{% endif %}
     {% if c.fee %}<dt>{{ L.fee }}</dt><dd>{{ c.fee | t(lang) }}</dd>{% endif %}
     <dt>{{ L.info }}</dt><dd>{{ c.level | t(lang) }}{% if c.lang %} · {{ c.lang | t(lang) }}{% endif %}</dd>
     <dt>{{ L.teachers }}</dt><dd>{% for t in c.teachers %}<a href="{{ ('/' + lang + '/' + site.sections.people[lang] + '/' + t + '/') | url }}">{{ graph.people[t].name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</dd>

@@ -8,7 +8,7 @@
       <h1>{{ w.title }}<span class="pt">.</span></h1>
       {% if w.quote %}<p class="hook it">{{ w.hook | t(lang) }}</p>{% endif %}
       <dl class="facts">
-        {%- if w.premiere %}<dt>{{ L.premiere }}</dt><dd>{% if w.premiere.approx %}{{ w.premiere.date | yearOf }}{% else %}{{ w.premiere.date | dmy }}{% endif %}, {{ graph.venues[w.premiere.venue].name }}{% if graph.venues[w.premiere.venue].city %}, {{ graph.venues[w.premiere.venue].city }}{% endif %}</dd>{% endif %}
+        {%- if w.premiere %}<dt>{{ L.premiere }}</dt><dd>{% if w.premiere.approx %}{{ w.premiere.date | yearOf }}{% else %}{{ w.premiere.date | dmy }}{% endif %}, {% set pv = graph.venues[w.premiere.venue] %}{% if pv.address %}<a class="vlink" href="{{ w.premiere.venue | venueHref(lang) }}">{{ pv.name }}</a>{% else %}{{ pv.name }}{% endif %}{% if graph.venues[w.premiere.venue].city %}, {{ graph.venues[w.premiere.venue].city }}{% endif %}</dd>{% endif %}
         {%- if w.partners %}<dt>{{ L.partners }}</dt><dd>{% for p in w.partners %}{{ graph.db.partners[p].name }}{% if not loop.last %}, {% endif %}{% endfor %}</dd>{% endif %}
         {%- if w.funders %}<dt>{{ L.support }}</dt><dd>{% for f in w.funders %}{{ graph.db.funders[f].name }}{% if not loop.last %}, {% endif %}{% endfor %}</dd>{% endif %}
       </dl>
@@ -43,7 +43,7 @@
     <h2 class="sub-h" style="margin-top:2rem">{{ L.dates }}</h2>
     <ul class="runs">
       {%- for s in past %}
-      <li><time datetime="{{ s.date }}">{% if s.approx %}{{ s.date | yearOf }}{% else %}{{ s.date | dmy }}{% endif %}</time><span>{{ graph.venues[s.venue].name }}{% if graph.venues[s.venue].city %}, {{ graph.venues[s.venue].city }}{% endif %}{% if s.premiere %} · {{ L.premiere }}{% endif %}</span></li>
+      <li><time datetime="{{ s.date }}">{% if s.approx %}{{ s.date | yearOf }}{% else %}{{ s.date | dmy }}{% endif %}</time><span>{% set rv = graph.venues[s.venue] %}{% if rv.address %}<a class="vlink" href="{{ s.venue | venueHref(lang) }}">{{ rv.name }}</a>{% else %}{{ rv.name }}{% endif %}{% if graph.venues[s.venue].city %}, {{ graph.venues[s.venue].city }}{% endif %}{% if s.premiere %} · {{ L.premiere }}{% endif %}</span></li>
       {%- endfor %}
     </ul>
     {% endif %}

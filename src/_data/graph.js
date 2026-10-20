@@ -87,13 +87,18 @@ export default function () {
     cities: cities.size,
   };
 
-  for (const v of Object.values(venues)) v.works = [...v.works];
+  for (const v of Object.values(venues)) {
+    v.works = [...v.works].map((slug) => works.find((w) => w.slug === slug)).sort((a, b) => b.year - a.year);
+    v.upcoming = program.filter((sh) => sh.venue === v.slug);
+    v.courses = extras.courses.filter((c) => c.venue === v.slug);
+  }
+  const venuePages = Object.values(venues).filter((v) => v.address);
 
   return {
     db, works, workBySlug: Object.fromEntries(works.map((w) => [w.slug, w])), people, venues, program, yearList, projects, courses: extras.courses,
     courseBySlug: Object.fromEntries(extras.courses.map((c) => [c.slug, c])),
     projectBySlug: Object.fromEntries(projects.map((p) => [p.slug, p])),
-    programByMonth, soon,
+    programByMonth, soon, venuePages,
     network: { nodes, links }, counts, today,
     personList: Object.values(people).filter((p) => p.works.length || p.teaches.length || p.projects.length)
       .sort((a, b) => a.name.localeCompare(b.name, "tr")),

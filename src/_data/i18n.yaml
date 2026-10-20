@@ -32,6 +32,16 @@ tr:
   upcoming: Yakında
   soon: Hazırlıkta
   starts: Başlangıç
+  address: Adres
+  transit: Nasıl gidilir
+  access: Erişilebilirlik
+  map_open: Google Haritalar'da aç
+  map_show: Haritayı göster
+  map_note: Harita Google'dan yüklenir; tıkladığınızda Google'ın gizlilik koşulları geçerli olur.
+  here_works: Burada oynanan oyunlar
+  here_next: Bu mekânda yakında
+  website: Web sitesi
+  venue: Mekân
   fee: Ücret
   register_open: Kayıtlar açık
   poster: Afiş
@@ -79,6 +89,16 @@ de:
   upcoming: Demnächst
   soon: In Vorbereitung
   starts: Beginn
+  address: Adresse
+  transit: Anfahrt
+  access: Barrierefreiheit
+  map_open: In Google Maps öffnen
+  map_show: Karte anzeigen
+  map_note: Die Karte wird von Google geladen; mit dem Klick gelten die Datenschutzbestimmungen von Google.
+  here_works: Hier gezeigt
+  here_next: Demnächst hier
+  website: Website
+  venue: Spielort
   fee: Gebühr
   register_open: Anmeldung offen
   poster: Plakat
@@ -126,6 +146,16 @@ en:
   upcoming: Coming up
   soon: In the making
   starts: Starts
+  address: Address
+  transit: Getting there
+  access: Accessibility
+  map_open: Open in Google Maps
+  map_show: Show map
+  map_note: The map loads from Google; by clicking, Google's privacy terms apply.
+  here_works: Shown here
+  here_next: Coming up here
+  website: Website
+  venue: Venue
   fee: Fee
   register_open: Registration open
   poster: Poster

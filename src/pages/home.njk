@@ -19,7 +19,7 @@ eleventyComputed:
       <h1 class="lead-title">{% if nw %}<a href="{{ ('/' + lang + '/' + S.works[lang] + '/' + nw.slug + '/') | url }}">{{ nxt.title }}<span class="pt">.</span></a>{% else %}{{ nxt.title }}<span class="pt">.</span>{% endif %}</h1>
       {% if nw and nw.quote %}<p class="lead-hook it">{{ nw.hook | t(lang) }}</p>{% endif %}
       <dl class="lead-meta">
-        <dt>{{ L.where }}</dt><dd>{{ graph.venues[nxt.venue].name }}, {{ graph.venues[nxt.venue].district }}</dd>
+        <dt>{{ L.where }}</dt><dd>{% set lv = graph.venues[nxt.venue] %}{% if lv.address %}<a class="vlink" href="{{ nxt.venue | venueHref(lang) }}">{{ lv.name }}</a>{% else %}{{ lv.name }}{% endif %}, {{ graph.venues[nxt.venue].district }}</dd>
         {% if nw %}<dt>{{ L.info }}</dt><dd>{{ nw.form | t(lang) }}</dd>{% endif %}
       </dl>
       {% if nxt.eventim %}<button class="btn" type="button" data-eventim="{{ nxt.eventim }}" data-account="{{ site.eventim_account }}" aria-expanded="false" aria-controls="t-lead">{{ L.tickets }}</button>
@@ -62,7 +62,7 @@ eleventyComputed:
     </div>
     <dl class="facts">
       <dt>{{ L.when }}</dt><dd>{{ c.when | t(lang) }}</dd>
-      <dt>{{ L.where }}</dt><dd>{{ graph.venues[c.venue].address }}</dd>
+      <dt>{{ L.where }}</dt><dd>{% set cv = graph.venues[c.venue] %}{% if cv.address %}<a class="vlink" href="{{ c.venue | venueHref(lang) }}">{{ cv.name }}</a>{% else %}{{ cv.name }}{% endif %}, {{ cv.address }}</dd>
       <dt>{{ L.fee }}</dt><dd>{{ c.fee | t(lang) }}</dd>
       <dt>{{ L.info }}</dt><dd>{{ c.lang | t(lang) }} · {{ c.level | t(lang) }}</dd>
       </dl><p style="margin-top:1.2rem"><a class="btn red" href="{{ c.form }}" rel="noopener">{{ L.register }}</a></p><dl hidden>

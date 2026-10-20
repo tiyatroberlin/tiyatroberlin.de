@@ -1,3 +1,4 @@
+import fs from "node:fs";
 import yaml from "js-yaml";
 
 export default function (cfg) {
@@ -18,6 +19,11 @@ export default function (cfg) {
   cfg.addFilter("roleName", (roles, key, lang) => roles[key][{ tr: 0, de: 1, en: 2 }[lang]]);
   cfg.addGlobalData("build", () => Date.now().toString(36));
   cfg.addFilter("json", (v) => JSON.stringify(v));
+  // mekân sayfası linki (adresi olan mekânlar için)
+  const siteData = yaml.load(fs.readFileSync("src/_data/site.yaml", "utf8"));
+  const prefix = (process.env.PATH_PREFIX || "/").replace(/\/?$/, "/");
+  cfg.addFilter("venueHref", (slug, lang) => `${prefix}${lang}/${siteData.sections.venues[lang]}/${slug}/`);
+  cfg.addFilter("urlenc", (s) => encodeURIComponent(s || ""));
   cfg.addFilter("initials", (n) => n.split(" ").map((w) => w[0]).slice(0, 2).join(""));
 
   return {

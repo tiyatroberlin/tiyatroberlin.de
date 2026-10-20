@@ -1,0 +1,10 @@
+---
+pagination: {data: graph.venuePages, size: 1, alias: v}
+lang: en
+permalink: "/en/venues/{{ v.slug }}/"
+layout: base.njk
+eleventyComputed:
+  title: "{{ v.name }}"
+  alt: {tr: "/tr/mekanlar/{{ v.slug }}/", de: "/de/spielorte/{{ v.slug }}/", en: "/en/venues/{{ v.slug }}/"}
+---
+{% include "venue-body.njk" %}

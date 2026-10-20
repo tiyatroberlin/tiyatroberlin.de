@@ -36,7 +36,7 @@ eleventyComputed:
     <li class="show">
       <div class="show-date">{{ c.start | dm }}<small>{{ c.start | weekday(L) }}</small></div>
       <div class="show-title"><a href="{{ ('/' + lang + '/' + site.sections.edu[lang] + '/') | url }}">{{ c.title | t(lang) }}</a><span class="show-sub">{{ c.when | t(lang) }}</span></div>
-      <div class="show-where">{% if c.venue %}{{ graph.venues[c.venue].name }}<span>{{ graph.venues[c.venue].district }}</span>{% endif %}</div>
+      <div class="show-where">{% if c.venue %}{% set cv = graph.venues[c.venue] %}{% if cv.address %}<a class="vlink" href="{{ c.venue | venueHref(lang) }}">{{ cv.name }}</a>{% else %}{{ cv.name }}{% endif %}<span>{{ graph.venues[c.venue].district }}</span>{% endif %}</div>
       <div class="show-action">{% if c.form %}<a class="btn" href="{{ c.form }}" rel="noopener">{{ L.register }}</a>{% endif %}</div>
     </li>
   {%- endfor %}
