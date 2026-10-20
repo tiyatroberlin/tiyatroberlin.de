@@ -3,6 +3,7 @@ on:
   push:
     branches: [kaynak-arsiv]
     paths: ['.github/workflows/kaynak-arsiv.yml', 'kaynak/ek-linkler.txt']
+  workflow_dispatch:
 permissions:
   contents: write
 jobs:
@@ -12,6 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Eski siteyi indir (yalnız HTML ve görseller, script yok)
+        if: false
         run: |
           mkdir -p kaynak/eski-site
           cd kaynak/eski-site
@@ -27,13 +29,15 @@ jobs:
       - name: Ek linkler
         run: |
           mkdir -p kaynak/ek
-          if [ -f kaynak/ek-linkler.txt ]; then
-            cd kaynak/ek
-            while read -r url; do
-              [ -z "$url" ] && continue
-              wget --tries=2 --timeout=30 -e robots=off -x "$url" || echo "BASARISIZ $url"
-            done < ../ek-linkler.txt
-          fi
+          cd kaynak/ek
+          : > rapor.txt
+          while read -r url; do
+            [ -z "$url" ] && continue
+            f=$(echo "$url" | sed 's#https\?://##; s#[/?&=]#_#g')
+            code=$(curl -sSL -A "Mozilla/5.0" -o "$f" -w "%{http_code}" "$url" || echo ERR)
+            echo "$code $url -> $f" >> rapor.txt
+          done < ../ek-linkler.txt
+          cat rapor.txt
       - name: Kaydet
         run: |
           git config user.name "tiyatroberlin"
