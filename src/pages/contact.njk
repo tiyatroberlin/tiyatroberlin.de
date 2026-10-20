@@ -9,11 +9,39 @@ eleventyComputed:
 ---
 {%- set L = i18n[lang] -%}
 <section class="page-head"><div class="wrap"><h1 class="h-huge">{{ L.nav.contact }}<span class="pt">.</span></h1></div></section>
+{%- set C = contact_labels[lang] -%}
 <section class="section"><div class="wrap cols">
+  <div>
+    <h2 class="h-big">{{ C.form_h }}<span class="pt">.</span></h2>
+    <p class="prose">{{ C.text }}</p>
+    <form class="cform" id="cform" action="{{ site.contact_form }}" method="post" novalidate>
+      <label>{{ C.name }}<input type="text" name="name" autocomplete="name" required></label>
+      <label>{{ C.email }}<input type="email" name="email" autocomplete="email" required></label>
+      <label>{{ C.topic }}<select name="konu">{% for t in C.topics %}<option>{{ t }}</option>{% endfor %}</select></label>
+      <label>{{ C.message }}<textarea name="message" rows="7" required></textarea></label>
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="dil" value="{{ lang | upper }}">
+      <label class="consent"><input type="checkbox" name="onay" value="evet" required> <span>{{ C.consent }} <a href="{{ ('/' + lang + '/' + site.sections.privacy[lang] + '/') | url }}">{{ C.privacy }}</a></span></label>
+      <p><button class="btn red" type="submit">{{ C.send }}</button></p>
+      <p class="cform-msg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
   <dl class="facts big">
     <dt>E-Mail</dt><dd><a href="mailto:{{ site.email }}">{{ site.email }}</a></dd>
     <dt>Instagram</dt><dd><a href="{{ site.instagram }}" rel="noopener">@tiyatroberlin</a></dd>
-    <dt>{{ contact_labels[lang].press }}</dt><dd><a href="mailto:{{ site.email }}">{{ site.email }}</a></dd>
+    <dt>{{ C.press }}</dt><dd><a href="mailto:{{ site.email }}">{{ site.email }}</a></dd>
   </dl>
-  <div class="prose"><p>{{ contact_labels[lang].text }}</p></div>
 </div></section>
+<script>
+(()=>{const f=document.getElementById('cform');if(!f)return;const m=f.querySelector('.cform-msg'),b=f.querySelector('button');
+f.addEventListener('submit',async e=>{e.preventDefault();if(!f.reportValidity())return;
+if(f._honey.value){return}
+const d=Object.fromEntries(new FormData(f));d._subject='tiyatroberlin.de · '+d.konu+' · '+d.name;d._replyto=d.email;
+b.disabled=true;b.textContent={{ C.sending | dump | safe }};m.textContent='';
+try{const r=await fetch(f.action,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(d)});const j=await r.json().catch(()=>({}));
+if(r.ok&&String(j.success)!=='false'){f.reset();m.textContent={{ C.ok | dump | safe }};m.className='cform-msg ok'}else throw 0}
+catch(_){m.textContent={{ C.err | dump | safe }};m.className='cform-msg err'}
+b.disabled=false;b.textContent={{ C.send | dump | safe }}})})();
+</script>

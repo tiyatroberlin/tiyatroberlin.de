@@ -25,7 +25,7 @@
     </a>
     <button class="menu-btn" aria-expanded="false" aria-controls="nav">{{ L.menu }}</button>
     <nav class="nav" id="nav">
-      {%- for key in ["program","works","people","network","projects","edu","about"] %}
+      {%- for key in ["program","works","people","network","projects","edu","about","contact"] %}
       <a href="{{ u(key) }}"{% if section == key %} aria-current="page"{% endif %}>{{ L.nav[key] }}</a>
       {%- endfor %}
       <span class="langs">

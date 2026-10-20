@@ -313,3 +313,14 @@ p{margin:0 0 1em}
 .gallery figcaption{margin-top:.6rem}
 .g-poster img{max-width:100%}
 .kicker .badge{margin:0 .8rem 0 0}
+
+/* iletişim formu */
+.cform{display:grid;gap:1rem;margin-top:1.6rem;max-width:40rem}
+.cform label{display:grid;gap:.35rem;font-family:var(--sans);font-weight:600;font-size:.95rem}
+.cform input[type=text],.cform input[type=email],.cform select,.cform textarea{font:inherit;font-weight:400;padding:.75em .85em;border:1px solid var(--rule);background:var(--wash);color:var(--ink);border-radius:0;width:100%}
+.cform input:focus,.cform select:focus,.cform textarea:focus{outline:2px solid var(--red);outline-offset:0;border-color:var(--red)}
+.cform .consent{display:flex;font-weight:400}
+.cform-msg{font-family:var(--sans);min-height:1.4em}
+.cform-msg.ok{color:var(--ink)}
+.cform-msg.err{color:var(--red-ink)}
+.cols > .facts{align-self:start}
