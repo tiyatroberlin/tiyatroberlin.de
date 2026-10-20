@@ -93,12 +93,14 @@ export default function () {
     v.courses = extras.courses.filter((c) => c.venue === v.slug);
   }
   const venuePages = Object.values(venues).filter((v) => v.address);
+  const venueList = Object.values(venues).filter((v) => v.shows || v.courses.length)
+    .sort((a, b) => (b.upcoming.length - a.upcoming.length) || (b.shows - a.shows));
 
   return {
     db, works, workBySlug: Object.fromEntries(works.map((w) => [w.slug, w])), people, venues, program, yearList, projects, courses: extras.courses,
     courseBySlug: Object.fromEntries(extras.courses.map((c) => [c.slug, c])),
     projectBySlug: Object.fromEntries(projects.map((p) => [p.slug, p])),
-    programByMonth, soon, venuePages,
+    programByMonth, soon, venuePages, venueList,
     network: { nodes, links }, counts, today,
     personList: Object.values(people).filter((p) => p.works.length || p.teaches.length || p.projects.length)
       .sort((a, b) => a.name.localeCompare(b.name, "tr")),

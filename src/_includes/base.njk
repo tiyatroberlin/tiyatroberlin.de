@@ -60,6 +60,14 @@
         </ul>
       </div>
       <div>
+        <h2><a href="{{ u('venues') }}">{{ L.nav.venues }}</a></h2>
+        <ul>
+          {%- for v in graph.venueList %}
+          <li>{% if v.address %}<a href="{{ v.slug | venueHref(lang) }}">{{ v.name }}</a>{% else %}{{ v.name }}{% if v.city and v.city != 'Berlin' %}, {{ v.city }}{% endif %}{% endif %}</li>
+          {%- endfor %}
+        </ul>
+      </div>
+      <div>
         <h2>{{ L.newsletter }}</h2>
         <p>{{ L.newsletter_text }}</p>
         <form class="signup" action="{{ site.mailchimp }}" method="post" target="_blank">

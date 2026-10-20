@@ -1,6 +1,6 @@
 tr:
   name: Türkçe
-  nav: {program: Program, works: Oyunlar, people: Kişiler, network: Ağ, projects: Projeler, edu: "Tiyatro pedagojisi – Kurslar", about: Hakkımızda, contact: İletişim}
+  nav: {program: Program, works: Oyunlar, people: Kişiler, network: Ağ, projects: Projeler, edu: "Tiyatro pedagojisi – Kurslar", about: Hakkımızda, contact: İletişim, venues: Mekânlar}
   next: Yakında sahnede
   tickets: Bilet al
   register: Kaydol
@@ -57,7 +57,7 @@ tr:
   teachers: Eğitmenler
 de:
   name: Deutsch
-  nav: {program: Spielplan, works: Stücke, people: Ensemble, network: Netzwerk, projects: Projekte, edu: "Theaterpädagogik – Kurse", about: Über uns, contact: Kontakt}
+  nav: {program: Spielplan, works: Stücke, people: Ensemble, network: Netzwerk, projects: Projekte, edu: "Theaterpädagogik – Kurse", about: Über uns, contact: Kontakt, venues: Spielorte}
   next: Demnächst
   tickets: Tickets
   register: Anmelden
@@ -114,7 +114,7 @@ de:
   teachers: Leitung
 en:
   name: English
-  nav: {program: Programme, works: Works, people: Ensemble, network: Network, projects: Projects, edu: "Theatre education – Courses", about: About, contact: Contact}
+  nav: {program: Programme, works: Works, people: Ensemble, network: Network, projects: Projects, edu: "Theatre education – Courses", about: About, contact: Contact, venues: Venues}
   next: Coming up
   tickets: Tickets
   register: Sign up

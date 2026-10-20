@@ -1,0 +1,23 @@
+---
+pagination: {data: site.langs, size: 1, alias: lang}
+permalink: "/{{ lang }}/{{ site.sections.venues[lang] }}/"
+layout: base.njk
+section: venues
+eleventyComputed:
+  title: "{{ i18n[lang].nav.venues }}"
+  alt: {tr: "/tr/mekanlar/", de: "/de/spielorte/", en: "/en/venues/"}
+---
+{%- set L = i18n[lang] -%}
+<section class="page-head"><div class="wrap"><h1 class="h-huge">{{ L.nav.venues }}<span class="pt">.</span></h1></div></section>
+<section class="section"><div class="wrap">
+  <ul class="venue-list">
+  {%- for v in graph.venueList %}
+    <li>
+      <h2>{% if v.address %}<a href="{{ v.slug | venueHref(lang) }}">{{ v.name }}<span class="pt">.</span></a>{% else %}{{ v.name }}<span class="pt">.</span>{% endif %}</h2>
+      <p class="soon-form">{{ v.district }}{% if v.city and v.city != 'Berlin' %}, {{ v.city }}{% endif %}{% if v.address %} · {{ v.address }}{% endif %}</p>
+      {% if v.works | length %}<p class="venue-sub">{% for w in v.works %}{{ w.title }}{% if not loop.last %}, {% endif %}{% endfor %}</p>{% endif %}
+      {% if v.upcoming | length %}<p class="badge">{{ L.here_next }}</p>{% endif %}
+    </li>
+  {%- endfor %}
+  </ul>
+</div></section>
