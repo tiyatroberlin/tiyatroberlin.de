@@ -32,6 +32,7 @@ tr:
   upcoming: Yakında
   soon: Hazırlıkta
   starts: Başlangıç
+  fee: Ücret
   register_open: Kayıtlar açık
   poster: Afiş
   year: Yıl
@@ -78,6 +79,7 @@ de:
   upcoming: Demnächst
   soon: In Vorbereitung
   starts: Beginn
+  fee: Gebühr
   register_open: Anmeldung offen
   poster: Plakat
   year: Jahr
@@ -124,6 +126,7 @@ en:
   upcoming: Coming up
   soon: In the making
   starts: Starts
+  fee: Fee
   register_open: Registration open
   poster: Poster
   year: Year

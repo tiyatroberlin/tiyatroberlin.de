@@ -63,7 +63,7 @@ eleventyComputed:
     <dl class="facts">
       <dt>{{ L.when }}</dt><dd>{{ c.when | t(lang) }}</dd>
       <dt>{{ L.where }}</dt><dd>{{ graph.venues[c.venue].address }}</dd>
-      <dt>{{ L.price }}</dt><dd>{{ c.fee | t(lang) }}</dd>
+      <dt>{{ L.fee }}</dt><dd>{{ c.fee | t(lang) }}</dd>
       <dt>{{ L.info }}</dt><dd>{{ c.lang | t(lang) }} · {{ c.level | t(lang) }}</dd>
       </dl><p style="margin-top:1.2rem"><a class="btn red" href="{{ c.form }}" rel="noopener">{{ L.register }}</a></p><dl hidden>
     </dl>

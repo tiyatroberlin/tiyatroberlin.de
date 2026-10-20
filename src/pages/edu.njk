@@ -18,12 +18,13 @@ eleventyComputed:
 <section class="section"><div class="wrap cols">
   <div>
     <h2 class="h-big">{{ c.title | t(lang) }}</h2>
+    {% if c.text %}<div class="prose">{{ c.text | t(lang) | paras | safe }}</div>{% endif %}
     {% if c.topics %}<p class="prose">{{ c.topics | t(lang) }}</p>{% endif %}
   </div>
   <dl class="facts">
     <dt>{{ L.when }}</dt><dd>{{ c.when | t(lang) }}</dd>
     {% if c.venue %}<dt>{{ L.where }}</dt><dd>{{ graph.venues[c.venue].address }}</dd>{% endif %}
-    {% if c.fee %}<dt>{{ L.price }}</dt><dd>{{ c.fee | t(lang) }}</dd>{% endif %}
+    {% if c.fee %}<dt>{{ L.fee }}</dt><dd>{{ c.fee | t(lang) }}</dd>{% endif %}
     <dt>{{ L.info }}</dt><dd>{{ c.level | t(lang) }}{% if c.lang %} · {{ c.lang | t(lang) }}{% endif %}</dd>
     <dt>{{ L.teachers }}</dt><dd>{% for t in c.teachers %}<a href="{{ ('/' + lang + '/' + site.sections.people[lang] + '/' + t + '/') | url }}">{{ graph.people[t].name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</dd>
     {% if c.form %}</dl><p style="margin-top:1.2rem"><a class="btn red" href="{{ c.form }}" rel="noopener">{{ L.register }}</a></p><dl hidden>{% endif %}
