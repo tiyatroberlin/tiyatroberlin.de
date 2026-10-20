@@ -59,8 +59,9 @@
   title: Kozalar
   year: 2025
   image: foto/kozalar-uc.jpg
+  hero: foto/kozalar-portre.jpg
   poster: oyun/kozalar.jpg
-  gallery: [foto/kozalar-grotesk.jpg, foto/kozalar-portre.jpg, foto/kozalar-mavi.jpg, foto/kozalar-cigl.jpg]
+  gallery: [foto/kozalar-portre.jpg, foto/kozalar-genc.jpg, foto/kozalar-grotesk.jpg, foto/kozalar-sepya.jpg, foto/kozalar-mavi.jpg, foto/kozalar-cigl.jpg]
   form: {tr: "Adalet Ağaoğlu'nun oyunu", de: "Stück von Adalet Ağaoğlu", en: "A play by Adalet Ağaoğlu"}
   hook: {tr: "Bize dokunmasınlar da ne yaparlarsa yapsınlar.", de: "Sollen sie doch machen, was sie wollen, solange sie uns in Ruhe lassen.", en: "Let them do whatever they like, as long as they leave us alone."}
   quote: true
@@ -93,7 +94,9 @@
 - slug: pride-93
   title: Pride '93
   year: 2024
-  image: oyun/pride-93.jpg
+  image: foto/pride-grup.jpg
+  poster: oyun/pride-93.jpg
+  gallery: [foto/pride-el.jpg, foto/pride-ikili.jpg, foto/pride-tulum.jpg]
   form: {tr: "Belgesel tiyatro", de: "Dokumentartheater", en: "Documentary theatre"}
   hook: {tr: "İstanbul, 1993. İlk Onur Yürüyüşü başlamadan yasaklanıyor.", de: "Istanbul, 1993. Der erste Pride wird verboten, bevor er beginnt.", en: "Istanbul, 1993. The first Pride is banned before it begins."}
   text:

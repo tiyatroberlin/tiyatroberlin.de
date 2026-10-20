@@ -12,7 +12,7 @@ eleventyComputed:
 {%- set nw = graph.workBySlug[nxt.work] if nxt and not nxt.external else null -%}
 {% if nxt %}
 <section class="lead">
-  {% if nw and nw.image %}<figure class="lead-figure"><img src="{{ ('/assets/img/' + nw.image) | url }}?v={{ build }}" alt="" width="1400" height="1000"></figure>{% endif %}
+  {% set heroImg = (nw.hero or nw.image) if nw else null %}{% if heroImg %}<figure class="lead-figure"><img src="{{ ('/assets/img/' + heroImg) | url }}?v={{ build }}" alt="" width="1600" height="1986"></figure>{% endif %}
   <div class="wrap">
     <div class="lead-text">
       <p class="lead-when"><span class="dot" aria-hidden="true"></span>{{ L.next }}: {{ nxt.date | longDate(L, lang) }}, {{ nxt.date | weekday(L) }}{% if nxt.time %}, {{ nxt.time }}{% endif %}</p>
