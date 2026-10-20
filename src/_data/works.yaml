@@ -27,6 +27,34 @@
     - {date: 2026-11-22, time: "19:00", venue: moda-bar, premiere: true, eventim: 6ace5a69a47cb7abb7b2496e, price: {tr: "20 €", de: "20 €", en: "€20"}}
     - {date: 2026-11-29, time: "19:00", venue: moda-bar, eventim: 6ace5aa484ed3c6a8a6549e6, price: {tr: "20 €", de: "20 €", en: "€20"}}
 
+- slug: same
+  title: SAME
+  year: 2026
+  image: foto/same-ayak.jpg
+  form: {tr: "Fiziksel performans", de: "Physische Performance", en: "Physical performance"}
+  info: {tr: "Proud Haram Festival 2026 programında. Türkçe, Almanca ve İngilizce üstyazılı.", de: "Im Programm des Proud Haram Festival 2026. Auf Türkisch mit deutschen und englischen Übertiteln.", en: "Part of Proud Haram Festival 2026. In Turkish with German and English surtitles."}
+  text:
+    tr: |
+      SAME, dijital çağın görünürlük rejimini, kimliklerin nasıl üretildiğini ve gündelik hayatın sessizce nasıl dönüştüğünü bedenden yola çıkarak düşünen fiziksel bir performans. Sosyal medya, algoritmalar, queer varoluş, toplumsal kutuplaşma ve bir yere ait olma ihtiyacı, elektronik ritimlerin eşliğinde giderek daralan bir oyun alanında birbirine dolanıyor.
+
+      Minimalist sahnede kolektif bir deneyim bedenler üzerinden görünür hâle geliyor. Oyun seyirciye çağın ruh hâlini açıyor ve sorduğu soruları bilerek cevapsız bırakıyor.
+    de: |
+      SAME ist eine physische Performance über das Sichtbarkeitsregime des digitalen Zeitalters, über die Produktion von Identität und den leisen Wandel des Alltags. Soziale Medien, Algorithmen, queere Existenz, gesellschaftliche Polarisierung und das Bedürfnis nach Zugehörigkeit verschränken sich zu elektronischen Rhythmen in einem Spielraum, der immer enger wird.
+
+      Auf der minimalistischen Bühne wird eine kollektive Erfahrung über die Körper sichtbar. Das Stück öffnet den Blick auf die Stimmung einer Zeit und lässt seine Fragen bewusst offen.
+    en: |
+      SAME is a physical performance about the visibility regime of the digital age, the production of identity and the quiet transformation of everyday life. Social media, algorithms, queer existence, social polarisation and the need to belong intertwine to electronic rhythms in a playing space that keeps closing in.
+
+      On a minimalist stage a collective experience becomes visible through the body. The piece opens up the mood of an era and deliberately leaves its questions unanswered.
+  credits:
+    - [writedirect, ufuk-tan-altunkaya]
+    - [coordination, hazal-erdal]
+    - [dramaturgy, didem-kaplan]
+    - [light, zeki-elveris]
+    - [cast, [kaan-songun, ilayda-fidanlik]]
+  shows:
+    - {date: 2026-06-12, time: "19:00", venue: ballhaus, premiere: true}
+
 - slug: kozalar
   title: Kozalar
   year: 2025
