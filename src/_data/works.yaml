@@ -72,7 +72,10 @@
       The Monologue Box is a one-to-one encounter in a closed room where a single spectator and a single narrator are alone together. Visitors decide for themselves when to enter, how long to stay and when to leave. The box has two chambers: in the first a performer delivers a monologue directly to the visitor, in the second visitors leave their own stories aloud and anonymously, without showing their faces or giving their names.
 
       The stories left in the second chamber are later retold in the first, so that one person's account becomes the monologue another person hears. Within the festival's question of making visible versus standing beside, the work asks to whom a story belongs once it has come loose from its origin.
-  credits: []
+  credits:
+    - [conceditdir, ufuk-tan-altunkaya]
+    - [text, didem-kaplan]
+    - [cast, hazal-erdal]
   shows:
     - {date: 2026-06-12, time: "18:00", venue: ballhaus, premiere: true}
     - {date: 2026-06-13, time: "18:00", venue: ballhaus}

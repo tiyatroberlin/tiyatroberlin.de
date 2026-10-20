@@ -78,6 +78,7 @@ roles:
   direction:   [Yönetim, Regie, Direction]
   adaptation:  [Uyarlama ve yönetim, Bearbeitung und Regie, Adaptation and direction]
   writedirect: [Yazan ve yöneten, Text und Regie, Written and directed by]
+  conceditdir: [Konsept, kurgu ve yönetim, Konzept, Fassung und Regie, Concept, arrangement and direction]
   edit:        [Kurgu ve yönetim, Konzept und Regie, Concept and direction]
   cast:        [Oyuncular, Mit, Cast]
   performer:   [Oyun, Performance, Performer]
