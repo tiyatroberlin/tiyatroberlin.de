@@ -7,7 +7,7 @@ courses:
     level: {tr: "Yetişkinler için, deneyim gerekmez", de: "Für Erwachsene, ohne Vorkenntnisse", en: "For adults, no experience needed"}
     when: {tr: "Her pazartesi 18:30–21:00 · 2 Kasım 2026'dan Mayıs 2027'ye", de: "Montags 18:30–21:00 · 2. November 2026 bis Mai 2027", en: "Mondays 6:30–9 pm · 2 November 2026 to May 2027"}
     start: 2026-11-02
-    venue: atolye-moabit
+    venue: interkulturell-aktiv
     fee: {tr: "Aylık 80 € · istediğin ay bırakabilirsin", de: "80 € im Monat, monatlich kündbar", en: "€80 per month, cancel any month"}
     lang: {tr: Türkçe, de: Kurssprache Türkisch, en: Taught in Turkish}
     teachers: [ufuk-tan-altunkaya, hazal-erdal]
@@ -38,7 +38,7 @@ courses:
     level: {tr: "Yetişkinler için, ön bilgi gerekmez", de: "Für Erwachsene, ohne Vorkenntnisse", en: "For adults, no prior knowledge needed"}
     when: {tr: "Her salı 19:00–21:00 · 12 Ocak – 30 Mart 2027, 12 hafta", de: "Dienstags 19:00–21:00 · 12. Januar bis 30. März 2027, 12 Wochen", en: "Tuesdays 7–9 pm · 12 January to 30 March 2027, 12 weeks"}
     start: 2027-01-12
-    venue: atolye-moabit
+    venue: interkulturell-aktiv
     fee: {tr: "Aylık 80 €", de: "80 € im Monat", en: "€80 per month"}
     lang: {tr: Türkçe, de: Kurssprache Türkisch, en: Taught in Turkish}
     teachers: [egemen-kalyon]

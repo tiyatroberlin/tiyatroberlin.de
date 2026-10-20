@@ -45,7 +45,7 @@ venues:
     transit: ["S+U Neukölln (S41, S42, S45, S46, S47, U7)", "U8 Leinestraße"]
   nikolaiviertel: {name: Nikolaiviertel, district: Mitte, city: Berlin, note: {tr: şehirde yürüyüş, de: Stadtraum, en: walk through the city}}
   bergama:       {name: Kale Mahallesi, city: Bergama, district: "Bergama Tiyatro Festivali"}
-  atolye-moabit: {name: Atölye Moabit, address: "Wiclefstraße 16–17, 10551 Berlin", district: Moabit, transit: ["U9 Birkenstraße · 400 m", "S41, S42 Beusselstraße"]}
+  interkulturell-aktiv: {name: Interkulturell Aktiv e.V., address: "Wiclefstraße 16–17, 10551 Berlin", district: Moabit, transit: ["U9 Birkenstraße · 400 m", "S41, S42 Beusselstraße"]}
 
 funders:
   senat:      {name: "Senatsverwaltung für Kultur und Europa", short: "Land Berlin"}
