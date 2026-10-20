@@ -365,6 +365,7 @@
   year: 2022
   image: oyun/nested.jpg
   form: {tr: "Açık havada performans", de: "Performance im Freien", en: "Outdoor performance"}
+  info: {tr: "48 Stunden Neukölln festivali programında, Körnerpark'ta oynandı.", de: "Im Programm des Festivals 48 Stunden Neukölln, gezeigt im Körnerpark.", en: "Part of the 48 Stunden Neukölln festival, performed in Körnerpark."}
   hook: {tr: "Göç sanatçıya ne yapar?", de: "Was macht Migration mit Künstler*innen?", en: "What does migration do to artists?"}
   text:
     tr: |
@@ -387,7 +388,7 @@
     - [coordination, ilayda-fidanlik]
     - [sound, zeki-elveris]
   partners: [cabinet-novus]
-  funders: [48h, ausland]
+  funders: [ausland]
   shows:
     - {date: 2022-06-24, venue: koernerpark, premiere: true}
 
