@@ -1,0 +1,43 @@
+name: Eski siteyi arşivle
+on:
+  push:
+    branches: [kaynak-arsiv]
+    paths: ['.github/workflows/kaynak-arsiv.yml', 'kaynak/ek-linkler.txt']
+permissions:
+  contents: write
+jobs:
+  arsivle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Eski siteyi indir (yalnız HTML ve görseller, script yok)
+        run: |
+          mkdir -p kaynak/eski-site
+          cd kaynak/eski-site
+          wget --recursive --level=4 --page-requisites --adjust-extension \
+               --domains=tiyatroberlin.de --no-host-directories \
+               --reject='*.js,*.css,*.woff,*.woff2,*.ttf,*.svg,*.ico' \
+               --reject-regex='(\.info/|\.co/|copperlodestar|aragoniteforum|honeysucklefolio|planetreeapse|/component/users|/search|format=feed|tmpl=component|print=1|view-map)' \
+               --restrict-file-names=windows --wait=0.3 --tries=2 --timeout=20 \
+               --quota=400m -e robots=off \
+               https://tiyatroberlin.de/index.php/tr https://tiyatroberlin.de/index.php/de/ || true
+          find . -type f | wc -l
+          du -sh .
+      - name: Ek linkler
+        run: |
+          mkdir -p kaynak/ek
+          if [ -f kaynak/ek-linkler.txt ]; then
+            cd kaynak/ek
+            while read -r url; do
+              [ -z "$url" ] && continue
+              wget --tries=2 --timeout=30 -e robots=off --adjust-extension -x "$url" || true
+            done < ../ek-linkler.txt
+          fi
+      - name: Kaydet
+        run: |
+          git config user.name "tiyatroberlin"
+          git config user.email "info@tiyatroberlin.de"
+          git add kaynak
+          git commit -m "Eski site ve ek kaynaklar arşivlendi" || echo "değişiklik yok"
+          git push
