@@ -29,6 +29,8 @@
 
 - slug: zwei-staedte-ein-koerper
   title: Zwei Städte, Ein Körper
+  image: oyun/zwei-staedte.jpg
+  poster: oyun/zwei-staedte.jpg
   year: 2026
   form: {tr: "Mekâna özgü ses yürüyüşü", de: "Ortsspezifischer Audiowalk", en: "Site-specific audio walk"}
   info: {tr: "Proud Haram Festival 2026 programında. Almanca.", de: "Im Programm des Proud Haram Festival 2026. Auf Deutsch.", en: "Part of Proud Haram Festival 2026. In German."}
