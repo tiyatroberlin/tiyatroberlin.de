@@ -41,7 +41,7 @@ if(f._honey.value){return}
 const d=Object.fromEntries(new FormData(f));d._subject='tiyatroberlin.de · '+d.konu+' · '+d.name;d._replyto=d.email;
 b.disabled=true;b.textContent={{ C.sending | dump | safe }};m.textContent='';
 try{const r=await fetch(f.action,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(d)});const j=await r.json().catch(()=>({}));
-if(r.ok&&String(j.success)!=='false'){f.reset();m.textContent={{ C.ok | dump | safe }};m.className='cform-msg ok'}else throw 0}
+if(r.ok&&String(j.success)!=='false'){f.reset();m.textContent={{ C.ok | dump | safe }};m.className='cform-msg ok'}else if(/activat/i.test(j.message||'')){m.textContent='FormSubmit: '+j.message;m.className='cform-msg err'}else throw 0}
 catch(_){m.textContent={{ C.err | dump | safe }};m.className='cform-msg err'}
 b.disabled=false;b.textContent={{ C.send | dump | safe }}})})();
 </script>
