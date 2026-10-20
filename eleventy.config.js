@@ -13,6 +13,7 @@ export default function (cfg) {
   cfg.addFilter("dm", (iso) => { const [, m, d] = iso.split("-"); return `${d}.${m}.`; });
   cfg.addFilter("yearOf", (iso) => iso.slice(0, 4));
   cfg.addFilter("weekday", (iso, i18n) => i18n.days[new Date(iso + "T12:00:00").getDay()]);
+  cfg.addFilter("longDate", (iso, i18n, lang) => { const d = +iso.slice(8, 10), m = i18n.months[+iso.slice(5, 7) - 1]; return lang === "en" ? `${d} ${m}` : lang === "de" ? `${d}. ${m}` : `${d} ${m}`; });
   cfg.addFilter("monthName", (iso, i18n) => i18n.months[+iso.slice(5, 7) - 1]);
   cfg.addFilter("roleName", (roles, key, lang) => roles[key][{ tr: 0, de: 1, en: 2 }[lang]]);
   cfg.addFilter("json", (v) => JSON.stringify(v));

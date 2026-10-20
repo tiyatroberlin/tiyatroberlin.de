@@ -1,7 +1,7 @@
 tr:
   name: Türkçe
   nav: {program: Program, works: Oyunlar, people: Kişiler, network: Ağ, projects: Projeler, edu: Tiyatro pedagojisi, about: Hakkımızda, contact: İletişim}
-  next: Sıradaki
+  next: Yakında sahnede
   tickets: Bilet al
   register: Kaydol
   info: Bilgi
@@ -43,7 +43,7 @@ tr:
 de:
   name: Deutsch
   nav: {program: Spielplan, works: Stücke, people: Menschen, network: Netzwerk, projects: Projekte, edu: Theaterpädagogik, about: Über uns, contact: Kontakt}
-  next: Als Nächstes
+  next: Demnächst
   tickets: Tickets
   register: Anmelden
   info: Info
@@ -85,7 +85,7 @@ de:
 en:
   name: English
   nav: {program: Programme, works: Works, people: People, network: Network, projects: Projects, edu: Theatre education, about: About, contact: Contact}
-  next: Next
+  next: Coming up
   tickets: Tickets
   register: Sign up
   info: Info

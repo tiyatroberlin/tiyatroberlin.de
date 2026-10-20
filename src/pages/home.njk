@@ -14,7 +14,7 @@ eleventyComputed:
 <section class="lead">
   <div class="wrap">
     <div>
-      <p class="lead-when"><span class="dot" aria-hidden="true"></span>{{ L.next }}: {{ nxt.date | dm }} {{ nxt.date | weekday(L) }}{% if nxt.time %}, {{ nxt.time }}{% endif %}</p>
+      <p class="lead-when"><span class="dot" aria-hidden="true"></span>{{ L.next }}: {{ nxt.date | longDate(L, lang) }}, {{ nxt.date | weekday(L) }}{% if nxt.time %}, {{ nxt.time }}{% endif %}</p>
       <h1 class="lead-title">{% if nw %}<a href="{{ ('/' + lang + '/' + S.works[lang] + '/' + nw.slug + '/') | url }}">{{ nxt.title }}</a>{% else %}{{ nxt.title }}{% endif %}</h1>
       {% if nw %}<p class="lead-hook">{{ nw.hook | t(lang) }}</p>{% endif %}
       <dl class="lead-meta">
