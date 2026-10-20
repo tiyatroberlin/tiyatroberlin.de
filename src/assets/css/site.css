@@ -256,3 +256,9 @@ p{margin:0 0 1em}
 .edu-teaser .facts{align-self:end}
 
 .hp{position:absolute;left:-5000px;width:1px;height:1px;overflow:hidden}
+
+.soon-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:2rem var(--gutter);border-top:1px solid var(--ink)}
+.soon-list li{padding-top:1rem}
+.soon-list h3{font-size:var(--step-3);letter-spacing:-.045em;margin:.4rem 0 .3rem}
+.soon-form{font-family:var(--sans);color:var(--mute);margin-bottom:.8rem}
+.replica{font-style:italic}

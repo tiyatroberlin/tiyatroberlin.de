@@ -40,6 +40,19 @@ eleventyComputed:
   </div>
 </section>
 
+
+<section class="section soon">
+  <div class="wrap">
+    <div class="section-head"><h2>{{ L.soon }}</h2></div>
+    <ul class="soon-list">
+      {%- for s in graph.soon %}
+      <li><p class="kicker">{{ s.when | t(lang) }} · {{ graph.venues[s.venue].name }}{% if s.by %} · {{ s.by }}{% endif %}</p>
+        <h3>{{ s.title }}</h3><p class="soon-form">{{ s.form | t(lang) }}</p><p>{{ s.text | t(lang) }}</p></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
 {%- set c = graph.courses[0] %}
 <section class="section edu-teaser">
   <div class="wrap cols">

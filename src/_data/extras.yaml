@@ -1,19 +1,5 @@
 # Programda görünen ama Tiyatro Berlin oyunu olmayan etkinlikler ve kurslar
-events:
-  - title: NAMELESS
-    by: cabinet:novus
-    date: 2026-11-14
-    time: "20:00"
-    venue: ballhaus
-    sub: {tr: "Kulaklıklı şehir yürüyüşü · Türkçe dinleme seçeneği", de: "Audiowalk · auch auf Türkisch", en: "Audio walk · also in Turkish"}
-    ticket: "https://www.ballhaus-prinzenallee.de"
-  - title: NAMELESS
-    by: cabinet:novus
-    date: 2026-11-15
-    time: "20:00"
-    venue: ballhaus
-    sub: {tr: "Kulaklıklı şehir yürüyüşü · Türkçe dinleme seçeneği", de: "Audiowalk · auch auf Türkisch", en: "Audio walk · also in Turkish"}
-    ticket: "https://www.ballhaus-prinzenallee.de"
+events: []
 
 courses:
   - slug: oyunculuk-atolyesi

@@ -11,6 +11,7 @@ export default function () {
   const bios = load("./bios.yaml");
   const extras = load("./extras.yaml");
   const projects = load("./projects.yaml");
+  const soon = load("./soon.yaml");
   const today = new Date().toISOString().slice(0, 10);
 
   const people = Object.fromEntries(
@@ -92,7 +93,7 @@ export default function () {
     db, works, workBySlug: Object.fromEntries(works.map((w) => [w.slug, w])), people, venues, program, yearList, projects, courses: extras.courses,
     courseBySlug: Object.fromEntries(extras.courses.map((c) => [c.slug, c])),
     projectBySlug: Object.fromEntries(projects.map((p) => [p.slug, p])),
-    programByMonth,
+    programByMonth, soon,
     network: { nodes, links }, counts, today,
     personList: Object.values(people).filter((p) => p.works.length || p.teaches.length || p.projects.length)
       .sort((a, b) => a.name.localeCompare(b.name, "tr")),

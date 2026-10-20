@@ -1,0 +1,29 @@
+# Yakında: henüz programa girmemiş yeni işler
+- slug: nameless
+  title: NAMELESS
+  when: {tr: Kasım 2026, de: November 2026, en: November 2026}
+  venue: ballhaus
+  by: "cabinet:novus"
+  form: {tr: Kulaklıklı şehir yürüyüşü, de: Audiowalk, en: Audio walk}
+  text:
+    tr: Kulaklıklarını takan on kişilik küçük bir grup, bir kadının hayatını şehrin sokaklarında, adım adım dinleyerek izliyor. Yürüyüş Almanca ve Türkçe dinlenebiliyor.
+    de: Eine kleine Gruppe von zehn Menschen setzt die Kopfhörer auf und folgt Schritt für Schritt dem Leben einer Frau durch die Straßen der Stadt. Der Walk ist auf Deutsch und auf Türkisch zu hören.
+    en: A small group of ten puts on headphones and follows, step by step, the life of a woman through the streets of the city. The walk can be heard in German and in Turkish.
+- slug: throniva
+  title: THRONIVA
+  when: {tr: Ocak–Şubat 2027, de: Januar–Februar 2027, en: January–February 2027}
+  venue: ballhaus
+  form: {tr: "Sözsüz oyun · bir yüzyıl başı çözümlemesi", de: "Stück ohne Worte · eine Analyse des Jahrhundertbeginns", en: "A wordless piece · an analysis of the turn of a century"}
+  text:
+    tr: Karanlıkla açılan ve tek kelime konuşulmadan ilerleyen THRONIVA, bir aile sofrasının etrafında bir yüzyılın başlangıcını çözümlüyor; ışık geri sayan ampullerle, yavaş yavaş geri geliyor.
+    de: THRONIVA beginnt in der Dunkelheit und kommt ohne ein einziges Wort aus. Rund um einen Familientisch wird der Beginn eines Jahrhunderts seziert, während das Licht mit herunterzählenden Glühbirnen allmählich zurückkehrt.
+    en: Opening in darkness and unfolding without a single word, THRONIVA dissects the beginning of a century around a family table, as the light slowly returns through counting-down bulbs.
+- slug: fast
+  title: FAST
+  when: {tr: Nisan–Mayıs 2027, de: April–Mai 2027, en: April–May 2027}
+  venue: ballhaus
+  form: {tr: Biyografik solo, de: Biografisches Solo, en: Biographical solo}
+  text:
+    tr: Kamera ve monitörlerle kurulan biyografik bir solo; sahnedeki beden ile ekrandaki görüntüsü arasındaki mesafe, bir hayatın kendine nasıl anlatıldığını soruyor.
+    de: Ein biografisches Solo mit Kamera und Monitoren, in dem der Abstand zwischen dem Körper auf der Bühne und seinem Bild auf dem Bildschirm danach fragt, wie man sich selbst das eigene Leben erzählt.
+    en: A biographical solo with camera and monitors, in which the distance between the body on stage and its image on screen asks how a life is told to oneself.
