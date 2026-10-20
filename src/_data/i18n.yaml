@@ -1,7 +1,7 @@
 tr:
   name: Türkçe
   nav: {program: Program, works: Oyunlar, people: Kişiler, network: Ağ, projects: Projeler, edu: "Tiyatro pedagojisi – Kurslar", about: Hakkımızda, contact: İletişim, venues: Mekânlar}
-  next: Yakında sahnede
+  next: Bir sonraki gösterim
   tickets: Bilet al
   register: Kaydol
   info: Bilgi
