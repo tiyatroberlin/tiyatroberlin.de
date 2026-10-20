@@ -31,6 +31,8 @@ tr:
   past: Oynandı
   upcoming: Yakında
   soon: Hazırlıkta
+  register_open: Kayıtlar açık
+  poster: Afiş
   year: Yıl
   people_intro: 2021'den beri Tiyatro Berlin'de çalışan herkes. Bir isme tıkla, yer aldığı bütün işleri gör.
   works_intro: 2021'den bugüne bütün oyunlar.
@@ -74,6 +76,8 @@ de:
   past: Gespielt
   upcoming: Demnächst
   soon: In Vorbereitung
+  register_open: Anmeldung offen
+  poster: Plakat
   year: Jahr
   people_intro: Alle, die seit 2021 mit Tiyatro Berlin gearbeitet haben. Ein Klick auf einen Namen zeigt alle Arbeiten.
   works_intro: Alle Produktionen seit 2021.
@@ -117,6 +121,8 @@ en:
   past: Played
   upcoming: Coming up
   soon: In the making
+  register_open: Registration open
+  poster: Poster
   year: Year
   people_intro: Everyone who has worked with Tiyatro Berlin since 2021. Click a name to see all their work.
   works_intro: Every production since 2021.

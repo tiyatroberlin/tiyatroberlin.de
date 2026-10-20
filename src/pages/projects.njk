@@ -8,7 +8,7 @@ eleventyComputed:
   alt: {tr: "/tr/projeler/", de: "/de/projekte/", en: "/en/projects/"}
 ---
 {%- set L = i18n[lang] -%}
-<section class="page-head"><div class="wrap"><h1 class="h-huge">{{ L.nav.projects }}</h1><p class="lede big">{{ projects_intro[lang] }}</p></div></section>
+<section class="page-head"><div class="wrap"><h1 class="h-huge">{{ L.nav.projects }}<span class="pt">.</span></h1><p class="lede big">{{ projects_intro[lang] }}</p></div></section>
 {%- for p in graph.projects %}
 <section class="section" id="{{ p.slug }}"><div class="wrap cols rev">
   <div><p class="kicker">{{ p.year }}</p><h2 class="h-big">{{ p.title }}</h2></div>

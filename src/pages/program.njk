@@ -9,7 +9,7 @@ eleventyComputed:
 ---
 {%- import "macros.njk" as m -%}
 {%- set L = i18n[lang] -%}
-<section class="page-head"><div class="wrap"><h1 class="h-huge">{{ L.nav.program }}</h1><p class="lede">{{ L.program_intro }}</p></div></section>
+<section class="page-head"><div class="wrap"><h1 class="h-huge">{{ L.nav.program }}<span class="pt">.</span></h1><p class="lede">{{ L.program_intro }}</p></div></section>
 <section class="section"><div class="wrap">
   {%- for g in graph.programByMonth %}
   <h2 class="month">{{ g.month | monthName(L) }} {{ g.month | yearOf }}</h2>

@@ -9,7 +9,7 @@ eleventyComputed:
 ---
 {%- set P = pages.about[lang] -%}
 {%- set L = i18n[lang] -%}
-<section class="page-head"><div class="wrap"><h1 class="h-huge">{{ P.title }}</h1><p class="lede big">{{ P.lead }}</p></div></section>
+<section class="page-head"><div class="wrap"><h1 class="h-huge">{{ P.title }}<span class="pt">.</span></h1><p class="lede big">{{ P.lead }}</p></div></section>
 {%- for s in P.sections %}
 <section class="section"><div class="wrap cols rev">
   <h2 class="h-big">{{ s.h }}</h2>

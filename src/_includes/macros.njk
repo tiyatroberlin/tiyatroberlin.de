@@ -4,7 +4,7 @@
   <div class="show-date">{% if s.approx %}{{ s.date | yearOf }}{% else %}{{ s.date | dm }}<small>{{ s.date | weekday(L) }}{% if s.time %} · {{ s.time }}{% endif %}</small>{% endif %}</div>
   <div class="show-title">
     {%- if s.external %}{{ s.title }}<span class="show-sub">{{ s.by }} · {{ s.sub | t(lang) }}</span>
-    {%- else %}<a href="{{ ('/' + lang + '/' + site.sections.works[lang] + '/' + s.work + '/') | url }}">{{ s.title }}</a>
+    {%- else %}<a href="{{ ('/' + lang + '/' + site.sections.works[lang] + '/' + s.work + '/') | url }}">{{ s.title }}<span class="pt">.</span></a>
     <span class="show-sub">{% if s.premiere and s.upcoming %}<span class="dot" aria-hidden="true"></span>{{ L.premiere }} · {% endif %}{{ graph.workBySlug[s.work].form | t(lang) }}</span>{% endif %}
   </div>
   <div class="show-where">{{ v.name }}<span>{{ v.district }}{% if v.city and v.city != 'Berlin' %}, {{ v.city }}{% endif %}</span>{% if s.price and s.upcoming %}<span>{{ s.price | t(lang) }}</span>{% endif %}</div>

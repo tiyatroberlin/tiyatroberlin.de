@@ -5,8 +5,8 @@
     {% if p.photo %}<figure class="portrait"><img src="{{ ('/assets/img/kisi/' + p.photo) | url }}" alt="{{ p.name }}" width="640" height="800"></figure>
     {% else %}<div class="portrait empty" aria-hidden="true"><span>{{ p.name | initials }}</span></div>{% endif %}
     <div>
-      {% if p.bio and p.bio.role %}<p class="kicker">{{ p.bio.role | t(lang) }}</p>{% endif %}
-      <h1>{{ p.name }}</h1>
+      {% if p.bio and p.bio.role %}<p class="label">{{ p.bio.role | t(lang) }}</p>{% endif %}
+      <h1>{{ p.name }}<span class="pt">.</span></h1>
     </div>
   </div>
 </section>

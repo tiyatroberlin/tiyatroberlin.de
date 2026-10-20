@@ -12,11 +12,12 @@ eleventyComputed:
 {%- set nw = graph.workBySlug[nxt.work] if nxt and not nxt.external else null -%}
 {% if nxt %}
 <section class="lead">
+  {% if nw and nw.image %}<figure class="lead-figure"><img src="{{ ('/assets/img/' + nw.image) | url }}" alt="" width="1400" height="1000"></figure>{% endif %}
   <div class="wrap">
-    <div>
+    <div class="lead-text">
       <p class="lead-when"><span class="dot" aria-hidden="true"></span>{{ L.next }}: {{ nxt.date | longDate(L, lang) }}, {{ nxt.date | weekday(L) }}{% if nxt.time %}, {{ nxt.time }}{% endif %}</p>
-      <h1 class="lead-title">{% if nw %}<a href="{{ ('/' + lang + '/' + S.works[lang] + '/' + nw.slug + '/') | url }}">{{ nxt.title }}</a>{% else %}{{ nxt.title }}{% endif %}</h1>
-      {% if nw %}<p class="lead-hook">{{ nw.hook | t(lang) }}</p>{% endif %}
+      <h1 class="lead-title">{% if nw %}<a href="{{ ('/' + lang + '/' + S.works[lang] + '/' + nw.slug + '/') | url }}">{{ nxt.title }}<span class="pt">.</span></a>{% else %}{{ nxt.title }}<span class="pt">.</span>{% endif %}</h1>
+      {% if nw %}<p class="lead-hook it">{{ nw.hook | t(lang) }}</p>{% endif %}
       <dl class="lead-meta">
         <dt>{{ L.where }}</dt><dd>{{ graph.venues[nxt.venue].name }}, {{ graph.venues[nxt.venue].district }}</dd>
         {% if nw %}<dt>{{ L.info }}</dt><dd>{{ nw.form | t(lang) }}</dd>{% endif %}
@@ -26,7 +27,6 @@ eleventyComputed:
       <a class="btn ghost" href="{{ ('/' + lang + '/' + S.program[lang] + '/') | url }}">{{ L.all_program }}</a>
       {% if nxt.eventim %}<div class="ticket" id="t-lead" hidden></div>{% endif %}
     </div>
-    {% if nw and nw.image %}<figure class="lead-figure"><img src="{{ ('/assets/img/oyun/' + nw.image) | url }}" alt="{{ nw.title }}" width="1000" height="1250"></figure>{% endif %}
   </div>
 </section>
 {% endif %}
@@ -57,15 +57,15 @@ eleventyComputed:
 <section class="section edu-teaser">
   <div class="wrap cols">
     <div>
-      <h2 class="h-big">{{ c.title | t(lang) }}</h2>
+      <p class="badge">{{ i18n[lang].register_open }}</p><h2 class="h-big">{{ c.title | t(lang) }}<span class="pt">.</span></h2>
       <p class="prose">{{ pages.edu[lang].lead }}</p>
     </div>
     <dl class="facts">
       <dt>{{ L.when }}</dt><dd>{{ c.when | t(lang) }}</dd>
       <dt>{{ L.where }}</dt><dd>{{ graph.venues[c.venue].address }}</dd>
       <dt>{{ L.price }}</dt><dd>{{ c.fee | t(lang) }}</dd>
-      <dt></dt><dd>{{ c.lang | t(lang) }} · {{ c.level | t(lang) }}</dd>
-      <dt></dt><dd><a class="btn" href="{{ c.form }}" rel="noopener">{{ L.register }}</a></dd>
+      <dt>{{ L.info }}</dt><dd>{{ c.lang | t(lang) }} · {{ c.level | t(lang) }}</dd>
+      </dl><p style="margin-top:1.2rem"><a class="btn red" href="{{ c.form }}" rel="noopener">{{ L.register }}</a></p><dl hidden>
     </dl>
   </div>
 </section>

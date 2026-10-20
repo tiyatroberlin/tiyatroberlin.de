@@ -4,7 +4,7 @@
 - slug: yakin
   title: YAKIN
   year: 2026
-  image: yakin.jpg
+  image: foto/yakin-yuz.jpg
   form: {tr: "Tek kişilik oyun, şarkılarla", de: "Solo mit Liedern", en: "Solo with songs"}
   hook: {tr: "Yakınlık bir bağımlılığa dönüşürse?", de: "Wenn Nähe zur Abhängigkeit wird.", en: "When closeness turns into dependence."}
   text:
@@ -30,7 +30,9 @@
 - slug: kozalar
   title: Kozalar
   year: 2025
-  image: kozalar.jpg
+  image: foto/kozalar-uc.jpg
+  poster: oyun/kozalar.jpg
+  gallery: [foto/kozalar-grotesk.jpg, foto/kozalar-portre.jpg, foto/kozalar-mavi.jpg, foto/kozalar-cigl.jpg]
   form: {tr: "Adalet Ağaoğlu'nun oyunu", de: "Stück von Adalet Ağaoğlu", en: "A play by Adalet Ağaoğlu"}
   hook: {tr: "Bize dokunmasınlar da ne yaparlarsa yapsınlar.", de: "Sollen sie doch machen, was sie wollen, solange sie uns in Ruhe lassen.", en: "Let them do whatever they like, as long as they leave us alone."}
   quote: true
@@ -63,7 +65,7 @@
 - slug: pride-93
   title: Pride '93
   year: 2024
-  image: pride-93.jpg
+  image: oyun/pride-93.jpg
   form: {tr: "Belgesel tiyatro", de: "Dokumentartheater", en: "Documentary theatre"}
   hook: {tr: "İstanbul, 1993. İlk Onur Yürüyüşü başlamadan yasaklanıyor.", de: "Istanbul, 1993. Der erste Pride wird verboten, bevor er beginnt.", en: "Istanbul, 1993. The first Pride is banned before it begins."}
   text:
@@ -108,7 +110,7 @@
 - slug: uftade
   title: Üftade
   year: 2023
-  image: uftade.jpg
+  image: oyun/uftade.jpg
   form: {tr: "Oyun", de: "Stück", en: "Play"}
   hook: {tr: "Haziran 2013. Bir tiyatro sahnesi revire dönüşüyor.", de: "Juni 2013. Eine Theaterbühne wird zum Lazarett.", en: "June 2013. A stage becomes a field hospital."}
   text:
@@ -138,7 +140,7 @@
 - slug: yeni-bir-hayat-icin
   title: Yeni Bir Hayat İçin
   year: 2023
-  image: yeni-bir-hayat-icin.jpg
+  image: oyun/yeni-bir-hayat-icin.jpg
   form: {tr: "Tek kişilik oyun", de: "Solo", en: "Solo"}
   hook: {tr: Orta yaş, orta sınıf, yeni bir kimlik., de: "Mitte des Lebens, Mittelschicht, neue Identität.", en: "Midlife, middle class, a new identity."}
   text:
@@ -172,7 +174,7 @@
 - slug: avzer
   title: Avzer
   year: 2023
-  image: avzer.jpg
+  image: oyun/avzer.jpg
   form: {tr: "Tek kişilik oyun", de: "Solo", en: "Solo"}
   hook: {tr: "Ankara, Haziran 2013. Bir sokak çocuğu değişmiş bir şehre uyanıyor.", de: "Ankara, Juni 2013. Ein Straßenkind erwacht in einer veränderten Stadt.", en: "Ankara, June 2013. A street kid wakes up in a changed city."}
   text:
@@ -206,7 +208,7 @@
 - slug: sen-istanbuldan-daha-guzelsin
   title: Sen İstanbul'dan Daha Güzelsin
   year: 2023
-  image: sen-istanbuldan.jpg
+  image: oyun/sen-istanbuldan.jpg
   form: {tr: "Oyun", de: "Stück", en: "Play"}
   hook: {tr: "Büyükanne, anne, torun. Bir şehirde elli yıl.", de: "Großmutter, Mutter, Enkelin. Fünfzig Jahre in einer Stadt.", en: "Grandmother, mother, granddaughter. Fifty years in one city."}
   text:
@@ -241,7 +243,7 @@
 - slug: ondan-sonra
   title: O'ndan Sonra
   year: 2022
-  image: ondan-sonra.jpg
+  image: oyun/ondan-sonra.jpg
   form: {tr: "Kulaklıklı şehir yürüyüşü", de: "Audiowalk", en: "Audio walk"}
   hook: {tr: "Dört yabancı ve görünmeyen bir Hanım.", de: "Vier Fremde und eine unsichtbare Dame.", en: "Four strangers and an invisible lady."}
   text:
@@ -274,7 +276,7 @@
 - slug: nested
   title: Nested
   year: 2022
-  image: nested.jpg
+  image: oyun/nested.jpg
   form: {tr: "Açık havada performans", de: "Performance im Freien", en: "Outdoor performance"}
   hook: {tr: "Göç sanatçıya ne yapar?", de: "Was macht Migration mit Künstler*innen?", en: "What does migration do to artists?"}
   text:
@@ -305,7 +307,6 @@
 - slug: uzak
   title: Uzak
   year: 2021
-  image: uzak.jpg
   form: {tr: "Tek seyircilik kulaklıklı yürüyüş", de: "Audiowalk für eine Person", en: "Audio walk for one"}
   hook: {tr: Tek seyirci, bir mahalle, iki zaman., de: "Eine Person, ein Viertel, zwei Zeiten.", en: "One spectator, one neighbourhood, two times."}
   text:
@@ -339,7 +340,9 @@
 - slug: 80lerde-lubunya-olmak
   title: 80'lerde Lubunya Olmak
   year: 2021
-  image: lubunya.jpg
+  image: foto/lubunya-sahne.jpg
+  poster: oyun/lubunya.jpg
+  gallery: [foto/lubunya-eldiven.jpg]
   form: {tr: "Tek kişilik performans", de: "Solo-Performance", en: "Solo performance"}
   hook: {tr: Bir trans kadın, 1980 darbesinin gölgesinde bir hayat., de: "Eine trans Frau, ein Leben im Schatten des Putsches von 1980.", en: "A trans woman, a life in the shadow of the 1980 coup."}
   text:

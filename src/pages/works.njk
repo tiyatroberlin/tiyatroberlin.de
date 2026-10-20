@@ -8,15 +8,15 @@ eleventyComputed:
   alt: {tr: "/tr/oyunlar/", de: "/de/stuecke/", en: "/en/works/"}
 ---
 {%- set L = i18n[lang] -%}
-<section class="page-head"><div class="wrap"><h1 class="h-huge">{{ L.nav.works }}</h1><p class="lede">{{ L.works_intro }}</p></div></section>
+<section class="page-head"><div class="wrap"><h1 class="h-huge">{{ L.nav.works }}<span class="pt">.</span></h1><p class="lede">{{ L.works_intro }}</p></div></section>
 <section class="section"><div class="wrap">
   {%- for y in graph.yearList | reverse %}
   <h2 class="month">{{ y.year }}</h2>
   <div class="works">
     {%- for w in y.works %}
     <a class="work" href="{{ ('/' + lang + '/' + site.sections.works[lang] + '/' + w.slug + '/') | url }}">
-      {% if w.image %}<img src="{{ ('/assets/img/oyun/' + w.image) | url }}" alt="" loading="lazy" width="1000" height="1250">{% else %}<div class="work-ph" aria-hidden="true">{{ w.title }}</div>{% endif %}
-      <h3>{{ w.title }}</h3>
+      {% if w.poster or w.image %}<img src="{{ ('/assets/img/' + (w.poster or w.image)) | url }}" alt="" loading="lazy" width="1000" height="1250">{% else %}<div class="work-ph" aria-hidden="true">{{ w.title }}</div>{% endif %}
+      <h3>{{ w.title }}<span class="pt">.</span></h3>
       <p>{% if w.upcoming | length %}<span class="dot" aria-hidden="true"></span>{% endif %}{{ w.form | t(lang) }} · {{ w.year }}</p>
     </a>
     {%- endfor %}
