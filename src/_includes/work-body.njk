@@ -6,7 +6,7 @@
     <div>
       <p class="label">{{ w.form | t(lang) }} · {{ w.year }}</p>
       <h1>{{ w.title }}<span class="pt">.</span></h1>
-      <p class="hook it">{{ w.hook | t(lang) }}</p>
+      {% if w.quote %}<p class="hook it">{{ w.hook | t(lang) }}</p>{% endif %}
       <dl class="facts">
         {%- if w.premiere %}<dt>{{ L.premiere }}</dt><dd>{% if w.premiere.approx %}{{ w.premiere.date | yearOf }}{% else %}{{ w.premiere.date | dmy }}{% endif %}, {{ graph.venues[w.premiere.venue].name }}{% if graph.venues[w.premiere.venue].city %}, {{ graph.venues[w.premiere.venue].city }}{% endif %}</dd>{% endif %}
         {%- if w.partners %}<dt>{{ L.partners }}</dt><dd>{% for p in w.partners %}{{ graph.db.partners[p].name }}{% if not loop.last %}, {% endif %}{% endfor %}</dd>{% endif %}
