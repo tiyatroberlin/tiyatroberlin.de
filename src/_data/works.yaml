@@ -59,6 +59,8 @@
 - slug: the-monologue-box
   title: The Monologue Box
   year: 2026
+  image: oyun/the-monologue-box.jpg
+  poster: oyun/the-monologue-box.jpg
   form: {tr: "Birebir performans", de: "One-on-One-Performance", en: "One-to-one performance"}
   info: {tr: "Proud Haram Festivali 2026 programında. İngilizce.", de: "Im Rahmen des Proud Haram Festivals 2026. Auf Englisch.", en: "Part of Proud Haram Festival 2026. In English."}
   text:
