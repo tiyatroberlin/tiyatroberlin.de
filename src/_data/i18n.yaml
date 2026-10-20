@@ -47,7 +47,7 @@ tr:
   teachers: Eğitmenler
 de:
   name: Deutsch
-  nav: {program: Spielplan, works: Stücke, people: Menschen, network: Netzwerk, projects: Projekte, edu: "Theaterpädagogik – Kurse", about: Über uns, contact: Kontakt}
+  nav: {program: Spielplan, works: Stücke, people: Ensemble, network: Netzwerk, projects: Projekte, edu: "Theaterpädagogik – Kurse", about: Über uns, contact: Kontakt}
   next: Demnächst
   tickets: Tickets
   register: Anmelden
@@ -94,7 +94,7 @@ de:
   teachers: Leitung
 en:
   name: English
-  nav: {program: Programme, works: Works, people: People, network: Network, projects: Projects, edu: "Theatre education – Courses", about: About, contact: Contact}
+  nav: {program: Programme, works: Works, people: Ensemble, network: Network, projects: Projects, edu: "Theatre education – Courses", about: About, contact: Contact}
   next: Coming up
   tickets: Tickets
   register: Sign up
