@@ -20,7 +20,7 @@ jobs:
       - run: npm ci
       - run: npx @11ty/eleventy
         env:
-          PATH_PREFIX: ${{ vars.PATH_PREFIX || '/tiyatroberlin.de/' }}
+          PATH_PREFIX: ${{ vars.PATH_PREFIX || '/' }}
       - uses: actions/upload-pages-artifact@v3
         with: {path: _site}
   deploy:
