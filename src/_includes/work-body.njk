@@ -13,7 +13,7 @@
         {%- if w.funders %}<dt>{{ L.support }}</dt><dd>{% for f in w.funders %}{{ graph.db.funders[f].name }}{% if not loop.last %}, {% endif %}{% endfor %}</dd>{% endif %}
       </dl>
     </div>
-    {% if w.image %}<figure class="poster"><img src="{{ ('/assets/img/' + w.image) | url }}" alt="{{ w.title }}" width="1000" height="1250"></figure>{% endif %}
+    {% if w.image %}<figure class="poster"><img src="{{ ('/assets/img/' + w.image) | url }}?v={{ build }}" alt="{{ w.title }}" width="1000" height="1250"></figure>{% endif %}
   </div>
 </section>
 
@@ -53,8 +53,8 @@
 {% if w.gallery or (w.poster and w.poster != w.image) %}
 <section class="section"><div class="wrap">
   <div class="gallery">
-    {%- for g in w.gallery or [] %}<figure><img src="{{ ('/assets/img/' + g) | url }}" alt="{{ w.title }}" loading="lazy"></figure>{% endfor %}
-    {%- if w.poster %}<figure class="g-poster"><img src="{{ ('/assets/img/' + w.poster) | url }}" alt="{{ w.title }}" loading="lazy"><figcaption class="label">{{ i18n[lang].poster }}</figcaption></figure>{% endif %}
+    {%- for g in w.gallery or [] %}<figure><img src="{{ ('/assets/img/' + g) | url }}?v={{ build }}" alt="{{ w.title }}" loading="lazy"></figure>{% endfor %}
+    {%- if w.poster %}<figure class="g-poster"><img src="{{ ('/assets/img/' + w.poster) | url }}?v={{ build }}" alt="{{ w.title }}" loading="lazy"><figcaption class="label">{{ i18n[lang].poster }}</figcaption></figure>{% endif %}
   </div>
 </div></section>
 {% endif %}

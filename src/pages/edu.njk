@@ -12,7 +12,7 @@ eleventyComputed:
 <section class="page-head"><div class="wrap"><h1 class="h-huge">{{ P.title }}<span class="pt">.</span></h1><p class="lede big">{{ P.lead }}</p></div></section>
 <section class="section"><div class="wrap cols">
   <div class="prose">{{ P.body | paras | safe }}</div>
-  <figure class="poster"><img src="{{ '/assets/img/oyun/atolye.jpg' | url }}" alt="" loading="lazy" width="1000" height="556"></figure>
+  <figure class="poster"><img src="{{ '/assets/img/oyun/atolye.jpg' | url }}?v={{ build }}" alt="" loading="lazy" width="1000" height="556"></figure>
 </div></section>
 {%- for c in graph.courses %}
 <section class="section"><div class="wrap cols">

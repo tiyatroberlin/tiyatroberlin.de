@@ -1,6 +1,6 @@
 tr:
   name: Türkçe
-  nav: {program: Program, works: Oyunlar, people: Kişiler, network: Ağ, projects: Projeler, edu: Tiyatro pedagojisi, about: Hakkımızda, contact: İletişim}
+  nav: {program: Program, works: Oyunlar, people: Kişiler, network: Ağ, projects: Projeler, edu: "Tiyatro pedagojisi – Kurslar", about: Hakkımızda, contact: İletişim}
   next: Yakında sahnede
   tickets: Bilet al
   register: Kaydol
@@ -31,6 +31,7 @@ tr:
   past: Oynandı
   upcoming: Yakında
   soon: Hazırlıkta
+  starts: Başlangıç
   register_open: Kayıtlar açık
   poster: Afiş
   year: Yıl
@@ -45,7 +46,7 @@ tr:
   teachers: Eğitmenler
 de:
   name: Deutsch
-  nav: {program: Spielplan, works: Stücke, people: Menschen, network: Netzwerk, projects: Projekte, edu: Theaterpädagogik, about: Über uns, contact: Kontakt}
+  nav: {program: Spielplan, works: Stücke, people: Menschen, network: Netzwerk, projects: Projekte, edu: "Theaterpädagogik – Kurse", about: Über uns, contact: Kontakt}
   next: Demnächst
   tickets: Tickets
   register: Anmelden
@@ -76,6 +77,7 @@ de:
   past: Gespielt
   upcoming: Demnächst
   soon: In Vorbereitung
+  starts: Beginn
   register_open: Anmeldung offen
   poster: Plakat
   year: Jahr
@@ -90,7 +92,7 @@ de:
   teachers: Leitung
 en:
   name: English
-  nav: {program: Programme, works: Works, people: People, network: Network, projects: Projects, edu: Theatre education, about: About, contact: Contact}
+  nav: {program: Programme, works: Works, people: People, network: Network, projects: Projects, edu: "Theatre education – Courses", about: About, contact: Contact}
   next: Coming up
   tickets: Tickets
   register: Sign up
@@ -121,6 +123,7 @@ en:
   past: Played
   upcoming: Coming up
   soon: In the making
+  starts: Starts
   register_open: Registration open
   poster: Poster
   year: Year

@@ -15,7 +15,7 @@ eleventyComputed:
   <div class="works">
     {%- for w in y.works %}
     <a class="work" href="{{ ('/' + lang + '/' + site.sections.works[lang] + '/' + w.slug + '/') | url }}">
-      {% if w.poster or w.image %}<img src="{{ ('/assets/img/' + (w.poster or w.image)) | url }}" alt="" loading="lazy" width="1000" height="1250">{% else %}<div class="work-ph" aria-hidden="true">{{ w.title }}</div>{% endif %}
+      {% if w.poster or w.image %}<img src="{{ ('/assets/img/' + (w.poster or w.image)) | url }}?v={{ build }}" alt="" loading="lazy" width="1000" height="1250">{% else %}<div class="work-ph" aria-hidden="true">{{ w.title }}</div>{% endif %}
       <h3>{{ w.title }}<span class="pt">.</span></h3>
       <p>{% if w.upcoming | length %}<span class="dot" aria-hidden="true"></span>{% endif %}{{ w.form | t(lang) }} · {{ w.year }}</p>
     </a>

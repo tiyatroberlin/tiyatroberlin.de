@@ -10,7 +10,7 @@
 <meta name="description" content="{{ description or (pages.about[lang].lead | truncate(155)) }}">
 <link rel="stylesheet" href="{{ '/assets/css/site.css' | url }}?v={{ build }}">
 <meta name="theme-color" content="#0b0b0b">
-<link rel="icon" href="{{ '/assets/img/favicon.png' | url }}">
+<link rel="icon" href="{{ '/assets/img/favicon.png' | url }}?v={{ build }}">
 {%- for l in site.langs %}{% if alt and alt[l] %}
 <link rel="alternate" hreflang="{{ l }}" href="{{ alt[l] | url }}">{% endif %}{% endfor %}
 <meta property="og:title" content="{{ title or 'Tiyatro Berlin' }}">
@@ -21,7 +21,7 @@
 <header class="mast">
   <div class="wrap">
     <a class="brand" href="{{ ('/' + lang + '/') | url }}" aria-label="Tiyatro Berlin">
-      <img src="{{ '/assets/img/logo-beyaz.png' | url }}" alt="" width="218" height="96"><span class="visually-hidden">Tiyatro Berlin</span>
+      <img src="{{ '/assets/img/logo-beyaz.png' | url }}?v={{ build }}" alt="" width="218" height="96"><span class="visually-hidden">Tiyatro Berlin</span>
     </a>
     <button class="menu-btn" aria-expanded="false" aria-controls="nav">{{ L.menu }}</button>
     <nav class="nav" id="nav">

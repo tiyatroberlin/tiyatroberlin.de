@@ -1,4 +1,15 @@
 # Ağ ve destek projeleri. Bilgisi eksik olanlar soru listesinde.
+- slug: right-of-entry
+  title: RIGHT OF ENTRY
+  year: 2027
+  status: soon
+  text:
+    tr: |
+      RIGHT OF ENTRY, hazırlığı süren ve 2027'de başlayacak bir proje. Türkiye'den Berlin'e gelecek sanatçıların yolunu daha Türkiye'deyken açmayı amaçlıyor: ilk temaslar ve tanışmalar orada kurulacak, böylece Berlin'e varıldığında üretim, ağ ve görünürlük için bir zemin hazır olacak.
+    de: |
+      RIGHT OF ENTRY ist in Vorbereitung und beginnt 2027. Das Projekt will Künstler*innen, die aus der Türkei nach Berlin kommen, den Weg ebnen, solange sie noch in der Türkei sind: Erste Kontakte und Begegnungen entstehen dort, sodass bei der Ankunft in Berlin bereits ein Boden für Produktion, Vernetzung und Sichtbarkeit bereitet ist.
+    en: |
+      RIGHT OF ENTRY is in preparation and will begin in 2027. It aims to open the way for artists moving from Turkey to Berlin while they are still in Turkey: first contacts and encounters will take place there, so that on arrival in Berlin there is already ground for production, networking and visibility.
 - slug: mut-zur-buehne
   title: Mut zur Bühne
   year: 2025
@@ -11,13 +22,3 @@
       Mut zur Bühne entstand 2025 mit Unterstützung des Programms Durchstarten und richtete sich unter der Leitung von Hazal Erdal an Menschen, die auf die Bühne wollen, aber dafür noch keine Tür gefunden haben.
     en: |
       Mut zur Bühne was realised in 2025 with support from the Durchstarten programme and, led by Hazal Erdal, reached out to people who want to be on stage but have not yet found a way in.
-- slug: right-of-entry
-  title: RIGHT OF ENTRY
-  year: 2026
-  text:
-    tr: |
-      RIGHT OF ENTRY, Türkiye'den Berlin'e gelen sanatçıların yolunu daha Türkiye'deyken açmaya çalışan bir proje: ilk temaslar ve tanışmalar oradayken kuruluyor, Berlin'e varıldığında ise üretim, ağ ve görünürlük için bir zemin hazır bekliyor.
-    de: |
-      RIGHT OF ENTRY will Künstler*innen, die aus der Türkei nach Berlin kommen, den Weg schon ebnen, solange sie noch in der Türkei sind: Erste Kontakte und Begegnungen entstehen dort, und bei der Ankunft in Berlin wartet bereits ein Boden für Produktion, Vernetzung und Sichtbarkeit.
-    en: |
-      RIGHT OF ENTRY aims to open the way for artists moving from Turkey to Berlin while they are still in Turkey: first contacts and encounters happen there, so that on arrival in Berlin there is already ground for production, networking and visibility.

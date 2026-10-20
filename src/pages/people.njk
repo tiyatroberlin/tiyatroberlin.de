@@ -13,7 +13,7 @@ eleventyComputed:
   <ul class="faces">
   {%- for p in graph.personList %}{% if not p.org and p.photo %}
     <li><a href="{{ ('/' + lang + '/' + site.sections.people[lang] + '/' + p.slug + '/') | url }}">
-      <img src="{{ ('/assets/img/kisi/' + p.photo) | url }}" alt="" loading="lazy" width="640" height="800">
+      <img src="{{ ('/assets/img/kisi/' + p.photo) | url }}?v={{ build }}" alt="" loading="lazy" width="640" height="800">
       <span class="face-name">{{ p.name }}</span><span class="face-n">{{ p.works | length }} {{ L.counts.works }}</span></a></li>
   {%- endif %}{% endfor %}
   </ul>

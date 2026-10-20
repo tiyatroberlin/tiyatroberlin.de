@@ -2,7 +2,7 @@
 {%- set S = site.sections -%}
 <section class="person-head">
   <div class="wrap">
-    {% if p.photo %}<figure class="portrait"><img src="{{ ('/assets/img/kisi/' + p.photo) | url }}" alt="{{ p.name }}" width="640" height="800"></figure>
+    {% if p.photo %}<figure class="portrait"><img src="{{ ('/assets/img/kisi/' + p.photo) | url }}?v={{ build }}" alt="{{ p.name }}" width="640" height="800"></figure>
     {% else %}<div class="portrait empty" aria-hidden="true"><span>{{ p.name | initials }}</span></div>{% endif %}
     <div>
       {% if p.bio and p.bio.role %}<p class="label">{{ p.bio.role | t(lang) }}</p>{% endif %}

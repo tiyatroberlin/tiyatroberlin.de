@@ -12,7 +12,7 @@ eleventyComputed:
 {%- set nw = graph.workBySlug[nxt.work] if nxt and not nxt.external else null -%}
 {% if nxt %}
 <section class="lead">
-  {% if nw and nw.image %}<figure class="lead-figure"><img src="{{ ('/assets/img/' + nw.image) | url }}" alt="" width="1400" height="1000"></figure>{% endif %}
+  {% if nw and nw.image %}<figure class="lead-figure"><img src="{{ ('/assets/img/' + nw.image) | url }}?v={{ build }}" alt="" width="1400" height="1000"></figure>{% endif %}
   <div class="wrap">
     <div class="lead-text">
       <p class="lead-when"><span class="dot" aria-hidden="true"></span>{{ L.next }}: {{ nxt.date | longDate(L, lang) }}, {{ nxt.date | weekday(L) }}{% if nxt.time %}, {{ nxt.time }}{% endif %}</p>
@@ -35,7 +35,7 @@ eleventyComputed:
   <div class="wrap">
     <div class="section-head"><h2>{{ L.nav.program }}</h2><a href="{{ ('/' + lang + '/' + S.program[lang] + '/') | url }}">{{ L.all_program }}</a></div>
     <ul class="shows">
-      {%- for s in graph.program %}{% if loop.index > 1 and loop.index <= 7 %}{{ m.showRow(s, lang, L, graph, site, loop.index) }}{% endif %}{% endfor %}
+      {%- for s in graph.program %}{% if loop.index <= 7 %}{{ m.showRow(s, lang, L, graph, site, loop.index) }}{% endif %}{% endfor %}
     </ul>
   </div>
 </section>
