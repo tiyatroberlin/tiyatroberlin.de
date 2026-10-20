@@ -11,7 +11,7 @@ eleventyComputed:
 <section class="page-head"><div class="wrap"><h1 class="h-huge">{{ L.nav.works }}<span class="pt">.</span></h1><p class="lede">{{ L.works_intro }}</p></div></section>
 <section class="section"><div class="wrap">
   {%- for y in graph.yearList | reverse %}
-  <h2 class="month">{{ y.year }}</h2>
+  <h2 class="month">{{ y.year }}<span class="pt">.</span></h2>
   <div class="works">
     {%- for w in y.works %}
     <a class="work" href="{{ ('/' + lang + '/' + site.sections.works[lang] + '/' + w.slug + '/') | url }}">

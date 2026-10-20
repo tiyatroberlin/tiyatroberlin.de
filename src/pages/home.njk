@@ -33,7 +33,7 @@ eleventyComputed:
 
 <section class="section">
   <div class="wrap">
-    <div class="section-head"><h2>{{ L.nav.program }}</h2><a href="{{ ('/' + lang + '/' + S.program[lang] + '/') | url }}">{{ L.all_program }}</a></div>
+    <div class="section-head"><h2>{{ L.nav.program }}<span class="pt">.</span></h2><a href="{{ ('/' + lang + '/' + S.program[lang] + '/') | url }}">{{ L.all_program }}</a></div>
     <ul class="shows">
       {%- for s in graph.program %}{% if loop.index <= 7 %}{{ m.showRow(s, lang, L, graph, site, loop.index) }}{% endif %}{% endfor %}
     </ul>
@@ -43,11 +43,11 @@ eleventyComputed:
 
 <section class="section soon">
   <div class="wrap">
-    <div class="section-head"><h2>{{ L.soon }}</h2></div>
+    <div class="section-head"><h2>{{ L.soon }}<span class="pt">.</span></h2></div>
     <ul class="soon-list">
       {%- for s in graph.soon %}
       <li><p class="kicker">{{ s.when | t(lang) }} · {{ graph.venues[s.venue].name }}{% if s.by %} · {{ s.by }}{% endif %}</p>
-        <h3>{{ s.title }}</h3><p class="soon-form">{{ s.form | t(lang) }}</p><p>{{ s.text | t(lang) }}</p></li>
+        <h3>{{ s.title }}<span class="pt">.</span></h3><p class="soon-form">{{ s.form | t(lang) }}</p><p>{{ s.text | t(lang) }}</p></li>
       {%- endfor %}
     </ul>
   </div>
@@ -72,10 +72,10 @@ eleventyComputed:
 
 <section class="section">
   <div class="wrap">
-    <div class="section-head"><h2>{{ L.archive }}</h2><a href="{{ ('/' + lang + '/' + S.works[lang] + '/') | url }}">{{ L.all_works }}</a></div>
+    <div class="section-head"><h2>{{ L.archive }}<span class="pt">.</span></h2><a href="{{ ('/' + lang + '/' + S.works[lang] + '/') | url }}">{{ L.all_works }}</a></div>
     <div class="years" style="--n:{{ graph.yearList | length }}">
       {%- for y in graph.yearList %}
-      <div class="year"><h3>{{ y.year }}</h3><ul>{% for w in y.works %}<li><a href="{{ ('/' + lang + '/' + S.works[lang] + '/' + w.slug + '/') | url }}">{{ w.title }}</a></li>{% endfor %}</ul></div>
+      <div class="year"><h3>{{ y.year }}<span class="pt">.</span></h3><ul>{% for w in y.works %}<li><a href="{{ ('/' + lang + '/' + S.works[lang] + '/' + w.slug + '/') | url }}">{{ w.title }}</a></li>{% endfor %}</ul></div>
       {%- endfor %}
     </div>
   </div>

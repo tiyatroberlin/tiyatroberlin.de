@@ -11,7 +11,7 @@ eleventyComputed:
 <section class="page-head"><div class="wrap"><h1 class="h-huge">{{ L.nav.projects }}<span class="pt">.</span></h1><p class="lede big">{{ projects_intro[lang] }}</p></div></section>
 {%- for p in graph.projects %}
 <section class="section" id="{{ p.slug }}"><div class="wrap cols rev">
-  <div>{% if p.status == "soon" %}<p class="kicker"><span class="badge">{{ L.soon }}</span> {{ L.starts }} {{ p.year }}</p>{% else %}<p class="kicker">{{ p.year }}</p>{% endif %}<h2 class="h-big">{{ p.title }}</h2></div>
+  <div>{% if p.status == "soon" %}<p class="kicker"><span class="badge">{{ L.soon }}</span> {{ L.starts }} {{ p.year }}</p>{% else %}<p class="kicker">{{ p.year }}</p>{% endif %}<h2 class="h-big">{{ p.title }}<span class="pt">.</span></h2></div>
   <div class="prose">{{ p.text | t(lang) | paras | safe }}
     {% if p.funders %}<p class="note">{{ L.support }}: {% for f in p.funders %}{{ graph.db.funders[f].name }}{% endfor %}</p>{% endif %}
   </div>

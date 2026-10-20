@@ -12,25 +12,25 @@ eleventyComputed:
 <section class="page-head"><div class="wrap"><h1 class="h-huge">{{ L.nav.program }}<span class="pt">.</span></h1><p class="lede">{{ L.program_intro }}</p></div></section>
 <section class="section"><div class="wrap">
   {%- for g in graph.programByMonth %}
-  <h2 class="month">{{ g.month | monthName(L) }} {{ g.month | yearOf }}</h2>
+  <h2 class="month">{{ g.month | monthName(L) }} {{ g.month | yearOf }}<span class="pt">.</span></h2>
   <ul class="shows">{% for s in g.shows %}{{ m.showRow(s, lang, L, graph, site, loop.index + loop.length * 0) }}{% endfor %}</ul>
   {%- endfor %}
 </div></section>
 
 <section class="section soon">
   <div class="wrap">
-    <div class="section-head"><h2>{{ L.soon }}</h2></div>
+    <div class="section-head"><h2>{{ L.soon }}<span class="pt">.</span></h2></div>
     <ul class="soon-list">
       {%- for s in graph.soon %}
       <li><p class="kicker">{{ s.when | t(lang) }} · {{ graph.venues[s.venue].name }}{% if s.by %} · {{ s.by }}{% endif %}</p>
-        <h3>{{ s.title }}</h3><p class="soon-form">{{ s.form | t(lang) }}</p><p>{{ s.text | t(lang) }}</p></li>
+        <h3>{{ s.title }}<span class="pt">.</span></h3><p class="soon-form">{{ s.form | t(lang) }}</p><p>{{ s.text | t(lang) }}</p></li>
       {%- endfor %}
     </ul>
   </div>
 </section>
 
 <section class="section"><div class="wrap">
-  <div class="section-head"><h2>{{ L.nav.edu }}</h2></div>
+  <div class="section-head"><h2>{{ L.nav.edu }}<span class="pt">.</span></h2></div>
   <ul class="shows">
   {%- for c in graph.courses %}
     <li class="show">
