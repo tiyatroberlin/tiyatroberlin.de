@@ -79,7 +79,7 @@ p{margin:0 0 1em}
 .lead-meta dt{color:var(--mute)}
 .lead-meta dd{margin:0}
 .lead-figure{margin:0;position:relative}
-.lead-figure img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.lead-figure img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 30%}
 @media (max-width:760px){.lead .wrap{grid-template-columns:1fr}.lead-figure{order:-1}.lead-figure img{aspect-ratio:3/2}}
 
 /* ---------- düğmeler ---------- */
