@@ -8,7 +8,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% if title %}{{ title }} · {% endif %}Tiyatro Berlin</title>
 <meta name="description" content="{{ description or (pages.about[lang].lead | truncate(155)) }}">
-<link rel="stylesheet" href="{{ '/assets/css/site.css' | url }}">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | url }}?v={{ build }}">
+<meta name="theme-color" content="#0b0b0b">
 <link rel="icon" href="{{ '/assets/img/favicon.png' | url }}">
 {%- for l in site.langs %}{% if alt and alt[l] %}
 <link rel="alternate" hreflang="{{ l }}" href="{{ alt[l] | url }}">{% endif %}{% endfor %}

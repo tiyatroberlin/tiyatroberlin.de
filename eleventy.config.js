@@ -16,6 +16,7 @@ export default function (cfg) {
   cfg.addFilter("longDate", (iso, i18n, lang) => { const d = +iso.slice(8, 10), m = i18n.months[+iso.slice(5, 7) - 1]; return lang === "en" ? `${d} ${m}` : lang === "de" ? `${d}. ${m}` : `${d} ${m}`; });
   cfg.addFilter("monthName", (iso, i18n) => i18n.months[+iso.slice(5, 7) - 1]);
   cfg.addFilter("roleName", (roles, key, lang) => roles[key][{ tr: 0, de: 1, en: 2 }[lang]]);
+  cfg.addGlobalData("build", () => Date.now().toString(36));
   cfg.addFilter("json", (v) => JSON.stringify(v));
   cfg.addFilter("initials", (n) => n.split(" ").map((w) => w[0]).slice(0, 2).join(""));
 
