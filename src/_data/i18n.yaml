@@ -62,7 +62,7 @@ tr:
   pages_h: Sayfalar
   counts_one: {works: oyun}
   support_program: Destekleyen program
-  site_desc: "Tiyatro Berlin, 2021'den beri Berlin'de Türkçe ve çok dilli oyunlar, kulaklıklı yürüyüşler ve oyunculuk kursları üreten bağımsız bir tiyatro kolektifi."
+  site_desc: "Tiyatro Berlin, 2021'den beri Berlin'de oyunlar, kulaklıklı yürüyüşler, mekâna özgü işler ve oyunculuk atölyeleri üreten bağımsız bir tiyatro kolektifi."
 de:
   name: Deutsch
   nav: {program: Spielplan, works: Produktionen, people: Ensemble, network: Netzwerk, projects: Projekte, edu: "Theaterpädagogik – Kurse", about: Über uns, contact: Kontakt, venues: Spielorte}
@@ -127,7 +127,7 @@ de:
   pages_h: Seiten
   counts_one: {works: Produktion}
   support_program: Gefördert durch
-  site_desc: "Tiyatro Berlin ist ein freies Theaterkollektiv in Berlin: Produktionen auf Türkisch und mehrsprachig, Audiowalks und Schauspielkurse, seit 2021."
+  site_desc: "Tiyatro Berlin ist ein freies Theaterkollektiv in Berlin: Stücke, Audiowalks, ortsspezifische Arbeiten und Schauspielkurse, seit 2021."
 en:
   name: English
   nav: {program: Programme, works: Productions, people: Ensemble, network: Network, projects: Projects, edu: "Theatre education – Courses", about: About, contact: Contact, venues: Venues}
@@ -192,4 +192,4 @@ en:
   pages_h: Pages
   counts_one: {works: production}
   support_program: Supported by
-  site_desc: "Tiyatro Berlin is an independent theatre collective in Berlin, making Turkish-language and multilingual productions, audio walks and acting courses since 2021."
+  site_desc: "Tiyatro Berlin is an independent theatre collective in Berlin, making plays, audio walks, site-specific work and acting courses since 2021."
