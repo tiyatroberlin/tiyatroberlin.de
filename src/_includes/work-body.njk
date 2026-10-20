@@ -31,7 +31,7 @@
     {% if w.sources %}<p class="note">{{ w.sources | t(lang) }}</p>{% endif %}
   </div>
   <aside>
-    <h2 class="sub-h">{{ L.credits }}</h2>
+    {% if w.credits.length %}<h2 class="sub-h">{{ L.credits }}</h2>{% endif %}
     <dl class="credits">
       {%- for c in w.credits %}
       <div><dt>{{ graph.db.roles | roleName(c.role, lang) }}</dt>

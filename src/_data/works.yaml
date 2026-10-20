@@ -27,6 +27,56 @@
     - {date: 2026-11-22, time: "19:00", venue: moda-bar, premiere: true, eventim: 6ace5a69a47cb7abb7b2496e, price: {tr: "20 €", de: "20 €", en: "€20"}}
     - {date: 2026-11-29, time: "19:00", venue: moda-bar, eventim: 6ace5aa484ed3c6a8a6549e6, price: {tr: "20 €", de: "20 €", en: "€20"}}
 
+- slug: zwei-staedte-ein-koerper
+  title: Zwei Städte, Ein Körper
+  year: 2026
+  form: {tr: "Mekâna özgü ses yürüyüşü", de: "Ortsspezifischer Audiowalk", en: "Site-specific audio walk"}
+  info: {tr: "Proud Haram Festival 2026 programında. Almanca.", de: "Im Programm des Proud Haram Festival 2026. Auf Deutsch.", en: "Part of Proud Haram Festival 2026. In German."}
+  text:
+    tr: |
+      Zwei Städte, Ein Körper, Wedding'deki Ballhaus Prinzenallee'den yola çıkan ve seyircinin kulaklıktaki seslere eşlik ederek yürüdüğü mekâna özgü bir ses yürüyüşü. İstanbul'da yürümek gergin ve tetikte bir eylem olarak hatırlanırken Berlin, özgürlüğün kendiliğinden var sayıldığı, rahat ama steril bir alan olarak beliriyor.
+
+      Yürüyüş, elinde Fiktionsbescheinigung'la kulüp kuyruklarında bekleyen bir göçmenin izini sürüyor. Onun bakışından Berlin'in sunduğu cool ve hazır queer konfor sorgulanıyor, evini yanında taşıyan insanların yalnızlığına kulak veriliyor.
+    de: |
+      Zwei Städte, Ein Körper ist ein ortsspezifischer Audiowalk, der am Ballhaus Prinzenallee im Wedding beginnt und das Publikum mit Stimmen im Kopfhörer durch die Straßen führt. Gehen in Istanbul erscheint als angespannter, wachsamer Akt, Berlin dagegen als bequemer, aber steriler Raum, in dem Freiheit als selbstverständlich gilt.
+
+      Der Walk folgt einem Migranten, der mit einer Fiktionsbescheinigung in den Schlangen vor Clubs wartet. Aus seinem Blick wird der coole, vorgefertigte queere Komfort Berlins befragt, und die Einsamkeit derer hörbar, die ihr Zuhause mit sich tragen.
+    en: |
+      Zwei Städte, Ein Körper (Two Cities, One Body) is a site-specific audio walk that starts at Ballhaus Prinzenallee in Wedding and leads the audience through the streets with voices in their headphones. Walking in Istanbul is remembered as a tense, watchful act, while Berlin appears as a comfortable yet sterile space where freedom is taken for granted.
+
+      The walk follows a migrant waiting in club queues with a Fiktionsbescheinigung. Through his eyes it questions the cool, ready-made queer comfort Berlin offers, and listens to the loneliness of those who carry their home with them.
+  credits:
+    - [writedirect, egemen-kalyon]
+    - [concept, egemen-kalyon]
+    - [dramaturgy, nesrin-karadag]
+    - [sound, yigit-tanel-kackaya]
+  shows:
+    - {date: 2026-06-12, time: "18:00", venue: ballhaus, premiere: true}
+    - {date: 2026-06-13, time: "17:30", venue: ballhaus}
+
+- slug: the-monologue-box
+  title: The Monologue Box
+  year: 2026
+  form: {tr: "Bire bir performans", de: "Eins-zu-eins-Performance", en: "One-to-one performance"}
+  info: {tr: "Proud Haram Festival 2026 programında. İngilizce.", de: "Im Programm des Proud Haram Festival 2026. Auf Englisch.", en: "Part of Proud Haram Festival 2026. In English."}
+  text:
+    tr: |
+      The Monologue Box, kapalı bir odada tek bir seyirciyle tek bir anlatıcıyı baş başa bırakan bire bir bir karşılaşma. Ziyaretçi ne zaman gireceğine, ne kadar kalacağına ve ne zaman çıkacağına kendisi karar veriyor. Kutunun iki bölmesi var: ilkinde bir oyuncu doğrudan ziyaretçiye bir monolog anlatıyor, ikincisinde ziyaretçiler yüzlerini göstermeden ve adlarını vermeden kendi hikâyelerini yüksek sesle bırakıyor.
+
+      İkinci bölmede bırakılan hikâyeler sonra ilk bölmede oyuncunun ağzından yeniden anlatılıyor; birinin hikâyesi böylece bir başkasının dinlediği monologa dönüşüyor. Festivalin görünür kılmak ile yanında durmak arasındaki sorusuna eklemlenen iş, kaynağından koptuğunda bir hikâyenin kime ait olduğunu soruyor.
+    de: |
+      The Monologue Box ist eine Eins-zu-eins-Begegnung in einem geschlossenen Raum, in dem eine Zuschauerin oder ein Zuschauer mit einer erzählenden Person allein ist. Wann man hineingeht, wie lange man bleibt und wann man wieder geht, entscheiden die Besuchenden selbst. Die Box hat zwei Kammern: In der ersten spricht eine Performerin oder ein Performer einen Monolog direkt an die Besuchenden, in der zweiten hinterlassen diese anonym und laut ihre eigenen Geschichten, ohne Gesicht und ohne Namen.
+
+      Die Geschichten aus der zweiten Kammer werden später in der ersten neu erzählt; so wird die Geschichte des einen zum Monolog, den ein anderer hört. Im Spannungsfeld des Festivals zwischen Sichtbarmachen und Danebenstehen fragt die Arbeit, wem eine Geschichte gehört, wenn sie sich von ihrem Ursprung löst.
+    en: |
+      The Monologue Box is a one-to-one encounter in a closed room where a single spectator and a single narrator are alone together. Visitors decide for themselves when to enter, how long to stay and when to leave. The box has two chambers: in the first a performer delivers a monologue directly to the visitor, in the second visitors leave their own stories aloud and anonymously, without showing their faces or giving their names.
+
+      The stories left in the second chamber are later retold in the first, so that one person's account becomes the monologue another person hears. Within the festival's question of making visible versus standing beside, the work asks to whom a story belongs once it has come loose from its origin.
+  credits: []
+  shows:
+    - {date: 2026-06-12, time: "18:00", venue: ballhaus, premiere: true}
+    - {date: 2026-06-13, time: "18:00", venue: ballhaus}
+
 - slug: same
   title: SAME
   year: 2026
