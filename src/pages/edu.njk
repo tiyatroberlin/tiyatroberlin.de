@@ -18,6 +18,7 @@ eleventyComputed:
 <section class="section"><div class="wrap cols">
   <div>
     <h2 class="h-big">{% if c.detail and lang == "tr" %}<a href="{{ ('/tr/tiyatro-pedagojisi/' + c.slug + '/') | url }}">{{ c.title | t(lang) }}</a>{% else %}{{ c.title | t(lang) }}{% endif %}<span class="pt">.</span></h2>
+    {% if c.detail and lang == "tr" %}<p class="course-more"><a class="btn red" href="{{ ('/tr/tiyatro-pedagojisi/' + c.slug + '/') | url }}">Ayrıntılı bilgi</a></p>{% endif %}
     {% if c.text %}<div class="prose">{{ c.text | t(lang) | paras | safe }}</div>{% endif %}
     {% if c.topics %}<p class="prose">{{ c.topics | t(lang) }}</p>{% endif %}
   </div>

@@ -392,3 +392,4 @@ a.vlink{text-decoration:underline;text-decoration-thickness:1px;text-underline-o
   .course-toc{display:none}
   .teacher{grid-template-columns:6.5rem 1fr;gap:1rem}
 }
+.course-more{margin:.4rem 0 1.4rem}
