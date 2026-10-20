@@ -9,12 +9,13 @@ tr:
   all_works: Tüm oyunlar
   archive: Arşiv
   premiere: Prömiyer
+  world_premiere: Prömiyer
   credits: Künye
   dates: Gösterimler
   where: Nerede
   when: Ne zaman
   price: Bilet
-  support: Destek
+  support: Destekleyen kurumlar
   partners: Ortak yapım
   works_with: Oyunlar
   menu: Menü
@@ -23,7 +24,7 @@ tr:
   newsletter: Bülten
   newsletter_text: Program ve atölye duyuruları ayda bir kez.
   email: E-posta adresi
-  fname: Adın (isteğe bağlı)
+  fname: Ad (isteğe bağlı)
   subscribe: Abone ol
   imprint: Impressum
   privacy: Gizlilik
@@ -46,7 +47,7 @@ tr:
   register_open: Kayıtlar açık
   poster: Afiş
   year: Yıl
-  people_intro: 2021'den beri Tiyatro Berlin'de çalışan herkes. Bir isme tıkla, yer aldığı bütün işleri gör.
+  people_intro: 2021'den beri Tiyatro Berlin'de çalışan herkes. Bir isme tıklayın, kişinin yer aldığı bütün işleri görün.
   works_intro: 2021'den bugüne bütün oyunlar.
   program_intro: Biletler doğrudan bu sayfadan.
   network_intro: Her nokta bir kişi ya da bir oyun. Çizgiler birlikte çalışılan işleri gösteriyor.
@@ -57,23 +58,24 @@ tr:
   teachers: Eğitmenler
 de:
   name: Deutsch
-  nav: {program: Spielplan, works: Stücke, people: Ensemble, network: Netzwerk, projects: Projekte, edu: "Theaterpädagogik – Kurse", about: Über uns, contact: Kontakt, venues: Spielorte}
-  next: Demnächst
+  nav: {program: Spielplan, works: Produktionen, people: Ensemble, network: Netzwerk, projects: Projekte, edu: "Theaterpädagogik – Kurse", about: Über uns, contact: Kontakt, venues: Spielorte}
+  next: Nächste Vorstellung
   tickets: Tickets
   register: Anmelden
   info: Info
-  all_program: Ganzer Spielplan
-  all_works: Alle Stücke
+  all_program: Zum Spielplan
+  all_works: Alle Produktionen
   archive: Archiv
   premiere: Premiere
+  world_premiere: Uraufführung
   credits: Besetzung und Team
   dates: Termine
   where: Ort
   when: Wann
   price: Eintritt
-  support: Förderung
+  support: Gefördert von
   partners: Koproduktion
-  works_with: Stücke
+  works_with: Produktionen
   menu: Menü
   close: Schließen
   sold_by: Ticketverkauf
@@ -95,7 +97,7 @@ de:
   map_open: In Google Maps öffnen
   map_show: Karte anzeigen
   map_note: Die Karte wird von Google geladen; mit dem Klick gelten die Datenschutzbestimmungen von Google.
-  here_works: Hier gezeigt
+  here_works: Hier gespielt
   here_next: Demnächst hier
   website: Website
   venue: Spielort
@@ -114,23 +116,24 @@ de:
   teachers: Leitung
 en:
   name: English
-  nav: {program: Programme, works: Works, people: Ensemble, network: Network, projects: Projects, edu: "Theatre education – Courses", about: About, contact: Contact, venues: Venues}
-  next: Coming up
+  nav: {program: Programme, works: Productions, people: Ensemble, network: Network, projects: Projects, edu: "Theatre education – Courses", about: About, contact: Contact, venues: Venues}
+  next: Next
   tickets: Tickets
   register: Sign up
   info: Info
   all_program: Full programme
-  all_works: All works
+  all_works: All productions
   archive: Archive
   premiere: Premiere
+  world_premiere: World premiere
   credits: Credits
   dates: Dates
   where: Where
   when: When
   price: Tickets
-  support: Funding
+  support: Funded by
   partners: Co-production
-  works_with: Works
+  works_with: Productions
   menu: Menu
   close: Close
   sold_by: Ticket sales
@@ -152,7 +155,7 @@ en:
   map_open: Open in Google Maps
   map_show: Show map
   map_note: The map loads from Google; by clicking, Google's privacy terms apply.
-  here_works: Shown here
+  here_works: Performed here
   here_next: Coming up here
   website: Website
   venue: Venue
@@ -162,7 +165,7 @@ en:
   year: Year
   people_intro: Everyone who has worked with Tiyatro Berlin since 2021. Click a name to see all their work.
   works_intro: Every production since 2021.
-  program_intro: Tickets right on this page.
+  program_intro: Book tickets directly on this page.
   network_intro: Each dot is a person or a production. Lines show work made together.
   approx: exact date unknown
   months: [January, February, March, April, May, June, July, August, September, October, November, December]

@@ -3,12 +3,12 @@ events: []
 
 courses:
   - slug: oyunculuk-atolyesi
-    title: {tr: Oyunculuk Atölyesi, de: Schauspielensemble, en: Acting ensemble}
+    title: {tr: Oyunculuk Atölyesi, de: Schauspielkurs für Erwachsene, en: Acting course for adults}
     level: {tr: "Yetişkinler için, deneyim gerekmez", de: "Für Erwachsene, ohne Vorkenntnisse", en: "For adults, no experience needed"}
     when: {tr: "Her pazartesi 18:30–21:00 · 2 Kasım 2026'dan Mayıs 2027'ye", de: "Montags 18:30–21:00 · 2. November 2026 bis Mai 2027", en: "Mondays 6:30–9 pm · 2 November 2026 to May 2027"}
     start: 2026-11-02
     venue: interkulturell-aktiv
-    fee: {tr: "Aylık 80 € · istediğin ay bırakabilirsin", de: "80 € im Monat, monatlich kündbar", en: "€80 per month, cancel any month"}
+    fee: {tr: "Aylık 80 € · istediğiniz ay bırakabilirsiniz", de: "80 € im Monat, monatlich kündbar", en: "€80 per month, cancel monthly"}
     lang: {tr: Türkçe, de: Kurssprache Türkisch, en: Taught in Turkish}
     teachers: [ufuk-tan-altunkaya, hazal-erdal]
     topics: {tr: "Ses ve diksiyon · beden ve nefes · doğaçlama · tiyatro tarihi ve dramaturji · metin ve rol çalışması", de: "Stimme und Sprechen · Körper und Atem · Improvisation · Theatergeschichte und Dramaturgie · Arbeit an Text und Rolle", en: "Voice and diction · body and breath · improvisation · theatre history and dramaturgy · text and role work"}

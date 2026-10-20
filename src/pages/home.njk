@@ -15,7 +15,7 @@ eleventyComputed:
   {% set heroImg = (nw.hero or nw.image) if nw else null %}{% if heroImg %}<figure class="lead-figure{% if nw.hero_fit %} fit{% endif %}"><img src="{{ ('/assets/img/' + heroImg) | url }}?v={{ build }}" alt="" width="1080" height="1240"></figure>{% endif %}
   <div class="wrap">
     <div class="lead-text">
-      <p class="lead-when"><span class="dot" aria-hidden="true"></span>{{ L.next }}: {{ nxt.date | longDate(L, lang) }}, {{ nxt.date | weekday(L) }}{% if nxt.time %}, {{ nxt.time }}{% endif %}</p>
+      <p class="lead-when"><span class="dot" aria-hidden="true"></span>{{ L.next }}: {% if lang == "tr" %}{{ nxt.date | longDate(L, lang) }} {{ nxt.date | weekday(L) }}{% if nxt.time %}, {{ nxt.time }}{% endif %}{% elif lang == "de" %}{{ nxt.date | weekday(L) }}, {{ nxt.date | longDate(L, lang) }}{% if nxt.time %}, {{ nxt.time }} Uhr{% endif %}{% else %}{{ nxt.date | weekday(L) }} {{ nxt.date | longDate(L, lang) }}{% if nxt.time %}, {{ nxt.time }}{% endif %}{% endif %}</p>
       <h1 class="lead-title">{% if nw %}<a href="{{ ('/' + lang + '/' + S.works[lang] + '/' + nw.slug + '/') | url }}">{{ nxt.title }}<span class="pt">.</span></a>{% else %}{{ nxt.title }}<span class="pt">.</span>{% endif %}</h1>
       {% if nw and nw.quote %}<p class="lead-hook it">{{ nw.hook | t(lang) }}</p>{% endif %}
       <dl class="lead-meta">

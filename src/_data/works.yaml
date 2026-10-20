@@ -23,7 +23,7 @@
       YAKIN is a solo carried by songs sung live between the scenes. The songs do not decorate the story, they carry it: whatever cannot be said takes refuge in a melody.
   credits:
     - [writedirect, ufuk-tan-altunkaya]
-    - [performer, hazal-erdal]
+    - [songs, hazal-erdal]
   shows:
     - {date: 2026-11-22, time: "19:00", venue: moda-bar, premiere: true, eventim: 6ace5a69a47cb7abb7b2496e, price: {tr: "20 €", de: "20 €", en: "€20"}}
     - {date: 2026-11-29, time: "19:00", venue: moda-bar, eventim: 6ace5aa484ed3c6a8a6549e6, price: {tr: "20 €", de: "20 €", en: "€20"}}
@@ -34,7 +34,7 @@
   poster: oyun/zwei-staedte.jpg
   year: 2026
   form: {tr: "Mekâna özgü ses yürüyüşü", de: "Ortsspezifischer Audiowalk", en: "Site-specific audio walk"}
-  info: {tr: "Proud Haram Festival 2026 programında. Almanca.", de: "Im Programm des Proud Haram Festival 2026. Auf Deutsch.", en: "Part of Proud Haram Festival 2026. In German."}
+  info: {tr: "Proud Haram Festival 2026 programında. Almanca.", de: "Im Rahmen des Proud Haram Festivals 2026. Auf Deutsch.", en: "Part of Proud Haram Festival 2026. In German."}
   text:
     tr: |
       Zwei Städte, Ein Körper, Wedding'deki Ballhaus Prinzenallee'den yola çıkan ve seyircinin kulaklıktaki seslere eşlik ederek yürüdüğü mekâna özgü bir ses yürüyüşü. İstanbul'da yürümek gergin ve tetikte bir eylem olarak hatırlanırken Berlin, özgürlüğün kendiliğinden var sayıldığı, rahat ama steril bir alan olarak beliriyor.
@@ -43,7 +43,7 @@
     de: |
       Zwei Städte, Ein Körper ist ein ortsspezifischer Audiowalk, der am Ballhaus Prinzenallee im Wedding beginnt und das Publikum mit Stimmen im Kopfhörer durch die Straßen führt. Gehen in Istanbul erscheint als angespannter, wachsamer Akt, Berlin dagegen als bequemer, aber steriler Raum, in dem Freiheit als selbstverständlich gilt.
 
-      Der Walk folgt einem Migranten, der mit einer Fiktionsbescheinigung in den Schlangen vor Clubs wartet. Aus seinem Blick wird der coole, vorgefertigte queere Komfort Berlins befragt, und die Einsamkeit derer hörbar, die ihr Zuhause mit sich tragen.
+      Der Walk folgt einem Migranten, der mit einer Fiktionsbescheinigung in den Schlangen vor Clubs wartet. Aus seiner Perspektive wird der coole, vorgefertigte queere Komfort Berlins hinterfragt und die Einsamkeit derer hörbar, die ihr Zuhause mit sich tragen.
     en: |
       Zwei Städte, Ein Körper (Two Cities, One Body) is a site-specific audio walk that starts at Ballhaus Prinzenallee in Wedding and leads the audience through the streets with voices in their headphones. Walking in Istanbul is remembered as a tense, watchful act, while Berlin appears as a comfortable yet sterile space where freedom is taken for granted.
 
@@ -60,21 +60,21 @@
 - slug: the-monologue-box
   title: The Monologue Box
   year: 2026
-  form: {tr: "Bire bir performans", de: "Eins-zu-eins-Performance", en: "One-to-one performance"}
-  info: {tr: "Proud Haram Festival 2026 programında. İngilizce.", de: "Im Programm des Proud Haram Festival 2026. Auf Englisch.", en: "Part of Proud Haram Festival 2026. In English."}
+  form: {tr: "Bire bir performans", de: "One-on-One-Performance", en: "One-to-one performance"}
+  info: {tr: "Proud Haram Festival 2026 programında. İngilizce.", de: "Im Rahmen des Proud Haram Festivals 2026. Auf Englisch.", en: "Part of Proud Haram Festival 2026. In English."}
   text:
     tr: |
       The Monologue Box, kapalı bir odada tek bir seyirciyle tek bir anlatıcıyı baş başa bırakan bire bir bir karşılaşma. Ziyaretçi ne zaman gireceğine, ne kadar kalacağına ve ne zaman çıkacağına kendisi karar veriyor. Kutunun iki bölmesi var: ilkinde bir oyuncu doğrudan ziyaretçiye bir monolog anlatıyor, ikincisinde ziyaretçiler yüzlerini göstermeden ve adlarını vermeden kendi hikâyelerini yüksek sesle bırakıyor.
 
-      İkinci bölmede bırakılan hikâyeler sonra ilk bölmede oyuncunun ağzından yeniden anlatılıyor; birinin hikâyesi böylece bir başkasının dinlediği monologa dönüşüyor. Festivalin görünür kılmak ile yanında durmak arasındaki sorusuna eklemlenen iş, kaynağından koptuğunda bir hikâyenin kime ait olduğunu soruyor.
+      İkinci bölmede bırakılan hikâyeler sonra ilk bölmede oyuncunun ağzından yeniden anlatılıyor; birinin hikâyesi böylece bir başkasının dinlediği monologa dönüşüyor. Festivalin görünür kılmakla yanında durmak arasındaki sorusundan yola çıkan iş, kaynağından koptuğunda bir hikâyenin kime ait olduğunu soruyor.
     de: |
       The Monologue Box ist eine Eins-zu-eins-Begegnung in einem geschlossenen Raum, in dem eine Zuschauerin oder ein Zuschauer mit einer erzählenden Person allein ist. Wann man hineingeht, wie lange man bleibt und wann man wieder geht, entscheiden die Besuchenden selbst. Die Box hat zwei Kammern: In der ersten spricht eine Performerin oder ein Performer einen Monolog direkt an die Besuchenden, in der zweiten hinterlassen diese anonym und laut ihre eigenen Geschichten, ohne Gesicht und ohne Namen.
 
-      Die Geschichten aus der zweiten Kammer werden später in der ersten neu erzählt; so wird die Geschichte des einen zum Monolog, den ein anderer hört. Im Spannungsfeld des Festivals zwischen Sichtbarmachen und Danebenstehen fragt die Arbeit, wem eine Geschichte gehört, wenn sie sich von ihrem Ursprung löst.
+      Die Geschichten aus der zweiten Kammer werden später in der ersten neu erzählt; so wird die Geschichte des einen zum Monolog, den ein anderer hört. Im Spannungsfeld des Festivals zwischen Sichtbarmachen und Beistand fragt die Arbeit, wem eine Geschichte gehört, wenn sie sich von ihrem Ursprung löst.
     en: |
       The Monologue Box is a one-to-one encounter in a closed room where a single spectator and a single narrator are alone together. Visitors decide for themselves when to enter, how long to stay and when to leave. The box has two chambers: in the first a performer delivers a monologue directly to the visitor, in the second visitors leave their own stories aloud and anonymously, without showing their faces or giving their names.
 
-      The stories left in the second chamber are later retold in the first, so that one person's account becomes the monologue another person hears. Within the festival's question of making visible versus standing beside, the work asks to whom a story belongs once it has come loose from its origin.
+      The stories left in the second chamber are later retold in the first, so that one person's account becomes the monologue another person hears. Within the festival's tension between making visible and standing in solidarity, the work asks to whom a story belongs once it has come loose from its origin.
   credits:
     - [conceditdir, ufuk-tan-altunkaya]
     - [text, didem-kaplan]
@@ -87,19 +87,19 @@
   title: SAME
   year: 2026
   image: foto/same-ayak.jpg
-  form: {tr: "Fiziksel performans", de: "Physische Performance", en: "Physical performance"}
-  info: {tr: "Proud Haram Festival 2026 programında. Türkçe, Almanca ve İngilizce üstyazılı.", de: "Im Programm des Proud Haram Festival 2026. Auf Türkisch mit deutschen und englischen Übertiteln.", en: "Part of Proud Haram Festival 2026. In Turkish with German and English surtitles."}
+  form: {tr: "Fiziksel tiyatro", de: "Physisches Theater", en: "Physical theatre"}
+  info: {tr: "Proud Haram Festival 2026 programında. Türkçe, Almanca ve İngilizce üstyazılı.", de: "Im Rahmen des Proud Haram Festivals 2026. Auf Türkisch mit deutschen und englischen Übertiteln.", en: "Part of Proud Haram Festival 2026. In Turkish with German and English surtitles."}
   text:
     tr: |
-      SAME, dijital çağın görünürlük rejimini, kimliklerin nasıl üretildiğini ve gündelik hayatın sessizce nasıl dönüştüğünü bedenden yola çıkarak düşünen fiziksel bir performans. Sosyal medya, algoritmalar, queer varoluş, toplumsal kutuplaşma ve bir yere ait olma ihtiyacı, elektronik ritimlerin eşliğinde giderek daralan bir oyun alanında birbirine dolanıyor.
+      SAME, dijital çağın görünürlük rejimini, kimliklerin nasıl üretildiğini ve gündelik hayatın sessizce nasıl dönüştüğünü bedenden yola çıkarak düşünen bir fiziksel tiyatro işi. Sosyal medya, algoritmalar, queer varoluş, toplumsal kutuplaşma ve bir yere ait olma ihtiyacı, elektronik ritimlerin eşliğinde giderek daralan bir oyun alanında birbirine dolanıyor.
 
-      Minimalist sahnede kolektif bir deneyim bedenler üzerinden görünür hâle geliyor. Oyun seyirciye çağın ruh hâlini açıyor ve sorduğu soruları bilerek cevapsız bırakıyor.
+      Minimalist sahnede kolektif bir deneyim bedenler üzerinden görünür hâle geliyor. Oyun çağın ruh hâlini seyircinin önüne seriyor ve sorduğu soruları bilerek cevapsız bırakıyor.
     de: |
-      SAME ist eine physische Performance über das Sichtbarkeitsregime des digitalen Zeitalters, über die Produktion von Identität und den leisen Wandel des Alltags. Soziale Medien, Algorithmen, queere Existenz, gesellschaftliche Polarisierung und das Bedürfnis nach Zugehörigkeit verschränken sich zu elektronischen Rhythmen in einem Spielraum, der immer enger wird.
+      SAME ist eine Arbeit des physischen Theaters über das Sichtbarkeitsregime des digitalen Zeitalters, über die Produktion von Identität und den leisen Wandel des Alltags. Soziale Medien, Algorithmen, queere Existenz, gesellschaftliche Polarisierung und das Bedürfnis nach Zugehörigkeit verschränken sich zu elektronischen Rhythmen in einem Spielraum, der immer enger wird.
 
       Auf der minimalistischen Bühne wird eine kollektive Erfahrung über die Körper sichtbar. Das Stück öffnet den Blick auf die Stimmung einer Zeit und lässt seine Fragen bewusst offen.
     en: |
-      SAME is a physical performance about the visibility regime of the digital age, the production of identity and the quiet transformation of everyday life. Social media, algorithms, queer existence, social polarisation and the need to belong intertwine to electronic rhythms in a playing space that keeps closing in.
+      SAME is a piece of physical theatre about the visibility regime of the digital age, the production of identity and the quiet transformation of everyday life. Social media, algorithms, queer existence, social polarisation and the need to belong intertwine to electronic rhythms in a playing space that keeps closing in.
 
       On a minimalist stage a collective experience becomes visible through the body. The piece opens up the mood of an era and deliberately leaves its questions unanswered.
   credits:
@@ -114,6 +114,7 @@
 - slug: kozalar
   title: Kozalar
   year: 2025
+  premiere_kind: premiere
   image: foto/kozalar-uc.jpg
   hero: foto/kozalar-genc.jpg
   hero_fit: true
@@ -199,7 +200,7 @@
   year: 2023
   image: oyun/uftade.jpg
   form: {tr: "Oyun", de: "Stück", en: "Play"}
-  info: {tr: "Haziran 2023'te Maxim Gorki Theater'da, 6. Berliner Herbstsalon kapsamındaki GEZİ – TEN YEARS AFTER programında konuk oyun olarak sahnelendi.", de: "Im Juni 2023 als Gastspiel im Maxim Gorki Theater zu sehen, im Programm GEZİ – TEN YEARS AFTER des 6. Berliner Herbstsalons.", en: "Shown in June 2023 as a guest performance at the Maxim Gorki Theater, in the programme GEZİ – TEN YEARS AFTER of the 6th Berliner Herbstsalon."}
+  info: {tr: "Haziran 2023'te Maxim Gorki Theater'da, 6. Berliner Herbstsalon kapsamındaki GEZİ – TEN YEARS AFTER programında konuk oyun olarak sahnelendi.", de: "Gastspiel im Juni 2023 am Maxim Gorki Theater, im Rahmen des 6. Berliner Herbstsalons (GEZİ – TEN YEARS AFTER).", en: "Guest performance at the Maxim Gorki Theater in June 2023, as part of the 6th Berliner Herbstsalon (GEZİ – TEN YEARS AFTER)."}
   hook: {tr: "Haziran 2013. Bir tiyatro sahnesi revire dönüşüyor.", de: "Juni 2013. Eine Theaterbühne wird zum Lazarett.", en: "June 2013. A stage becomes a field hospital."}
   text:
     tr: |
@@ -228,16 +229,17 @@
 - slug: yeni-bir-hayat-icin
   title: Yeni Bir Hayat İçin
   year: 2023
+  premiere_kind: premiere
   image: oyun/yeni-bir-hayat-icin.jpg
   form: {tr: "Tek kişilik oyun", de: "Solo", en: "Solo"}
-  hook: {tr: Orta yaş, orta sınıf, yeni bir kimlik., de: "Mitte des Lebens, Mittelschicht, neue Identität.", en: "Midlife, middle class, a new identity."}
+  hook: {tr: "Orta yaş, orta sınıf, yeni bir kimlik.", de: "Mitte des Lebens, Mittelschicht, neue Identität.", en: "Midlife, middle class, a new identity."}
   text:
     tr: |
       Orta yaş krizindeki Selim Özben yeni bir hayat kurmaya karar veriyor: doğa sporları, internet, gece hayatı, sanat kursları.
 
       Her yeni uğraş bir kimlik vaadi taşıyor, hiçbiri yüzleşmenin yerini tutmuyor. Cüneyt Yalaz ve Uluç Esen'in tek kişilik oyunu, orta sınıfın kendini yeniden icat etme hevesine acı bir komediyle bakıyor.
     de: |
-      Mitten in der Midlife-Crisis beschließt Selim Özben, ein neues Leben anzufangen: Outdoorsport, Internet, Nachtleben, Kunstkurse.
+      Mitten in der Midlife-Crisis beschließt Selim Özben, ein neues Leben anzufangen: Extremsport, Internet, Nachtleben, Kunstkurse.
 
       Jede neue Beschäftigung verspricht eine Identität, keine ersetzt die Auseinandersetzung mit sich selbst und mit den Verhältnissen. Das Solo von Cüneyt Yalaz und Uluç Esen blickt mit bitterer Komik auf den Wunsch der Mittelschicht, sich neu zu erfinden.
     en: |
@@ -263,7 +265,7 @@
   year: 2023
   image: oyun/avzer.jpg
   form: {tr: "Tek kişilik oyun", de: "Solo", en: "Solo"}
-  info: {tr: "Haziran 2023'te Maxim Gorki Theater'da, 6. Berliner Herbstsalon kapsamındaki GEZİ – TEN YEARS AFTER programında konuk oyun olarak sahnelendi.", de: "Im Juni 2023 als Gastspiel im Maxim Gorki Theater zu sehen, im Programm GEZİ – TEN YEARS AFTER des 6. Berliner Herbstsalons.", en: "Shown in June 2023 as a guest performance at the Maxim Gorki Theater, in the programme GEZİ – TEN YEARS AFTER of the 6th Berliner Herbstsalon."}
+  info: {tr: "Haziran 2023'te Maxim Gorki Theater'da, 6. Berliner Herbstsalon kapsamındaki GEZİ – TEN YEARS AFTER programında konuk oyun olarak sahnelendi.", de: "Gastspiel im Juni 2023 am Maxim Gorki Theater, im Rahmen des 6. Berliner Herbstsalons (GEZİ – TEN YEARS AFTER).", en: "Guest performance at the Maxim Gorki Theater in June 2023, as part of the 6th Berliner Herbstsalon (GEZİ – TEN YEARS AFTER)."}
   hook: {tr: "Ankara, Haziran 2013. Bir sokak çocuğu değişmiş bir şehre uyanıyor.", de: "Ankara, Juni 2013. Ein Straßenkind erwacht in einer veränderten Stadt.", en: "Ankara, June 2013. A street kid wakes up in a changed city."}
   text:
     tr: |
@@ -295,6 +297,7 @@
 - slug: sen-istanbuldan-daha-guzelsin
   title: Sen İstanbul'dan Daha Güzelsin
   year: 2023
+  premiere_kind: premiere
   image: oyun/sen-istanbuldan.jpg
   form: {tr: "Oyun", de: "Stück", en: "Play"}
   hook: {tr: "Büyükanne, anne, torun. Bir şehirde elli yıl.", de: "Großmutter, Mutter, Enkelin. Fünfzig Jahre in einer Stadt.", en: "Grandmother, mother, granddaughter. Fifty years in one city."}
@@ -340,11 +343,11 @@
     de: |
       Kopfhörer auf, und mitten in Berlin beginnt eine Verfolgung. Das Publikum folgt vier Menschen, die einander nicht kennen, und sucht nach dem, was sie verbindet.
 
-      Alle sind auf der Spur einer Person, die nie zu sehen ist: der Dame. Didem Kaplans Text befragt Migration, Fremdsein und eine unvollendete Moderne an Menschen von heute. Die Stadt ist keine Kulisse, sie ist das Stück.
+      Alle sind auf der Spur einer Person, die nie zu sehen ist: der Dame. Didem Kaplans Text fragt anhand heutiger Lebensgeschichten nach Migration, Fremdsein und einer unvollendeten Moderne. Die Stadt ist keine Kulisse, sie ist das Stück.
     en: |
       Headphones on, and a pursuit begins on the streets of Berlin. The audience follows four people who do not know each other and looks for what connects them.
 
-      They are all on the trail of someone who never appears: the Lady. Didem Kaplan's text questions migration, otherness and an unfinished modernity through the people of today. The city is not a backdrop; it is the play.
+      They are all on the trail of someone who never appears: the Lady. Didem Kaplan's text explores migration, otherness and an unfinished modernity through present-day lives. The city is not a backdrop; it is the play.
   info: {tr: "Yaklaşık 60 dakika yürüyüş. Başlangıç ve bitiş noktası farklı. Kulaklık için kimlik bırakılır. Tekerlekli sandalyeyle erişilebilir değil.", de: "Etwa 60 Minuten zu Fuß. Start und Ziel sind verschieden. Für die Kopfhörer wird ein Ausweis hinterlegt. Nicht barrierefrei.", en: "About 60 minutes on foot. Start and end points differ. An ID is left as deposit for the headphones. Not wheelchair accessible."}
   credits:
     - [text, didem-kaplan]
@@ -362,7 +365,7 @@
   year: 2022
   image: oyun/nested.jpg
   form: {tr: "Açık havada performans", de: "Performance im Freien", en: "Outdoor performance"}
-  info: {tr: "48 Stunden Neukölln festivali programında, Körnerpark'ta oynandı.", de: "Im Programm des Festivals 48 Stunden Neukölln, gezeigt im Körnerpark.", en: "Part of the 48 Stunden Neukölln festival, performed in Körnerpark."}
+  info: {tr: "48 Stunden Neukölln festivali programında, Körnerpark'ta oynandı.", de: "Im Rahmen von 48 Stunden Neukölln, gezeigt im Körnerpark.", en: "Part of the 48 Stunden Neukölln festival, performed in Körnerpark."}
   hook: {tr: "Göç sanatçıya ne yapar?", de: "Was macht Migration mit Künstler*innen?", en: "What does migration do to artists?"}
   text:
     tr: |
@@ -393,7 +396,7 @@
   title: Uzak
   year: 2021
   form: {tr: "Tek seyircilik kulaklıklı yürüyüş", de: "Audiowalk für eine Person", en: "Audio walk for one"}
-  hook: {tr: Tek seyirci, bir mahalle, iki zaman., de: "Eine Person, ein Viertel, zwei Zeiten.", en: "One spectator, one neighbourhood, two times."}
+  hook: {tr: "Tek seyirci, bir mahalle, iki zaman.", de: "Eine Person, ein Viertel, zwei Zeiten.", en: "One spectator, one neighbourhood, two times."}
   text:
     tr: |
       Bergama, Kale Mahallesi. Kulaklıklar takılıyor ve tek bir seyirci yola çıkıyor. Chris Marker'ın La Jetée'sinden yola çıkan Uzak, Üçüncü Dünya Savaşı'ndan sonra geçmişe ve geleceğe gönderilen bir tutsağın hikâyesini tarihi bir mahallenin sokaklarına yerleştiriyor.
@@ -430,7 +433,7 @@
   poster: oyun/lubunya.jpg
   gallery: [foto/lubunya-sahne.jpg]
   form: {tr: "Tek kişilik performans", de: "Solo-Performance", en: "Solo performance"}
-  hook: {tr: Bir trans kadın, 1980 darbesinin gölgesinde bir hayat., de: "Eine trans Frau, ein Leben im Schatten des Putsches von 1980.", en: "A trans woman, a life in the shadow of the 1980 coup."}
+  hook: {tr: "Bir trans kadın, 1980 darbesinin gölgesinde bir hayat.", de: "Eine trans Frau, ein Leben im Schatten des Putsches von 1980.", en: "A trans woman, a life in the shadow of the 1980 coup."}
   text:
     tr: |
       Bugün elli yaşında olan bir trans kadın, 1980 darbesinin gölgesinde lubunya olmanın tarihini anlatıyor: parklar, üçüncü sınıf oteller, gece kulüpleri, Bayram Sokak, Dolapdere, karakollar ve kışlalar.
@@ -439,7 +442,7 @@
     de: |
       Eine heute fünfzigjährige trans Frau erzählt, was es hieß, im Schatten des Militärputsches von 1980 lubunya zu sein: Parks, drittklassige Hotels, Nachtclubs, Polizeiwachen und Kasernen.
 
-      Der Text beruht auf realen Zeitzeug*innen-Interviews, die der Verein Siyah Pembe Üçgen İzmir gesammelt hat. Das Publikum sitzt wie in einer schäbigen Taverne, Arabesk-Lieder begleiten den Abend. Eine Geschichte des Überlebens und der Solidarität, die in keiner offiziellen Chronik steht.
+      Der Text beruht auf realen Zeitzeug*innen-Interviews, die der Verein Siyah Pembe Üçgen İzmir gesammelt hat. Das Publikum sitzt wie in einer Kaschemme, Arabesk-Lieder begleiten den Abend. Eine Geschichte des Überlebens und der Solidarität, die in keiner offiziellen Chronik steht.
     en: |
       A trans woman, now fifty, tells what it meant to be lubunya in the shadow of the 1980 military coup: parks, third-rate hotels, nightclubs, police stations and barracks.
 
