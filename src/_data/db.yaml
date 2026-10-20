@@ -117,6 +117,7 @@ roles:
   cast:        [Oyuncular, Mit, Cast]
   performer:   [Oyun, Performance, Performer]
   voice:       [Seslendirme, Stimme, Voice]
+  makeup:      [Maske tasarımı, Maske, Make-up design]
   songs:       [Oyun ve şarkılar, Spiel und Gesang, Performance and songs]
   dramaturgy:  [Dramaturji, Dramaturgie, Dramaturgy]
   advice:      [Proje danışmanı, Beratung, Advisor]
