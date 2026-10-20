@@ -394,6 +394,8 @@
 - slug: uzak
   title: Uzak
   year: 2021
+  image: oyun/uzak.jpg
+  poster: oyun/uzak.jpg
   form: {tr: "Tek seyircilik kulaklıklı yürüyüş", de: "Audiowalk für eine Person", en: "Audio walk for one"}
   hook: {tr: "Tek seyirci, bir mahalle, iki zaman.", de: "Eine Person, ein Viertel, zwei Zeiten.", en: "One spectator, one neighbourhood, two times."}
   text:
@@ -421,7 +423,9 @@
   partners: [mekan-arti, cabinet-novus, bergama-fest]
   funders: [goethe]
   shows:
-    - {date: 2021-06-01, venue: bergama, premiere: true, approx: true}
+    - {date: 2021-08-27, venue: bergama, premiere: true}
+    - {date: 2021-08-28, venue: bergama}
+    - {date: 2021-08-29, venue: bergama}
 
 - slug: 80lerde-lubunya-olmak
   title: 80'lerde Lubunya Olmak
