@@ -13,13 +13,6 @@ courses:
     teachers: [ufuk-tan-altunkaya, hazal-erdal]
     topics: {tr: "Ses ve diksiyon · beden ve nefes · doğaçlama · tiyatro tarihi ve dramaturji · metin ve rol çalışması", de: "Stimme und Sprechen · Körper und Atem · Improvisation · Theatergeschichte und Dramaturgie · Arbeit an Text und Rolle", en: "Voice and diction · body and breath · improvisation · theatre history and dramaturgy · text and role work"}
     form: "https://docs.google.com/forms/d/e/1FAIpQLSddOgOPj7CnL_aH_LfAXcB5XDjTV-HxV_9e07vgNabJOlQtIw/viewform"
-  - slug: ileri-atolye
-    title: {tr: Oyunculuk Atölyesi · İleri, de: Schauspielensemble · Fortgeschrittene, en: Acting ensemble · Advanced}
-    level: {tr: "Önceki dönemlerin katılımcıları için", de: "Für Teilnehmende früherer Jahrgänge", en: "For previous participants"}
-    when: {tr: "20 Kasım 2026'dan itibaren · davetle", de: "Ab 20. November 2026 · auf Einladung", en: "From 20 November 2026 · by invitation"}
-    start: 2026-11-20
-    teachers: [ufuk-tan-altunkaya, hazal-erdal]
-    invite: true
   - slug: tiyatroyu-okumak
     title: {tr: "Tiyatroyu Okumak · Reji, kuram ve seyir atölyesi", de: "Theater lesen · Werkstatt für Regie, Theorie und Zuschauen", en: "Reading Theatre · A workshop in directing, theory and spectatorship"}
     text:
