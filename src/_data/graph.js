@@ -49,7 +49,8 @@ export default function () {
   works.sort((a, b) => b.year - a.year || (b.premiere?.date || "").localeCompare(a.premiere?.date || ""));
 
   const iso = (d) => (typeof d === "string" ? d : new Date(d).toISOString().slice(0, 10));
-  for (const c of extras.courses) c.start = iso(c.start);
+  const coursePages = load("./course_pages.yaml");
+  for (const c of extras.courses) { c.start = iso(c.start); c.detail = coursePages.some((p) => p.slug === c.slug); }
   for (const c of extras.courses) for (const t of c.teachers || []) people[t].teaches.push(c.slug);
   for (const p of projects) for (const t of p.lead || []) people[t].projects.push(p.slug);
   for (const p of Object.values(people)) p.works.sort((a, b) => b.year - a.year);

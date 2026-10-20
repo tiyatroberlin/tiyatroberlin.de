@@ -1,0 +1,284 @@
+# Kurs ayrıntı sayfaları (yalnız Türkçe). Metinler Markdown. Kaynak: Kurs sayfaları içerik taslağı (Claude Docs).
+- slug: oyunculuk-atolyesi
+  subtitle: Yetişkinler için temel oyunculuk eğitimi · Her pazartesi
+  image: foto/kozalar-genc.jpg
+  facts:
+    - [Gün ve saat, "Pazartesi, 18:30–21:00"]
+    - [Dönem, "2 Kasım 2026 – 31 Mayıs 2027"]
+    - [Ders sayısı, "27 ders, toplam 67,5 saat"]
+    - [Yer, "Interkulturell Aktiv e.V., Wiclefstraße 16–17, 10551 Berlin (Moabit)"]
+    - [Dil, Türkçe]
+    - [Düzey, "Başlangıç; deneyim gerekmez"]
+    - [Yaş, 18 yaş ve üstü]
+    - [Ücret, "Aylık 80 €, havale ile, fatura karşılığı"]
+    - [Son katılım, 16 Kasım 2026 dersi]
+  sections:
+    - id: hakkinda
+      h: Kurs hakkında
+      md: |
+        Oyunculuk Atölyesi, sahneye hiç çıkmamış yetişkinlerin yedi ay boyunca oyunculuğun temel araçlarını adım adım edindiği bir çalışma alanı. Beden, nefes ve sesle başlayan yol doğaçlamadan karakter çalışmasına, oradan da partnerle kurulan sahnelere ve kısa sunum denemelerine uzanıyor.
+
+        Tiyatro Berlin atölyeyi sanatsal pratiğinin bir uzantısı olarak ele alıyor: provada geliştirilen yöntemler, oyunların dramaturjisinde sorulan sorular ve sahnede biriken deneyim, aynı düşünce alanının parçası olarak derse taşınıyor. Teknik çalışmanın yanında tiyatro tarihi ve oyun okumaları da müfredatın kalıcı bir parçası.
+    - id: kimler-icin
+      h: Kimler için
+      md: |
+        - Tiyatroya merak duyan, sahne deneyimi olmayan ya da yeniden başlamak isteyen yetişkinler
+        - Kendini daha rahat ifade etmek, sesini ve bedenini daha bilinçli kullanmak isteyenler
+        - Berlin'de Türkçe üretilen bir sanat ortamının parçası olmak isteyenler
+        - Türkçesini sahnede geliştirmek isteyen ikinci ve üçüncü kuşak katılımcılar
+    - id: kazanimlar
+      h: Kurs sonunda neler kazanılır
+      md: |
+        - Nefesini, sesini ve bedenini sahnede kontrollü kullanabilmek
+        - Doğaçlamada anı kabul edip geliştirebilmek, partneri dinleyerek oynayabilmek
+        - Bir sahneyi verili koşullar, amaç ve engel üzerinden çözümleyebilmek
+        - Bir karakteri gözlemden, metinden ve bedenden yola çıkarak kurabilmek
+        - Bir oyun metnini okuyup sahneye taşımanın ilk adımlarını atabilmek
+        - Bir izleyici önünde oynamayı ve anı yakalamayı deneyimlemiş olmak
+    - id: mufredat
+      h: Müfredat
+      md: |
+        Dönem, birbirinin üzerine kurulan altı bölümden oluşuyor. Her bölüm yaklaşık bir ay sürüyor; tempo grubun ihtiyacına göre ayarlanıyor.
+
+        1. **Topluluk, beden ve dikkat** · Kasım
+            - Tanışma, güven ve grup oyunları; dinleme ve dikkat egzersizleri
+            - Isınma rutini: eklem açma, esneme, merkez ve denge
+            - Alan kullanımı, tempo ve ritim; bedenin sahnedeki varlığı
+            - Nefesin farklı biçimleri ve diyafram nefesine giriş
+        2. **Ses, konuşma ve diksiyon** · Aralık–Ocak
+            - Soluk, ses ve boğumlama: diyafram kontrolü, rezonans, ses alanı
+            - Türkçenin sesleri, artikülasyon ve diksiyon egzersizleri
+            - Tonlama, vurgu, duraklama ve konuşma hızı
+            - Şiir ve metin okuma; metni dinleyiciye ulaştırmak
+        3. **Doğaçlama** · Ocak–Şubat
+            - Kabul et ve geliştir: sahnede teklif vermek ve almak
+            - Nesne, durum ve duygu doğaçlamaları
+            - Statü oyunları ve ilişki kurma
+            - Kısa hikâye kurgulama; bir sahnenin başı, ortası ve sonu
+        4. **Karakter ve rol** · Şubat–Mart
+            - Verili koşullar, amaç, engel ve eylem: Stanislavski'nin temel kavramları
+            - Alt metin: söylenenle kastedilen arasındaki mesafe
+            - Gözlem çalışmaları, karakter yürüyüşü ve bedence kurulan karakter
+            - Mimik ve jest: yüzün ve ellerin anlatımı
+        5. **Sahne çalışması** · Nisan
+            - Çağdaş Türkçe oyun metinlerinden ikili sahneler ve monologlar
+            - Partnerle çalışma: dinlemek, tepki vermek, ritmi paylaşmak
+            - Yönetmen ve oyuncu arasındaki ilişki; bir provanın nasıl çalıştığı
+        6. **Sunum denemeleri** · Mayıs
+            - Dönem boyunca çalışılan sahnelerden kısa sunum örnekleri
+            - Anında kurulan doğaçlamalar ve atölye dışındaki mekânlarda çalışmalar
+            - Dönemin birlikte değerlendirilmesi
+
+        **Dönem boyunca süren hat: tiyatro tarihi ve dramaturji.** Her ay bir ders akşamının bir bölümü tiyatronun tarihine ve düşüncesine ayrılıyor: Antik Yunan'dan modern tiyatroya, meddah, Karagöz ve ortaoyunundan Cumhuriyet dönemine ve bugünün Türkiye tiyatrosuna uzanan bir okuma. Katılımcılar her bölümde bir oyun metni okuyor.
+    - id: ders-aksami
+      h: Bir ders akşamı nasıl geçer
+      md: |
+        | Saat | Bölüm |
+        | --- | --- |
+        | 18:15 | Kapı açılır; üst değiştirme |
+        | 18:30 | Isınma: beden, nefes, ses |
+        | 19:00 | Ayın konusu üzerine teknik çalışma |
+        | 19:45 | Ara |
+        | 19:55 | Doğaçlama ya da sahne çalışması |
+        | 20:40 | Geri bildirim ve gelecek haftanın hazırlığı |
+        | 21:00 | Kapanış |
+    - id: egitmenler
+      h: Eğitmenler
+      teachers: true
+    - id: takvim
+      h: Takvim
+      md: |
+        Dönem 27 dersten oluşuyor. Berlin'in resmî tatillerine, Ramazan ve Kurban Bayramı'na ve Noel ile yılbaşı arasına denk gelen pazartesiler ders yapılmıyor.
+
+        | Ay | Ders günleri | Ders yok |
+        | --- | --- | --- |
+        | Kasım 2026 | 2, 9, 16, 23, 30 | |
+        | Aralık 2026 | 7, 14, 21 | 28 Aralık: Noel ile yılbaşı arası |
+        | Ocak 2027 | 4, 11, 18, 25 | |
+        | Şubat 2027 | 1, 8, 15, 22 | |
+        | Mart 2027 | 1, 15, 22 | 8 Mart: Dünya Kadınlar Günü ve Ramazan Bayramı arifesi · 29 Mart: Paskalya Pazartesisi |
+        | Nisan 2027 | 5, 12, 19, 26 | |
+        | Mayıs 2027 | 3, 10, 24, 31 | 17 Mayıs: Pentekost Pazartesisi ve Kurban Bayramı |
+    - id: ucret
+      h: Ücret ve ödeme
+      md: |
+        - Aylık 80 €. Ücret, o ay kaç ders olduğundan bağımsız olarak sabittir.
+        - Ödeme her ayın ilk dersinden önce banka havalesiyle yapılır; her ödeme için fatura düzenlenir.
+        - Katılım aylıktır: bir sonraki aya devam etmek istemeyen katılımcı bunu ay bitmeden e-postayla bildirir.
+        - İndirim ve deneme dersi uygulanmaz.
+        - Kaçırılan dersler için iade yapılmaz; dersin notları ve ödevleri paylaşılır.
+    - id: kayit
+      h: Kayıt adımları
+      md: |
+        1. Kayıt formu doldurulur.
+        2. Tiyatro Berlin 24 saat içinde kişisel olarak döner.
+        3. Katılımcıya ödeme bilgileri ve hoş geldin e-postası gönderilir.
+        4. Katılımcı kurs grubunun WhatsApp grubuna eklenir.
+        5. İlk derste katılım sözleşmesi imzalanır.
+    - id: ilk-ders
+      h: İlk ders günü
+      md: |
+        - 18:15'te mekânda olun; ilk akşam tanışma ve sözleşmeyle başlıyor.
+        - Rahat, hareket etmenizi kısıtlamayan kıyafetler giyin; çorap ya da yumuşak tabanlı ayakkabı getirin.
+        - Yanınızda su, defter ve kalem olsun.
+        - Sözleşme ilk derste, katılım koşulları birlikte okunarak imzalanır; ilk ayın ödemesi bu tarihe kadar yapılmış olur.
+    - id: ilkeler
+      h: Birlikte çalışma ilkeleri
+      md: |
+        - Ders 18:30'da başlar; ısınma grubun ortak zeminidir, geç kalınacağı durumlar önceden haber verilir.
+        - Katılamayacağınız dersleri kurs grubunda önceden bildirin.
+        - Telefonlar ders süresince sessizdedir.
+        - Atölye güvenli bir alan: kimse istemediği bir şeye zorlanmaz, fiziksel temas her zaman rızayla kurulur, grupta paylaşılan kişisel hikâyeler grubun içinde kalır.
+        - Derslerde fotoğraf ve video yalnızca katılımcıların izniyle çekilir.
+    - id: donem-sonu
+      h: Dönem sonu
+      md: |
+        - Her katılımcıya katılım belgesi (Teilnahmebescheinigung) verilir.
+        - Dönemi tamamlayanlar bir sonraki sezonun ileri atölyesine davet edilir.
+    - id: mekan
+      h: Mekân ve ulaşım
+      venue: true
+  faq:
+    - ["Hiç deneyimim yok, katılabilir miyim?", Evet. Kurs başlangıç düzeyi için tasarlandı.]
+    - ["Türkçem çok iyi değil, sorun olur mu?", "Hayır. Kurs Türkçe yürütülüyor; ses ve diksiyon çalışmaları Türkçeyi sahnede kullanmayı da güçlendiriyor."]
+    - [Kursa sonradan katılabilir miyim?, 16 Kasım 2026 dersine kadar katılım mümkün.]
+    - [Deneme dersi var mı?, "Hayır. Bir ay katılıp devam edip etmemeye ay sonunda karar verebilirsiniz."]
+    - [Bir dersi kaçırırsam ne olur?, "Dersin notları ve ödevleri kurs grubunda paylaşılır; ücret iadesi yapılmaz."]
+    - [Fatura alabilir miyim?, "Evet, her ödeme için fatura düzenlenir."]
+    - [Bu kurs konservatuvar sınavlarına hazırlar mı?, "Kurs temel bir oyunculuk eğitimi veriyor; sınava hazırlanmak isteyenler eğitmenlerle ayrıca görüşebilir."]
+    - [İleri atölyeye nasıl katılınır?, "İleri atölye, temel dönemi tamamlayanlara davetle açılıyor."]
+  teachers:
+    - person: ufuk-tan-altunkaya
+      title: Yönetmen, dramaturg, oyuncu; Tiyatro Berlin genel sanat yönetmeni
+      cv: |
+        - **Eğitim:** İstanbul Üniversitesi, tiyatro eleştirmenliği ve dramaturji yüksek lisans; Freie Universität Berlin, doktora (1990 sonrası Türkiye'de tiyatro ve siyaset)
+        - **2008–2010:** garajistanbul, asistan yönetmenlik ve programlama
+        - **2010–2017:** Mekan Artı, İstanbul; kurucu ve sanat yönetmeni; 40'ı aşkın yapım. Türkiye'nin ilk tek seyircili oyunları Takip ve üçKİŞİ, Cumartesi Anneleri üzerine Bizde Yok, düşünce suçları üzerine Kalem; işleri İstanbul Tiyatro Festivali'nde gösterildi
+        - **2018–2020:** Theater28 Türk-Alman Tiyatro Festivali, festival yönetmeni
+        - **2019–2021:** Ballhaus Prinzenallee, program
+        - **Maxim Gorki Theater:** Lola Arias'ın Mother Tongue'unda oyuncu; Üftade ve Avzer'in yönetmeni
+        - **2021'den beri:** Tiyatro Berlin, genel sanat yönetmeni; 80'lerde Lubunya Olmak, Kozalar, YAKIN, SAME ve diğer yapımlar
+        - **Ödüller:** Direklerarası (2009, 2012), TOBAV (2011), Ekin Yazın (2012, 2017)
+    - person: hazal-erdal
+      title: Oyuncu, seslendirme sanatçısı, cast direktörü
+      cv: |
+        - Türkiye'de uzun yıllar cast direktörü olarak çalıştı; pek çok yapımda oyuncu ve seslendirme sanatçısı olarak yer aldı
+        - **Tiyatro Berlin'de:** Kozalar ve Pride '93'te oyuncu; YAKIN ve The Monologue Box'ta tek oyuncu; 80'lerde Lubunya Olmak ve SAME'de proje koordinasyonu
+        - **2025:** Durchstarten desteğiyle Mut zur Bühne projesini yürüttü
+        - **2026:** Proud Haram Festivali'nde Die Reise der Figur durch körperliche Energie atölyesi
+
+- slug: tiyatroyu-okumak
+  subtitle: Reji, kuram ve seyir atölyesi · Her salı
+  image: oyun/atolye.jpg
+  facts:
+    - [Gün ve saat, "Salı, 19:00–21:00"]
+    - [Dönem, "12 Ocak – 30 Mart 2027"]
+    - [Ders sayısı, "11 ders, toplam 22 saat"]
+    - [Yer, Daha sonra duyurulacak]
+    - [Dil, Türkçe]
+    - [Düzey, Ön bilgi gerekmez]
+    - [Yaş, 18 yaş ve üstü]
+    - [Ücret, "Aylık 80 €, havale ile, fatura karşılığı"]
+  sections:
+    - id: hakkinda
+      h: Kurs hakkında
+      md: |
+        Bir gösterinin bizi neden yakaladığını, bir metnin sahnede nasıl başka bir şeye dönüştüğünü, bir rejinin hangi kararlarla kurulduğunu birlikte soran bu atölye, tiyatroya sahnenin hem önünden hem arkasından bakmak isteyenler için kuruldu. On iki hafta boyunca reji anlayışları ve tiyatro kuramları konuşuluyor, oyun metinleri satır satır çözümleniyor, oyunlar birlikte izlenip ardından tartışılıyor.
+
+        Atölyenin ufkunda iyi bir seyirci olmak var: gördüğünü okuyabilen, bir gösterinin nasıl kurulduğunu fark eden ve üzerine söz alabilen bir seyirci.
+    - id: kimler-icin
+      h: Kimler için
+      md: |
+        - Tiyatroyu daha derinden izlemek ve anlamak isteyen seyirciler
+        - Yönetmenliğe, yazarlığa, dramaturjiye ya da eleştiriye merak duyanlar
+        - Oyunculuk Atölyesi'ne katılan ve sahnenin düşünce tarafını da öğrenmek isteyenler
+    - id: kazanimlar
+      h: Kurs sonunda neler kazanılır
+      md: |
+        - Bir oyun metnini yapısı, karakterleri ve alt metniyle çözümleyebilmek
+        - Bir gösterinin reji kararlarını okuyabilmek: mekân, oyunculuk, ritim, ışık, ses
+        - 20. yüzyılın belli başlı tiyatro kuramlarını ve akımlarını tanımak
+        - Türkiye tiyatrosunun dönüşümünü tarihsel bir çerçevede görebilmek
+        - İzlediği bir gösteri üzerine kısa bir eleştiri metni yazabilmek
+    - id: mufredat
+      h: Müfredat
+      md: |
+        - Reji anlayışları ve tiyatro kuramları
+        - Oyun metni çözümleme
+        - Birlikte oyun izleme ve tartışma
+        - Türkiye ve dünya tiyatro tarihi
+        - Eleştiri yazımı
+
+        Haftalık okuma listesi ve izlenecek oyunlar ilk derste paylaşılır.
+    - id: ders-aksami
+      h: Bir ders akşamı nasıl geçer
+      md: |
+        | Saat | Bölüm |
+        | --- | --- |
+        | 19:00 | Haftanın konusu: kuram ya da reji anlayışı |
+        | 19:50 | Ara |
+        | 20:00 | Metin çözümleme ya da izlenen oyun üzerine tartışma |
+        | 20:50 | Gelecek haftanın okuması |
+        | 21:00 | Kapanış |
+    - id: egitmenler
+      h: Eğitmen
+      teachers: true
+    - id: takvim
+      h: Takvim
+      md: |
+        Atölye 11 dersten oluşuyor. 9 Mart 2027 Salı, Ramazan Bayramı'nın ilk günü olduğu için ders yapılmıyor.
+
+        | Ay | Ders günleri | Ders yok |
+        | --- | --- | --- |
+        | Ocak 2027 | 12, 19, 26 | |
+        | Şubat 2027 | 2, 9, 16, 23 | |
+        | Mart 2027 | 2, 16, 23, 30 | 9 Mart: Ramazan Bayramı 1. gün |
+    - id: ucret
+      h: Ücret ve ödeme
+      md: |
+        - Aylık 80 €; Ocak, Şubat ve Mart için üç ödeme, toplam 240 €.
+        - Ödeme her ayın ilk dersinden önce banka havalesiyle yapılır; her ödeme için fatura düzenlenir.
+        - Birlikte izlenen oyunların biletleri kurs ücretine dahil değil.
+        - İndirim ve deneme dersi uygulanmaz; kaçırılan dersler için iade yapılmaz.
+    - id: kayit
+      h: Kayıt adımları
+      md: |
+        1. Kayıt formu doldurulur.
+        2. Tiyatro Berlin 24 saat içinde kişisel olarak döner.
+        3. Katılımcıya ödeme bilgileri ve hoş geldin e-postası gönderilir.
+        4. Katılımcı kurs grubunun WhatsApp grubuna eklenir.
+        5. İlk derste katılım sözleşmesi imzalanır.
+    - id: ilk-ders
+      h: İlk ders günü
+      md: |
+        - 18:45'te mekânda olun; ilk akşam tanışma, okuma listesi ve sözleşmeyle başlıyor.
+        - Yanınızda defter ve kalem olsun.
+    - id: ilkeler
+      h: Birlikte çalışma ilkeleri
+      md: |
+        - Haftalık okumalar derse hazırlıklı gelmek için; tartışmanın zemini onlar.
+        - Farklı görüşler atölyenin malzemesi; her görüş dinlenir.
+        - Telefonlar ders süresince sessizdedir.
+    - id: donem-sonu
+      h: Dönem sonu
+      md: |
+        - Katılımcılar dönem boyunca izlenen oyunlardan biri üzerine kısa bir eleştiri metni yazar; metinler son derste okunur.
+        - Her katılımcıya katılım belgesi verilir.
+    - id: mekan
+      h: Mekân ve ulaşım
+      md: |
+        Atölyenin yapılacağı mekân daha sonra duyurulacak; kayıt olanlara ayrıca bildirilir.
+  faq:
+    - ["Tiyatro hakkında hiç bilgim yok, katılabilir miyim?", Evet. Atölye ön bilgi gerektirmiyor.]
+    - ["Oyunculuk Atölyesi'ne de devam ediyorum, ikisine birden katılabilir miyim?", "Evet; iki kurs farklı günlerde ve birbirini tamamlıyor."]
+    - [Oyun biletleri ne kadar tutar?, Biletler mekâna göre değişiyor ve kurs ücretine dahil değil.]
+  teachers:
+    - person: egemen-kalyon
+      title: Dramaturg
+      cv: |
+        - **Eğitim:** İstanbul Üniversitesi
+        - Mekan Artı yıllarından bu yana aynı ekiple çalışıyor
+        - **Tiyatro Berlin'de dramaturji:** Kozalar, 80'lerde Lubunya Olmak, Pride '93, Avzer, Üftade, Yeni Bir Hayat İçin, Sen İstanbul'dan Daha Güzelsin, O'ndan Sonra, Nested
+        - **2026:** Zwei Städte, Ein Körper; metin, konsept ve reji (Proud Haram Festivali, Ballhaus Prinzenallee)
+        - **2025–2026:** Tiyatro Berlin Dramaturji ve Oyun İnceleme Atölyesi
+        - 2024'ten beri Berlin'de

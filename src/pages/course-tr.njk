@@ -1,0 +1,72 @@
+---
+pagination: {data: course_pages, size: 1, alias: cp}
+lang: tr
+permalink: "/tr/tiyatro-pedagojisi/{{ cp.slug }}/"
+layout: base.njk
+section: edu
+eleventyComputed:
+  title: "{{ (graph.courseBySlug[cp.slug].title.tr.split(' · '))[0] }}"
+  alt: {tr: "/tr/tiyatro-pedagojisi/{{ cp.slug }}/", de: "/de/theaterpaedagogik/", en: "/en/education/"}
+---
+{%- set c = graph.courseBySlug[cp.slug] -%}
+{%- set L = i18n.tr -%}
+{%- set v = graph.venues[c.venue] -%}
+<section class="page-head course-head"><div class="wrap cols">
+  <div>
+    <p class="label"><a href="{{ '/tr/tiyatro-pedagojisi/' | url }}">{{ L.nav.edu }}</a></p>
+    <h1 class="h-huge">{{ (c.title.tr.split(' · '))[0] }}<span class="pt">.</span></h1>
+    <p class="lede it">{{ cp.subtitle }}</p>
+    <p class="course-cta"><a class="btn red" href="{{ c.form }}" rel="noopener">{{ L.register }}</a> <a class="btn ghost" href="#takvim">Takvim</a></p>
+  </div>
+  {% if cp.image %}<figure class="poster"><img src="{{ ('/assets/img/' + cp.image) | url }}?v={{ build }}" alt="" width="1080" height="1240"></figure>{% endif %}
+</div></section>
+<section class="section"><div class="wrap course-grid">
+  <aside class="course-aside">
+    <h2 class="sub-h">Bir bakışta</h2>
+    <dl class="facts">
+      {%- for f in cp.facts %}<dt>{{ f[0] }}</dt><dd>{{ f[1] }}</dd>{% endfor %}
+      <dt>{{ "Eğitmenler" if cp.teachers.length > 1 else "Eğitmen" }}</dt><dd>{% for t in cp.teachers %}<a href="{{ ('/tr/kisiler/' + t.person + '/') | url }}">{{ graph.people[t.person].name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</dd>
+    </dl>
+    <p style="margin-top:1.2rem"><a class="btn red" href="{{ c.form }}" rel="noopener">{{ L.register }}</a></p>
+    <nav class="course-toc" aria-label="İçindekiler">
+      {%- for s in cp.sections %}<a href="#{{ s.id }}">{{ s.h }}</a>{% endfor %}<a href="#sss">Sık sorulan sorular</a>
+    </nav>
+  </aside>
+  <div class="course-body">
+    {%- for s in cp.sections %}
+    <section id="{{ s.id }}" class="course-sec">
+      <h2>{{ s.h }}<span class="pt">.</span></h2>
+      {%- if s.md %}<div class="prose md">{{ s.md | md | safe }}</div>{% endif %}
+      {%- if s.teachers %}
+      <div class="teachers">
+        {%- for t in cp.teachers %}{% set p = graph.people[t.person] %}
+        <article class="teacher">
+          {% if p.photo %}<img src="{{ ('/assets/img/kisi/' + p.photo) | url }}?v={{ build }}" alt="{{ p.name }}" width="640" height="800">{% endif %}
+          <div>
+            <h3><a href="{{ ('/tr/kisiler/' + t.person + '/') | url }}">{{ p.name }}</a></h3>
+            <p class="soon-form">{{ t.title }}</p>
+            <div class="prose md">{{ t.cv | md | safe }}</div>
+          </div>
+        </article>
+        {%- endfor %}
+      </div>
+      {%- endif %}
+      {%- if s.venue and v %}
+      <div class="prose md">
+        <p>Dersler <a href="{{ c.venue | venueHref('tr') }}">{{ v.name }}</a> derneğinin mekânında yapılıyor: {{ v.address }}.</p>
+        {% if v.transit %}<ul>{% for t in v.transit %}<li>{{ t }}</li>{% endfor %}</ul>{% endif %}
+        <p><a class="btn" href="https://www.google.com/maps/search/?api=1&query={{ (v.name + ', ' + v.address) | urlenc }}" rel="noopener">{{ L.map_open }}</a></p>
+      </div>
+      {%- endif %}
+    </section>
+    {%- endfor %}
+    <section id="sss" class="course-sec">
+      <h2>Sık sorulan sorular<span class="pt">.</span></h2>
+      <div class="faq">
+        {%- for f in cp.faq %}<details><summary>{{ f[0] }}</summary><p>{{ f[1] }}</p></details>{% endfor %}
+        <details><summary>Sorum burada yoksa?</summary><p><a href="mailto:{{ site.email }}">{{ site.email }}</a> adresine ya da <a href="{{ '/tr/iletisim/' | url }}">iletişim formuna</a> yazın.</p></details>
+      </div>
+    </section>
+    <p class="course-cta"><a class="btn red" href="{{ c.form }}" rel="noopener">{{ L.register }}</a></p>
+  </div>
+</div></section>

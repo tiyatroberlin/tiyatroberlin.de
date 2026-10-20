@@ -1,5 +1,7 @@
 import fs from "node:fs";
 import yaml from "js-yaml";
+import markdownIt from "markdown-it";
+const md = markdownIt({ html: false, linkify: false, typographer: false });
 
 export default function (cfg) {
   cfg.addDataExtension("yaml", (c) => yaml.load(c));
@@ -23,6 +25,7 @@ export default function (cfg) {
   const siteData = yaml.load(fs.readFileSync("src/_data/site.yaml", "utf8"));
   const prefix = (process.env.PATH_PREFIX || "/").replace(/\/?$/, "/");
   cfg.addFilter("venueHref", (slug, lang) => `${prefix}${lang}/${siteData.sections.venues[lang]}/${slug}/`);
+  cfg.addFilter("md", (s) => md.render(s || ""));
   cfg.addFilter("urlenc", (s) => encodeURIComponent(s || ""));
   cfg.addFilter("initials", (n) => n.split(" ").map((w) => w[0]).slice(0, 2).join(""));
 

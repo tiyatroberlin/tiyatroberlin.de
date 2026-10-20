@@ -65,7 +65,7 @@ eleventyComputed:
       <dt>{{ L.where }}</dt><dd>{% set cv = graph.venues[c.venue] %}{% if cv.address %}<a class="vlink" href="{{ c.venue | venueHref(lang) }}">{{ cv.name }}</a>{% else %}{{ cv.name }}{% endif %}, {{ cv.address }}</dd>
       <dt>{{ L.fee }}</dt><dd>{{ c.fee | t(lang) }}</dd>
       <dt>{{ L.info }}</dt><dd>{{ c.lang | t(lang) }} · {{ c.level | t(lang) }}</dd>
-      </dl><p style="margin-top:1.2rem"><a class="btn red" href="{{ c.form }}" rel="noopener">{{ L.register }}</a></p><dl hidden>
+      </dl><p style="margin-top:1.2rem"><a class="btn red" href="{{ c.form }}" rel="noopener">{{ L.register }}</a>{% if c.detail and lang == "tr" %} <a class="btn ghost" href="{{ ('/tr/tiyatro-pedagojisi/' + c.slug + '/') | url }}">Ayrıntılı bilgi</a>{% endif %}</p><dl hidden>
     </dl>
   </div>
 </section>
