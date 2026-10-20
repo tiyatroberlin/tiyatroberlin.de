@@ -1,7 +1,6 @@
 # Yakında: henüz programa girmemiş yeni işler
 - slug: nameless
   title: NAMELESS
-  when: {tr: Kasım 2026, de: November 2026, en: November 2026}
   venue: ballhaus
   by: "cabinet:novus"
   form: {tr: Kulaklıklı şehir yürüyüşü, de: Audiowalk, en: Audio walk}
@@ -11,7 +10,6 @@
     en: A small group of ten puts on headphones and follows, step by step, the life of a woman through the streets of the city. The walk can be heard in German and in Turkish.
 - slug: throniva
   title: THRONIVA
-  when: {tr: Ocak–Şubat 2027, de: Januar–Februar 2027, en: January–February 2027}
   venue: ballhaus
   form: {tr: "Sözsüz oyun · bir yüzyıl başı çözümlemesi", de: "Stück ohne Worte · eine Analyse des Jahrhundertbeginns", en: "A wordless piece · an analysis of the turn of a century"}
   text:
@@ -20,7 +18,6 @@
     en: Opening in darkness and unfolding without a single word, THRONIVA dissects the beginning of a century around a family table, as the light slowly returns through counting-down bulbs.
 - slug: fast
   title: FAST
-  when: {tr: Nisan–Mayıs 2027, de: April–Mai 2027, en: April–May 2027}
   venue: ballhaus
   form: {tr: Biyografik solo, de: Biografisches Solo, en: Biographical solo}
   text:
