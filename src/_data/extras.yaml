@@ -20,21 +20,21 @@ courses:
     start: 2026-11-20
     teachers: [ufuk-tan-altunkaya, hazal-erdal]
     invite: true
-  - slug: dramaturji-atolyesi
-    title: {tr: "Sahneyi Düşünmek · Dramaturji Atölyesi", de: "Bühne denken · Dramaturgie-Werkstatt", en: "Thinking the Stage · Dramaturgy workshop"}
+  - slug: tiyatroyu-okumak
+    title: {tr: "Tiyatroyu Okumak · Reji, kuram ve seyir atölyesi", de: "Theater lesen · Werkstatt für Regie, Theorie und Zuschauen", en: "Reading Theatre · A workshop in directing, theory and spectatorship"}
     text:
       tr: |
-        Bir gösterinin bizi neden yakaladığını, bir metnin sahnede nasıl başka bir şeye dönüştüğünü, bir rejinin hangi kararlarla kurulduğunu sormak dramaturjinin alanıdır. Bu atölye, tiyatroya oyunculuğun dışından da bakmak isteyenlere on iki hafta boyunca okumaya, tartışmaya ve yazmaya dayalı bir çalışma alanı açıyor.
+        Bir oyunu izlerken neyin bizi yakaladığını, bir metnin sahnede nasıl başka bir şeye dönüştüğünü, bir rejinin hangi kararlarla kurulduğunu birlikte soran bu atölye, tiyatroya sahnenin hem önünden hem arkasından bakmak isteyenler için kuruldu. On iki hafta boyunca reji anlayışları ve tiyatro kuramları konuşuluyor, oyun metinleri satır satır çözümleniyor, oyunlar birlikte izlenip ardından tartışılıyor.
 
-        Hat, tiyatro kuramlarından Osmanlı döneminden bugüne Türkiye tiyatrosunun dönüşümlerine, temel metinlerin çözümlenmesinden eleştiri yazımına uzanıyor. Atölye ön bilgi gerektirmiyor; tiyatroyu seyirci, yazar, oyuncu ya da yönetmen olarak daha derinden düşünmek isteyen herkese açık.
+        Atölyenin ufkunda iyi bir seyirci olmak var: gördüğünü okuyabilen, bir gösterinin nasıl kurulduğunu fark eden ve üzerine söz alabilen bir seyirci. Ön bilgi gerekmiyor; yönetmenliğe, yazarlığa ya da eleştiriye merak duyanlar kadar tiyatroyu yalnızca daha derinden izlemek isteyenler de davetli.
       de: |
-        Warum uns eine Aufführung packt, wie sich ein Text auf der Bühne in etwas anderes verwandelt, aus welchen Entscheidungen eine Inszenierung entsteht: Das ist das Feld der Dramaturgie. Die Werkstatt öffnet zwölf Wochen lang einen Raum zum Lesen, Diskutieren und Schreiben für alle, die Theater auch jenseits des Spielens verstehen wollen.
+        Was uns an einer Aufführung packt, wie sich ein Text auf der Bühne in etwas anderes verwandelt, aus welchen Entscheidungen eine Inszenierung entsteht: Diesen Fragen geht die Werkstatt gemeinsam nach, für alle, die Theater zugleich von vorne und von hinten sehen wollen. Zwölf Wochen lang geht es um Regieansätze und Theatertheorien, Stücktexte werden Zeile für Zeile gelesen, Aufführungen gemeinsam besucht und danach diskutiert.
 
-        Der Bogen reicht von Theatertheorien über die Geschichte des Theaters in der Türkei, vom Osmanischen Reich bis heute, bis zur Analyse grundlegender Texte und zum Schreiben von Kritiken. Vorkenntnisse sind nicht nötig; die Werkstatt richtet sich an alle, die Theater als Zuschauende, Schreibende, Spielende oder Inszenierende genauer denken möchten.
+        Am Horizont steht das gute Zuschauen: ein Publikum, das lesen kann, was es sieht, erkennt, wie eine Aufführung gebaut ist, und darüber sprechen kann. Vorkenntnisse sind nicht nötig; eingeladen sind alle, die sich für Regie, Schreiben oder Kritik interessieren, ebenso wie alle, die Theater einfach genauer sehen möchten.
       en: |
-        Why a performance grips us, how a text turns into something else on stage, which decisions a production is built from: this is the field of dramaturgy. Over twelve weeks the workshop opens a space for reading, discussion and writing for anyone who wants to understand theatre beyond acting as well.
+        What grips us in a performance, how a text turns into something else on stage, which decisions a production is built from: the workshop asks these questions together, for anyone who wants to see theatre from the front and from behind at the same time. Over twelve weeks it covers approaches to directing and theories of theatre, reads play texts line by line, and goes to see performances together to discuss them afterwards.
 
-        The arc runs from theories of theatre through the history of theatre in Turkey, from the Ottoman period to today, to the close analysis of key texts and the writing of criticism. No prior knowledge is needed; the workshop is open to anyone who wants to think about theatre more deeply, as a spectator, writer, performer or director.
+        On its horizon is good spectatorship: an audience that can read what it sees, notices how a performance is built and can speak about it. No prior knowledge is needed; the workshop is open to anyone curious about directing, writing or criticism, and just as much to those who simply want to watch theatre more closely.
     level: {tr: "Yetişkinler için, ön bilgi gerekmez", de: "Für Erwachsene, ohne Vorkenntnisse", en: "For adults, no prior knowledge needed"}
     when: {tr: "Her salı 19:00–21:00 · 12 Ocak – 30 Mart 2027, 12 hafta", de: "Dienstags 19:00–21:00 · 12. Januar bis 30. März 2027, 12 Wochen", en: "Tuesdays 7–9 pm · 12 January to 30 March 2027, 12 weeks"}
     start: 2027-01-12
@@ -42,5 +42,5 @@ courses:
     fee: {tr: "Aylık 80 €", de: "80 € im Monat", en: "€80 per month"}
     lang: {tr: Türkçe, de: Kurssprache Türkisch, en: Taught in Turkish}
     teachers: [egemen-kalyon]
-    topics: {tr: "Tiyatro kuramları: reji, oyunculuk, 20. yüzyıl akımları · Osmanlı'dan bugüne Türkiye tiyatrosu ve dünya tiyatro tarihi · dramaturjinin temelleri ve metin çözümleme · eleştiri kuramları ve eleştiri yazımı", de: "Theatertheorien: Regie, Schauspiel, Strömungen des 20. Jahrhunderts · Theater in der Türkei vom Osmanischen Reich bis heute und Weltheatergeschichte · Grundlagen der Dramaturgie und Textanalyse · Theorien der Kritik und Kritikschreiben", en: "Theories of theatre: directing, acting, 20th-century movements · theatre in Turkey from the Ottoman period to today and world theatre history · foundations of dramaturgy and text analysis · theories of criticism and critical writing"}
+    topics: {tr: "Reji anlayışları ve tiyatro kuramları · oyun metni çözümleme · birlikte oyun izleme ve tartışma · Türkiye ve dünya tiyatro tarihi · eleştiri yazımı", de: "Regieansätze und Theatertheorien · Stückanalyse · gemeinsame Aufführungsbesuche und Gespräche · Theatergeschichte der Türkei und der Welt · Kritikschreiben", en: "Approaches to directing and theories of theatre · play analysis · seeing and discussing performances together · theatre history of Turkey and the world · critical writing"}
     form: "https://docs.google.com/forms/d/e/1FAIpQLSddOgOPj7CnL_aH_LfAXcB5XDjTV-HxV_9e07vgNabJOlQtIw/viewform"
