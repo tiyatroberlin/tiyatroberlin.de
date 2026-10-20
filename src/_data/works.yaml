@@ -199,6 +199,7 @@
   year: 2023
   image: oyun/uftade.jpg
   form: {tr: "Oyun", de: "Stück", en: "Play"}
+  info: {tr: "Haziran 2023'te Maxim Gorki Theater'da, 6. Berliner Herbstsalon kapsamındaki GEZİ – TEN YEARS AFTER programında konuk oyun olarak sahnelendi.", de: "Im Juni 2023 als Gastspiel im Maxim Gorki Theater zu sehen, im Programm GEZİ – TEN YEARS AFTER des 6. Berliner Herbstsalons.", en: "Shown in June 2023 as a guest performance at the Maxim Gorki Theater, in the programme GEZİ – TEN YEARS AFTER of the 6th Berliner Herbstsalon."}
   hook: {tr: "Haziran 2013. Bir tiyatro sahnesi revire dönüşüyor.", de: "Juni 2013. Eine Theaterbühne wird zum Lazarett.", en: "June 2013. A stage becomes a field hospital."}
   text:
     tr: |
@@ -263,6 +264,7 @@
   year: 2023
   image: oyun/avzer.jpg
   form: {tr: "Tek kişilik oyun", de: "Solo", en: "Solo"}
+  info: {tr: "Haziran 2023'te Maxim Gorki Theater'da, 6. Berliner Herbstsalon kapsamındaki GEZİ – TEN YEARS AFTER programında konuk oyun olarak sahnelendi.", de: "Im Juni 2023 als Gastspiel im Maxim Gorki Theater zu sehen, im Programm GEZİ – TEN YEARS AFTER des 6. Berliner Herbstsalons.", en: "Shown in June 2023 as a guest performance at the Maxim Gorki Theater, in the programme GEZİ – TEN YEARS AFTER of the 6th Berliner Herbstsalon."}
   hook: {tr: "Ankara, Haziran 2013. Bir sokak çocuğu değişmiş bir şehre uyanıyor.", de: "Ankara, Juni 2013. Ein Straßenkind erwacht in einer veränderten Stadt.", en: "Ankara, June 2013. A street kid wakes up in a changed city."}
   text:
     tr: |
