@@ -3,15 +3,49 @@
 # Bir isim bir kez yazılır; geçtiği her sayfada otomatik bağlantı olur.
 
 venues:
-  ballhaus:      {name: Ballhaus Prinzenallee, address: "Prinzenallee 33, 13359 Berlin", district: Wedding, url: "https://www.ballhaus-prinzenallee.de"}
-  moda-bar:      {name: Moda Bar, address: "Weichselstraße 54, 12045 Berlin", district: Neukölln}
-  gorki:         {name: Maxim Gorki Theater, address: "Am Festungsgraben 2, 10117 Berlin", district: Mitte, url: "https://www.gorki.de"}
-  fliegendes:    {name: Fliegendes Theater, address: "Urbanstraße 100, 10967 Berlin", district: Kreuzberg}
-  gropiusstadt:  {name: Gemeinschaftshaus Gropiusstadt, address: "Bat-Yam-Platz 1, 12353 Berlin", district: Neukölln}
-  koernerpark:   {name: Körnerpark, address: "Schierker Straße 8, 12051 Berlin", district: Neukölln}
+  ballhaus:
+    name: Ballhaus Prinzenallee
+    address: "Prinzenallee 33, 13359 Berlin"
+    district: Wedding
+    url: "https://www.ballhausprinzenallee.de"
+    transit: ["U8 Pankstraße · 600 m", "Tram M13, 50 · Osloer Str./Prinzenallee · 300 m", "Bus M27, 255 · Prinzenallee/Soldiner Str.", "S1 Wollankstraße"]
+    access: {tr: "Mekân bir arka avluda; sokaktan girişe kadar yol eşiksiz ve düz. Engelli tuvaleti var, tekerlekli sandalye yerleri önceden ayırtılabilir.", de: "Der Saal liegt im Hinterhof; der Weg von der Straße ist stufenlos und eben. Barrierefreies WC vorhanden, Rollstuhlplätze können reserviert werden.", en: "The hall is in a rear courtyard; the way from the street is step-free and level. Accessible toilet; wheelchair spaces can be reserved."}
+  moda-bar:
+    name: Moda Bar
+    address: "Weichselstraße 54, 12045 Berlin"
+    district: Neukölln
+    url: "https://www.instagram.com/moda.bar.berlin/"
+    transit: ["U7 Rathaus Neukölln", "U7, U8 Hermannplatz"]
+  gorki:
+    name: Maxim Gorki Theater
+    address: "Am Festungsgraben 2, 10117 Berlin"
+    district: Mitte
+    url: "https://www.gorki.de"
+    transit: ["U5 Museumsinsel · 300 m", "S+U Friedrichstraße · 600 m", "Tram M1, 12 · Am Kupfergraben", "Bus 100, 300 · Staatsoper"]
+    access: {tr: "Ana sahneye girişteki rampa ve asansörle eşiksiz ulaşılıyor; tekerlekli sandalye yerleri en az dört gün önceden ayırtılmalı.", de: "Die große Bühne ist über Rampe und Aufzug am Haupteingang stufenlos erreichbar; Rollstuhlplätze mindestens vier Tage vorher reservieren.", en: "The main stage is step-free via the ramp and lift at the main entrance; book wheelchair spaces at least four days ahead."}
+  fliegendes:
+    name: Fliegendes Theater
+    address: "Urbanstraße 100, 10967 Berlin"
+    district: Kreuzberg
+    url: "https://www.fliegendes-theater.de"
+    transit: ["U7, U8 Hermannplatz · 300 m", "U8 Schönleinstraße · 300 m"]
+    access: {tr: "Giriş avludan; salonlar eşiksiz.", de: "Eingang über den Hof; die Räume sind barrierefrei zugänglich.", en: "Entrance through the courtyard; the rooms are step-free."}
+  gropiusstadt:
+    name: Gemeinschaftshaus Gropiusstadt
+    address: "Bat-Yam-Platz 1, 12353 Berlin"
+    district: Neukölln
+    url: "https://www.berlin.de/kunst-und-kultur-neukoelln/kulturorte/gemeinschaftshaus/"
+    transit: ["U7 Lipschitzallee · 100 m", "Bus 744 · U Lipschitzallee", "Bus M11, X71, 172 · Lipschitzallee/Fritz-Erler-Allee"]
+    access: {tr: "Ana girişin sağında eşiksiz bir giriş ve büyük salona asansör var; tekerlekli sandalye yerleri bilet alırken ayırtılabilir.", de: "Stufenloser Eingang rechts vom Haupteingang, Aufzug zum Großen Saal; Rollstuhlplätze beim Ticketkauf reservieren.", en: "Step-free entrance to the right of the main door and a lift to the large hall; reserve wheelchair spaces when booking."}
+  koernerpark:
+    name: Körnerpark
+    address: "Schierker Straße 8, 12051 Berlin"
+    district: Neukölln
+    url: "https://www.galerie-im-koernerpark.de"
+    transit: ["S+U Neukölln (S41, S42, S45, S46, S47, U7)", "U8 Leinestraße"]
   nikolaiviertel: {name: Nikolaiviertel, district: Mitte, city: Berlin, note: {tr: şehirde yürüyüş, de: Stadtraum, en: walk through the city}}
   bergama:       {name: Kale Mahallesi, city: Bergama, district: "Bergama Tiyatro Festivali"}
-  atolye-moabit: {name: Atölye Moabit, address: "Wiclefstraße 16–17, 10551 Berlin", district: Moabit}
+  atolye-moabit: {name: Atölye Moabit, address: "Wiclefstraße 16–17, 10551 Berlin", district: Moabit, transit: ["U9 Birkenstraße · 400 m", "S41, S42 Beusselstraße"]}
 
 funders:
   senat:      {name: "Senatsverwaltung für Kultur und Europa", short: "Land Berlin"}
