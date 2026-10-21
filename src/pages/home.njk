@@ -81,14 +81,3 @@ eleventyComputed:
   </div>
 </section>
 
-<section class="section">
-  <div class="wrap">
-    <dl class="counts">
-      <div><dt>{{ L.counts.works }}</dt><dd>{{ graph.counts.works }}</dd></div>
-      <div><dt>{{ L.counts.people }}</dt><dd>{{ graph.counts.people }}</dd></div>
-      <div><dt>{{ L.counts.shows }}</dt><dd>{{ graph.counts.shows }}</dd></div>
-      <div><dt>{{ L.counts.venues }}</dt><dd>{{ graph.counts.venues }}</dd></div>
-    </dl>
-    <p class="counts-link"><a href="{{ ('/' + lang + '/' + S.network[lang] + '/') | url }}">{{ L.nav.network }}</a> · <a href="{{ ('/' + lang + '/' + S.people[lang] + '/') | url }}">{{ L.nav.people }}</a></p>
-  </div>
-</section>

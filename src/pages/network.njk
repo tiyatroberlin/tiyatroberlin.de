@@ -13,14 +13,6 @@ eleventyComputed:
   <svg class="net" id="net" role="img" aria-label="{{ L.nav.network }}"></svg>
   <p class="net-legend"><span><span class="dot" aria-hidden="true"></span>{{ L.nav.works }}</span><span><span class="dot ink" aria-hidden="true"></span>{{ L.nav.people }}</span></p>
 </div>
-<section class="section"><div class="wrap">
-  <dl class="counts">
-    <div><dt>{{ L.counts.works }}</dt><dd>{{ graph.counts.works }}</dd></div>
-    <div><dt>{{ L.counts.people }}</dt><dd>{{ graph.counts.people }}</dd></div>
-    <div><dt>{{ L.counts.shows }}</dt><dd>{{ graph.counts.shows }}</dd></div>
-    <div><dt>{{ L.counts.venues }}</dt><dd>{{ graph.counts.venues }}</dd></div>
-  </dl>
-</div></section>
 <script src="{{ '/assets/js/d3.min.js' | url }}"></script>
 <script>
 (function(){
