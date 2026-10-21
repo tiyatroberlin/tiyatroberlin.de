@@ -75,8 +75,9 @@
       <div>
         <h2>{{ L.support }}</h2>
         <ul class="funders logos">
-          {%- for f in [["senat","senat.png"],["fdk","fdk.svg"],["goethe","goethe.svg"]] %}
-          <li><img class="lg-{{ f[0] }}" src="{{ ('/assets/img/destek/' + f[1]) | url }}" alt="{{ graph.db.funders[f[0]].name }}" title="{{ graph.db.funders[f[0]].name }}" loading="lazy"></li>
+          {%- for f in [["senat","senat.png"],["fdk","fdk.svg"],["goethe","goethe.svg"],["ia","interkulturell-aktiv.png","Interkulturell Aktiv e.V."]] %}
+          {%- set fname = f[2] or graph.db.funders[f[0]].name %}
+          <li><img class="lg-{{ f[0] }}" src="{{ ('/assets/img/destek/' + f[1]) | url }}" alt="{{ fname }}" title="{{ fname }}" loading="lazy"></li>
           {%- endfor %}
         </ul>
       </div>
