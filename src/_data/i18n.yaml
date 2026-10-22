@@ -1,4 +1,8 @@
 tr:
+  teaser: Tanıtım filmi
+  sound_on: Sesi aç
+  sound_off: Sesi kapat
+  work_page: Oyun sayfası
   name: Türkçe
   nav: {program: Program, works: Oyunlar, people: Kişiler, network: Ağ, projects: Projeler, edu: "Tiyatro pedagojisi – Kurslar", about: Hakkımızda, contact: İletişim, venues: Mekânlar}
   next: Bir sonraki gösterim
@@ -64,6 +68,10 @@ tr:
   support_program: Destekleyen program
   site_desc: "Tiyatro Berlin, 2021'den beri Berlin'de oyunlar, kulaklıklı yürüyüşler, mekâna özgü işler ve oyunculuk atölyeleri üreten bağımsız bir tiyatro kolektifi."
 de:
+  teaser: Trailer
+  sound_on: Ton an
+  sound_off: Ton aus
+  work_page: Zur Produktion
   name: Deutsch
   nav: {program: Spielplan, works: Produktionen, people: Ensemble, network: Netzwerk, projects: Projekte, edu: "Theaterpädagogik – Kurse", about: Über uns, contact: Kontakt, venues: Spielorte}
   next: Nächste Vorstellung
@@ -129,6 +137,10 @@ de:
   support_program: Gefördert durch
   site_desc: "Tiyatro Berlin ist ein freies Theaterkollektiv in Berlin: Stücke, Audiowalks, ortsspezifische Arbeiten und Schauspielkurse, seit 2021."
 en:
+  teaser: Trailer
+  sound_on: Sound on
+  sound_off: Mute
+  work_page: About the production
   name: English
   nav: {program: Programme, works: Productions, people: Ensemble, network: Network, projects: Projects, edu: "Theatre education – Courses", about: About, contact: Contact, venues: Venues}
   next: Next

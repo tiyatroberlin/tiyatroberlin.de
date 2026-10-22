@@ -393,3 +393,25 @@ a.vlink{text-decoration:underline;text-decoration-thickness:1px;text-underline-o
   .teacher{grid-template-columns:6.5rem 1fr;gap:1rem}
 }
 .course-more{margin:.4rem 0 1.4rem}
+
+/* öne çıkan oyun: videolu blok */
+.feature-grid{display:grid;grid-template-columns:minmax(220px,340px) minmax(0,1fr);gap:clamp(2rem,6vw,6rem);align-items:center}
+.teaser{position:relative;margin:0}
+.teaser-video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:#000}
+.snd{position:absolute;right:.7rem;bottom:.7rem;font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.04em;color:#fff;background:rgba(0,0,0,.62);border:1px solid rgba(255,255,255,.55);padding:.45em .8em;cursor:pointer}
+.snd:hover{border-color:var(--red);color:#fff}
+.snd::before{content:"";display:inline-block;width:.45em;height:.45em;border-radius:50%;background:var(--red);margin-right:.5em;vertical-align:.12em}
+.snd[aria-pressed="true"]::before{background:#fff}
+.feature-text{max-width:36rem}
+.feature-title{font-size:var(--step-5);line-height:.88;letter-spacing:-.05em;margin:0}
+.feature-title a{text-decoration:none}
+.feature-hook{font-size:var(--step-2);line-height:1.25;margin:1rem 0 .4rem}
+.feature-form{font-family:var(--sans);color:var(--mute);margin:0 0 1.4rem}
+.feature-text .credits{margin-bottom:1.2rem}
+.feature-dates{list-style:none;margin:0 0 1.4rem;padding:0;font-family:var(--sans);border-top:2px solid var(--ink)}
+.feature-dates li{display:grid;grid-template-columns:minmax(0,11rem) 1fr;gap:.8rem;padding:.55rem 0;border-bottom:1px solid var(--rule)}
+.feature-dates time{font-weight:700}
+.feature-btns{margin:0}
+@media (max-width:760px){.feature-grid{grid-template-columns:1fr}.teaser{max-width:340px}}
+.teaser-work{max-width:300px;margin-top:2rem}
+.teaser-work figcaption{margin-top:.6rem}

@@ -28,6 +28,10 @@
 <section class="section"><div class="wrap cols">
   <div class="prose">
     {{ w.text | t(lang) | paras | safe }}
+    {% if w.teaser %}<figure class="teaser teaser-work">
+      <video class="teaser-video" src="{{ ('/assets/' + w.teaser.video) | url }}" poster="{{ ('/assets/' + w.teaser.poster) | url }}" controls playsinline preload="none" aria-label="{{ w.title }}: {{ L.teaser }}"></video>
+      <figcaption class="label">{{ L.teaser }}</figcaption>
+    </figure>{% endif %}
     {% if w.info %}<p class="note">{{ w.info | t(lang) }}</p>{% endif %}
     {% if w.sources %}<p class="note">{{ w.sources | t(lang) }}</p>{% endif %}
   </div>

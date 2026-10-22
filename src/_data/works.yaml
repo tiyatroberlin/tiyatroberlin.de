@@ -6,6 +6,7 @@
   year: 2026
   image: foto/yakin-yuz.jpg
   hero_fit: true
+  teaser: {video: video/yakin-teaser.mp4, poster: video/yakin-teaser.jpg}
   form: {tr: "Tek kişilik oyun, şarkılarla", de: "Solo mit Liedern", en: "Solo with songs"}
   hook: {tr: "Yakınlık bir bağımlılığa dönüşürse?", de: "Wenn Nähe zur Abhängigkeit wird.", en: "When closeness turns into dependence."}
   text:

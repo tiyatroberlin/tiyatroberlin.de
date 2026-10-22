@@ -7,6 +7,8 @@ web3forms_key: "b5e680c9-e187-4178-be96-2d6b85471eb6"
 instagram: https://www.instagram.com/tiyatroberlin
 facebook: https://www.facebook.com/tiyatroberlin
 mailchimp: "https://tiyatroberlin.us14.list-manage.com/subscribe/post?u=4ff8cee3c133c0cb0141ad744&id=e148b607d0&f_id=00e38ee0f0"
+# Ana sayfada videolu öne çıkan oyun (gelecek gösterimi varken görünür)
+home_feature: yakin
 eventim_account: 63b583c9d6b98e4acc0d11c7
 langs: [tr, de, en]
 sections:
