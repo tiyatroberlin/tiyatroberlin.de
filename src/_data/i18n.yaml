@@ -20,6 +20,7 @@ tr:
   when: Ne zaman
   price: Bilet
   support: Destekleyen kurumlar
+  foot_partners: Partnerler
   partners: Ortak yapım
   works_with: Oyunlar
   menu: Menü
@@ -89,6 +90,7 @@ de:
   when: Wann
   price: Eintritt
   support: Gefördert von
+  foot_partners: Partner
   partners: Koproduktion
   works_with: Produktionen
   menu: Menü
@@ -158,6 +160,7 @@ en:
   when: When
   price: Tickets
   support: Funded by
+  foot_partners: Partners
   partners: Co-production
   works_with: Productions
   menu: Menu

@@ -80,6 +80,10 @@
           <li><img class="lg-{{ f[0] }}" src="{{ ('/assets/img/destek/' + f[1]) | url }}" alt="{{ fname }}" title="{{ fname }}" loading="lazy"></li>
           {%- endfor %}
         </ul>
+        <h2 class="foot-h2">{{ L.foot_partners }}</h2>
+        <ul class="funders logos">
+          <li><a href="https://www.nxtpls.de" rel="noopener"><img class="lg-nxtpls" src="{{ '/assets/img/destek/nxtpls.png' | url }}" alt="NXTPLS!" title="NXTPLS!" loading="lazy"></a></li>
+        </ul>
       </div>
     </div>
     <p class="legal"><span>© 2021–2026 Tiyatro Berlin</span><a href="{{ u('imprint') }}">{{ L.imprint }}</a><a href="{{ u('privacy') }}">{{ L.privacy }}</a></p>
