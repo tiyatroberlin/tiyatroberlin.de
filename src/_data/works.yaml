@@ -6,7 +6,8 @@
   year: 2026
   image: foto/yakin-yuz.jpg
   hero_fit: true
-  teaser: {video: video/yakin-teaser.mp4, poster: video/yakin-teaser.jpg}
+  teasers:
+    - {video: video/yakin-teaser.mp4, poster: video/yakin-teaser.jpg}
   form: {tr: "Tek kişilik oyun, şarkılarla", de: "Solo mit Liedern", en: "Solo with songs"}
   hook: {tr: "Yakınlık bir bağımlılığa dönüşürse?", de: "Wenn Nähe zur Abhängigkeit wird.", en: "When closeness turns into dependence."}
   text:
@@ -120,6 +121,8 @@
   image: foto/kozalar-uc.jpg
   hero: foto/kozalar-genc.jpg
   hero_fit: true
+  teasers:
+    - {video: video/kozalar-teaser.mp4, poster: video/kozalar-teaser.jpg, until: "2026-11-01"}
   poster: oyun/kozalar.jpg
   gallery: [foto/kozalar-portre.jpg, foto/kozalar-genc.jpg, foto/kozalar-grotesk.jpg, foto/kozalar-sepya.jpg, foto/kozalar-mavi.jpg, foto/kozalar-cigl.jpg]
   form: {tr: "Adalet Ağaoğlu'nun oyunu", de: "Stück von Adalet Ağaoğlu", en: "A play by Adalet Ağaoğlu"}
@@ -436,6 +439,9 @@
   image: foto/lubunya-eldiven-hd.jpg
   hero: foto/lubunya-eldiven-hd.jpg
   hero_fit: true
+  teasers:
+    - {video: video/lubunya-prenses.mp4, poster: video/lubunya-prenses.jpg}
+    - {video: video/lubunya-surek-avi.mp4, poster: video/lubunya-surek-avi.jpg}
   poster: oyun/lubunya.jpg
   gallery: [foto/lubunya-sahne.jpg]
   form: {tr: "Tek kişilik performans", de: "Solo-Performance", en: "Solo performance"}

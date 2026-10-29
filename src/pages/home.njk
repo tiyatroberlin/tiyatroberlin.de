@@ -41,38 +41,44 @@ eleventyComputed:
 </section>
 
 
-{%- set fw = graph.workBySlug[site.home_feature] if site.home_feature else null %}
-{%- if fw and fw.teaser and (fw.upcoming | length) %}
+{%- for fslug in site.home_features or [] %}
+{%- set fw = graph.workBySlug[fslug] %}
+{%- if fw and (fw.teasersNow | length) and (fw.upcoming | length) %}
 {%- set f1 = fw.upcoming[0] %}
 {%- set fhref = ('/' + lang + '/' + S.works[lang] + '/' + fw.slug + '/') | url %}
-<section class="section feature">
-  <div class="wrap feature-grid">
-    <figure class="teaser">
-      <video class="teaser-video" src="{{ ('/assets/' + fw.teaser.video) | url }}" poster="{{ ('/assets/' + fw.teaser.poster) | url }}" autoplay muted loop playsinline preload="metadata" aria-label="{{ fw.title }}: {{ L.teaser }}" data-autoplay></video>
-      <button class="snd" type="button" aria-pressed="false" data-on="{{ L.sound_on }}" data-off="{{ L.sound_off }}">{{ L.sound_on }}</button>
-    </figure>
+<section class="section feature{% if loop.index is even %} flip{% endif %}">
+  <div class="wrap feature-grid n{{ fw.teasersNow | length }}">
+    <div class="teasers">
+      {%- for t in fw.teasersNow %}
+      <figure class="teaser">
+        <video class="teaser-video" src="{{ ('/assets/' + t.video) | url }}" poster="{{ ('/assets/' + t.poster) | url }}" autoplay muted loop playsinline preload="metadata" aria-label="{{ fw.title }}: {{ L.teaser }}" data-autoplay></video>
+        <button class="snd" type="button" aria-pressed="false" data-on="{{ L.sound_on }}" data-off="{{ L.sound_off }}">{{ L.sound_on }}</button>
+      </figure>
+      {%- endfor %}
+    </div>
     <div class="feature-text">
       <p class="lead-when"><span class="dot" aria-hidden="true"></span>{% if f1.premiere %}{{ L.premiere if fw.premiere_kind == "premiere" else L.world_premiere }}{% else %}{{ L.next }}{% endif %}: {{ f1.date | longDate(L, lang) }}</p>
       <h2 class="feature-title"><a href="{{ fhref }}">{{ fw.title }}<span class="pt">.</span></a></h2>
       <p class="feature-hook it">{{ fw.hook | t(lang) }}</p>
       <p class="feature-form">{{ fw.form | t(lang) }}</p>
       <dl class="credits">
-        {%- for c in fw.credits %}
-        <div><dt>{{ graph.db.roles | roleName(c.role, lang) }}</dt><dd>{% for sl in c.people %}<a href="{{ ('/' + lang + '/' + S.people[lang] + '/' + sl + '/') | url }}">{{ graph.people[sl].name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</dd></div>
-        {%- endfor %}
+        {%- for c in fw.credits %}{% if loop.index <= 3 %}
+        <div><dt>{% if c.people.length > 1 and graph.db.roles_plural[c.role] %}{{ graph.db.roles_plural | roleName(c.role, lang) }}{% else %}{{ graph.db.roles | roleName(c.role, lang) }}{% endif %}</dt><dd>{% for sl in c.people %}{% set p = graph.people[sl] %}{% if p.org %}{{ p.name }}{% else %}<a href="{{ ('/' + lang + '/' + S.people[lang] + '/' + sl + '/') | url }}">{{ p.name }}</a>{% endif %}{% if not loop.last %}, {% endif %}{% endfor %}</dd></div>
+        {%- endif %}{% endfor %}
       </dl>
       <ul class="feature-dates">
         {%- for s in fw.upcoming %}
         <li><time datetime="{{ s.date }}">{{ s.date | dmyL(lang, L) }}{% if s.time %} · {{ s.time }}{% endif %}</time><span>{% set fv = graph.venues[s.venue] %}{% if fv.address %}<a class="vlink" href="{{ s.venue | venueHref(lang) }}">{{ fv.name }}</a>{% else %}{{ fv.name }}{% endif %}</span></li>
         {%- endfor %}
       </ul>
-      <p class="feature-btns">{% if f1.eventim %}<button class="btn" type="button" data-eventim="{{ f1.eventim }}" data-account="{{ site.eventim_account }}" aria-expanded="false" aria-controls="t-feat">{{ L.tickets }}</button>{% elif f1.ticket %}<a class="btn" href="{{ f1.ticket }}" rel="noopener">{{ L.tickets }}</a>{% endif %}
+      <p class="feature-btns">{% if f1.eventim %}<button class="btn" type="button" data-eventim="{{ f1.eventim }}" data-account="{{ site.eventim_account }}" aria-expanded="false" aria-controls="t-feat-{{ fw.slug }}">{{ L.tickets }}</button>{% elif f1.ticket %}<a class="btn" href="{{ f1.ticket }}" rel="noopener">{{ L.tickets }}</a>{% endif %}
       <a class="btn ghost" href="{{ fhref }}">{{ L.work_page }}</a></p>
-      {% if f1.eventim %}<div class="ticket" id="t-feat" hidden></div>{% endif %}
+      {% if f1.eventim %}<div class="ticket" id="t-feat-{{ fw.slug }}" hidden></div>{% endif %}
     </div>
   </div>
 </section>
 {%- endif %}
+{%- endfor %}
 
 
 <section class="section soon">

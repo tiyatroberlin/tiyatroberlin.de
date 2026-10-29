@@ -44,6 +44,7 @@ export default function () {
     }).sort((a, b) => a.date.localeCompare(b.date));
     w.premiere = w.shows.find((s) => s.premiere) || w.shows[0];
     w.upcoming = w.shows.filter((s) => s.upcoming);
+    w.teasersNow = (w.teasers || []).filter((t) => !t.until || String(t.until) >= today);
     w.venueList = [...new Set(w.shows.map((s) => s.venue))];
   }
   works.sort((a, b) => b.year - a.year || (b.premiere?.date || "").localeCompare(a.premiere?.date || ""));
