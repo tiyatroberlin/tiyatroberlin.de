@@ -1,0 +1,23 @@
+name: QR sayfaları canlı test
+on:
+  push:
+    branches: [kaynak-arsiv]
+    paths: ['test/qr-test.mjs', '.github/workflows/qr-test.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 20}
+      - run: npm i --no-save playwright@1.48.2 && npx playwright install --with-deps chromium
+      - run: node test/qr-test.mjs
+      - name: Kaydet
+        if: always()
+        run: |
+          git config user.name "tiyatroberlin"; git config user.email "info@tiyatroberlin.de"
+          git add test/sonuc; git commit -m "QR test sonuçları" || true; git pull --rebase; git push
