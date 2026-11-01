@@ -20,6 +20,19 @@ eleventyExcludeFromCollections: true
     <label><span>Adın ya da baş harflerin <span class="opt">isteğe bağlı</span></span><span class="de" lang="de">Name oder Initialen <span class="opt">optional</span></span>
       <input type="text" name="ad" autocomplete="name"></label>
     <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <fieldset class="src">
+      <legend>Bizi nereden duydun? <span class="opt">isteğe bağlı</span><span class="de" lang="de">Wie hast du von uns erfahren? <span class="opt">optional</span></span></legend>
+      <div class="src-list">
+        <label class="src-opt"><input type="radio" name="kaynak" value="Sosyal medya"> <span>Sosyal medya<span class="de" lang="de">Soziale Medien</span></span></label>
+        <label class="src-opt"><input type="radio" name="kaynak" value="Arkadaş ya da tanıdık"> <span>Arkadaş ya da tanıdık<span class="de" lang="de">Freunde, Bekannte</span></span></label>
+        <label class="src-opt"><input type="radio" name="kaynak" value="Etkinlik programı"> <span>Etkinlik programı<span class="de" lang="de">Veranstaltungskalender</span></span></label>
+        <label class="src-opt"><input type="radio" name="kaynak" value="Afiş ya da el ilanı"> <span>Afiş ya da el ilanı<span class="de" lang="de">Plakat oder Flyer</span></span></label>
+        <label class="src-opt"><input type="radio" name="kaynak" value="Bülten"> <span>Bülten<span class="de" lang="de">Newsletter</span></span></label>
+        <label class="src-opt"><input type="radio" name="kaynak" value="Mekânın kendi duyurusu"> <span>Mekânın kendi duyurusu<span class="de" lang="de">Über den Spielort</span></span></label>
+        <label class="src-opt"><input type="radio" name="kaynak" value="Diğer" data-other> <span>Diğer<span class="de" lang="de">Sonstiges</span></span></label>
+      </div>
+      <label class="src-other" hidden><span class="visually-hidden">Diğer · Sonstiges</span><input type="text" name="kaynak_diger" placeholder="Nereden? · Woher?" maxlength="120"></label>
+    </fieldset>
     <label class="consent"><input type="checkbox" name="onay" value="evet"> <span>Yorumumun Tiyatro Berlin'in sitesinde ve sosyal medyasında, adımla ya da baş harflerimle kullanılmasına izin veriyorum.<span class="de" lang="de">Ich bin einverstanden, dass mein Kommentar auf der Website und in den sozialen Medien von Tiyatro Berlin verwendet wird.</span></span></label>
     <p><button class="btn red" type="submit">Gönder · <span lang="de">Senden</span></button></p>
     <p class="cform-msg" role="status" aria-live="polite"></p>
@@ -34,12 +47,15 @@ eleventyExcludeFromCollections: true
 const names={ {%- for p in plays %}"{{ p[0] }}":{{ p[1] | dump | safe }}{% if not loop.last %},{% endif %}{% endfor -%} };
 const q=new URLSearchParams(location.search).get('oyun');if(q&&names[q.toLowerCase()])sel.value=q.toLowerCase();
 const m=f.querySelector('.cform-msg'),b=f.querySelector('button'),bt=b.innerHTML;
+const oth=f.querySelector('.src-other');
+f.querySelectorAll('input[name=kaynak]').forEach(r=>r.addEventListener('change',()=>{const on=f.querySelector('input[name=kaynak][data-other]').checked;oth.hidden=!on;if(on)oth.querySelector('input').focus();}));
+const src=()=>{const r=f.querySelector('input[name=kaynak]:checked');if(!r)return '(boş)';if(r.hasAttribute('data-other')){const t=f.kaynak_diger.value.trim();return t?'Diğer: '+t:'Diğer';}return r.value;};
 const done=()=>{f.hidden=true;const ok=document.getElementById('yorum-ok');ok.hidden=false;ok.focus();ok.scrollIntoView({block:'center'});};
 if(new URLSearchParams(location.search).get('tesekkur'))done();
 f.addEventListener('submit',async e=>{e.preventDefault();if(!f.reportValidity())return;if(f._honey.value)return;
 const oyun=names[sel.value];
 const d={access_key:f.dataset.w3,subject:'Seyirci yorumu · '+oyun,from_name:'tiyatroberlin.de/yorum',botcheck:'',
-'Oyun':oyun,'Yorum':f.yorum.value.trim(),'Ad':f.ad.value.trim()||'(yok)','Onay':f.onay.checked?'evet':'hayır'};
+'Oyun':oyun,'Yorum':f.yorum.value.trim(),'Ad':f.ad.value.trim()||'(yok)','Nereden duydu':src(),'Onay':f.onay.checked?'evet':'hayır'};
 b.disabled=true;b.textContent='…';m.textContent='';m.className='cform-msg';
 const fd=new FormData();Object.entries(d).forEach(([k,v])=>fd.append(k,v));
 try{const r=await fetch(f.action,{method:'POST',headers:{Accept:'application/json'},body:fd});const j=await r.json().catch(()=>({}));

@@ -448,3 +448,11 @@ a.vlink{text-decoration:underline;text-decoration-thickness:1px;text-underline-o
 .yorum-ok{margin-top:2rem;max-width:36rem;outline:none}
 .yorum-thanks{font-family:var(--serif);font-size:var(--step-2);line-height:1.25;margin:0}
 .yorum-thanks.de{font-size:var(--step-1);margin-top:.5rem}
+.yform .src{border:0;padding:0;margin:.4rem 0 0;min-width:0}
+.yform .src legend{font-family:var(--sans);font-weight:600;font-size:.95rem;padding:0;margin-bottom:.6rem}
+.yform .src-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(12rem,1fr));gap:.1rem 1.2rem;border-top:1px solid var(--rule)}
+.yform .src-opt{display:flex;align-items:flex-start;gap:.6rem;font-weight:400;padding:.5rem 0;border-bottom:1px solid var(--rule);cursor:pointer}
+.yform .src-opt input{margin-top:.2rem;flex:none;width:1.05rem;height:1.05rem;accent-color:var(--red)}
+.yform .src-opt .de{font-size:.85em;margin-top:.05rem}
+.yform .src-other{margin-top:.7rem}
+.yform .src-other[hidden]{display:none}
