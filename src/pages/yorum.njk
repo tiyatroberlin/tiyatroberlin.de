@@ -34,14 +34,22 @@ eleventyExcludeFromCollections: true
 const names={ {%- for p in plays %}"{{ p[0] }}":{{ p[1] | dump | safe }}{% if not loop.last %},{% endif %}{% endfor -%} };
 const q=new URLSearchParams(location.search).get('oyun');if(q&&names[q.toLowerCase()])sel.value=q.toLowerCase();
 const m=f.querySelector('.cform-msg'),b=f.querySelector('button'),bt=b.innerHTML;
+const done=()=>{f.hidden=true;const ok=document.getElementById('yorum-ok');ok.hidden=false;ok.focus();ok.scrollIntoView({block:'center'});};
+if(new URLSearchParams(location.search).get('tesekkur'))done();
 f.addEventListener('submit',async e=>{e.preventDefault();if(!f.reportValidity())return;if(f._honey.value)return;
 const oyun=names[sel.value];
 const d={access_key:f.dataset.w3,subject:'Seyirci yorumu · '+oyun,from_name:'tiyatroberlin.de/yorum',botcheck:'',
-'Oyun':oyun,'Yorum':f.yorum.value.trim(),'Ad':f.ad.value.trim()||'(yok)','Onay':f.onay.checked?'evet':'hayır','Sayfa':location.href};
+'Oyun':oyun,'Yorum':f.yorum.value.trim(),'Ad':f.ad.value.trim()||'(yok)','Onay':f.onay.checked?'evet':'hayır'};
 b.disabled=true;b.textContent='…';m.textContent='';m.className='cform-msg';
-try{const r=await fetch(f.action,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(d)});const j=await r.json().catch(()=>({}));
-if(!(r.ok&&String(j.success)!=='false'))throw 0;
-f.hidden=true;const ok=document.getElementById('yorum-ok');ok.hidden=false;ok.focus();ok.scrollIntoView({block:'center'});}
-catch(_){m.textContent='Gönderilemedi, lütfen tekrar deneyin. · Senden fehlgeschlagen, bitte erneut versuchen.';m.className='cform-msg err';b.disabled=false;b.innerHTML=bt;}
+const fd=new FormData();Object.entries(d).forEach(([k,v])=>fd.append(k,v));
+try{const r=await fetch(f.action,{method:'POST',headers:{Accept:'application/json'},body:fd});const j=await r.json().catch(()=>({}));
+if(!(r.ok&&String(j.success)!=='false'))throw 0;done();}
+catch(_){
+  /* yedek: tarayıcının olağan form gönderimi, sonra teşekkür sayfasına dönüş */
+  const nf=document.createElement('form');nf.method='post';nf.action=f.action;nf.hidden=true;
+  d.redirect=location.origin+location.pathname+'?tesekkur=1&oyun='+encodeURIComponent(sel.value);
+  Object.entries(d).forEach(([k,v])=>{const i=document.createElement('input');i.type='hidden';i.name=k;i.value=v;nf.appendChild(i);});
+  document.body.appendChild(nf);nf.submit();
+}
 });})();
 </script>
