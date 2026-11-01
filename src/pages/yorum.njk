@@ -1,0 +1,47 @@
+---
+permalink: "/yorum/index.html"
+layout: bare.njk
+title: Ne kaldı aklında?
+eleventyExcludeFromCollections: true
+---
+{%- set plays = [["kozalar","Kozalar"],["80lerde-lubunya-olmak","80'lerde Lubunya Olmak"],["yakin","YAKIN"]] -%}
+<section class="section yorum"><div class="wrap">
+  <h1 class="h-huge">Ne kaldı aklında<span class="pt">?</span></h1>
+  <p class="yorum-sub">Oyun üzerine iki cümle.<span class="de" lang="de">Zwei Sätze zum Stück.</span></p>
+
+  <form class="cform yform" id="yform" action="https://api.web3forms.com/submit" method="post" novalidate data-w3="{{ site.web3forms_key }}">
+    <label>Oyun<span class="de" lang="de">Stück</span>
+      <select name="oyun" id="y-oyun" required>
+        <option value="">Seç · Auswählen</option>
+        {%- for p in plays %}<option value="{{ p[0] }}">{{ p[1] }}</option>{% endfor %}
+      </select></label>
+    <label>Yorumun<span class="de" lang="de">Dein Kommentar</span>
+      <textarea name="yorum" rows="6" required></textarea></label>
+    <label><span>Adın ya da baş harflerin <span class="opt">isteğe bağlı</span></span><span class="de" lang="de">Name oder Initialen <span class="opt">optional</span></span>
+      <input type="text" name="ad" autocomplete="name"></label>
+    <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <label class="consent"><input type="checkbox" name="onay" value="evet"> <span>Yorumumun Tiyatro Berlin'in sitesinde ve sosyal medyasında, adımla ya da baş harflerimle kullanılmasına izin veriyorum.<span class="de" lang="de">Ich bin einverstanden, dass mein Kommentar auf der Website und in den sozialen Medien von Tiyatro Berlin verwendet wird.</span></span></label>
+    <p><button class="btn red" type="submit">Gönder · <span lang="de">Senden</span></button></p>
+    <p class="cform-msg" role="status" aria-live="polite"></p>
+  </form>
+  <div class="yorum-ok" id="yorum-ok" hidden tabindex="-1">
+    <p class="yorum-thanks">Teşekkürler<span class="pt">.</span> Bir sonraki perdede görüşmek üzere.</p>
+    <p class="yorum-thanks de" lang="de">Danke. Bis zum nächsten Vorhang.</p>
+  </div>
+</div></section>
+<script>
+(()=>{const f=document.getElementById('yform'),sel=document.getElementById('y-oyun');
+const names={ {%- for p in plays %}"{{ p[0] }}":{{ p[1] | dump | safe }}{% if not loop.last %},{% endif %}{% endfor -%} };
+const q=new URLSearchParams(location.search).get('oyun');if(q&&names[q.toLowerCase()])sel.value=q.toLowerCase();
+const m=f.querySelector('.cform-msg'),b=f.querySelector('button'),bt=b.innerHTML;
+f.addEventListener('submit',async e=>{e.preventDefault();if(!f.reportValidity())return;if(f._honey.value)return;
+const oyun=names[sel.value];
+const d={access_key:f.dataset.w3,subject:'Seyirci yorumu · '+oyun,from_name:'tiyatroberlin.de/yorum',botcheck:'',
+'Oyun':oyun,'Yorum':f.yorum.value.trim(),'Ad':f.ad.value.trim()||'(yok)','Onay':f.onay.checked?'evet':'hayır','Sayfa':location.href};
+b.disabled=true;b.textContent='…';m.textContent='';m.className='cform-msg';
+try{const r=await fetch(f.action,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(d)});const j=await r.json().catch(()=>({}));
+if(!(r.ok&&String(j.success)!=='false'))throw 0;
+f.hidden=true;const ok=document.getElementById('yorum-ok');ok.hidden=false;ok.focus();ok.scrollIntoView({block:'center'});}
+catch(_){m.textContent='Gönderilemedi, lütfen tekrar deneyin. · Senden fehlgeschlagen, bitte erneut versuchen.';m.className='cform-msg err';b.disabled=false;b.innerHTML=bt;}
+});})();
+</script>

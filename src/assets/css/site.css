@@ -424,3 +424,27 @@ a.vlink{text-decoration:underline;text-decoration-thickness:1px;text-underline-o
 .teasers-work.n2{max-width:560px}
 .teasers-work.n1{grid-template-columns:1fr}
 .teasers-work .label{grid-column:1/-1;margin:0}
+
+/* QR sayfaları: /yorum, /kulis */
+.bare-head{border-bottom:1px solid var(--rule)}
+.bare-head .wrap{padding-top:1rem;padding-bottom:1rem}
+.bare-head img{height:40px;width:auto;display:block}
+.bare .section{border-bottom:0}
+.bare-foot{border-top:1px solid var(--rule);font-family:var(--sans);font-size:.85rem;color:var(--mute)}
+.bare-foot .wrap{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;padding-top:1.2rem;padding-bottom:1.6rem}
+.bare-foot a{color:var(--mute)}
+.yorum .h-huge{overflow-wrap:anywhere}
+.yorum-sub{font-size:var(--step-1);margin:.8rem 0 0;max-width:34rem}
+.de{display:block;font-family:var(--serif);font-style:italic;font-weight:400;color:var(--mute);font-size:.92em;letter-spacing:0;text-transform:none}
+.yorum-sub .de{font-size:.85em;margin-top:.15rem}
+.yform{max-width:36rem}
+.yform[hidden]{display:none}
+.yform label{gap:.25rem}
+.yform label .de{margin-top:-.1rem}
+.yform .opt{font-weight:400;color:var(--mute);font-size:.85em}
+.yform .consent{gap:.6rem;align-items:flex-start;font-size:.9rem;line-height:1.45}
+.yform .consent input{margin-top:.25rem;flex:none;width:1.1rem;height:1.1rem;accent-color:var(--red)}
+.yform .consent .de{margin-top:.35rem;font-size:.95em}
+.yorum-ok{margin-top:2rem;max-width:36rem;outline:none}
+.yorum-thanks{font-family:var(--serif);font-size:var(--step-2);line-height:1.25;margin:0}
+.yorum-thanks.de{font-size:var(--step-1);margin-top:.5rem}

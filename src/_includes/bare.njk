@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }} · Tiyatro Berlin</title>
+<meta name="robots" content="noindex">
+{{ headExtra | safe if headExtra }}
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | url }}?v={{ build }}">
+<meta name="theme-color" content="#0b0b0b">
+<link rel="icon" href="{{ '/assets/img/favicon.png' | url }}?v={{ build }}">
+</head>
+<body class="bare">
+<header class="bare-head"><div class="wrap">
+  <a class="brand" href="{{ '/tr/' | url }}" aria-label="Tiyatro Berlin"><img src="{{ '/assets/img/logo-beyaz.png' | url }}?v={{ build }}" alt="" width="218" height="96"></a>
+</div></header>
+<main id="main">
+{{ content | safe }}
+</main>
+<footer class="bare-foot"><div class="wrap">
+  <a href="{{ '/tr/' | url }}">tiyatroberlin.de</a>
+  <a href="{{ '/tr/gizlilik/' | url }}">Gizlilik</a>
+  <a href="{{ '/de/datenschutz/' | url }}" lang="de">Datenschutz</a>
+</div></footer>
+</body>
+</html>
