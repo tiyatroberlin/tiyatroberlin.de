@@ -6,7 +6,7 @@ const b = await chromium.launch();
 const ctx = await b.newContext({ ...devices['iPhone 13'] });
 const pg = await ctx.newPage();
 // 1) /yorum?oyun=kozalar (eğik çizgisiz, QR'daki gibi)
-const r = await pg.goto('https://tiyatroberlin.de/yorum?oyun=kozalar', { waitUntil: 'networkidle' });
+const r = await pg.goto('https://tiyatroberlin.de/yorum?oyun=kozalar&t=' + Date.now(), { waitUntil: 'networkidle' });
 log.push('yorum status ' + r.status() + ' final ' + pg.url());
 log.push('secili oyun: ' + await pg.$eval('#y-oyun', e => e.value));
 pg.on('console', m => log.push('console: ' + m.text()));
@@ -15,12 +15,11 @@ await pg.screenshot({ path: 'test/sonuc/1-yorum.png', fullPage: true });
 await pg.fill('textarea[name=yorum]', 'Deneme yorumu, sistem testi (Claude). Lütfen dikkate almayın.');
 await pg.fill('input[name=ad]', 'Test');
 await pg.check('input[name=onay]');
-const resP = pg.waitForResponse(x => x.url().includes('api.web3forms.com'), { timeout: 30000 });
+pg.on('response', async x => { if (x.url().includes('web3forms')) log.push('web3forms yanit ' + x.status() + ' ' + x.request().method() + ' ' + (await x.text().catch(()=>'')).slice(0,200)); });
 await pg.click('button[type=submit]');
-try { const res = await resP; log.push('web3forms ' + res.status() + ' ' + (await res.text()).slice(0, 300)); }
-catch (e) { log.push('web3forms istegi yok: ' + e.message); log.push('validity: ' + await pg.$eval('#yform', f => [...f.elements].filter(x=>x.validity && !x.validity.valid).map(x=>x.name).join(','))); log.push('msg: ' + await pg.$eval('.cform-msg', e=>e.textContent)); log.push('html has data-w3: ' + await pg.$eval('#yform', f=>f.dataset.w3)); }
-await pg.waitForTimeout(1500);
-log.push('tesekkur gorunur: ' + await pg.isVisible('#yorum-ok'));
+await pg.waitForSelector('#yorum-ok', { state: 'visible', timeout: 40000 }).catch(e => log.push('tesekkur bekleme: ' + e.message));
+log.push('son url: ' + pg.url());
+log.push('tesekkur gorunur: ' + await pg.isVisible('#yorum-ok').catch(()=>false));
 await pg.screenshot({ path: 'test/sonuc/2-tesekkur.png' });
 // 2) /kulis
 const p2 = await ctx.newPage();
