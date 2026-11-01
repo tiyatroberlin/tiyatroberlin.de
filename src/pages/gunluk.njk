@@ -1,0 +1,117 @@
+---
+permalink: "/gunluk/"
+eleventyExcludeFromCollections: true
+---
+{% raw %}
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Ders Defteri · Tiyatro Berlin</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600;700;800&family=DejaVu+Sans+Mono&display=swap" rel="stylesheet"><style>
+*{box-sizing:border-box}
+:root{--red:#e32b2b;--ink:#161616;--muted:#6b6b76;--line:#dcdce0;--tint:#f6f6f7}
+body{font-family:"Inter",system-ui,sans-serif;color:var(--ink);background:#f4f4f6;margin:0;line-height:1.5}
+.wrap{max-width:150mm;margin:0 auto;background:#fff;padding:9mm 9mm 14mm;box-shadow:0 1px 20px rgba(0,0,0,.08)}
+.gk{font-family:"Inter";font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:8pt;color:var(--red)}
+h1{font-family:"Lora",serif;font-weight:700;font-size:23pt;margin:1mm 0 1mm}
+.lead{color:var(--muted);font-size:10pt;margin:0 0 6mm;border-bottom:3px solid var(--red);padding-bottom:4mm}
+label{display:block;font-weight:600;font-size:9.5pt;margin:0 0 1.5mm}
+input[type=text],input[type=date],select,textarea{width:100%;font:inherit;font-size:10.5pt;padding:2.6mm 3mm;border:1.5px solid var(--line);border-radius:2mm;background:#fff}
+textarea{resize:vertical;min-height:22mm}
+.row{display:flex;gap:4mm;flex-wrap:wrap;margin:0 0 4mm}.row>div{flex:1;min-width:40mm}
+.sec{margin:6mm 0 2mm;font-family:"Inter";font-weight:800;font-size:9pt;text-transform:uppercase;letter-spacing:.05em;color:var(--red);border-bottom:1px solid var(--line);padding-bottom:1.5mm}
+.hint{font-size:8.5pt;color:var(--muted);margin:.5mm 0 2.5mm}
+#clist{display:flex;flex-direction:column;gap:1.5mm;margin:2mm 0}
+.ci{display:flex;align-items:flex-start;gap:2.5mm;padding:2.2mm 3mm;border:1px solid var(--line);border-radius:2mm;background:var(--tint);cursor:pointer}
+.ci input{margin-top:.6mm;width:4.5mm;height:4.5mm;flex:none;accent-color:var(--red)}
+.ci span{font-size:9.6pt}
+.btn{font-family:"Inter";font-weight:700;font-size:11pt;color:#fff;background:var(--red);border:0;border-radius:2mm;padding:3.2mm 8mm;cursor:pointer;margin-top:4mm}
+.btn:disabled{opacity:.5}
+.msg{font-size:9.5pt;margin-top:3mm;min-height:1.2em}.msg.ok{color:#1a7a3a}.msg.err{color:#c0392b}
+.hp{position:absolute;left:-9999px}
+#gate{position:fixed;inset:0;background:linear-gradient(150deg,#e32b2b,#6D3BE4 55%,#2563EB);display:flex;align-items:center;justify-content:center;z-index:100;padding:6mm}
+.gatebox{background:#fff;border-radius:4mm;padding:9mm 8mm;max-width:92mm;width:100%;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,.3)}
+.gatebox .gk2{font-family:"Inter";font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:7.5pt;color:var(--red)}
+.gatebox h2{font-family:"Lora",serif;font-weight:700;font-size:17pt;margin:2mm 0 1mm}
+.gatebox p{font-size:8.5pt;color:var(--muted);margin:0 0 5mm}
+.gatebox input{margin-bottom:3mm}
+.gatebox button{width:100%;font-weight:700;font-size:11pt;color:#fff;background:var(--red);border:0;border-radius:2mm;padding:3.2mm;cursor:pointer}
+#gerr{color:#c0392b;font-size:8.5pt;min-height:1.2em;margin:3mm 0 0}
+@media(max-width:620px){.wrap{padding:6mm 5mm 12mm}}
+</style></head><body>
+<div id="gate"><div class="gatebox"><div class="gk2">Tiyatro Berlin</div>
+<h2>Ders Defteri · Gizli</h2><p>Bu sayfa yalnızca eğitmenler içindir.</p>
+<form id="gf2"><input type="text" id="gu" placeholder="Kullanıcı adı" autocomplete="off" autocapitalize="off">
+<input type="password" id="gp" placeholder="Şifre" autocomplete="off">
+<button type="submit">Gir</button><div id="gerr"></div></form></div></div>
+<div class="wrap">
+<div class="gk">Tiyatro Berlin · Oyunculuk Atölyesi</div>
+<h1>Ders Defteri — Günlük</h1>
+<p class="lead">Her dersin sonunda doldurun: o gün yapılan çalışmaları işaretleyin, notları ve gelmeyenleri yazın, Gönder'e basın — info@tiyatroberlin.de adresine düşer.</p>
+<form id="gf" novalidate>
+  <div class="row">
+    <div><label>Eğitmen</label><input type="text" name="egitmen" autocomplete="name" required></div>
+    <div><label>Tarih</label><input type="date" name="tarih" required></div>
+  </div>
+  <div><label>Hangi ders?</label>
+    <select name="gun" id="gun" required><option value="">— gün seçin —</option></select>
+    <div class="hint" id="ghint"></div>
+  </div>
+  <div class="sec">Yapılan çalışmalar</div>
+  <div class="hint">O gün için planlanan çalışmalar. Yapılanları işaretleyin.</div>
+  <div id="clist"><div class="hint">Önce yukarıdan bir gün seçin.</div></div>
+  <div style="margin-top:3mm"><label>Plan dışı / ek çalışma</label><input type="text" name="ek" placeholder="Varsa, kısaca"></div>
+  <div class="sec">Notlar</div>
+  <div class="hint">O güne dair önemli şeyler: nasıl geçti, kim neyi zorladı, haftaya taşınacaklar…</div>
+  <textarea name="notlar"></textarea>
+  <div class="sec">Gelmeyen öğrenciler (yoklama)</div>
+  <div class="hint">Şimdilik elle yazın; öğrenci listesi eklenince buraya tek tek işaretlenecek.</div>
+  <textarea name="gelmeyenler" placeholder="Gelmeyenlerin adları…"></textarea>
+  <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <button class="btn" type="submit">Gönder</button>
+  <div class="msg" id="msg" role="status" aria-live="polite"></div>
+</form>
+</div>
+<script>
+(function(){var U="tiyatro berlin",P="kurs",K="tb_ok";
+function unlock(){var g=document.getElementById('gate');if(g)g.style.display='none';try{sessionStorage.setItem(K,'1')}catch(e){}}
+try{if(sessionStorage.getItem(K)==='1')unlock()}catch(e){}
+var gf=document.getElementById('gf2');gf.addEventListener('submit',function(e){e.preventDefault();
+var u=document.getElementById('gu').value.trim().toLowerCase(),p=document.getElementById('gp').value;
+if(u===U&&p===P){unlock()}else{document.getElementById('gerr').textContent='Kullanıcı adı veya şifre hatalı.'}});
+})();
+var DAY={"1": {"t": "02.11.2026", "u": "Blok 1", "k": "Tiyatronun kökeni ve Antik Yunan", "items": ["Nasılsın turu", "Günün oyunu — İsim Topu", "Tiyatro Tarihi/Teori — Tiyatronun kökeni ve Antik Yunan", "Isınma", "Toplu yürüyüş", "Hafıza Zinciri (sıfatlı isim)", "Göz Göze Bakma", "Hatıra Resmi", "İki Doğru Bir Yalan (yedek)", "20 Sayısı Oyunu (yedek)", "Hareketi Kim Başlattı (yedek)"]}, "2": {"t": "09.11.2026", "u": "Blok 1", "k": "Sahne bilgisi I — sahne ve temel terimler", "items": ["Nasılsın turu", "Günün oyunu — Çağrışım Zinciri", "Tiyatro Tarihi/Teori — Sahne bilgisi I — sahne ve temel terimler", "Isınma", "Toplu yürüyüş", "Daire (Güven) Temrini", "Küçük Etki Çalışması", "İkili Hareketler (Sırt Sırta)", "Parmakla Gezdirme (yedek)", "El Üstünde Taşıma (yedek)", "His / Düşünce Aktarımı (yedek)"]}, "3": {"t": "16.11.2026", "u": "Blok 1", "k": "Poetika, Antik Roma ve Orta Çağ", "items": ["Nasılsın turu", "Günün oyunu — Göz Göze + Üç Değişiklik", "Tiyatro Tarihi/Teori — Poetika, Antik Roma ve Orta Çağ", "Isınma", "Toplu yürüyüş", "Tohum / Çiçek Açma", "İçindeki Hayvan", "Heykel Oluşturma", "Ayna Çalışması (yedek)", "Sihirli Çamur (yedek)"]}, "4": {"t": "23.11.2026", "u": "Blok 2", "k": "Beden, ses ve nefes", "items": ["Nasılsın turu", "Günün oyunu — Pencereden Gözlem", "Tiyatro Tarihi/Teori — Beden, ses ve nefes", "Isınma", "Toplu yürüyüş", "Karşılıklı Olay Anlatma", "Öykü Anlatma / Masal Değiştirme", "Ayna Çalışması", "9 Nokta / 9 Adım (yedek)", "Karşılıklı Gözlem (yedek)"]}, "5": {"t": "30.11.2026", "u": "Blok 2", "k": "Rönesans, Commedia dell'arte ve Shakespeare", "items": ["Nasılsın turu", "Günün oyunu — Hareketlerin Kodlanması / Hareketi Yakalama", "Tiyatro Tarihi/Teori — Rönesans, Commedia dell'arte ve Shakespeare", "Isınma", "Toplu yürüyüş", "Tek Kişilik Fiziksel Aksiyon (Stilize)", "İmitasyon Zinciri", "Sihirli Çamur", "Tepki ve Uzaklaşma (yedek)", "Yaklaşma Çalışması (yedek)", "Kar Topu (yedek)"]}, "6": {"t": "07.12.2026", "u": "Blok 2", "k": "Sahne bilgisi II — oyuncunun sahnedeki yeri", "items": ["Nasılsın turu", "Günün oyunu — Yazı Makinesi", "Tiyatro Tarihi/Teori — Sahne bilgisi II — oyuncunun sahnedeki yeri", "Isınma", "Toplu yürüyüş", "Dekor Parçası (1. Aşama)", "\"Ne?\" Çalışması", "Gazete / Bank Çalışması", "Büfe (Sözsüz Tek Kişilik) (yedek)", "Eylemi Parçalara Bölmek (Ne İstiyorum?) (yedek)", "Kutu Çalışması (yedek)"]}, "7": {"t": "14.12.2026", "u": "Blok 2", "k": "Fransız klasisizmi ve Aydınlanma", "items": ["Nasılsın turu", "Günün oyunu — Göz Göze + Üç Değişiklik", "Tiyatro Tarihi/Teori — Fransız klasisizmi ve Aydınlanma", "Isınma", "Toplu yürüyüş", "\"Nerede?\" Çalışması", "Evinin Planını Çizmek", "Elden Ele Kalem (yedek)", "Eylemi Parçalara Bölmek (Ne İstiyorum?) (yedek)", "Dekor Parçası (1. Aşama) (yedek)"]}, "8": {"t": "21.12.2026", "u": "Blok 2", "k": "Doğaçlama kuramı — 5N1K", "items": ["Nasılsın turu", "Günün oyunu — Şef–Orkestra", "Tiyatro Tarihi/Teori — Doğaçlama kuramı — 5N1K", "Isınma", "Toplu yürüyüş", "Davranışların Oynanması (Baston)", "Dönüm Noktası", "Kutu Çalışması (yedek)", "Sihirli Kalem (yedek)"]}, "9": {"t": "04.01.2027", "u": "Blok 3", "k": "Gerçekçilik, natüralizm ve Stanislavski", "items": ["Nasılsın turu", "Günün oyunu — İmgeler Zinciri + Hikâye", "Tiyatro Tarihi/Teori — Gerçekçilik, natüralizm ve Stanislavski", "Isınma", "Toplu yürüyüş", "5N1K (Tam)", "Meyhane Doğaçlaması (5N1K + Dönüm Noktası)", "Dönüm Noktası (yedek)", "Kutu Çalışması (yedek)"]}, "10": {"t": "11.01.2027", "u": "Blok 3", "k": "Altmetin, tutum ve davranış", "items": ["Nasılsın turu", "Günün oyunu — Çağrışım Zinciri", "Tiyatro Tarihi/Teori — Altmetin, tutum ve davranış", "Isınma", "Toplu yürüyüş", "Altmetin: Mektup / Radyo", "Sevgili Odası / Eşyaları İnceleme", "Üç Evet / Üç Anne (yedek)", "Fotoğrafın Oynanması (yedek)"]}, "11": {"t": "18.01.2027", "u": "Blok 3", "k": "Meyerhold ve 20. yüzyıl öncü akımları", "items": ["Nasılsın turu", "Günün oyunu — Elektrik Çarpması", "Tiyatro Tarihi/Teori — Meyerhold ve 20. yüzyıl öncü akımları", "Isınma", "Toplu yürüyüş", "Ses Doğaçlamaları (A sesi / tek cümle)", "Kürsü Çalışması", "Vokal Kullanım (yedek)", "Üç Evet / Üç Anne (yedek)"]}, "12": {"t": "25.01.2027", "u": "Blok 3", "k": "Diksiyon ve fonetik I", "items": ["Nasılsın turu", "Günün oyunu — Alfabetik Diyalog", "Tiyatro Tarihi/Teori — Diksiyon ve fonetik I", "Isınma", "Toplu yürüyüş", "Diksiyon–Fonetik Alıştırmaları", "Ezber Metin", "Vokal Kullanım (yedek)", "Kürsü Çalışması (yedek)"]}, "13": {"t": "01.02.2027", "u": "Blok 3", "k": "Brecht ve epik tiyatro", "items": ["Nasılsın turu", "Günün oyunu — Zorongo (Kolektif Kurgu)", "Tiyatro Tarihi/Teori — Brecht ve epik tiyatro", "Isınma", "Toplu yürüyüş", "Sözsüzden Söze (Yemek)", "Günaydın Diyaloğu (Altmetinli)", "Zorongo (Kolektif Kurgu) (yedek)", "Rol Arkadaşını Gözlemleme (yedek)"]}, "14": {"t": "08.02.2027", "u": "Blok 4", "k": "Diksiyon ve fonetik II", "items": ["Nasılsın turu", "Günün oyunu — Rol Arkadaşını Gözlemleme", "Tiyatro Tarihi/Teori — Diksiyon ve fonetik II", "Isınma", "Toplu yürüyüş", "Rol Arkadaşıyla Doğaçlama", "Adım Adım Yakınlaşma", "Taklit (Epik) (yedek)", "Zorongo (Kolektif Kurgu) (yedek)"]}, "15": {"t": "15.02.2027", "u": "Blok 4", "k": "Artaud ve absürd tiyatro", "items": ["Nasılsın turu", "Günün oyunu — Partnerini Sesinden Bulma", "Tiyatro Tarihi/Teori — Artaud ve absürd tiyatro", "Isınma", "Toplu yürüyüş", "Karakter Oluşturma", "Karakter Önerisi", "Mimik Korosu / Öykülü Mimik (yedek)", "Stanislavski Durum Temrinleri (yedek)"]}, "16": {"t": "22.02.2027", "u": "Blok 4", "k": "Reji, karakter ve ışığa giriş", "items": ["Nasılsın turu", "Günün oyunu — Alfabetik Diyalog", "Tiyatro Tarihi/Teori — Reji, karakter ve ışığa giriş", "Isınma", "Toplu yürüyüş", "Sahnede Sözün Yeri", "Sorgulama Doğaçlaması", "Eklemeli Doğaçlama (yedek)", "Stanislavski Durum Temrinleri (yedek)", "Günaydın Diyaloğu (Altmetinli) (yedek)"]}, "17": {"t": "01.03.2027", "u": "Blok 4", "k": "Grotowski ve Boal", "items": ["Nasılsın turu", "Günün oyunu — Fotoğrafın Oynanması", "Tiyatro Tarihi/Teori — Grotowski ve Boal", "Isınma", "Toplu yürüyüş", "Düz Metinden Sahneye", "Yönlendirmeli Uzun Doğaçlama (Finali)", "Eklemeli Doğaçlama (yedek)", "Zorongo (Kolektif Kurgu) (yedek)"]}, "18": {"t": "15.03.2027", "u": "Blok 4", "k": "Sahne makyajı ve kostüm", "items": ["Nasılsın turu", "Günün oyunu — Mask Oluşturma", "Tiyatro Tarihi/Teori — Sahne makyajı ve kostüm", "Isınma", "Toplu yürüyüş", "Sahne Makyajı", "Mimik Korosu / Öykülü Mimik (yedek)"]}, "19": {"t": "22.03.2027", "u": "Blok 5", "k": "Çağdaş tiyatro ve Türk tiyatrosu", "items": ["Nasılsın turu", "Günün oyunu — Çağrışım Zinciri", "Tiyatro Tarihi/Teori — Çağdaş tiyatro ve Türk tiyatrosu", "Isınma", "Toplu yürüyüş", "Stanislavski Durum Temrinleri", "Taklit (Epik)", "Nesnenin Aktifleşmesi (Epik)", "Mekân Birleştirme / Değiştirme (Epik) (yedek)"]}, "20": {"t": "05.04.2027", "u": "Blok 5", "k": "Ekoller ve fiziksel/korocu tiyatro", "items": ["Nasılsın turu", "Günün oyunu — Zorongo (Kolektif Kurgu)", "Tiyatro Tarihi/Teori — Ekoller ve fiziksel/korocu tiyatro", "Isınma", "Toplu yürüyüş", "Korocu Çalışma (Fiziksel Tiyatro)", "İmge Tiyatrosu (Donmuş İmge)", "Makine Doğaçlaması (yedek)", "Orman / Akvaryum Temrini (yedek)", "Duyusal Uyanış Oyunları (yedek)"]}, "21": {"t": "12.04.2027", "u": "Ünite 1 · hazırlık", "k": "Klasik dramatik oyun — hazırlık", "items": ["Nasılsın turu", "Günün oyunu — Çağrışım Zinciri", "Tiyatro Tarihi/Teori — Klasik dramatik oyun — hazırlık", "Isınma", "Toplu yürüyüş", "Metin çözümü (oyun inceleme şablonu)", "Rol dağıtımı ve mizansen", "Zorlanırsan B planı (yedek)"]}, "22": {"t": "19.04.2027", "u": "Ünite 1 · sunum", "k": "Klasik dramatik oyun — sunum", "items": ["Nasılsın turu", "Günün oyunu — Elektrik Çarpması", "Tiyatro Tarihi/Teori — Klasik dramatik oyun — sunum", "Isınma", "Toplu yürüyüş", "Son prova", "İç gösterim + değerlendirme"]}, "23": {"t": "26.04.2027", "u": "Ünite 2 · hazırlık", "k": "Fiziksel / korocu metin — hazırlık", "items": ["Nasılsın turu", "Günün oyunu — Makine Doğaçlaması", "Tiyatro Tarihi/Teori — Fiziksel / korocu metin — hazırlık", "Isınma", "Toplu yürüyüş", "Koroda söz bölme", "Beden partisyonu + düzen", "B planı (yedek)"]}, "24": {"t": "03.05.2027", "u": "Ünite 2 · kapanış", "k": "Fiziksel / korocu metin — paylaşım", "items": ["Nasılsın turu", "Günün oyunu — Çağrışım Zinciri", "Tiyatro Tarihi/Teori — Fiziksel / korocu metin — paylaşım", "Isınma", "Toplu yürüyüş", "Bütünleme", "Gösterimsiz paylaşım + çözümleme"]}, "25": {"t": "10.05.2027", "u": "Ünite 3 · hazırlık I", "k": "Sokak / happening — hazırlık", "items": ["Nasılsın turu", "Günün oyunu — Makine Doğaçlaması", "Tiyatro Tarihi/Teori — Sokak / happening — hazırlık", "Isınma", "Toplu yürüyüş", "Happening konsepti", "İlk prova (içeride)", "B planı (yedek)"]}, "26": {"t": "24.05.2027", "u": "Ünite 3 · park provası", "k": "Sokak / happening — park provası", "items": ["Nasılsın turu", "Günün oyunu — Elektrik Çarpması", "Tiyatro Tarihi/Teori — Sokak / happening — park provası", "Isınma", "Toplu yürüyüş", "Parkta prova"]}, "27": {"t": "31.05.2027", "u": "Ünite 3 · gösterim + KAPANIŞ", "k": "Sokak gösterimi ve dönem kapanışı", "items": ["Nasılsın turu", "Günün oyunu — Elektrik Çarpması", "Tiyatro Tarihi/Teori — Sokak gösterimi ve dönem kapanışı", "Isınma", "Toplu yürüyüş", "Sokak gösterimi", "Dönem değerlendirmesi ve kapanış"]}};
+var KEY="b5e680c9-e187-4178-be96-2d6b85471eb6";
+var sel=document.getElementById('gun'),hint=document.getElementById('ghint'),clist=document.getElementById('clist');
+Object.keys(DAY).sort(function(a,b){return a-b}).forEach(function(n){var o=document.createElement('option');o.value=n;o.textContent=n+'. Gün · '+DAY[n].t+' · '+DAY[n].u;sel.appendChild(o)});
+sel.addEventListener('change',function(){var n=sel.value;clist.innerHTML='';if(!n){hint.textContent='';clist.innerHTML='<div class="hint">Önce yukarıdan bir gün seçin.</div>';return}
+var d=DAY[n];hint.textContent=d.k;
+var df=document.querySelector('[name=tarih]');if(df&&!df.value){var p=d.t.split('.');df.value=p[2]+'-'+p[1]+'-'+p[0]}
+d.items.forEach(function(it,i){var l=document.createElement('label');l.className='ci';
+l.innerHTML='<input type="checkbox" data-ex="1" value="'+it.replace(/"/g,'&quot;')+'"><span>'+it+'</span>';clist.appendChild(l)});
+});
+var f=document.getElementById('gf'),msg=document.getElementById('msg'),btn=f.querySelector('button');
+f.addEventListener('submit',function(e){e.preventDefault();if(f._honey.value)return;if(!f.reportValidity())return;
+var done=[].slice.call(clist.querySelectorAll('input[data-ex]:checked')).map(function(c){return c.value});
+var gn=sel.value, d=DAY[gn]||{};
+var lines=[];
+lines.push('Eğitmen: '+f.egitmen.value);
+lines.push('Tarih: '+f.tarih.value);
+lines.push('Ders: '+gn+'. Gün ('+(d.u||'')+') — '+(d.k||''));
+lines.push('');
+lines.push('YAPILAN ÇALIŞMALAR:');
+if(done.length){done.forEach(function(x){lines.push('  ✓ '+x)})}else{lines.push('  (işaretlenmedi)')}
+if(f.ek.value)lines.push('  + ek: '+f.ek.value);
+lines.push('');
+lines.push('NOTLAR:');lines.push(f.notlar.value||'  —');
+lines.push('');
+lines.push('GELMEYEN ÖĞRENCİLER:');lines.push(f.gelmeyenler.value||'  —');
+var payload={access_key:KEY,subject:'Ders Defteri · '+gn+'. Gün · '+f.tarih.value,from_name:'Tiyatro Berlin · Ders Defteri',botcheck:'',
+ egitmen:f.egitmen.value,tarih:f.tarih.value,ders:gn+'. Gün',yapilan_calismalar:done.join(' | ')||'(yok)',ek_calisma:f.ek.value,notlar:f.notlar.value,gelmeyenler:f.gelmeyenler.value,
+ message:lines.join('\n')};
+btn.disabled=true;btn.textContent='Gönderiliyor…';msg.textContent='';msg.className='msg';
+fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(payload)})
+.then(function(r){return r.json().catch(function(){return{}})})
+.then(function(j){if(j&&String(j.success)!=='false'){f.reset();clist.innerHTML='<div class="hint">Önce yukarıdan bir gün seçin.</div>';hint.textContent='';msg.textContent='Gönderildi. Teşekkürler — info@tiyatroberlin.de adresine düştü.';msg.className='msg ok'}else{throw 0}})
+.catch(function(){msg.textContent='Gönderilemedi. İnternet bağlantınızı kontrol edip tekrar deneyin.';msg.className='msg err'})
+.finally(function(){btn.disabled=false;btn.textContent='Gönder'});
+});
+</script>
+</body></html>
+{% endraw %}
