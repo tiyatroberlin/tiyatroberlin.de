@@ -1,0 +1,10 @@
+yorum status 200 final https://tiyatroberlin.de/yorum/?oyun=kozalar
+secili oyun: kozalar
+console: Access to fetch at 'https://api.web3forms.com/submit' from origin 'https://tiyatroberlin.de' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
+console: Failed to load resource: net::ERR_FAILED
+web3forms istegi yok: page.waitForResponse: Timeout 30000ms exceeded while waiting for event "response"
+validity: 
+msg: Gönderilemedi, lütfen tekrar deneyin. · Senden fehlgeschlagen, bitte erneut versuchen.
+html has data-w3: b5e680c9-e187-4178-be96-2d6b85471eb6
+tesekkur gorunur: false
+kulis final https://www.whatsapp.com/channel/0029VbEBb0pBVJlBagI3ic03
