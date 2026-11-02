@@ -54,6 +54,8 @@ table.grid td.nm{text-align:left;font-weight:600;position:sticky;left:0;backgrou
 table.grid td.paid{background:#e7f6ec}
 table.grid td.unpaid{background:#fdecec}
 table.grid tr.tot td{font-weight:700;background:var(--tint)}
+table.grid td.det{text-align:left;white-space:normal;background:#fafafa;font-weight:400;font-size:9pt}
+table.grid td.det .bad{color:#c0392b;font-weight:600}
 .subtabs{display:flex;gap:1.5mm;margin-bottom:4mm;flex-wrap:wrap}
 .subtab{font:inherit;font-weight:600;font-size:9pt;color:var(--muted);background:var(--tint);border:1px solid var(--line);border-radius:20mm;padding:1.6mm 4mm;cursor:pointer}
 .subtab.on{color:#fff;background:var(--red);border-color:var(--red)}
@@ -71,7 +73,7 @@ table.grid input{width:5mm;height:5mm;accent-color:#1a7a3a;cursor:pointer}
 .gatebox .gk2{font-family:"Inter";font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:7.5pt;color:var(--red)}
 .gatebox h2{font-family:"Lora",serif;font-weight:700;font-size:17pt;margin:2mm 0 1mm}
 .gatebox p{font-size:8.5pt;color:var(--muted);margin:0 0 5mm}
-.gatebox input{margin-bottom:3mm}
+.gatebox input{width:100%;font:inherit;font-size:10.5pt;padding:2.6mm 3mm;border:1.5px solid var(--line);border-radius:2mm;margin-bottom:3mm}
 .gatebox button{width:100%;font-weight:700;font-size:11pt;color:#fff;background:var(--red);border:0;border-radius:2mm;padding:3.2mm;cursor:pointer}
 #gerr{color:#c0392b;font-size:8.5pt;min-height:1.2em;margin:3mm 0 0}
 @media(max-width:620px){.wrap{padding:6mm 5mm 12mm}}
@@ -90,6 +92,7 @@ table.grid input{width:5mm;height:5mm;accent-color:#1a7a3a;cursor:pointer}
  <button class="tab" data-v="gecmis" type="button">Veri tabanı</button>
  <button class="tab" data-v="odeme" type="button">Ödemeler</button>
  <button class="tab" data-v="ogrenci" type="button">Öğrenciler</button>
+ <button class="tab" data-v="istatistik" type="button">İstatistik</button>
 </nav>
 <div id="loadmsg" class="hint"></div>
 
@@ -120,15 +123,9 @@ table.grid input{width:5mm;height:5mm;accent-color:#1a7a3a;cursor:pointer}
 </section>
 
 <section id="v-gecmis" class="view" hidden>
- <nav class="subtabs">
-  <button class="subtab on" data-s="vt-gunluk" type="button">Günlük</button>
-  <button class="subtab" data-s="vt-odeme" type="button">Ödemeler</button>
- </nav>
- <div id="vt-gunluk">
-  <div id="gecmis-ozet"></div>
-  <div id="gecmis-list"></div>
- </div>
- <div id="vt-odeme" hidden><div id="rapor"></div></div>
+ <div class="sec" style="margin-top:0">Ders kayıtları</div>
+ <div id="gecmis-ozet"></div>
+ <div id="gecmis-list"></div>
 </section>
 
 <section id="v-odeme" class="view" hidden>
@@ -137,8 +134,11 @@ table.grid input{width:5mm;height:5mm;accent-color:#1a7a3a;cursor:pointer}
  <div class="row" style="align-items:flex-end;gap:2mm">
   <div style="flex:1"><input type="text" id="ogr-ad" placeholder="Ad Soyad" autocomplete="off"></div>
   <button id="ogr-ekle" class="btn2" type="button">Ekle</button>
-  <button id="ogr-seed" class="btn2" type="button" style="background:#555">20 deneme kişi</button>
+  <button id="ogr-seed" class="btn2" type="button" style="background:#555">Kişi 1–20 oluştur</button>
  </div>
+ <div style="margin-top:2mm"><label>Ya da listeyi topluca yapıştır (her satıra bir isim)</label>
+  <textarea id="ogr-bulk" placeholder="Ayşe Yılmaz&#10;Mehmet Demir&#10;…" style="min-height:16mm"></textarea>
+  <button id="ogr-bulk-ekle" class="btn2" type="button" style="margin-top:1.5mm">Listeyi ekle</button></div>
  <div id="ogr-list" class="ogr"></div>
  <div class="sec">Ödeme planı · 80 €/ay</div>
  <div class="hint">Ödeme geldikçe kutuyu işaretleyin. Boş (kırmızı) = ödememiş.</div>
@@ -151,6 +151,12 @@ table.grid input{width:5mm;height:5mm;accent-color:#1a7a3a;cursor:pointer}
  <div class="hint">Bir öğrenci seçin; o kişiyle ilgili elimizdeki her şey (ödemeler + devamsızlık) burada toplu görünür.</div>
  <select id="ogr-sec"><option value="">— öğrenci seçin —</option></select>
  <div id="ogr-detay"></div>
+</section>
+
+<section id="v-istatistik" class="view" hidden>
+ <div class="sec" style="margin-top:0">Finans / istatistik</div>
+ <div class="hint">Ödemeler sekmesinde işaretledikçe burası güncellenir. Bir aya tıklayınca o ay kimler ödemiş görünür.</div>
+ <div id="rapor"></div>
 </section>
 </div>
 
@@ -186,24 +192,17 @@ sel.addEventListener('change',function(){var n=sel.value;clist.innerHTML='';if(!
 var tabs=document.querySelectorAll('.tab');
 tabs.forEach(function(b){b.addEventListener('click',function(){
  tabs.forEach(function(x){x.classList.remove('on')});b.classList.add('on');
- ['gunluk','gecmis','odeme','ogrenci'].forEach(function(v){document.getElementById('v-'+v).hidden=(v!==b.dataset.v)});
- if(b.dataset.v==='gecmis')renderGecmis(); if(b.dataset.v==='odeme')renderOdeme(); if(b.dataset.v==='ogrenci')renderOgrenciTab();
-})});
-var subtabs=document.querySelectorAll('.subtab');
-subtabs.forEach(function(b){b.addEventListener('click',function(){
- subtabs.forEach(function(x){x.classList.remove('on')});b.classList.add('on');
- document.getElementById('vt-gunluk').hidden=(b.dataset.s!=='vt-gunluk');
- document.getElementById('vt-odeme').hidden=(b.dataset.s!=='vt-odeme');
+ ['gunluk','gecmis','odeme','ogrenci','istatistik'].forEach(function(v){document.getElementById('v-'+v).hidden=(v!==b.dataset.v)});
+ if(b.dataset.v==='gecmis')renderGecmis(); if(b.dataset.v==='odeme')renderOdeme(); if(b.dataset.v==='ogrenci')renderOgrenciTab(); if(b.dataset.v==='istatistik')renderIstatistik();
 })});
 
 /* --- gelmeyenler: öğrenci varsa tik, yoksa metin (Gün 0'da uydurma isimler) --- */
-var DEMO_OGR=["Deneme Ali","Deneme Veli","Şakacı Ayşe","Komik Mehmet Abi","Palyaço Zeynep"];
 function renderGelmeyen(){var w=document.getElementById('gelmeyen-wrap');
- var list=(sel.value==='0')?DEMO_OGR:STATE.ogrenciler;
- if(list.length){var h='<div class="hint">Gelmeyenleri işaretleyin.'+(sel.value==='0'?' (deneme isimleri)':'')+'</div><div class="cks">';
+ var list=STATE.ogrenciler;
+ if(list.length){var h='<div class="hint">Gelmeyenleri işaretleyin.</div><div class="cks">';
   list.forEach(function(n){h+='<label class="ci"><input type="checkbox" data-gel="1" value="'+esc(n)+'"><span>'+esc(n)+'</span></label>'});
   w.innerHTML=h+'</div>';}
- else{w.innerHTML='<div class="hint">Öğrenci listesi henüz boş — Ödemeler sekmesinden ekleyebilirsiniz. Şimdilik elle yazın.</div><textarea name="gelmeyenler" placeholder="Gelmeyenlerin adları…"></textarea>';}
+ else{w.innerHTML='<div class="hint">Öğrenci listesi boş — Ödemeler sekmesinden ekleyin (ya da Kişi 1–20 oluştur butonuyla). Şimdilik elle yazabilirsiniz.</div><textarea name="gelmeyenler" placeholder="Gelmeyenlerin adları…"></textarea>';}
 }
 function gelmeyenText(){var any=document.querySelector('[data-gel]');
  if(any)return [].slice.call(document.querySelectorAll('[data-gel]:checked')).map(function(c){return c.value}).join(', ');
@@ -230,18 +229,6 @@ var FEE=80;
 function money(n){return Math.round(n).toLocaleString('tr-TR')+' €';}
 function renderGecmis(){
  var ozet=document.getElementById('gecmis-ozet'),list=document.getElementById('gecmis-list');
- var M=STATE.months||[];
- /* --- ödeme raporu: ay ay --- */
- var tR=0,prows='';
- M.forEach(function(m){var c=STATE.ogrenciler.filter(function(n){return STATE.odeme[n+'||'+m]===1}).length;var t=c*FEE;tR+=t;
-  prows+='<tr><td class="nm">'+esc(m)+'</td><td>'+c+'</td><td>'+money(t)+'</td><td>'+money(t/2)+'</td><td>'+money(t*0.25)+'</td><td>'+money(t*0.25)+'</td></tr>';});
- var rep='<div class="sec" style="margin-top:0">Ödeme raporu · ay ay</div>'
-  +'<div class="hint">Ücret 80 €/ay · Kira: toplamın yarısı · Ufuk %25 · Hazal %25. Ödemeler sekmesinde işaretledikçe burası güncellenir.</div>'
-  +'<div class="gridscroll"><table class="grid"><thead><tr><th class="nm">Ay</th><th>Ödeyen</th><th>Toplam</th><th>Kira</th><th>Ufuk</th><th>Hazal</th></tr></thead><tbody>'
-  +prows
-  +'<tr class="tot"><td class="nm">GENEL TOPLAM</td><td>—</td><td>'+money(tR)+'</td><td>'+money(tR/2)+'</td><td>'+money(tR*0.25)+'</td><td>'+money(tR*0.25)+'</td></tr>'
-  +'</tbody></table></div>';
- var rap=document.getElementById('rapor');if(rap)rap.innerHTML=rep;
  /* --- ders kayıtları --- */
  var rows=(STATE.gunluk||[]).slice().sort(function(a,b){return new Date(b.zaman)-new Date(a.zaman)});
  var days={};rows.forEach(function(r){days[r.gun]=1});
@@ -260,6 +247,23 @@ function renderGecmis(){
  });
  list.innerHTML=h;
 }
+function renderIstatistik(){
+ var rap=document.getElementById('rapor');if(!rap)return;
+ var M=STATE.months||[];var tR=0,body='';
+ M.forEach(function(m){
+  var pay=STATE.ogrenciler.filter(function(n){return STATE.odeme[n+'||'+m]===1});
+  var non=STATE.ogrenciler.filter(function(n){return STATE.odeme[n+'||'+m]!==1});
+  var c=pay.length,t=c*FEE;tR+=t;
+  body+='<tr class="mrow" data-m="'+esc(m)+'"><td class="nm">▸ '+esc(m)+'</td><td>'+c+'</td><td>'+money(t)+'</td><td>'+money(t/2)+'</td><td>'+money(t*0.25)+'</td><td>'+money(t*0.25)+'</td></tr>';
+  body+='<tr class="mdet" data-m="'+esc(m)+'" hidden><td colspan="6" class="det"><b>Ödeyen ('+pay.length+'):</b> '+(pay.length?pay.map(esc).join(', '):'—')+'<br><b>Ödemeyen ('+non.length+'):</b> '+(non.length?'<span class="bad">'+non.map(esc).join(', ')+'</span>':'—')+'</td></tr>';
+ });
+ rap.innerHTML='<div class="gridscroll"><table class="grid"><thead><tr><th class="nm">Ay</th><th>Ödeyen</th><th>Toplam</th><th>Kira</th><th>Ufuk</th><th>Hazal</th></tr></thead><tbody>'
+  +body
+  +'<tr class="tot"><td class="nm">GENEL TOPLAM</td><td>—</td><td>'+money(tR)+'</td><td>'+money(tR/2)+'</td><td>'+money(tR*0.25)+'</td><td>'+money(tR*0.25)+'</td></tr>'
+  +'</tbody></table></div><div class="hint" style="margin-top:2mm">Bir aya tıklayınca o ay kimler ödemiş / ödememiş açılır.</div>';
+ [].slice.call(rap.querySelectorAll('.mrow')).forEach(function(tr){tr.style.cursor='pointer';
+  tr.addEventListener('click',function(){var det=rap.querySelector('.mdet[data-m="'+tr.getAttribute('data-m')+'"]');if(det)det.hidden=!det.hidden;});});
+}
 
 /* --- ödemeler --- */
 document.getElementById('ogr-ekle').addEventListener('click',function(){
@@ -270,12 +274,22 @@ document.getElementById('ogr-ekle').addEventListener('click',function(){
  .finally(function(){document.getElementById('ogr-ekle').disabled=false});
 });
 document.getElementById('ogr-ad').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();document.getElementById('ogr-ekle').click();}});
+function seedKisi(done){var i=1;
+ (function step(){if(i>20){load(true).then(function(){renderOdeme();renderGelmeyen();}).finally(function(){if(done)done();});return;}
+  api({action:'addOgrenci',ad:'Kişi '+i}).then(function(){i++;step();}).catch(function(){i++;step();});})();
+}
 document.getElementById('ogr-seed').addEventListener('click',function(){
- if(!confirm('20 deneme kişi (Kişi 1–20) eklensin mi? Sonra tek tek silip gerçek isimleri koyabilirsin.'))return;
- var b=this;b.disabled=true;b.textContent='Ekleniyor…';var i=1;
- function step(){if(i>20){load(true).then(function(){renderOdeme();renderGelmeyen();}).finally(function(){b.disabled=false;b.textContent='20 deneme kişi';});return;}
-  api({action:'addOgrenci',ad:'Kişi '+i}).then(function(){i++;step();}).catch(function(){i++;step();});}
- step();
+ if(!confirm('Kişi 1–20 oluşturulsun mu? (Her yerde çıkar; sonra silip gerçek isimleri koyarsın.)'))return;
+ var b=this;b.disabled=true;b.textContent='Ekleniyor…';
+ seedKisi(function(){b.disabled=false;b.textContent='Kişi 1–20 oluştur';});
+});
+document.getElementById('ogr-bulk-ekle').addEventListener('click',function(){
+ var ta=document.getElementById('ogr-bulk');
+ var names=ta.value.split(/\n|,/).map(function(s){return s.trim()}).filter(Boolean);
+ if(!names.length)return; if(!confirm(names.length+' isim eklensin mi?'))return;
+ var b=this;b.disabled=true;b.textContent='Ekleniyor…';var i=0;
+ (function step(){if(i>=names.length){ta.value='';load(true).then(function(){renderOdeme();renderGelmeyen();}).finally(function(){b.disabled=false;b.textContent='Listeyi ekle';});return;}
+  api({action:'addOgrenci',ad:names[i]}).then(function(){i++;step();}).catch(function(){i++;step();});})();
 });
 
 function delOgr(name){if(!confirm(name+' silinsin mi?'))return;
@@ -334,7 +348,11 @@ function render(){renderGelmeyen();}
 function load(silent){if(!silent){document.getElementById('loadmsg').textContent='Yükleniyor…';}
  return api({action:'get'}).then(function(d){if(!d||!d.ok)throw new Error((d&&d.error)||'veri alinamadi');
    STATE=d; if(!STATE.months)STATE.months=["Kasım","Aralık","Ocak","Şubat","Mart","Nisan","Mayıs"];
-   document.getElementById('loadmsg').textContent='';render();})
+   document.getElementById('loadmsg').textContent='';render();
+   if((!STATE.ogrenciler||!STATE.ogrenciler.length)&&!window.__seedTried){window.__seedTried=true;
+     document.getElementById('loadmsg').textContent='Öğrenciler (Kişi 1–20) oluşturuluyor…';
+     seedKisi(function(){document.getElementById('loadmsg').textContent='';});}
+  })
  .catch(function(err){document.getElementById('loadmsg').innerHTML='Veriye ulaşılamadı ('+esc(err.message)+'). <a href="#" id="retry">Tekrar dene</a>';
    var r=document.getElementById('retry');if(r)r.addEventListener('click',function(e){e.preventDefault();load();});});
 }
