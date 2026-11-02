@@ -1,6 +1,7 @@
 # Teşekkürler sayfası (/tr/tesekkurler/, /de/dank/, /en/thanks/)
 # Yeni isimleri listenin sonuna ekle; sayfa kendiliğinden güncellenir.
 title: {tr: Teşekkürler, de: Dank, en: Thanks}
+foot_link: {tr: "Teşekkürler sayfası", de: "Dankesseite", en: "Thanks page"}
 foot_line: {tr: "Tiyatro Berlin'e emeği geçenler", de: "Alle, die dieses Theater mittragen", en: "Everyone who helps carry this theatre"}
 text:
   tr: |
