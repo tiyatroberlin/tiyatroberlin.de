@@ -129,18 +129,7 @@ table.grid input{width:5mm;height:5mm;accent-color:#1a7a3a;cursor:pointer}
 </section>
 
 <section id="v-odeme" class="view" hidden>
- <div class="sec">Öğrenciler</div>
- <div class="hint">İsimleri buradan ekleyin; ödeme planı ve yoklama bu listeyi kullanır.</div>
- <div class="row" style="align-items:flex-end;gap:2mm">
-  <div style="flex:1"><input type="text" id="ogr-ad" placeholder="Ad Soyad" autocomplete="off"></div>
-  <button id="ogr-ekle" class="btn2" type="button">Ekle</button>
-  <button id="ogr-seed" class="btn2" type="button" style="background:#555">Kişi 1–20 oluştur</button>
- </div>
- <div style="margin-top:2mm"><label>Ya da listeyi topluca yapıştır (her satıra bir isim)</label>
-  <textarea id="ogr-bulk" placeholder="Ayşe Yılmaz&#10;Mehmet Demir&#10;…" style="min-height:16mm"></textarea>
-  <button id="ogr-bulk-ekle" class="btn2" type="button" style="margin-top:1.5mm">Listeyi ekle</button></div>
- <div id="ogr-list" class="ogr"></div>
- <div class="sec">Ödeme planı · 80 €/ay</div>
+ <div class="sec" style="margin-top:0">Ödeme planı · 80 €/ay</div>
  <div class="hint">Ödeme geldikçe kutuyu işaretleyin. Boş (kırmızı) = ödememiş.</div>
  <div id="odeme-wrap"></div>
  <div id="odeme-summ" class="summ"></div>
@@ -266,31 +255,10 @@ function renderIstatistik(){
 }
 
 /* --- ödemeler --- */
-document.getElementById('ogr-ekle').addEventListener('click',function(){
- var inp=document.getElementById('ogr-ad'),name=inp.value.trim();if(!name)return;
- this.disabled=true;
- api({action:'addOgrenci',ad:name}).then(function(){inp.value='';return load(true)}).then(function(){renderOdeme();renderGelmeyen();})
- .catch(function(err){alert('Eklenemedi: '+err.message)})
- .finally(function(){document.getElementById('ogr-ekle').disabled=false});
-});
-document.getElementById('ogr-ad').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();document.getElementById('ogr-ekle').click();}});
 function seedKisi(done){var i=1;
  (function step(){if(i>20){load(true).then(function(){renderOdeme();renderGelmeyen();}).finally(function(){if(done)done();});return;}
   api({action:'addOgrenci',ad:'Kişi '+i}).then(function(){i++;step();}).catch(function(){i++;step();});})();
 }
-document.getElementById('ogr-seed').addEventListener('click',function(){
- if(!confirm('Kişi 1–20 oluşturulsun mu? (Her yerde çıkar; sonra silip gerçek isimleri koyarsın.)'))return;
- var b=this;b.disabled=true;b.textContent='Ekleniyor…';
- seedKisi(function(){b.disabled=false;b.textContent='Kişi 1–20 oluştur';});
-});
-document.getElementById('ogr-bulk-ekle').addEventListener('click',function(){
- var ta=document.getElementById('ogr-bulk');
- var names=ta.value.split(/\n|,/).map(function(s){return s.trim()}).filter(Boolean);
- if(!names.length)return; if(!confirm(names.length+' isim eklensin mi?'))return;
- var b=this;b.disabled=true;b.textContent='Ekleniyor…';var i=0;
- (function step(){if(i>=names.length){ta.value='';load(true).then(function(){renderOdeme();renderGelmeyen();}).finally(function(){b.disabled=false;b.textContent='Listeyi ekle';});return;}
-  api({action:'addOgrenci',ad:names[i]}).then(function(){i++;step();}).catch(function(){i++;step();});})();
-});
 
 function delOgr(name){if(!confirm(name+' silinsin mi?'))return;
  api({action:'delOgrenci',ad:name}).then(function(){return load(true)}).then(function(){renderOdeme();renderGelmeyen();})
@@ -300,12 +268,8 @@ function setOd(name,ay,on,td){td.className=on?'paid':'unpaid';STATE.odeme[name+'
  api({action:'setOdeme',ogrenci:name,ay:ay,durum:on?1:0}).catch(function(){td.className=on?'unpaid':'paid';alert('Kaydedilemedi, tekrar deneyin.');var cb=td.querySelector('input');if(cb)cb.checked=!on;STATE.odeme[name+'||'+ay]=on?0:1;});
 }
 function renderOdeme(){
- var ul=document.getElementById('ogr-list');
- if(!STATE.ogrenciler.length){ul.innerHTML='<div class="hint">Henüz öğrenci yok.</div>';}
- else{ul.innerHTML=STATE.ogrenciler.map(function(n){return '<span class="ogrchip">'+esc(n)+' <button type="button" title="sil" data-del="'+esc(n)+'">×</button></span>'}).join('');
-  ul.querySelectorAll('[data-del]').forEach(function(b){b.addEventListener('click',function(){delOgr(b.getAttribute('data-del'))})});}
  var wrap=document.getElementById('odeme-wrap'),summ=document.getElementById('odeme-summ');
- if(!STATE.ogrenciler.length){wrap.innerHTML='<div class="hint">Öğrenci ekleyince ödeme tablosu burada çıkar.</div>';summ.innerHTML='';return;}
+ if(!STATE.ogrenciler.length){wrap.innerHTML='<div class="hint">Öğrenci listesi yükleniyor…</div>';summ.innerHTML='';return;}
  var M=STATE.months;
  var h='<div class="gridscroll"><table class="grid"><thead><tr><th class="nm">Öğrenci</th>';
  M.forEach(function(m){h+='<th>'+esc(m)+'</th>'});h+='</tr></thead><tbody>';
