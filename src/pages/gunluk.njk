@@ -53,6 +53,16 @@ table.grid th{background:var(--red);color:#fff;font-size:8pt;text-transform:uppe
 table.grid td.nm{text-align:left;font-weight:600;position:sticky;left:0;background:#fff}
 table.grid td.paid{background:#e7f6ec}
 table.grid td.unpaid{background:#fdecec}
+table.grid tr.tot td{font-weight:700;background:var(--tint)}
+.subtabs{display:flex;gap:1.5mm;margin-bottom:4mm;flex-wrap:wrap}
+.subtab{font:inherit;font-weight:600;font-size:9pt;color:var(--muted);background:var(--tint);border:1px solid var(--line);border-radius:20mm;padding:1.6mm 4mm;cursor:pointer}
+.subtab.on{color:#fff;background:var(--red);border-color:var(--red)}
+.dossier{border:1px solid var(--line);border-left:4px solid var(--red);border-radius:2mm;padding:3mm 3.5mm;margin-top:3mm}
+.dossier .big{font-family:"Lora",serif;font-weight:700;font-size:14pt;margin-bottom:1mm}
+.dossier .lbl{font-weight:800;font-size:7.3pt;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:2.5mm 0 .8mm}
+.dossier p{margin:0;font-size:9.6pt}.dossier ul{margin:.5mm 0;padding-left:5mm}.dossier li{font-size:9.2pt;margin:.3mm 0}
+.pill{display:inline-block;background:var(--tint);border:1px solid var(--line);border-radius:20mm;padding:.8mm 2.5mm;font-size:8.5pt;margin:.6mm .6mm 0 0}
+.pill.on{background:#e7f6ec;border-color:#bfe6cd;color:#1a7a3a;font-weight:600}
 table.grid input{width:5mm;height:5mm;accent-color:#1a7a3a;cursor:pointer}
 .summ{font-size:9pt;margin-top:3mm}.summ .bad{color:var(--red);font-weight:700}
 .hp{position:absolute;left:-9999px}
@@ -77,13 +87,14 @@ table.grid input{width:5mm;height:5mm;accent-color:#1a7a3a;cursor:pointer}
 <h1>Ders Defteri</h1>
 <nav class="tabs">
  <button class="tab on" data-v="gunluk" type="button">Günlük</button>
- <button class="tab" data-v="gecmis" type="button">Geçmiş</button>
+ <button class="tab" data-v="gecmis" type="button">Veri tabanı</button>
  <button class="tab" data-v="odeme" type="button">Ödemeler</button>
+ <button class="tab" data-v="ogrenci" type="button">Öğrenciler</button>
 </nav>
 <div id="loadmsg" class="hint"></div>
 
 <section id="v-gunluk" class="view">
- <p class="hint">Her dersin sonunda doldurun. Gönder'e basınca doğrudan kayıt defterine (Geçmiş) düşer.</p>
+ <p class="hint">Her dersin sonunda doldurun. Gönder'e basınca doğrudan kayıt defterine (Veri tabanı) düşer.</p>
  <form id="gf" novalidate>
   <div class="row">
    <div><label>Eğitmen</label><input type="text" name="egitmen" autocomplete="name" required></div>
@@ -109,8 +120,15 @@ table.grid input{width:5mm;height:5mm;accent-color:#1a7a3a;cursor:pointer}
 </section>
 
 <section id="v-gecmis" class="view" hidden>
- <div id="gecmis-ozet"></div>
- <div id="gecmis-list"></div>
+ <nav class="subtabs">
+  <button class="subtab on" data-s="vt-gunluk" type="button">Günlük</button>
+  <button class="subtab" data-s="vt-odeme" type="button">Ödemeler</button>
+ </nav>
+ <div id="vt-gunluk">
+  <div id="gecmis-ozet"></div>
+  <div id="gecmis-list"></div>
+ </div>
+ <div id="vt-odeme" hidden><div id="rapor"></div></div>
 </section>
 
 <section id="v-odeme" class="view" hidden>
@@ -119,12 +137,20 @@ table.grid input{width:5mm;height:5mm;accent-color:#1a7a3a;cursor:pointer}
  <div class="row" style="align-items:flex-end;gap:2mm">
   <div style="flex:1"><input type="text" id="ogr-ad" placeholder="Ad Soyad" autocomplete="off"></div>
   <button id="ogr-ekle" class="btn2" type="button">Ekle</button>
+  <button id="ogr-seed" class="btn2" type="button" style="background:#555">20 deneme kişi</button>
  </div>
  <div id="ogr-list" class="ogr"></div>
  <div class="sec">Ödeme planı · 80 €/ay</div>
  <div class="hint">Ödeme geldikçe kutuyu işaretleyin. Boş (kırmızı) = ödememiş.</div>
  <div id="odeme-wrap"></div>
  <div id="odeme-summ" class="summ"></div>
+</section>
+
+<section id="v-ogrenci" class="view" hidden>
+ <div class="sec" style="margin-top:0">Öğrenci dosyası</div>
+ <div class="hint">Bir öğrenci seçin; o kişiyle ilgili elimizdeki her şey (ödemeler + devamsızlık) burada toplu görünür.</div>
+ <select id="ogr-sec"><option value="">— öğrenci seçin —</option></select>
+ <div id="ogr-detay"></div>
 </section>
 </div>
 
@@ -160,8 +186,14 @@ sel.addEventListener('change',function(){var n=sel.value;clist.innerHTML='';if(!
 var tabs=document.querySelectorAll('.tab');
 tabs.forEach(function(b){b.addEventListener('click',function(){
  tabs.forEach(function(x){x.classList.remove('on')});b.classList.add('on');
- ['gunluk','gecmis','odeme'].forEach(function(v){document.getElementById('v-'+v).hidden=(v!==b.dataset.v)});
- if(b.dataset.v==='gecmis')renderGecmis(); if(b.dataset.v==='odeme')renderOdeme();
+ ['gunluk','gecmis','odeme','ogrenci'].forEach(function(v){document.getElementById('v-'+v).hidden=(v!==b.dataset.v)});
+ if(b.dataset.v==='gecmis')renderGecmis(); if(b.dataset.v==='odeme')renderOdeme(); if(b.dataset.v==='ogrenci')renderOgrenciTab();
+})});
+var subtabs=document.querySelectorAll('.subtab');
+subtabs.forEach(function(b){b.addEventListener('click',function(){
+ subtabs.forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+ document.getElementById('vt-gunluk').hidden=(b.dataset.s!=='vt-gunluk');
+ document.getElementById('vt-odeme').hidden=(b.dataset.s!=='vt-odeme');
 })});
 
 /* --- gelmeyenler: öğrenci varsa tik, yoksa metin (Gün 0'da uydurma isimler) --- */
@@ -186,7 +218,7 @@ f.addEventListener('submit',function(e){e.preventDefault();if(f._honey.value)ret
  api({action:'addGunluk',tarih:f.tarih.value,gun:gn+'. Gün',egitmen:f.egitmen.value,
    calismalar:done.join(' | '),ek:f.ek.value,notlar:f.notlar.value,gelmeyenler:gelmeyenText()})
  .then(function(d){if(!d||!d.ok)throw new Error((d&&d.error)||'kayit olmadi');
-   msg.textContent='Kaydedildi — Geçmiş sekmesine düştü.';msg.className='msg ok';
+   msg.textContent='Kaydedildi — Veri tabanı sekmesine düştü.';msg.className='msg ok';
    f.reset();clist.innerHTML='<div class="hint">Önce yukarıdan bir gün seçin.</div>';hint.textContent='';renderGelmeyen();
    return load(true);})
  .catch(function(err){msg.textContent='Kaydedilemedi ('+err.message+'). Tekrar deneyin.';msg.className='msg err';})
@@ -194,11 +226,26 @@ f.addEventListener('submit',function(e){e.preventDefault();if(f._honey.value)ret
 });
 
 /* --- geçmiş --- */
+var FEE=80;
+function money(n){return Math.round(n).toLocaleString('tr-TR')+' €';}
 function renderGecmis(){
  var ozet=document.getElementById('gecmis-ozet'),list=document.getElementById('gecmis-list');
+ var M=STATE.months||[];
+ /* --- ödeme raporu: ay ay --- */
+ var tR=0,prows='';
+ M.forEach(function(m){var c=STATE.ogrenciler.filter(function(n){return STATE.odeme[n+'||'+m]===1}).length;var t=c*FEE;tR+=t;
+  prows+='<tr><td class="nm">'+esc(m)+'</td><td>'+c+'</td><td>'+money(t)+'</td><td>'+money(t/2)+'</td><td>'+money(t*0.25)+'</td><td>'+money(t*0.25)+'</td></tr>';});
+ var rep='<div class="sec" style="margin-top:0">Ödeme raporu · ay ay</div>'
+  +'<div class="hint">Ücret 80 €/ay · Kira: toplamın yarısı · Ufuk %25 · Hazal %25. Ödemeler sekmesinde işaretledikçe burası güncellenir.</div>'
+  +'<div class="gridscroll"><table class="grid"><thead><tr><th class="nm">Ay</th><th>Ödeyen</th><th>Toplam</th><th>Kira</th><th>Ufuk</th><th>Hazal</th></tr></thead><tbody>'
+  +prows
+  +'<tr class="tot"><td class="nm">GENEL TOPLAM</td><td>—</td><td>'+money(tR)+'</td><td>'+money(tR/2)+'</td><td>'+money(tR*0.25)+'</td><td>'+money(tR*0.25)+'</td></tr>'
+  +'</tbody></table></div>';
+ var rap=document.getElementById('rapor');if(rap)rap.innerHTML=rep;
+ /* --- ders kayıtları --- */
  var rows=(STATE.gunluk||[]).slice().sort(function(a,b){return new Date(b.zaman)-new Date(a.zaman)});
- if(!rows.length){ozet.innerHTML='';list.innerHTML='<div class="hint">Henüz kayıt yok. İlk dersten sonra Günlük sekmesinden doldurun.</div>';return;}
  var days={};rows.forEach(function(r){days[r.gun]=1});
+ if(!rows.length){ozet.innerHTML='<div class="hint">Henüz ders kaydı yok. İlk dersten sonra Günlük sekmesinden doldurun.</div>';list.innerHTML='';return;}
  ozet.innerHTML='<div class="ozet">Toplam <b>'+rows.length+'</b> kayıt · <b>'+Object.keys(days).length+'</b> ayrı ders dolduruldu. En yeni en üstte.</div>';
  var h='';
  rows.forEach(function(r){
@@ -223,6 +270,13 @@ document.getElementById('ogr-ekle').addEventListener('click',function(){
  .finally(function(){document.getElementById('ogr-ekle').disabled=false});
 });
 document.getElementById('ogr-ad').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();document.getElementById('ogr-ekle').click();}});
+document.getElementById('ogr-seed').addEventListener('click',function(){
+ if(!confirm('20 deneme kişi (Kişi 1–20) eklensin mi? Sonra tek tek silip gerçek isimleri koyabilirsin.'))return;
+ var b=this;b.disabled=true;b.textContent='Ekleniyor…';var i=1;
+ function step(){if(i>20){load(true).then(function(){renderOdeme();renderGelmeyen();}).finally(function(){b.disabled=false;b.textContent='20 deneme kişi';});return;}
+  api({action:'addOgrenci',ad:'Kişi '+i}).then(function(){i++;step();}).catch(function(){i++;step();});}
+ step();
+});
 
 function delOgr(name){if(!confirm(name+' silinsin mi?'))return;
  api({action:'delOgrenci',ad:name}).then(function(){return load(true)}).then(function(){renderOdeme();renderGelmeyen();})
@@ -253,6 +307,27 @@ function renderOdeme(){
   summ.innerHTML=curName+' ödemeyenler: '+(bad.length?'<span class="bad">'+bad.map(esc).join(', ')+'</span>':'<b>yok, herkes ödedi</b>');}
  else summ.innerHTML='';
 }
+
+/* --- öğrenci dosyası --- */
+function renderOgrenciTab(){var s=document.getElementById('ogr-sec'),cur=s.value;
+ s.innerHTML='<option value="">— öğrenci seçin —</option>'+STATE.ogrenciler.map(function(n){return '<option'+(n===cur?' selected':'')+'>'+esc(n)+'</option>'}).join('');
+ if(!STATE.ogrenciler.length){document.getElementById('ogr-detay').innerHTML='<div class="hint">Henüz öğrenci yok. Ödemeler sekmesinden ekleyin.</div>';return;}
+ renderOgrenciDetay(s.value);
+}
+function renderOgrenciDetay(name){var d=document.getElementById('ogr-detay');if(!name){d.innerHTML='';return;}
+ var M=STATE.months||[];
+ var paidM=M.filter(function(m){return STATE.odeme[name+'||'+m]===1});
+ var missed=(STATE.gunluk||[]).filter(function(r){return String(r.gelmeyenler||'').split(',').map(function(x){return x.trim()}).indexOf(name)>=0})
+   .sort(function(a,b){return new Date(b.zaman)-new Date(a.zaman)});
+ var h='<div class="dossier"><div class="big">'+esc(name)+'</div>';
+ h+='<div class="lbl">Ödemeler</div><p>Ödenen ay: <b>'+paidM.length+'</b> · Toplam: <b>'+money(paidM.length*FEE)+'</b></p>';
+ h+='<div>'+M.map(function(m){var on=STATE.odeme[name+'||'+m]===1;return '<span class="pill'+(on?' on':'')+'">'+esc(m)+(on?' ✓':'')+'</span>'}).join('')+'</div>';
+ h+='<div class="lbl">Devamsızlık</div>';
+ if(missed.length){h+='<p>Gelmediği ders: <b>'+missed.length+'</b></p><ul>'+missed.map(function(r){return '<li>'+esc(r.gun||'')+' · '+esc(r.tarih||'')+'</li>'}).join('')+'</ul>';}
+ else{h+='<p>Kayda göre gelmediği ders yok.</p>';}
+ d.innerHTML=h+'</div>';
+}
+document.getElementById('ogr-sec').addEventListener('change',function(){renderOgrenciDetay(this.value)});
 
 /* --- yükle --- */
 function render(){renderGelmeyen();}
