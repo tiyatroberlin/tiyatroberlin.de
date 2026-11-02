@@ -10,7 +10,8 @@ eleventyExcludeFromCollections: true
 *{box-sizing:border-box}
 :root{--red:#e32b2b;--ink:#161616;--muted:#6b6b76;--line:#dcdce0;--tint:#f6f6f7}
 body{font-family:"Inter",system-ui,sans-serif;color:var(--ink);background:#f4f4f6;margin:0;line-height:1.5}
-.wrap{max-width:172mm;margin:0 auto;background:#fff;padding:9mm 9mm 14mm;box-shadow:0 1px 20px rgba(0,0,0,.08)}
+.wrap{max-width:172mm;margin:0 auto;background:#fff;padding:9mm 9mm 14mm;box-shadow:0 1px 20px rgba(0,0,0,.08);position:relative}
+.logout{position:absolute;top:7mm;right:7mm;font:inherit;font-weight:600;font-size:8.5pt;color:var(--red);background:#fff;border:1px solid var(--line);border-radius:20mm;padding:1.4mm 4mm;cursor:pointer}
 .gk{font-family:"Inter";font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:8pt;color:var(--red)}
 h1{font-family:"Lora",serif;font-weight:700;font-size:23pt;margin:1mm 0 3mm}
 .tabs{display:flex;gap:1.5mm;border-bottom:2px solid var(--line);margin-bottom:5mm;flex-wrap:wrap}
@@ -85,6 +86,7 @@ table.grid input{width:5mm;height:5mm;accent-color:#1a7a3a;cursor:pointer}
 <button type="submit">Gir</button><div id="gerr"></div></form></div></div>
 
 <div id="app" class="wrap">
+<button id="logout" class="logout" type="button">Çıkış</button>
 <div class="gk">Tiyatro Berlin · Oyunculuk Atölyesi</div>
 <h1>Ders Defteri</h1>
 <nav class="tabs">
@@ -211,15 +213,15 @@ tabs.forEach(function(b){b.addEventListener('click',function(){
 function renderYoklama(){
  var wrap=document.getElementById('yoklama-wrap');if(!wrap)return;
  if(!STATE.ogrenciler.length){wrap.innerHTML='<div class="hint">Öğrenci listesi yükleniyor…</div>';return;}
- var days=Object.keys(DAY).map(Number).sort(function(a,b){return a-b;});
+ var days=Object.keys(DAY).map(Number).filter(function(k){return k>=1;}).sort(function(a,b){return a-b;});
  var h='<div class="gridscroll"><table class="grid"><thead><tr><th class="nm">Öğrenci</th>';
- days.forEach(function(k){h+='<th title="Gün '+k+'">'+k+'</th>';});
+ days.forEach(function(k){var dt=(DAY[k]&&DAY[k].t)||'';var sd=dt.split('.').slice(0,2).join('.');h+='<th title="'+k+'. ders · '+esc(dt)+'">'+esc(sd)+'</th>';});
  h+='</tr></thead><tbody>';
  STATE.ogrenciler.forEach(function(n){h+='<tr><td class="nm">'+esc(n)+'</td>';
   days.forEach(function(k){var lbl='Gün '+k;var ab=STATE.odeme[n+'||'+lbl]===1;
    h+='<td class="'+(ab?'unpaid':'')+'" data-n="'+esc(n)+'" data-g="'+lbl+'"><input type="checkbox" '+(ab?'checked':'')+'></td>';});
   h+='</tr>';});
- h+='</tbody></table></div><div class="hint" style="margin-top:2mm">Sütunlar ders günleri (0–27). İşaretli hücre = o gün GELMEDİ (devamsız). Kalıcıdır, günlükten bağımsızdır.</div>';
+ h+='</tbody></table></div><div class="hint" style="margin-top:2mm">Sütun başlıkları ders tarihleridir (1–27). İşaretli hücre = o gün GELMEDİ. Kalıcıdır, günlükten bağımsızdır.</div>';
  wrap.innerHTML=h;
  [].slice.call(wrap.querySelectorAll('td[data-g]')).forEach(function(td){var cb=td.querySelector('input');
   cb.addEventListener('change',function(){setYok(td.getAttribute('data-n'),td.getAttribute('data-g'),cb.checked,td);});});
@@ -275,12 +277,26 @@ function renderIstatistik(){
   body+='<tr class="mrow" data-m="'+esc(m)+'"><td class="nm">▸ '+esc(m)+'</td><td>'+c+'</td><td>'+money(t)+'</td><td>'+money(t/2)+'</td><td>'+money(t*0.25)+'</td><td>'+money(t*0.25)+'</td></tr>';
   body+='<tr class="mdet" data-m="'+esc(m)+'" hidden><td colspan="6" class="det"><b>Ödeyen ('+pay.length+'):</b> '+(pay.length?pay.map(esc).join(', '):'—')+'<br><b>Ödemeyen ('+non.length+'):</b> '+(non.length?'<span class="bad">'+non.map(esc).join(', ')+'</span>':'—')+'</td></tr>';
  });
- rap.innerHTML='<div class="gridscroll"><table class="grid"><thead><tr><th class="nm">Ay</th><th>Ödeyen</th><th>Toplam</th><th>Kira</th><th>Ufuk</th><th>Hazal</th></tr></thead><tbody>'
+ var fin='<div class="sec" style="margin-top:0">Ödeme · ay ay</div><div class="gridscroll"><table class="grid"><thead><tr><th class="nm">Ay</th><th>Ödeyen</th><th>Toplam</th><th>Kira</th><th>Ufuk</th><th>Hazal</th></tr></thead><tbody>'
   +body
   +'<tr class="tot"><td class="nm">GENEL TOPLAM</td><td>—</td><td>'+money(tR)+'</td><td>'+money(tR/2)+'</td><td>'+money(tR*0.25)+'</td><td>'+money(tR*0.25)+'</td></tr>'
-  +'</tbody></table></div><div class="hint" style="margin-top:2mm">Bir aya tıklayınca o ay kimler ödemiş / ödememiş açılır.</div>';
+  +'</tbody></table></div><div class="hint">Bir aya tıklayınca o ay kimler ödemiş / ödememiş açılır.</div>';
+ var ydays=Object.keys(DAY).map(Number).filter(function(k){return k>=1;}).sort(function(a,b){return a-b;});
+ var tot=STATE.ogrenciler.length, totAbs=0, ybody='';
+ ydays.forEach(function(k){var lbl='Gün '+k;
+  var abs=STATE.ogrenciler.filter(function(n){return STATE.odeme[n+'||'+lbl]===1;});
+  totAbs+=abs.length;var dt=(DAY[k]&&DAY[k].t)||'';
+  ybody+='<tr class="yrow" data-g="'+lbl+'"><td class="nm">▸ '+k+'. ders · '+esc(dt)+'</td><td>'+abs.length+'</td><td>'+(tot-abs.length)+'</td></tr>';
+  ybody+='<tr class="ydet" data-g="'+lbl+'" hidden><td colspan="3" class="det">'+(abs.length?'<b>Gelmeyen:</b> <span class="bad">'+abs.map(esc).join(', ')+'</span>':'İşaret yok (herkes geldi sayılır).')+'</td></tr>';
+ });
+ var yok='<div class="sec">Yoklama / katılım · ders ders</div><div class="hint">Her ders o gün kaç kişi gelmedi / geldi. Satıra tıkla → o gün gelmeyenler.</div>'
+  +'<div class="gridscroll"><table class="grid"><thead><tr><th class="nm">Ders</th><th>Gelmeyen</th><th>Gelen</th></tr></thead><tbody>'+ybody
+  +'<tr class="tot"><td class="nm">TOPLAM devamsızlık</td><td>'+totAbs+'</td><td>—</td></tr></tbody></table></div>';
+ rap.innerHTML=fin+yok;
  [].slice.call(rap.querySelectorAll('.mrow')).forEach(function(tr){tr.style.cursor='pointer';
   tr.addEventListener('click',function(){var det=rap.querySelector('.mdet[data-m="'+tr.getAttribute('data-m')+'"]');if(det)det.hidden=!det.hidden;});});
+ [].slice.call(rap.querySelectorAll('.yrow')).forEach(function(tr){tr.style.cursor='pointer';
+  tr.addEventListener('click',function(){var det=rap.querySelector('.ydet[data-g="'+tr.getAttribute('data-g')+'"]');if(det)det.hidden=!det.hidden;});});
 }
 
 /* --- ödemeler --- */
@@ -355,6 +371,8 @@ function load(silent){if(!silent){document.getElementById('loadmsg').textContent
    var r=document.getElementById('retry');if(r)r.addEventListener('click',function(e){e.preventDefault();load();});});
 }
 
+
+var _lo=document.getElementById('logout');if(_lo)_lo.addEventListener('click',function(){try{sessionStorage.removeItem('tb_ok')}catch(e){}location.reload();});
 
 /* --- şifre kapısı --- */
 (function(){var U="tiyatroberlin",P="kurs",K="tb_ok";
