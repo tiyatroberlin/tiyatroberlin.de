@@ -27,6 +27,8 @@ eleventyComputed:
     <dl class="facts">
       {%- for f in cp.facts %}<dt>{{ f[0] }}</dt><dd>{{ f[1] }}</dd>{% endfor %}
       <dt>{{ "Eğitmenler" if cp.teachers.length > 1 else "Eğitmen" }}</dt><dd>{% for t in cp.teachers %}<a href="{{ ('/tr/kisiler/' + t.person + '/') | url }}">{{ graph.people[t.person].name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</dd>
+      {%- set cco = graph.courseBySlug[cp.slug].coordination if graph.courseBySlug[cp.slug] else null %}{% if cco %}
+      <dt>Kurs koordinasyonu</dt><dd>{% for t in cco %}<a href="{{ ('/tr/kisiler/' + t + '/') | url }}">{{ graph.people[t].name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</dd>{% endif %}
     </dl>
     <p style="margin-top:1.2rem"><a class="btn red" href="{{ c.form }}" rel="noopener">{{ L.register }}</a></p>
     <nav class="course-toc" aria-label="İçindekiler">

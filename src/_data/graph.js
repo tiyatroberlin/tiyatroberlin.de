@@ -15,7 +15,7 @@ export default function () {
   const today = process.env.SITE_TODAY || new Date().toISOString().slice(0, 10);
 
   const people = Object.fromEntries(
-    Object.entries(db.people).map(([slug, p]) => [slug, { slug, ...p, bio: bios[slug] || null, works: [], teaches: [], projects: [] }])
+    Object.entries(db.people).map(([slug, p]) => [slug, { slug, ...p, bio: bios[slug] || null, works: [], teaches: [], coordinates: [], projects: [] }])
   );
   const venues = Object.fromEntries(Object.entries(db.venues).map(([slug, v]) => [slug, { slug, ...v, works: new Set(), shows: 0 }]));
 
@@ -53,6 +53,7 @@ export default function () {
   const coursePages = load("./course_pages.yaml");
   for (const c of extras.courses) { c.start = iso(c.start); c.detail = coursePages.some((p) => p.slug === c.slug); }
   for (const c of extras.courses) for (const t of c.teachers || []) people[t].teaches.push(c.slug);
+  for (const c of extras.courses) for (const t of c.coordination || []) people[t].coordinates.push(c.slug);
   for (const p of projects) for (const t of p.lead || []) people[t].projects.push(p.slug);
   for (const p of Object.values(people)) p.works.sort((a, b) => b.year - a.year);
 
@@ -110,7 +111,7 @@ export default function () {
     projectBySlug: Object.fromEntries(projects.map((p) => [p.slug, p])),
     programByMonth, soon, venuePages, venueList,
     network: { nodes, links }, counts, today,
-    personList: Object.values(people).filter((p) => p.works.length || p.teaches.length || p.projects.length)
+    personList: Object.values(people).filter((p) => p.works.length || p.teaches.length || p.coordinates.length || p.projects.length)
       .sort((a, b) => a.name.localeCompare(b.name, "tr")),
   };
 }

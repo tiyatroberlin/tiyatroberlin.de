@@ -11,6 +11,7 @@ courses:
     fee: {tr: "Aylık 80 € · istediğiniz ay bırakabilirsiniz", de: "80 € im Monat, monatlich kündbar", en: "€80 per month, cancel monthly"}
     lang: {tr: Türkçe, de: Kurssprache Türkisch, en: Taught in Turkish}
     teachers: [ufuk-tan-altunkaya, hazal-erdal]
+    coordination: [ela-tekgul]
     topics: {tr: "Ses ve diksiyon · beden ve nefes · doğaçlama · tiyatro tarihi ve dramaturji · metin ve rol çalışması", de: "Stimme und Sprechen · Körper und Atem · Improvisation · Theatergeschichte und Dramaturgie · Arbeit an Text und Rolle", en: "Voice and diction · body and breath · improvisation · theatre history and dramaturgy · text and role work"}
     form: "https://docs.google.com/forms/d/e/1FAIpQLSddOgOPj7CnL_aH_LfAXcB5XDjTV-HxV_9e07vgNabJOlQtIw/viewform"
   - slug: tiyatroyu-okumak
