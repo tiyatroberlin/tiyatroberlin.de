@@ -24,7 +24,7 @@ textarea{resize:vertical;min-height:22mm}
 .row{display:flex;gap:4mm;flex-wrap:wrap;margin:0 0 4mm}.row>div{flex:1;min-width:40mm}
 .sec{margin:6mm 0 2mm;font-family:"Inter";font-weight:800;font-size:9pt;text-transform:uppercase;letter-spacing:.05em;color:var(--red);border-bottom:1px solid var(--line);padding-bottom:1.5mm}
 .hint{font-size:8.5pt;color:var(--muted);margin:.5mm 0 2.5mm}
-#clist,#gelmeyen-wrap .cks{display:flex;flex-direction:column;gap:1.5mm;margin:2mm 0}
+#clist{display:flex;flex-direction:column;gap:1.5mm;margin:2mm 0}
 .ci{display:flex;align-items:flex-start;gap:2.5mm;padding:2.2mm 3mm;border:1px solid var(--line);border-radius:2mm;background:var(--tint);cursor:pointer}
 .ci input{margin-top:.6mm;width:4.5mm;height:4.5mm;flex:none;accent-color:var(--red)}
 .ci span{font-size:9.6pt}
@@ -91,6 +91,7 @@ table.grid input{width:5mm;height:5mm;accent-color:#1a7a3a;cursor:pointer}
  <button class="tab on" data-v="gunluk" type="button">Günlük</button>
  <button class="tab" data-v="gecmis" type="button">Veri tabanı</button>
  <button class="tab" data-v="odeme" type="button">Ödemeler</button>
+ <button class="tab" data-v="yoklama" type="button">Yoklama</button>
  <button class="tab" data-v="ogrenci" type="button">Öğrenciler</button>
  <button class="tab" data-v="istatistik" type="button">İstatistik</button>
 </nav>
@@ -114,8 +115,7 @@ table.grid input{width:5mm;height:5mm;accent-color:#1a7a3a;cursor:pointer}
   <div class="sec">Notlar</div>
   <div class="hint">O güne dair önemli şeyler: nasıl geçti, kim neyi zorladı, haftaya taşınacaklar…</div>
   <textarea name="notlar"></textarea>
-  <div class="sec">Gelmeyen öğrenciler (yoklama)</div>
-  <div id="gelmeyen-wrap"></div>
+  <div class="hint" style="margin-top:2mm">Yoklama artık ayrı: üstteki <b>Yoklama</b> sekmesinden işaretlenir.</div>
   <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
   <button class="btn" type="submit">Gönder</button>
   <div class="msg" id="msg" role="status" aria-live="polite"></div>
@@ -133,6 +133,12 @@ table.grid input{width:5mm;height:5mm;accent-color:#1a7a3a;cursor:pointer}
  <div class="hint">Ödeme geldikçe kutuyu işaretleyin. Boş (kırmızı) = ödememiş.</div>
  <div id="odeme-wrap"></div>
  <div id="odeme-summ" class="summ"></div>
+</section>
+
+<section id="v-yoklama" class="view" hidden>
+ <div class="sec" style="margin-top:0">Yoklama</div>
+ <div class="hint">Satır öğrenci, sütun ders günleri (sırayla). İşaretli = o gün GELMEDİ.</div>
+ <div id="yoklama-wrap"></div>
 </section>
 
 <section id="v-ogrenci" class="view" hidden>
@@ -169,33 +175,57 @@ function api(params){return new Promise(function(res,rej){
 /* --- gün seçici (müfredattan) --- */
 var sel=document.getElementById('gun'),hint=document.getElementById('ghint'),clist=document.getElementById('clist');
 Object.keys(DAY).sort(function(a,b){return a-b}).forEach(function(n){var o=document.createElement('option');o.value=n;o.textContent=n+'. Gün · '+DAY[n].t+' · '+DAY[n].u;sel.appendChild(o)});
-sel.addEventListener('change',function(){var n=sel.value;clist.innerHTML='';if(!n){hint.textContent='';clist.innerHTML='<div class="hint">Önce yukarıdan bir gün seçin.</div>';renderGelmeyen();return}
+function clearWarn(){var pw=document.getElementById('prefwarn');if(pw)pw.remove();}
+sel.addEventListener('change',function(){var n=sel.value;clist.innerHTML='';clearWarn();if(!n){hint.textContent='';clist.innerHTML='<div class="hint">Önce yukarıdan bir gün seçin.</div>';return}
  var d=DAY[n];hint.textContent=d.k;
- var df=document.querySelector('[name=tarih]');if(df&&!df.value){var p=d.t.split('.');df.value=p[2]+'-'+p[1]+'-'+p[0]}
+ var df=document.querySelector('[name=tarih]');if(df){var p=d.t.split('.');df.value=p[2]+'-'+p[1]+'-'+p[0]}
  d.items.forEach(function(it){var l=document.createElement('label');l.className='ci';
   l.innerHTML='<input type="checkbox" data-ex="1" value="'+esc(it)+'"><span>'+esc(it)+'</span>';clist.appendChild(l)});
- renderGelmeyen();
+ prefillGun(n);
 });
+function prefillGun(n){
+ var gl=n+'. Gün';
+ var rows=(STATE.gunluk||[]).filter(function(r){return String(r.gun||'')===gl;}).sort(function(a,b){return new Date(b.zaman)-new Date(a.zaman);});
+ if(!rows.length)return;
+ var r=rows[0];
+ var es=document.querySelector('[name=egitmen]');if(es&&r.egitmen)es.value=r.egitmen;
+ var df=document.querySelector('[name=tarih]');if(df&&r.tarih)df.value=r.tarih;
+ var done=String(r.calismalar||'').split(' | ').map(function(s){return s.trim();});
+ [].slice.call(clist.querySelectorAll('input[data-ex]')).forEach(function(cb){if(done.indexOf(cb.value)>=0)cb.checked=true;});
+ var ek=document.querySelector('[name=ek]');if(ek)ek.value=r.ek||'';
+ var nt=document.querySelector('[name=notlar]');if(nt)nt.value=r.notlar||'';
+ var w=document.createElement('div');w.id='prefwarn';w.className='xwarn';
+ w.innerHTML='Bu gün daha önce dolduruldu; son kaydı forma getirdim — yanlışlıkla yeniden girmeyesin diye. (Yoklama ayrı sekmede, kalıcı tutuluyor.)';
+ var form=document.getElementById('gf');form.insertBefore(w,form.firstChild);
+}
 
 /* --- sekmeler --- */
 var tabs=document.querySelectorAll('.tab');
 tabs.forEach(function(b){b.addEventListener('click',function(){
  tabs.forEach(function(x){x.classList.remove('on')});b.classList.add('on');
- ['gunluk','gecmis','odeme','ogrenci','istatistik'].forEach(function(v){document.getElementById('v-'+v).hidden=(v!==b.dataset.v)});
- if(b.dataset.v==='gecmis')renderGecmis(); if(b.dataset.v==='odeme')renderOdeme(); if(b.dataset.v==='ogrenci')renderOgrenciTab(); if(b.dataset.v==='istatistik')renderIstatistik();
+ ['gunluk','gecmis','odeme','yoklama','ogrenci','istatistik'].forEach(function(v){document.getElementById('v-'+v).hidden=(v!==b.dataset.v)});
+ if(b.dataset.v==='gecmis')renderGecmis(); if(b.dataset.v==='odeme')renderOdeme(); if(b.dataset.v==='yoklama')renderYoklama(); if(b.dataset.v==='ogrenci')renderOgrenciTab(); if(b.dataset.v==='istatistik')renderIstatistik();
 })});
 
-/* --- gelmeyenler: öğrenci varsa tik, yoksa metin (Gün 0'da uydurma isimler) --- */
-function renderGelmeyen(){var w=document.getElementById('gelmeyen-wrap');
- var list=STATE.ogrenciler;
- if(list.length){var h='<div class="hint">Gelmeyenleri işaretleyin.</div><div class="cks">';
-  list.forEach(function(n){h+='<label class="ci"><input type="checkbox" data-gel="1" value="'+esc(n)+'"><span>'+esc(n)+'</span></label>'});
-  w.innerHTML=h+'</div>';}
- else{w.innerHTML='<div class="hint">Öğrenci listesi boş — Ödemeler sekmesinden ekleyin (ya da Kişi 1–20 oluştur butonuyla). Şimdilik elle yazabilirsiniz.</div><textarea name="gelmeyenler" placeholder="Gelmeyenlerin adları…"></textarea>';}
+/* --- yoklama: ödeme gibi matris, "Gün N" anahtarıyla (ayrı, kalıcı) --- */
+function renderYoklama(){
+ var wrap=document.getElementById('yoklama-wrap');if(!wrap)return;
+ if(!STATE.ogrenciler.length){wrap.innerHTML='<div class="hint">Öğrenci listesi yükleniyor…</div>';return;}
+ var days=Object.keys(DAY).map(Number).sort(function(a,b){return a-b;});
+ var h='<div class="gridscroll"><table class="grid"><thead><tr><th class="nm">Öğrenci</th>';
+ days.forEach(function(k){h+='<th title="Gün '+k+'">'+k+'</th>';});
+ h+='</tr></thead><tbody>';
+ STATE.ogrenciler.forEach(function(n){h+='<tr><td class="nm">'+esc(n)+'</td>';
+  days.forEach(function(k){var lbl='Gün '+k;var ab=STATE.odeme[n+'||'+lbl]===1;
+   h+='<td class="'+(ab?'unpaid':'')+'" data-n="'+esc(n)+'" data-g="'+lbl+'"><input type="checkbox" '+(ab?'checked':'')+'></td>';});
+  h+='</tr>';});
+ h+='</tbody></table></div><div class="hint" style="margin-top:2mm">Sütunlar ders günleri (0–27). İşaretli hücre = o gün GELMEDİ (devamsız). Kalıcıdır, günlükten bağımsızdır.</div>';
+ wrap.innerHTML=h;
+ [].slice.call(wrap.querySelectorAll('td[data-g]')).forEach(function(td){var cb=td.querySelector('input');
+  cb.addEventListener('change',function(){setYok(td.getAttribute('data-n'),td.getAttribute('data-g'),cb.checked,td);});});
 }
-function gelmeyenText(){var any=document.querySelector('[data-gel]');
- if(any)return [].slice.call(document.querySelectorAll('[data-gel]:checked')).map(function(c){return c.value}).join(', ');
- var ta=document.querySelector('[name=gelmeyenler]');return ta?ta.value:'';}
+function setYok(name,lbl,on,td){td.className=on?'unpaid':'';STATE.odeme[name+'||'+lbl]=on?1:0;
+ api({action:'setOdeme',ogrenci:name,ay:lbl,durum:on?1:0}).catch(function(){td.className=on?'':'unpaid';var cb=td.querySelector('input');if(cb)cb.checked=!on;STATE.odeme[name+'||'+lbl]=on?0:1;alert('Kaydedilemedi, tekrar deneyin.');});}
 
 /* --- günlük gönder --- */
 var f=document.getElementById('gf'),msg=document.getElementById('msg'),btn=f.querySelector('button.btn');
@@ -204,10 +234,10 @@ f.addEventListener('submit',function(e){e.preventDefault();if(f._honey.value)ret
  var gn=sel.value;
  btn.disabled=true;btn.textContent='Kaydediliyor…';msg.textContent='';msg.className='msg';
  api({action:'addGunluk',tarih:f.tarih.value,gun:gn+'. Gün',egitmen:f.egitmen.value,
-   calismalar:done.join(' | '),ek:f.ek.value,notlar:f.notlar.value,gelmeyenler:gelmeyenText()})
+   calismalar:done.join(' | '),ek:f.ek.value,notlar:f.notlar.value})
  .then(function(d){if(!d||!d.ok)throw new Error((d&&d.error)||'kayit olmadi');
    msg.textContent='Kaydedildi — Veri tabanı sekmesine düştü.';msg.className='msg ok';
-   f.reset();clist.innerHTML='<div class="hint">Önce yukarıdan bir gün seçin.</div>';hint.textContent='';renderGelmeyen();
+   f.reset();clist.innerHTML='<div class="hint">Önce yukarıdan bir gün seçin.</div>';hint.textContent='';
    return load(true);})
  .catch(function(err){msg.textContent='Kaydedilemedi ('+err.message+'). Tekrar deneyin.';msg.className='msg err';})
  .finally(function(){btn.disabled=false;btn.textContent='Gönder';});
@@ -231,7 +261,6 @@ function renderGecmis(){
   if(cal.length){h+='<div class="lbl">Yapılan çalışmalar</div><ul>'+cal.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>';}
   if(r.ek){h+='<div class="lbl">Ek</div><p>'+esc(r.ek)+'</p>';}
   if(r.notlar){h+='<div class="lbl">Notlar</div><p>'+esc(r.notlar)+'</p>';}
-  if(r.gelmeyenler){h+='<div class="lbl">Gelmeyenler</div><p>'+esc(r.gelmeyenler)+'</p>';}
   h+='</div>';
  });
  list.innerHTML=h;
@@ -255,13 +284,17 @@ function renderIstatistik(){
 }
 
 /* --- ödemeler --- */
-function seedKisi(done){var i=1;
- (function step(){if(i>20){load(true).then(function(){renderOdeme();renderGelmeyen();}).finally(function(){if(done)done();});return;}
-  api({action:'addOgrenci',ad:'Kişi '+i}).then(function(){i++;step();}).catch(function(){i++;step();});})();
+var ROSTER=[];(function(){for(var k=1;k<=20;k++)ROSTER.push('Kişi '+k);})();
+function syncRoster(done){
+ var have=STATE.ogrenciler||[];
+ var miss=ROSTER.filter(function(n){return have.indexOf(n)<0;});
+ if(!miss.length){if(done)done();return;}
+ var i=0;(function step(){if(i>=miss.length){load(true).then(function(){renderOdeme();renderYoklama();}).finally(function(){if(done)done();});return;}
+  api({action:'addOgrenci',ad:miss[i]}).then(function(){i++;step();}).catch(function(){i++;step();});})();
 }
 
 function delOgr(name){if(!confirm(name+' silinsin mi?'))return;
- api({action:'delOgrenci',ad:name}).then(function(){return load(true)}).then(function(){renderOdeme();renderGelmeyen();})
+ api({action:'delOgrenci',ad:name}).then(function(){return load(true)}).then(function(){renderOdeme();renderYoklama();})
  .catch(function(err){alert('Silinemedi: '+err.message)});
 }
 function setOd(name,ay,on,td){td.className=on?'paid':'unpaid';STATE.odeme[name+'||'+ay]=on?1:0;
@@ -295,33 +328,33 @@ function renderOgrenciTab(){var s=document.getElementById('ogr-sec'),cur=s.value
 function renderOgrenciDetay(name){var d=document.getElementById('ogr-detay');if(!name){d.innerHTML='';return;}
  var M=STATE.months||[];
  var paidM=M.filter(function(m){return STATE.odeme[name+'||'+m]===1});
- var missed=(STATE.gunluk||[]).filter(function(r){return String(r.gelmeyenler||'').split(',').map(function(x){return x.trim()}).indexOf(name)>=0})
-   .sort(function(a,b){return new Date(b.zaman)-new Date(a.zaman)});
+ var missed=Object.keys(STATE.odeme||{}).filter(function(k){return k.indexOf(name+'||Gün ')===0 && STATE.odeme[k]===1;})
+   .map(function(k){return k.split('||')[1];}).sort(function(a,b){return (+a.replace('Gün ',''))-(+b.replace('Gün ',''));});
  var h='<div class="dossier"><div class="big">'+esc(name)+'</div>';
  h+='<div class="lbl">Ödemeler</div><p>Ödenen ay: <b>'+paidM.length+'</b> · Toplam: <b>'+money(paidM.length*FEE)+'</b></p>';
  h+='<div>'+M.map(function(m){var on=STATE.odeme[name+'||'+m]===1;return '<span class="pill'+(on?' on':'')+'">'+esc(m)+(on?' ✓':'')+'</span>'}).join('')+'</div>';
  h+='<div class="lbl">Devamsızlık</div>';
- if(missed.length){h+='<p>Gelmediği ders: <b>'+missed.length+'</b></p><ul>'+missed.map(function(r){return '<li>'+esc(r.gun||'')+' · '+esc(r.tarih||'')+'</li>'}).join('')+'</ul>';}
+ if(missed.length){h+='<p>Gelmediği ders: <b>'+missed.length+'</b></p><ul>'+missed.map(function(lbl){var k=lbl.replace('Gün ','');var dt=(DAY[k]&&DAY[k].t)||'';return '<li>'+esc(lbl)+(dt?' · '+esc(dt):'')+'</li>';}).join('')+'</ul>';}
  else{h+='<p>Kayda göre gelmediği ders yok.</p>';}
  d.innerHTML=h+'</div>';
 }
 document.getElementById('ogr-sec').addEventListener('change',function(){renderOgrenciDetay(this.value)});
 
 /* --- yükle --- */
-function render(){renderGelmeyen();}
+function render(){renderOdeme();renderYoklama();}
 function load(silent){if(!silent){document.getElementById('loadmsg').textContent='Yükleniyor…';}
  return api({action:'get'}).then(function(d){if(!d||!d.ok)throw new Error((d&&d.error)||'veri alinamadi');
    STATE=d; if(!STATE.months)STATE.months=["Kasım","Aralık","Ocak","Şubat","Mart","Nisan","Mayıs"];
    document.getElementById('loadmsg').textContent='';render();
-   if((!STATE.ogrenciler||!STATE.ogrenciler.length)&&!window.__seedTried){window.__seedTried=true;
-     document.getElementById('loadmsg').textContent='Öğrenciler (Kişi 1–20) oluşturuluyor…';
-     seedKisi(function(){document.getElementById('loadmsg').textContent='';});}
+   if(!window.__syncTried){window.__syncTried=true;
+     var _miss=ROSTER.filter(function(n){return (STATE.ogrenciler||[]).indexOf(n)<0;});
+     if(_miss.length){document.getElementById('loadmsg').textContent='Öğrenciler hazırlanıyor ('+_miss.length+' ekleniyor)…';
+       syncRoster(function(){document.getElementById('loadmsg').textContent='';});}}
   })
  .catch(function(err){document.getElementById('loadmsg').innerHTML='Veriye ulaşılamadı ('+esc(err.message)+'). <a href="#" id="retry">Tekrar dene</a>';
    var r=document.getElementById('retry');if(r)r.addEventListener('click',function(e){e.preventDefault();load();});});
 }
 
-renderGelmeyen();
 
 /* --- şifre kapısı --- */
 (function(){var U="tiyatroberlin",P="kurs",K="tb_ok";
