@@ -1,0 +1,22 @@
+# Teşekkürler sayfası (/tr/tesekkurler/, /de/dank/, /en/thanks/)
+# Yeni isimleri listenin sonuna ekle; sayfa kendiliğinden güncellenir.
+title: {tr: Teşekkürler, de: Dank, en: Thanks}
+text:
+  tr: |
+    Bağımsız bir tiyatro, sahnede görünenden çok daha fazla insanın emeğiyle ayakta durur: bir provaya kapısını açanlar, bir akşam için mekânını paylaşanlar, bir oyunu bir başkasına anlatanlar, hiçbir sözleşmede yazmayan işleri üstlenenler.
+
+    Tiyatro Berlin'in yapımları bu görünmeyen emeğin üzerinde kuruldu. Bu sayfa o emeği verenlerin adlarını kayda geçiriyor. Liste her sezon uzuyor.
+  de: |
+    Ein freies Theater lebt von weit mehr Menschen, als auf der Bühne zu sehen sind: von denen, die einen Probenraum öffnen, einen Abend lang ihren Ort teilen, ein Stück weitererzählen oder Arbeit übernehmen, die in keinem Vertrag steht.
+
+    Die Produktionen von Tiyatro Berlin stehen auf dieser unsichtbaren Arbeit. Diese Seite hält die Namen derer fest, die sie geleistet haben. Die Liste wächst mit jeder Spielzeit.
+  en: |
+    An independent theatre rests on far more people than ever appear on stage: those who open a rehearsal room, share their space for an evening, tell someone else about a show, or take on work that no contract mentions.
+
+    Tiyatro Berlin's productions are built on this unseen work. This page records the names of those who gave it. The list grows with every season.
+names:
+  - Günay Aşar
+  - Ufuk Güldü
+  - Elif Erdal
+  - Galip Erdal
+  - Ali Erdem Karaarslan

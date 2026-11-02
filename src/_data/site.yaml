@@ -23,4 +23,5 @@ sections:
   contact:  {tr: iletisim, de: kontakt, en: contact}
   imprint:  {tr: impressum, de: impressum, en: imprint}
   privacy:  {tr: gizlilik, de: datenschutz, en: privacy}
+  thanks:   {tr: tesekkurler, de: dank, en: thanks}
 imprint_address: "Ufuk Tan Altunkaya · Bernauer Str. 79 · 13507 Berlin"

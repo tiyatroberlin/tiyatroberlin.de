@@ -456,3 +456,12 @@ a.vlink{text-decoration:underline;text-decoration-thickness:1px;text-underline-o
 .yform .src-opt .de{font-size:.85em;margin-top:.05rem}
 .yform .src-other{margin-top:.7rem}
 .yform .src-other[hidden]{display:none}
+
+/* Teşekkürler */
+.foot-thanks{text-align:center;margin:3rem 0 0;font-family:var(--serif);font-size:var(--step-2);font-weight:700;letter-spacing:-.025em}
+.foot-thanks a{text-decoration:none}
+.foot-thanks a:hover{color:var(--red-ink)}
+.thanks{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,6vw,6rem);align-items:start}
+.thanks-names{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.thanks-names li{font-family:var(--serif);font-size:var(--step-2);font-weight:600;letter-spacing:-.02em;line-height:1.15;padding:.7rem 0;border-bottom:1px solid var(--rule)}
+@media (max-width:860px){.thanks{grid-template-columns:1fr}}

@@ -1,0 +1,17 @@
+---
+pagination: {data: site.langs, size: 1, alias: lang}
+permalink: "/{{ lang }}/{{ site.sections.thanks[lang] }}/"
+layout: base.njk
+eleventyComputed:
+  title: "{{ thanks.title[lang] }}"
+  alt: {tr: "/tr/tesekkurler/", de: "/de/dank/", en: "/en/thanks/"}
+---
+<section class="page-head"><div class="wrap"><h1 class="h-huge">{{ thanks.title[lang] }}<span class="pt">.</span></h1></div></section>
+<section class="section"><div class="wrap thanks">
+  <div class="prose">{{ thanks.text[lang] | paras | safe }}</div>
+  <ul class="thanks-names">
+    {%- for n in thanks.names %}
+    <li>{{ n }}</li>
+    {%- endfor %}
+  </ul>
+</div></section>
