@@ -300,13 +300,17 @@ function renderIstatistik(){
 }
 
 /* --- ödemeler --- */
-var ROSTER=[];(function(){for(var k=1;k<=20;k++)ROSTER.push('Kişi '+k);})();
+var ROSTER=["Arda Karabulut","Aslan Gediman","Ceren Belge","Ece Nur Keskin","Ekin Ceren Akarçay","Elif Karabulut","Günay Aşar","Hüsnü Doğan Vardarlı","İpek Zobu","Neylan Süel","Özen Kartal Tuna","Özge İşlek","Özge Sarı","Rojin Beyaz","Selçuk Demirel","Zeynep Yazıcı Ekin"];
 function syncRoster(done){
  var have=STATE.ogrenciler||[];
- var miss=ROSTER.filter(function(n){return have.indexOf(n)<0;});
- if(!miss.length){if(done)done();return;}
- var i=0;(function step(){if(i>=miss.length){load(true).then(function(){renderOdeme();renderYoklama();}).finally(function(){if(done)done();});return;}
-  api({action:'addOgrenci',ad:miss[i]}).then(function(){i++;step();}).catch(function(){i++;step();});})();
+ var toDel=have.filter(function(n){return ROSTER.indexOf(n)<0;});   // placeholder / listede olmayan isimleri sil
+ var toAdd=ROSTER.filter(function(n){return have.indexOf(n)<0;});   // eksik gerçek isimleri ekle
+ var ops=[];
+ toDel.forEach(function(n){ops.push({action:'delOgrenci',ad:n});});
+ toAdd.forEach(function(n){ops.push({action:'addOgrenci',ad:n});});
+ if(!ops.length){if(done)done();return;}
+ var i=0;(function step(){if(i>=ops.length){load(true).then(function(){renderOdeme();renderYoklama();}).finally(function(){if(done)done();});return;}
+  api(ops[i]).then(function(){i++;step();}).catch(function(){i++;step();});})();
 }
 
 function delOgr(name){if(!confirm(name+' silinsin mi?'))return;
@@ -361,10 +365,13 @@ function render(){renderOdeme();renderYoklama();}
 function load(silent){if(!silent){document.getElementById('loadmsg').textContent='Yükleniyor…';}
  return api({action:'get'}).then(function(d){if(!d||!d.ok)throw new Error((d&&d.error)||'veri alinamadi');
    STATE=d; if(!STATE.months)STATE.months=["Kasım","Aralık","Ocak","Şubat","Mart","Nisan","Mayıs"];
+   if(STATE.ogrenciler&&STATE.ogrenciler.sort)STATE.ogrenciler=STATE.ogrenciler.slice().sort(function(a,b){return String(a).localeCompare(String(b),'tr');});
    document.getElementById('loadmsg').textContent='';render();
    if(!window.__syncTried){window.__syncTried=true;
-     var _miss=ROSTER.filter(function(n){return (STATE.ogrenciler||[]).indexOf(n)<0;});
-     if(_miss.length){document.getElementById('loadmsg').textContent='Öğrenciler hazırlanıyor ('+_miss.length+' ekleniyor)…';
+     var _have=STATE.ogrenciler||[];
+     var _miss=ROSTER.filter(function(n){return _have.indexOf(n)<0;});
+     var _extra=_have.filter(function(n){return ROSTER.indexOf(n)<0;});
+     if(_miss.length||_extra.length){document.getElementById('loadmsg').textContent='Öğrenci listesi güncelleniyor…';
        syncRoster(function(){document.getElementById('loadmsg').textContent='';});}}
   })
  .catch(function(err){document.getElementById('loadmsg').innerHTML='Veriye ulaşılamadı ('+esc(err.message)+'). <a href="#" id="retry">Tekrar dene</a>';
