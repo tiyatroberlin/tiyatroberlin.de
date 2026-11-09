@@ -313,6 +313,18 @@ function syncRoster(done){
   api(ops[i]).then(function(){i++;step();}).catch(function(){i++;step();});})();
 }
 
+/* Tek seferlik: banka ekstresinden Kasım ödemesi yatıranlar (yeşil+isim). Tarayıcıda bir kez işaretlenir. */
+var KASIM_ODEYENLER=["Aslan Gediman","Ceren Belge","Ekin Ceren Akarçay","Hüsnü Doğan Vardarlı","İpek Zobu","Özen Kartal Tuna","Özge İşlek","Özge Sarı","Rojin Beyaz","Selçuk Demirel","Zeynep Yazıcı Ekin"];
+function seedKasim(){
+ var KEY='tb_seed_kasim_v1';
+ try{if(localStorage.getItem(KEY)==='1')return;}catch(e){}
+ var todo=KASIM_ODEYENLER.filter(function(n){return STATE.odeme[n+'||Kasım']!==1;});
+ if(!todo.length){try{localStorage.setItem(KEY,'1')}catch(e){}return;}
+ document.getElementById('loadmsg').textContent='Kasım ödemeleri işaretleniyor ('+todo.length+')…';
+ var i=0;(function step(){if(i>=todo.length){try{localStorage.setItem(KEY,'1')}catch(e){}
+   load(true).then(function(){renderOdeme();renderYoklama();document.getElementById('loadmsg').textContent='';});return;}
+  api({action:'setOdeme',ogrenci:todo[i],ay:'Kasım',durum:1}).then(function(){i++;step();}).catch(function(){i++;step();});})();
+}
 function delOgr(name){if(!confirm(name+' silinsin mi?'))return;
  api({action:'delOgrenci',ad:name}).then(function(){return load(true)}).then(function(){renderOdeme();renderYoklama();})
  .catch(function(err){alert('Silinemedi: '+err.message)});
@@ -372,7 +384,8 @@ function load(silent){if(!silent){document.getElementById('loadmsg').textContent
      var _miss=ROSTER.filter(function(n){return _have.indexOf(n)<0;});
      var _extra=_have.filter(function(n){return ROSTER.indexOf(n)<0;});
      if(_miss.length||_extra.length){document.getElementById('loadmsg').textContent='Öğrenci listesi güncelleniyor…';
-       syncRoster(function(){document.getElementById('loadmsg').textContent='';});}}
+       syncRoster(function(){document.getElementById('loadmsg').textContent='';seedKasim();});}
+     else{seedKasim();}}
   })
  .catch(function(err){document.getElementById('loadmsg').innerHTML='Veriye ulaşılamadı ('+esc(err.message)+'). <a href="#" id="retry">Tekrar dene</a>';
    var r=document.getElementById('retry');if(r)r.addEventListener('click',function(e){e.preventDefault();load();});});
