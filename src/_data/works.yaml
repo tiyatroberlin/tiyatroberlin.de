@@ -4,27 +4,26 @@
 - slug: yakin
   title: YAKIN
   year: 2026
-  image: foto/yakin-yuz.jpg
+  image: foto/yakin-ipler.jpg
   hero_fit: true
-  teasers:
-    - {video: video/yakin-teaser.mp4, poster: video/yakin-teaser.jpg}
-  form: {tr: "Tek kişilik oyun, şarkılarla", de: "Solo mit Liedern", en: "Solo with songs"}
-  hook: {tr: "Yakınlık bir bağımlılığa dönüşürse?", de: "Wenn Nähe zur Abhängigkeit wird.", en: "When closeness turns into dependence."}
+  form: {tr: "Tek kişilik müzikli oyun", de: "Solo mit Live-Gesang", en: "Solo with live songs"}
+  hook: {tr: "Beyoğlu yutar ama unutmaz.", de: "Beyoğlu verschlingt, aber vergisst nicht.", en: "Beyoğlu swallows, but never forgets."}
   text:
     tr: |
-      Bir yakınlık ne zaman bağımlılığa dönüşür? Karşımızdaki bir sevgili mi, yoksa bizi bizden iyi tanıyan bir yanılsama mı?
+      Yüz yaşındaki gazeteci Aret, Beyoğlu’nun yüz yılını kara kaplı bir deftere yazdı: insanlarını, sokaklarını, eğlencelerini, kayıplarını. Ölemiyor; ölebilmesi için hikâyelerini birine devretmesi gerekiyor.
 
-      YAKIN, sahneler arasında canlı söylenen şarkılarla ilerleyen tek kişilik bir oyun. Şarkılar hikâyeyi süslemiyor, onu taşıyor: söylenemeyen her şey bir melodiye sığınıyor.
+      Asistanı Janet bu hikâyeleri seyirciye getiriyor. Arşiv fotoğrafları, canlandırılmış eski İstanbul görüntüleri, dönem müzikleri ve canlı söylenen şarkılarla anlatı, müzik ve görüntünün buluştuğu tek kişilik bir oyun.
     de: |
-      Wann wird Nähe zur Abhängigkeit? Ist das Gegenüber ein geliebter Mensch oder eine Illusion, die uns besser kennt als wir selbst?
+      Der hundertjährige Journalist Aret hat hundert Jahre Beyoğlu in ein schwarzes Notizbuch geschrieben: seine Menschen, seine Straßen, seine Feste und Verluste. Er kann nicht sterben, bevor er seine Geschichten weitergegeben hat.
 
-      YAKIN ist ein Solo, das von live gesungenen Liedern getragen wird. Die Lieder schmücken die Geschichte nicht aus, sie tragen sie: Was sich nicht sagen lässt, sucht Zuflucht in einer Melodie.
+      Seine Assistentin Janet bringt sie zum Publikum, mit Archivfotos, animierten Bildern des alten Istanbul, Musik der Zeit und live gesungenen Liedern. Ein Solostück zwischen Erzählung, Musik und Bild.
     en: |
-      When does closeness become dependence? Is the person opposite us a lover, or an illusion that knows us better than we know ourselves?
+      Aret, a hundred-year-old journalist, has written a century of Beyoğlu into a black notebook: its people, its streets, its pleasures and its losses. He cannot die until he has passed his stories on.
 
-      YAKIN is a solo carried by songs sung live between the scenes. The songs do not decorate the story, they carry it: whatever cannot be said takes refuge in a melody.
+      His assistant Janet brings them to the audience, with archive photographs, animated images of old Istanbul, period music and songs sung live. A solo piece where storytelling, music and image meet.
   credits:
-    - [writedirect, ufuk-tan-altunkaya]
+    - [author, didem-kaplan]
+    - [direction, ufuk-tan-altunkaya]
     - [songs, hazal-erdal]
   shows:
     - {date: 2026-11-22, time: "19:00", venue: moda-bar, premiere: true, eventim: 6ace5a69a47cb7abb7b2496e, price: {tr: "20 €", de: "20 €", en: "€20"}}
