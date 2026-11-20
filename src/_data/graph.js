@@ -61,6 +61,8 @@ export default function () {
     const d = typeof e.date === "string" ? e.date : new Date(e.date).toISOString().slice(0, 10);
     return { ...e, date: d, upcoming: d >= today, external: true };
   });
+  // kendi gösterilerimizde rezervasyon varsayılan olarak açık; kapatmak için reserve: false
+  for (const s of allShows) if (s.reserve === undefined) s.reserve = true;
   const program = [...allShows.filter((s) => s.upcoming), ...extraShows.filter((s) => s.upcoming)]
     .sort((a, b) => (a.date + (a.time || "")).localeCompare(b.date + (b.time || "")));
 

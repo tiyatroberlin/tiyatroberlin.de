@@ -53,13 +53,12 @@ f.addEventListener('submit',async e=>{e.preventDefault();if(!f.reportValidity())
 const lab=sel.options[sel.selectedIndex].dataset.label,kisi=f.kisi.value,ad=f.ad.value.trim();
 const ozet=lab+' · '+kisi+' kişi · '+ad;
 const d={access_key:f.dataset.w3,subject:'Rezervasyon · '+lab+' · '+kisi+' kişi · '+ad,from_name:'tiyatroberlin.de/rezervasyon',botcheck:'',
-'Gösteri':lab,'Ad':ad,'Kişi':kisi,'İletişim':f.iletisim.value.trim(),'Not':f.not.value.trim()||'(yok)'};
+'Oyun':lab,'Ad':ad,'Adet':kisi,'Telefon / e-posta':f.iletisim.value.trim(),'Not':f.not.value.trim()||'(yok)'};
 b.disabled=true;b.textContent='…';m.textContent='';m.className='cform-msg';
-const fd=new FormData();Object.entries(d).forEach(([k,v])=>fd.append(k,v));
-try{const r=await fetch(f.action,{method:'POST',headers:{Accept:'application/json'},body:fd});const j=await r.json().catch(()=>({}));
+try{const r=await fetch(f.action,{method:'POST',headers:{'Content-Type':'application/json; charset=utf-8',Accept:'application/json'},body:JSON.stringify(d)});const j=await r.json().catch(()=>({}));
 if(!(r.ok&&String(j.success)!=='false'))throw 0;done(ozet);}
 catch(_){
-  const nf=document.createElement('form');nf.method='post';nf.action=f.action;nf.hidden=true;
+  const nf=document.createElement('form');nf.method='post';nf.action=f.action;nf.acceptCharset='UTF-8';nf.hidden=true;
   d.redirect=location.origin+location.pathname+'?tamam=1&ozet='+encodeURIComponent(ozet);
   Object.entries(d).forEach(([k,v])=>{const i=document.createElement('input');i.type='hidden';i.name=k;i.value=v;nf.appendChild(i);});
   document.body.appendChild(nf);nf.submit();
