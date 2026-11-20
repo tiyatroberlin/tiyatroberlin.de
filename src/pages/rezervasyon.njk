@@ -10,7 +10,7 @@ eleventyExcludeFromCollections: true
   <p class="yorum-sub">Yerini ayır, biletini kapıda öde.<span class="de" lang="de">Platz reservieren, an der Abendkasse bezahlen.</span></p>
 
   <form class="cform yform" id="rform" action="https://api.web3forms.com/submit" method="post" novalidate data-w3="{{ site.web3forms_key }}">
-    <p class="rez-note rez-pay">Kapıda nakit ya da PayPal. Kartla ödeme yok.<span class="de" lang="de">An der Abendkasse nur bar oder PayPal. Keine Kartenzahlung.</span></p>
+    <p class="rez-note rez-pay">Kapıda nakit ya da PayPal ile ödeyebilirsin.<br>Kredi kartı ne yazık ki kabul edemiyoruz.<span class="de" lang="de">An der Abendkasse kannst du bar oder mit PayPal bezahlen.<br>Kartenzahlung ist leider nicht möglich.</span></p>
     <label>Gösteri<span class="de" lang="de">Vorstellung</span>
       <select name="gosteri" id="r-gosteri" required>
         <option value="">Seç · Auswählen</option>
@@ -34,10 +34,10 @@ eleventyExcludeFromCollections: true
     <p class="cform-msg" role="status" aria-live="polite"></p>
   </form>
   <div class="yorum-ok" id="rez-ok" hidden tabindex="-1">
-    <p class="yorum-thanks">Yerin ayrıldı<span class="pt">.</span> Ödeme kapıda.</p>
-    <p class="yorum-thanks de" lang="de">Dein Platz ist reserviert. Bezahlung an der Abendkasse.</p>
+    <p class="yorum-thanks">Yerin ayrıldı<span class="pt">.</span> Seni bekliyoruz.</p>
+    <p class="yorum-thanks de" lang="de">Dein Platz ist reserviert. Wir freuen uns auf dich.</p>
     <p class="rez-note" id="rez-ozet"></p>
-    <p class="rez-note rez-pay">Kapıda nakit ya da PayPal. Kartla ödeme yok.<span class="de" lang="de">An der Abendkasse nur bar oder PayPal. Keine Kartenzahlung.</span></p>
+    <p class="rez-note rez-pay">Kapıda nakit ya da PayPal ile ödeyebilirsin.<br>Kredi kartı ne yazık ki kabul edemiyoruz.<span class="de" lang="de">An der Abendkasse kannst du bar oder mit PayPal bezahlen.<br>Kartenzahlung ist leider nicht möglich.</span></p>
     <p class="rez-note">Gelemeyeceksen haber ver: <a href="mailto:{{ site.email }}">{{ site.email }}</a><span class="de" lang="de">Falls du nicht kommen kannst, gib uns bitte Bescheid.</span></p>
   </div>
 </div></section>
@@ -53,13 +53,12 @@ f.addEventListener('submit',async e=>{e.preventDefault();if(!f.reportValidity())
 const lab=sel.options[sel.selectedIndex].dataset.label,kisi=f.kisi.value,ad=f.ad.value.trim();
 const ozet=lab+' · '+kisi+' kişi · '+ad;
 const d={access_key:f.dataset.w3,subject:'Rezervasyon · '+lab+' · '+kisi+' kişi · '+ad,from_name:'tiyatroberlin.de/rezervasyon',botcheck:'',
-'Gösteri':lab,'Ad':ad,'Kişi':kisi,'İletişim':f.iletisim.value.trim(),'Not':f.not.value.trim()||'(yok)'};
+'Oyun':lab,'Ad':ad,'Adet':kisi,'Telefon / e-posta':f.iletisim.value.trim(),'Not':f.not.value.trim()||'(yok)'};
 b.disabled=true;b.textContent='…';m.textContent='';m.className='cform-msg';
-const fd=new FormData();Object.entries(d).forEach(([k,v])=>fd.append(k,v));
-try{const r=await fetch(f.action,{method:'POST',headers:{Accept:'application/json'},body:fd});const j=await r.json().catch(()=>({}));
+try{const r=await fetch(f.action,{method:'POST',headers:{'Content-Type':'application/json; charset=utf-8',Accept:'application/json'},body:JSON.stringify(d)});const j=await r.json().catch(()=>({}));
 if(!(r.ok&&String(j.success)!=='false'))throw 0;done(ozet);}
 catch(_){
-  const nf=document.createElement('form');nf.method='post';nf.action=f.action;nf.hidden=true;
+  const nf=document.createElement('form');nf.method='post';nf.action=f.action;nf.acceptCharset='UTF-8';nf.hidden=true;
   d.redirect=location.origin+location.pathname+'?tamam=1&ozet='+encodeURIComponent(ozet);
   Object.entries(d).forEach(([k,v])=>{const i=document.createElement('input');i.type='hidden';i.name=k;i.value=v;nf.appendChild(i);});
   document.body.appendChild(nf);nf.submit();
