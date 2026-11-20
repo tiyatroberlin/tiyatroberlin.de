@@ -10,7 +10,7 @@ eleventyExcludeFromCollections: true
   <p class="yorum-sub">Yerini ayır, biletini kapıda öde.<span class="de" lang="de">Platz reservieren, an der Abendkasse bezahlen.</span></p>
 
   <form class="cform yform" id="rform" action="https://api.web3forms.com/submit" method="post" novalidate data-w3="{{ site.web3forms_key }}">
-    <p class="rez-note rez-pay">Kapıda nakit ya da PayPal. Kartla ödeme yok.<span class="de" lang="de">An der Abendkasse nur bar oder PayPal. Keine Kartenzahlung.</span></p>
+    <p class="rez-note rez-pay">Kapıda nakit ya da PayPal ile ödeyebilirsin.<br>Kredi kartı ne yazık ki kabul edemiyoruz.<span class="de" lang="de">An der Abendkasse kannst du bar oder mit PayPal bezahlen.<br>Kartenzahlung ist leider nicht möglich.</span></p>
     <label>Gösteri<span class="de" lang="de">Vorstellung</span>
       <select name="gosteri" id="r-gosteri" required>
         <option value="">Seç · Auswählen</option>
@@ -34,10 +34,10 @@ eleventyExcludeFromCollections: true
     <p class="cform-msg" role="status" aria-live="polite"></p>
   </form>
   <div class="yorum-ok" id="rez-ok" hidden tabindex="-1">
-    <p class="yorum-thanks">Yerin ayrıldı<span class="pt">.</span> Ödeme kapıda.</p>
-    <p class="yorum-thanks de" lang="de">Dein Platz ist reserviert. Bezahlung an der Abendkasse.</p>
+    <p class="yorum-thanks">Yerin ayrıldı<span class="pt">.</span> Seni bekliyoruz.</p>
+    <p class="yorum-thanks de" lang="de">Dein Platz ist reserviert. Wir freuen uns auf dich.</p>
     <p class="rez-note" id="rez-ozet"></p>
-    <p class="rez-note rez-pay">Kapıda nakit ya da PayPal. Kartla ödeme yok.<span class="de" lang="de">An der Abendkasse nur bar oder PayPal. Keine Kartenzahlung.</span></p>
+    <p class="rez-note rez-pay">Kapıda nakit ya da PayPal ile ödeyebilirsin.<br>Kredi kartı ne yazık ki kabul edemiyoruz.<span class="de" lang="de">An der Abendkasse kannst du bar oder mit PayPal bezahlen.<br>Kartenzahlung ist leider nicht möglich.</span></p>
     <p class="rez-note">Gelemeyeceksen haber ver: <a href="mailto:{{ site.email }}">{{ site.email }}</a><span class="de" lang="de">Falls du nicht kommen kannst, gib uns bitte Bescheid.</span></p>
   </div>
 </div></section>
