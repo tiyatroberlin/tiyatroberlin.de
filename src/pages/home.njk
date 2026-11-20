@@ -24,6 +24,7 @@ eleventyComputed:
       </dl>
       {% if nxt.eventim %}<button class="btn" type="button" data-eventim="{{ nxt.eventim }}" data-account="{{ site.eventim_account }}" aria-expanded="false" aria-controls="t-lead">{{ L.tickets }}</button>
       {% elif nxt.ticket %}<a class="btn" href="{{ nxt.ticket }}" rel="noopener">{{ L.tickets }}</a>{% endif %}
+      {% if nxt.reserve %}<a class="btn ghost" href="{{ ('/rezervasyon/?oyun=' + nxt.work + '&tarih=' + nxt.date + '&dil=' + lang) | url }}">{{ L.reserve }}</a>{% endif %}
       <a class="btn ghost" href="{{ ('/' + lang + '/' + S.program[lang] + '/') | url }}">{{ L.all_program }}</a>
       {% if nxt.eventim %}<div class="ticket" id="t-lead" hidden></div>{% endif %}
     </div>
