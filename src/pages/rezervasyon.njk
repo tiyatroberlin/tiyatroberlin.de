@@ -1,12 +1,12 @@
 ---
 permalink: "/rezervasyon/index.html"
 layout: bare.njk
-title: Yer ayırt
+title: Rezervasyon
 eleventyExcludeFromCollections: true
 ---
 {%- set L = i18n.tr -%}
 <section class="section yorum rez"><div class="wrap">
-  <h1 class="h-huge">Yer ayırt<span class="pt">.</span></h1>
+  <h1 class="h-huge">Rezervasyon<span class="pt">.</span></h1>
   <p class="yorum-sub">Yerini ayır, biletini kapıda öde.<span class="de" lang="de">Platz reservieren, an der Abendkasse bezahlen.</span></p>
 
   <form class="cform yform" id="rform" action="https://api.web3forms.com/submit" method="post" novalidate data-w3="{{ site.web3forms_key }}">
@@ -30,7 +30,7 @@ eleventyExcludeFromCollections: true
       <input type="text" name="not" maxlength="200"></label>
     <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
     <p class="rez-note">Bilgilerini yalnız bu rezervasyon için kullanırız.<span class="de" lang="de">Wir verwenden deine Angaben nur für diese Reservierung.</span></p>
-    <p><button class="btn red" type="submit">Yer ayırt · <span lang="de">Reservieren</span></button></p>
+    <p><button class="btn red" type="submit">Rezervasyon yap · <span lang="de">Reservieren</span></button></p>
     <p class="cform-msg" role="status" aria-live="polite"></p>
   </form>
   <div class="yorum-ok" id="rez-ok" hidden tabindex="-1">
