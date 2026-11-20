@@ -7,6 +7,7 @@ tr:
   nav: {program: Program, works: Oyunlar, people: Kişiler, network: Ağ, projects: Projeler, edu: "Tiyatro pedagojisi – Kurslar", about: Hakkımızda, contact: İletişim, venues: Mekânlar}
   next: Bir sonraki gösterim
   tickets: Bilet al
+  reserve: Yer ayırt
   register: Kaydol
   info: Bilgi
   all_program: Tüm program
@@ -78,6 +79,7 @@ de:
   nav: {program: Spielplan, works: Produktionen, people: Ensemble, network: Netzwerk, projects: Projekte, edu: "Theaterpädagogik – Kurse", about: Über uns, contact: Kontakt, venues: Spielorte}
   next: Nächste Vorstellung
   tickets: Tickets
+  reserve: Reservieren
   register: Anmelden
   info: Info
   all_program: Zum Spielplan
@@ -149,6 +151,7 @@ en:
   nav: {program: Programme, works: Productions, people: Ensemble, network: Network, projects: Projects, edu: "Theatre education – Courses", about: About, contact: Contact, venues: Venues}
   next: Next
   tickets: Tickets
+  reserve: Reserve
   register: Sign up
   info: Info
   all_program: Full programme

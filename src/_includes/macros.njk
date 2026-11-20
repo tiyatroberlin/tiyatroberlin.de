@@ -15,6 +15,9 @@
       {%- elif s.ticket %}
       <a class="btn" href="{{ s.ticket }}" rel="noopener">{{ L.tickets }}</a>
       {%- endif %}
+      {%- if s.reserve %}
+      <a class="btn ghost" href="{{ ('/rezervasyon/?oyun=' + s.work + '&tarih=' + s.date + '&dil=' + lang) | url }}">{{ L.reserve }}</a>
+      {%- endif %}
     {%- endif %}
   </div>
   {%- if s.upcoming and s.eventim %}

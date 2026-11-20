@@ -26,8 +26,8 @@
     - [direction, ufuk-tan-altunkaya]
     - [songs, hazal-erdal]
   shows:
-    - {date: 2026-11-22, time: "19:00", venue: moda-bar, premiere: true, eventim: 6ace5a69a47cb7abb7b2496e, price: {tr: "20 €", de: "20 €", en: "€20"}}
-    - {date: 2026-11-29, time: "19:00", venue: moda-bar, eventim: 6ace5aa484ed3c6a8a6549e6, price: {tr: "20 €", de: "20 €", en: "€20"}}
+    - {date: 2026-11-22, time: "19:00", venue: moda-bar, premiere: true, eventim: 6ace5a69a47cb7abb7b2496e, reserve: true, price: {tr: "20 €", de: "20 €", en: "€20"}}
+    - {date: 2026-11-29, time: "19:00", venue: moda-bar, eventim: 6ace5aa484ed3c6a8a6549e6, reserve: true, price: {tr: "20 €", de: "20 €", en: "€20"}}
 
 - slug: zwei-staedte-ein-koerper
   title: Zwei Städte, Ein Körper
