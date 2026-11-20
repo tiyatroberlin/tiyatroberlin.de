@@ -467,3 +467,8 @@ a.vlink{text-decoration:underline;text-decoration-thickness:1px;text-underline-o
 .thanks-names{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
 .thanks-names li{font-family:var(--serif);font-size:var(--step-2);font-weight:600;letter-spacing:-.02em;line-height:1.15;padding:.7rem 0;border-bottom:1px solid var(--rule)}
 @media (max-width:860px){.thanks{grid-template-columns:1fr}}
+
+/* rezervasyon */
+.show-action{display:flex;gap:.5rem;flex-wrap:wrap}
+.rez .h-huge{overflow-wrap:anywhere}
+.rez-note{font-family:var(--sans);font-size:.95rem;color:var(--mute);margin:.2rem 0 0}

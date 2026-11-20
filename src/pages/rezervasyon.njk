@@ -1,0 +1,66 @@
+---
+permalink: "/rezervasyon/index.html"
+layout: bare.njk
+title: Yer ayırt
+eleventyExcludeFromCollections: true
+---
+{%- set L = i18n.tr -%}
+<section class="section yorum rez"><div class="wrap">
+  <h1 class="h-huge">Yer ayırt<span class="pt">.</span></h1>
+  <p class="yorum-sub">Yerini ayır, biletini kapıda öde.<span class="de" lang="de">Platz reservieren, an der Abendkasse bezahlen.</span></p>
+
+  <form class="cform yform" id="rform" action="https://api.web3forms.com/submit" method="post" novalidate data-w3="{{ site.web3forms_key }}">
+    <label>Gösteri<span class="de" lang="de">Vorstellung</span>
+      <select name="gosteri" id="r-gosteri" required>
+        <option value="">Seç · Auswählen</option>
+        {%- for s in graph.program %}{% if s.reserve %}
+        <option value="{{ s.work }}|{{ s.date }}" data-label="{{ s.title }} · {{ s.date | dmy }} · {{ s.time }} · {{ graph.venues[s.venue].name }}">{{ s.title }} · {{ s.date | dmy }} {{ s.date | weekday(L) }} · {{ s.time }} · {{ graph.venues[s.venue].name }}</option>
+        {%- endif %}{% endfor %}
+      </select></label>
+    <label>Ad soyad<span class="de" lang="de">Name</span>
+      <input type="text" name="ad" autocomplete="name" required maxlength="80"></label>
+    <label>Kaç kişi<span class="de" lang="de">Anzahl Personen</span>
+      <select name="kisi" required>
+        {%- for n in range(1, 7) %}<option value="{{ n }}">{{ n }}</option>{% endfor %}
+      </select></label>
+    <label><span>Telefon ya da e-posta</span><span class="de" lang="de">Telefon oder E-Mail</span>
+      <input type="text" name="iletisim" autocomplete="email" required maxlength="120"></label>
+    <label><span>Not <span class="opt">isteğe bağlı</span></span><span class="de" lang="de">Anmerkung <span class="opt">optional</span></span>
+      <input type="text" name="not" maxlength="200"></label>
+    <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <p class="rez-note">Bilgilerini yalnız bu rezervasyon için kullanırız.<span class="de" lang="de">Wir verwenden deine Angaben nur für diese Reservierung.</span></p>
+    <p><button class="btn red" type="submit">Yer ayırt · <span lang="de">Reservieren</span></button></p>
+    <p class="cform-msg" role="status" aria-live="polite"></p>
+  </form>
+  <div class="yorum-ok" id="rez-ok" hidden tabindex="-1">
+    <p class="yorum-thanks">Yerin ayrıldı<span class="pt">.</span> Ödeme kapıda.</p>
+    <p class="yorum-thanks de" lang="de">Dein Platz ist reserviert. Bezahlung an der Abendkasse.</p>
+    <p class="rez-note" id="rez-ozet"></p>
+    <p class="rez-note">Gelemeyeceksen haber ver: <a href="mailto:{{ site.email }}">{{ site.email }}</a><span class="de" lang="de">Falls du nicht kommen kannst, gib uns bitte Bescheid.</span></p>
+  </div>
+</div></section>
+<script>
+(()=>{const f=document.getElementById('rform'),sel=document.getElementById('r-gosteri');
+const q=new URLSearchParams(location.search),want=(q.get('oyun')||'')+'|'+(q.get('tarih')||'');
+[...sel.options].forEach(o=>{if(o.value===want)sel.value=want;});
+if(!sel.value&&sel.options.length===2)sel.selectedIndex=1;
+const m=f.querySelector('.cform-msg'),b=f.querySelector('button'),bt=b.innerHTML;
+const done=(t)=>{f.hidden=true;const ok=document.getElementById('rez-ok');if(t)document.getElementById('rez-ozet').textContent=t;ok.hidden=false;ok.focus();ok.scrollIntoView({block:'center'});};
+if(q.get('tamam'))done(q.get('ozet')||'');
+f.addEventListener('submit',async e=>{e.preventDefault();if(!f.reportValidity())return;if(f._honey.value)return;
+const lab=sel.options[sel.selectedIndex].dataset.label,kisi=f.kisi.value,ad=f.ad.value.trim();
+const ozet=lab+' · '+kisi+' kişi · '+ad;
+const d={access_key:f.dataset.w3,subject:'Rezervasyon · '+lab+' · '+kisi+' kişi · '+ad,from_name:'tiyatroberlin.de/rezervasyon',botcheck:'',
+'Gösteri':lab,'Ad':ad,'Kişi':kisi,'İletişim':f.iletisim.value.trim(),'Not':f.not.value.trim()||'(yok)'};
+b.disabled=true;b.textContent='…';m.textContent='';m.className='cform-msg';
+const fd=new FormData();Object.entries(d).forEach(([k,v])=>fd.append(k,v));
+try{const r=await fetch(f.action,{method:'POST',headers:{Accept:'application/json'},body:fd});const j=await r.json().catch(()=>({}));
+if(!(r.ok&&String(j.success)!=='false'))throw 0;done(ozet);}
+catch(_){
+  const nf=document.createElement('form');nf.method='post';nf.action=f.action;nf.hidden=true;
+  d.redirect=location.origin+location.pathname+'?tamam=1&ozet='+encodeURIComponent(ozet);
+  Object.entries(d).forEach(([k,v])=>{const i=document.createElement('input');i.type='hidden';i.name=k;i.value=v;nf.appendChild(i);});
+  document.body.appendChild(nf);nf.submit();
+}
+});})();
+</script>
