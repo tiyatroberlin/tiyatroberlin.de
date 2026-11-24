@@ -352,6 +352,7 @@ function renderOdeme(){
 }
 
 /* --- öğrenci şifreleri: eksik olana otomatik üret --- */
+function norm(s){return String(s||'').replace(/İ/g,'I').replace(/ı/g,'i').replace(/Ş/g,'S').replace(/ş/g,'s').replace(/Ç/g,'C').replace(/ç/g,'c').replace(/Ö/g,'O').replace(/ö/g,'o').replace(/Ü/g,'U').replace(/ü/g,'u').replace(/Ğ/g,'G').replace(/ğ/g,'g').toLowerCase().replace(/[^a-z0-9]/g,'');}
 function genSifre(){var a='ABCDEFGHJKLMNPQRSTUVWXYZ23456789',s='';for(var i=0;i<5;i++)s+=a.charAt(Math.floor(Math.random()*a.length));return s;}
 function seedSifre(){
  if(window.__sifreTried)return;window.__sifreTried=true;
@@ -374,7 +375,7 @@ function renderOgrenciDetay(name){var d=document.getElementById('ogr-detay');if(
    .map(function(k){return k.split('||')[1];}).sort(function(a,b){return (+a.replace('Gün ',''))-(+b.replace('Gün ',''));});
  var sfr=(STATE.sifreler||{})[name]||'—';
  var h='<div class="dossier"><div class="big">'+esc(name)+'</div>';
- h+='<div class="lbl">Giriş bilgileri (öğrenciye verilecek)</div><p>Kullanıcı adı: <b>'+esc(name)+'</b> · Şifre: <b>'+esc(sfr)+'</b> · tiyatroberlin.de/ogrenci</p>';
+ h+='<div class="lbl">Giriş bilgileri (öğrenciye verilecek)</div><p>Kullanıcı adı: <b>'+esc(norm(name))+'</b> · Şifre: <b>'+esc(sfr)+'</b> · tiyatroberlin.de/ogrenci</p>';
  h+='<div class="lbl">Ödemeler</div><p>Ödenen ay: <b>'+paidM.length+'</b> · Toplam: <b>'+money(paidM.length*FEE)+'</b></p>';
  h+='<div>'+M.map(function(m){var on=STATE.odeme[name+'||'+m]===1;return '<span class="pill'+(on?' on':'')+'">'+esc(m)+(on?' ✓':'')+'</span>'}).join('')+'</div>';
  h+='<div class="lbl">Devamsızlık</div>';
