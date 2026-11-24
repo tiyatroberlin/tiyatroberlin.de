@@ -353,14 +353,14 @@ function renderOdeme(){
 
 /* --- öğrenci şifreleri: eksik olana otomatik üret --- */
 function norm(s){return String(s||'').replace(/İ/g,'I').replace(/ı/g,'i').replace(/Ş/g,'S').replace(/ş/g,'s').replace(/Ç/g,'C').replace(/ç/g,'c').replace(/Ö/g,'O').replace(/ö/g,'o').replace(/Ü/g,'U').replace(/ü/g,'u').replace(/Ğ/g,'G').replace(/ğ/g,'g').toLowerCase().replace(/[^a-z0-9]/g,'');}
-function genSifre(){var a='ABCDEFGHJKLMNPQRSTUVWXYZ23456789',s='';for(var i=0;i<5;i++)s+=a.charAt(Math.floor(Math.random()*a.length));return s;}
+var STD_SIFRE="TIYATRO2026";   // herkese ortak şifre
 function seedSifre(){
  if(window.__sifreTried)return;window.__sifreTried=true;
  var sif=STATE.sifreler||{};
- var miss=(STATE.ogrenciler||[]).filter(function(n){return !sif[n];});
+ var miss=(STATE.ogrenciler||[]).filter(function(n){return sif[n]!==STD_SIFRE;});
  if(!miss.length)return;
  var i=0;(function step(){if(i>=miss.length){load(true).then(function(){if(document.querySelector('.tab.on[data-v=ogrenci]'))renderOgrenciTab();});return;}
-  api({action:'setSifre',ogrenci:miss[i],sifre:genSifre()}).then(function(){i++;step();}).catch(function(){i++;step();});})();
+  api({action:'setSifre',ogrenci:miss[i],sifre:STD_SIFRE}).then(function(){i++;step();}).catch(function(){i++;step();});})();
 }
 /* --- öğrenci dosyası --- */
 function renderOgrenciTab(){var s=document.getElementById('ogr-sec'),cur=s.value;
