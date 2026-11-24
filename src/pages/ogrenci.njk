@@ -1,0 +1,97 @@
+---
+permalink: "/ogrenci/"
+eleventyExcludeFromCollections: true
+---
+{% raw %}
+<!doctype html><html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Öğrenci Girişi · Tiyatro Berlin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600;700;800&family=DejaVu+Sans+Mono&display=swap" rel="stylesheet"><style>
+*{box-sizing:border-box}
+:root{--red:#e32b2b;--ink:#161616;--muted:#6b6b76;--line:#dcdce0;--tint:#f6f6f7}
+body{font-family:"Inter",system-ui,sans-serif;color:var(--ink);background:#f4f4f6;margin:0;line-height:1.5}
+.wrap{max-width:150mm;margin:0 auto;background:#fff;min-height:100vh;padding:8mm 7mm 16mm;box-shadow:0 1px 20px rgba(0,0,0,.08)}
+.hd{display:flex;justify-content:space-between;align-items:flex-start;gap:4mm;margin-bottom:5mm}
+.gk{font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:8pt;color:var(--red)}
+h1{font-family:"Lora",serif;font-weight:700;font-size:21pt;margin:1mm 0 0}
+.logout{font:inherit;font-weight:600;font-size:8.5pt;color:var(--red);background:#fff;border:1px solid var(--line);border-radius:20mm;padding:1.4mm 4mm;cursor:pointer;flex:none}
+.sec{margin:7mm 0 2mm;font-weight:800;font-size:9pt;text-transform:uppercase;letter-spacing:.05em;color:var(--red);border-bottom:1px solid var(--line);padding-bottom:1.5mm}
+.hint{font-size:8.5pt;color:var(--muted);margin:.5mm 0 2.5mm}
+.tx{font-size:10pt;margin:2mm 0}
+.lst{margin:1mm 0;padding-left:5mm}.lst li{font-size:10pt;margin:1mm 0}
+.lst a{color:var(--red);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:2mm;margin:2mm 0}
+.pill{display:inline-block;border-radius:20mm;padding:1.5mm 4mm;font-size:9.5pt;border:1px solid var(--line);background:var(--tint)}
+.pill.on{background:#e7f6ec;border-color:#bfe6cd;color:#1a7a3a;font-weight:700}
+.pill.off{color:var(--muted)}
+#login{position:fixed;inset:0;background:linear-gradient(150deg,#e32b2b,#6D3BE4 55%,#2563EB);display:flex;align-items:center;justify-content:center;z-index:100;padding:6mm}
+.lbox{background:#fff;border-radius:4mm;padding:9mm 8mm;max-width:94mm;width:100%;box-shadow:0 10px 40px rgba(0,0,0,.3)}
+.lbox .gk2{font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:7.5pt;color:var(--red);text-align:center}
+.lbox h2{font-family:"Lora",serif;font-weight:700;font-size:18pt;margin:2mm 0 1mm;text-align:center}
+.lbox p{font-size:8.5pt;color:var(--muted);margin:0 0 5mm;text-align:center}
+.lbox label{display:block;font-weight:600;font-size:9pt;margin:0 0 1.5mm}
+.lbox select,.lbox input{width:100%;font:inherit;font-size:10.5pt;padding:2.8mm 3mm;border:1.5px solid var(--line);border-radius:2mm;margin-bottom:3.5mm;background:#fff}
+.lbox button{width:100%;font-weight:700;font-size:11pt;color:#fff;background:var(--red);border:0;border-radius:2mm;padding:3.4mm;cursor:pointer}
+#lerr{color:#c0392b;font-size:8.5pt;min-height:1.2em;margin:2mm 0 0;text-align:center}
+@media(max-width:620px){.wrap{padding:7mm 5mm 14mm}}
+</style></head><body>
+<div id="login"><form class="lbox" id="lf">
+<div class="gk2">Tiyatro Berlin</div><h2>Öğrenci Girişi</h2>
+<p>Temel Oyunculuk Atölyesi · kendi bilgilerin</p>
+<label>Ad Soyad</label>
+<select id="lad"><option value="">— adını seç —</option><option>Arda Karabulut</option><option>Aslan Gediman</option><option>Batiyel Elciyel</option><option>Cemre Orhan</option><option>Ceren Belge</option><option>Ekin Ceren Akarçay</option><option>Elif Karabulut</option><option>Hüsnü Doğan Vardarlı</option><option>İpek Zobu</option><option>Melis Canan</option><option>Neylan Süel</option><option>Nurcennet Kaynak</option><option>Özen Kartal Tuna</option><option>Özge İşlek</option><option>Özge Sarı</option><option>Rojin Beyaz</option><option>Selçuk Demirel</option><option>Zeynep Yazıcı Ekin</option></select>
+<label>Şifre</label>
+<input id="lpw" type="text" autocomplete="off" autocapitalize="characters" placeholder="Sana verilen şifre">
+<button type="submit">Giriş</button>
+<div id="lerr"></div>
+</form></div>
+<div class="wrap" id="panel" style="display:none"></div>
+<script>
+var API="https://script.google.com/macros/s/AKfycbzECZtTrQXOMR_uA5BPtMFz6JAfei0pJlXx13BC7WYjyFhUXEsmg_Ck2oxKtp9-guWv/exec", STOKEN="tb-ogrenci-2026", DAY={"1": {"t": "02.11.2026"}, "2": {"t": "09.11.2026"}, "3": {"t": "16.11.2026"}, "4": {"t": "23.11.2026"}, "5": {"t": "30.11.2026"}, "6": {"t": "07.12.2026"}, "7": {"t": "14.12.2026"}, "8": {"t": "21.12.2026"}, "9": {"t": "04.01.2027"}, "10": {"t": "11.01.2027"}, "11": {"t": "18.01.2027"}, "12": {"t": "25.01.2027"}, "13": {"t": "01.02.2027"}, "14": {"t": "08.02.2027"}, "15": {"t": "15.02.2027"}, "16": {"t": "22.02.2027"}, "17": {"t": "01.03.2027"}, "18": {"t": "15.03.2027"}, "19": {"t": "22.03.2027"}, "20": {"t": "05.04.2027"}, "21": {"t": "12.04.2027"}, "22": {"t": "19.04.2027"}, "23": {"t": "26.04.2027"}, "24": {"t": "03.05.2027"}, "25": {"t": "10.05.2027"}, "26": {"t": "24.05.2027"}, "27": {"t": "31.05.2027"}, "0": {"t": "02.11.2026"}};
+var MONTHS=["Kasım","Aralık","Ocak","Şubat","Mart","Nisan","Mayıs"];
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function api(params){return new Promise(function(res,rej){
+ var cb='cb'+Date.now()+Math.floor(Math.random()*1e6);
+ var s=document.createElement('script');
+ var t=setTimeout(function(){done();rej(new Error('zaman asimi'))},25000);
+ function done(){try{delete window[cb]}catch(e){}if(s&&s.parentNode)s.parentNode.removeChild(s);clearTimeout(t);}
+ window[cb]=function(d){done();res(d)};
+ var q='callback='+cb+'&token='+encodeURIComponent(STOKEN);
+ for(var k in params)q+='&'+encodeURIComponent(k)+'='+encodeURIComponent(params[k]);
+ s.src=API+'?'+q; s.onerror=function(){done();rej(new Error('ag hatasi'))};
+ document.body.appendChild(s);
+});}
+function showPanel(d){
+ document.getElementById('login').style.display='none';
+ var M=d.months||MONTHS, od=d.odeme||{}, yo=d.yoklama||{}, docs=d.dokumanlar||[];
+ var h='<div class="hd"><div><div class="gk">Tiyatro Berlin · Öğrenci</div><h1>Merhaba, '+esc(d.ad)+'</h1></div><button class="logout" id="co">Çıkış</button></div>';
+ h+='<div class="sec">Ödeme Durumu</div><div class="hint">Aylık aidat 80 €</div><div class="chips">';
+ h+=M.map(function(m){var on=od[m]===1;return '<span class="pill '+(on?'on':'off')+'">'+esc(m)+' · '+(on?'ödendi':'bekliyor')+'</span>';}).join('');
+ h+='</div>';
+ var missed=Object.keys(yo).filter(function(k){return yo[k]===1;}).sort(function(a,b){return (+a.replace('Gün ','')) - (+b.replace('Gün ',''));});
+ h+='<div class="sec">Devam Durumu</div>';
+ if(missed.length){h+='<p class="tx">Gelmediğin ders sayısı: <b>'+missed.length+'</b></p><ul class="lst">'+missed.map(function(lbl){var k=lbl.replace('Gün ','');var dt=(DAY[k]&&DAY[k].t)||'';return '<li>'+esc(lbl)+(dt?' · '+esc(dt):'')+'</li>';}).join('')+'</ul>';}
+ else{h+='<p class="tx">Kayda göre hiç ders kaçırmadın.</p>';}
+ h+='<div class="sec">Dökümanlar</div>';
+ if(docs.length){h+='<ul class="lst">'+docs.map(function(x){var u=String(x.link||'');return '<li><a href="'+esc(u)+'" target="_blank" rel="noopener">'+esc(x.baslik||u)+'</a></li>';}).join('')+'</ul>';}
+ else{h+='<p class="tx">Henüz döküman paylaşılmadı.</p>';}
+ var p=document.getElementById('panel');p.innerHTML=h;p.style.display='block';
+ document.getElementById('co').addEventListener('click',function(){try{sessionStorage.removeItem('tb_ogr')}catch(e){}location.reload();});
+}
+function giris(ad,pw,errEl){
+ if(errEl)errEl.textContent='Kontrol ediliyor…';
+ return api({action:'ogrenciGiris',ad:ad,sifre:pw}).then(function(d){
+  if(d&&d.ok){try{sessionStorage.setItem('tb_ogr',JSON.stringify({ad:ad,pw:pw}))}catch(e){}showPanel(d);return true;}
+  if(errEl)errEl.textContent='Ad ya da şifre hatalı.';return false;
+ }).catch(function(){if(errEl)errEl.textContent='Bağlantı hatası, tekrar deneyin.';return false;});
+}
+document.getElementById('lf').addEventListener('submit',function(e){e.preventDefault();
+ var ad=document.getElementById('lad').value,pw=document.getElementById('lpw').value.trim().toUpperCase();
+ var err=document.getElementById('lerr');
+ if(!ad){err.textContent='Önce adını seç.';return;} if(!pw){err.textContent='Şifreni gir.';return;}
+ giris(ad,pw,err);
+});
+(function(){try{var raw=sessionStorage.getItem('tb_ogr');if(raw){var o=JSON.parse(raw);if(o&&o.ad&&o.pw)giris(o.ad,o.pw,null);}}catch(e){}})();
+</script>
+</body></html>
+{% endraw %}

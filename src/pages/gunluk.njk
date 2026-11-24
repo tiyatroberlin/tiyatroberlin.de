@@ -300,7 +300,7 @@ function renderIstatistik(){
 }
 
 /* --- ödemeler --- */
-var ROSTER=["Arda Karabulut","Aslan Gediman","Batiyel Elciyel","Cemre Orhan","Ceren Belge","Ekin Ceren Akarçay","Elif Karabulut","Hüsnü Doğan Vardarlı","İpek Zobu","Melis Canan","Neylan Süel","Nurcennet Kaynak","Özen Kartal Tuna","Özge İşlek","Özge Sarı","Rojin Beyaz","Selçuk Demirel","Zeynep Yazıcı Ekin"];
+var ROSTER=["Arda Karabulut", "Aslan Gediman", "Batiyel Elciyel", "Cemre Orhan", "Ceren Belge", "Ekin Ceren Akarçay", "Elif Karabulut", "Hüsnü Doğan Vardarlı", "İpek Zobu", "Melis Canan", "Neylan Süel", "Nurcennet Kaynak", "Özen Kartal Tuna", "Özge İşlek", "Özge Sarı", "Rojin Beyaz", "Selçuk Demirel", "Zeynep Yazıcı Ekin"];
 function syncRoster(done){
  var have=STATE.ogrenciler||[];
  var toDel=have.filter(function(n){return ROSTER.indexOf(n)<0;});   // placeholder / listede olmayan isimleri sil
@@ -351,6 +351,16 @@ function renderOdeme(){
  else summ.innerHTML='';
 }
 
+/* --- öğrenci şifreleri: eksik olana otomatik üret --- */
+function genSifre(){var a='ABCDEFGHJKLMNPQRSTUVWXYZ23456789',s='';for(var i=0;i<5;i++)s+=a.charAt(Math.floor(Math.random()*a.length));return s;}
+function seedSifre(){
+ if(window.__sifreTried)return;window.__sifreTried=true;
+ var sif=STATE.sifreler||{};
+ var miss=(STATE.ogrenciler||[]).filter(function(n){return !sif[n];});
+ if(!miss.length)return;
+ var i=0;(function step(){if(i>=miss.length){load(true).then(function(){if(document.querySelector('.tab.on[data-v=ogrenci]'))renderOgrenciTab();});return;}
+  api({action:'setSifre',ogrenci:miss[i],sifre:genSifre()}).then(function(){i++;step();}).catch(function(){i++;step();});})();
+}
 /* --- öğrenci dosyası --- */
 function renderOgrenciTab(){var s=document.getElementById('ogr-sec'),cur=s.value;
  s.innerHTML='<option value="">— öğrenci seçin —</option>'+STATE.ogrenciler.map(function(n){return '<option'+(n===cur?' selected':'')+'>'+esc(n)+'</option>'}).join('');
@@ -362,7 +372,9 @@ function renderOgrenciDetay(name){var d=document.getElementById('ogr-detay');if(
  var paidM=M.filter(function(m){return STATE.odeme[name+'||'+m]===1});
  var missed=Object.keys(STATE.odeme||{}).filter(function(k){return k.indexOf(name+'||Gün ')===0 && STATE.odeme[k]===1;})
    .map(function(k){return k.split('||')[1];}).sort(function(a,b){return (+a.replace('Gün ',''))-(+b.replace('Gün ',''));});
+ var sfr=(STATE.sifreler||{})[name]||'—';
  var h='<div class="dossier"><div class="big">'+esc(name)+'</div>';
+ h+='<div class="lbl">Giriş bilgileri (öğrenciye verilecek)</div><p>Kullanıcı adı: <b>'+esc(name)+'</b> · Şifre: <b>'+esc(sfr)+'</b> · tiyatroberlin.de/ogrenci</p>';
  h+='<div class="lbl">Ödemeler</div><p>Ödenen ay: <b>'+paidM.length+'</b> · Toplam: <b>'+money(paidM.length*FEE)+'</b></p>';
  h+='<div>'+M.map(function(m){var on=STATE.odeme[name+'||'+m]===1;return '<span class="pill'+(on?' on':'')+'">'+esc(m)+(on?' ✓':'')+'</span>'}).join('')+'</div>';
  h+='<div class="lbl">Devamsızlık</div>';
@@ -378,7 +390,7 @@ function load(silent){if(!silent){document.getElementById('loadmsg').textContent
  return api({action:'get'}).then(function(d){if(!d||!d.ok)throw new Error((d&&d.error)||'veri alinamadi');
    STATE=d; if(!STATE.months)STATE.months=["Kasım","Aralık","Ocak","Şubat","Mart","Nisan","Mayıs"];
    if(STATE.ogrenciler&&STATE.ogrenciler.sort)STATE.ogrenciler=STATE.ogrenciler.slice().sort(function(a,b){return String(a).localeCompare(String(b),'tr');});
-   document.getElementById('loadmsg').textContent='';render();
+   document.getElementById('loadmsg').textContent='';render();seedSifre();
    if(!window.__syncTried){window.__syncTried=true;
      var _have=STATE.ogrenciler||[];
      var _miss=ROSTER.filter(function(n){return _have.indexOf(n)<0;});
