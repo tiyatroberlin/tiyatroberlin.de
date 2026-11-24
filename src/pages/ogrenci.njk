@@ -38,18 +38,19 @@ h1{font-family:"Lora",serif;font-weight:700;font-size:21pt;margin:1mm 0 0}
 <div id="login"><form class="lbox" id="lf">
 <div class="gk2">Tiyatro Berlin</div><h2>Öğrenci Girişi</h2>
 <p>Temel Oyunculuk Atölyesi · kendi bilgilerin</p>
-<label>Ad Soyad</label>
-<select id="lad"><option value="">— adını seç —</option><option>Arda Karabulut</option><option>Aslan Gediman</option><option>Batiyel Elciyel</option><option>Cemre Orhan</option><option>Ceren Belge</option><option>Ekin Ceren Akarçay</option><option>Elif Karabulut</option><option>Hüsnü Doğan Vardarlı</option><option>İpek Zobu</option><option>Melis Canan</option><option>Neylan Süel</option><option>Nurcennet Kaynak</option><option>Özen Kartal Tuna</option><option>Özge İşlek</option><option>Özge Sarı</option><option>Rojin Beyaz</option><option>Selçuk Demirel</option><option>Zeynep Yazıcı Ekin</option></select>
+<label>Kullanıcı adı</label>
+<input id="lad" type="text" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="ad-soyad bitişik (ör. ipekzobu)">
 <label>Şifre</label>
-<input id="lpw" type="text" autocomplete="off" autocapitalize="characters" placeholder="Sana verilen şifre">
+<input id="lpw" type="text" autocomplete="off" autocapitalize="characters" autocorrect="off" spellcheck="false" placeholder="Sana verilen şifre">
 <button type="submit">Giriş</button>
 <div id="lerr"></div>
 </form></div>
 <div class="wrap" id="panel" style="display:none"></div>
 <script>
-var API="https://script.google.com/macros/s/AKfycbzECZtTrQXOMR_uA5BPtMFz6JAfei0pJlXx13BC7WYjyFhUXEsmg_Ck2oxKtp9-guWv/exec", STOKEN="tb-ogrenci-2026", DAY={"1": {"t": "02.11.2026"}, "2": {"t": "09.11.2026"}, "3": {"t": "16.11.2026"}, "4": {"t": "23.11.2026"}, "5": {"t": "30.11.2026"}, "6": {"t": "07.12.2026"}, "7": {"t": "14.12.2026"}, "8": {"t": "21.12.2026"}, "9": {"t": "04.01.2027"}, "10": {"t": "11.01.2027"}, "11": {"t": "18.01.2027"}, "12": {"t": "25.01.2027"}, "13": {"t": "01.02.2027"}, "14": {"t": "08.02.2027"}, "15": {"t": "15.02.2027"}, "16": {"t": "22.02.2027"}, "17": {"t": "01.03.2027"}, "18": {"t": "15.03.2027"}, "19": {"t": "22.03.2027"}, "20": {"t": "05.04.2027"}, "21": {"t": "12.04.2027"}, "22": {"t": "19.04.2027"}, "23": {"t": "26.04.2027"}, "24": {"t": "03.05.2027"}, "25": {"t": "10.05.2027"}, "26": {"t": "24.05.2027"}, "27": {"t": "31.05.2027"}, "0": {"t": "02.11.2026"}};
+var API="https://script.google.com/macros/s/AKfycbzECZtTrQXOMR_uA5BPtMFz6JAfei0pJlXx13BC7WYjyFhUXEsmg_Ck2oxKtp9-guWv/exec", STOKEN="tb-ogrenci-2026", DAY={"1": {"t": "02.11.2026"}, "2": {"t": "09.11.2026"}, "3": {"t": "16.11.2026"}, "4": {"t": "23.11.2026"}, "5": {"t": "30.11.2026"}, "6": {"t": "07.12.2026"}, "7": {"t": "14.12.2026"}, "8": {"t": "21.12.2026"}, "9": {"t": "04.01.2027"}, "10": {"t": "11.01.2027"}, "11": {"t": "18.01.2027"}, "12": {"t": "25.01.2027"}, "13": {"t": "01.02.2027"}, "14": {"t": "08.02.2027"}, "15": {"t": "15.02.2027"}, "16": {"t": "22.02.2027"}, "17": {"t": "01.03.2027"}, "18": {"t": "15.03.2027"}, "19": {"t": "22.03.2027"}, "20": {"t": "05.04.2027"}, "21": {"t": "12.04.2027"}, "22": {"t": "19.04.2027"}, "23": {"t": "26.04.2027"}, "24": {"t": "03.05.2027"}, "25": {"t": "10.05.2027"}, "26": {"t": "24.05.2027"}, "27": {"t": "31.05.2027"}, "0": {"t": "02.11.2026"}}, ROSTER=["Arda Karabulut", "Aslan Gediman", "Batiyel Elciyel", "Cemre Orhan", "Ceren Belge", "Ekin Ceren Akarçay", "Elif Karabulut", "Hüsnü Doğan Vardarlı", "İpek Zobu", "Melis Canan", "Neylan Süel", "Nurcennet Kaynak", "Özen Kartal Tuna", "Özge İşlek", "Özge Sarı", "Rojin Beyaz", "Selçuk Demirel", "Zeynep Yazıcı Ekin"];
 var MONTHS=["Kasım","Aralık","Ocak","Şubat","Mart","Nisan","Mayıs"];
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function norm(s){return String(s||'').replace(/İ/g,'I').replace(/ı/g,'i').replace(/Ş/g,'S').replace(/ş/g,'s').replace(/Ç/g,'C').replace(/ç/g,'c').replace(/Ö/g,'O').replace(/ö/g,'o').replace(/Ü/g,'U').replace(/ü/g,'u').replace(/Ğ/g,'G').replace(/ğ/g,'g').toLowerCase().replace(/[^a-z0-9]/g,'');}
 function api(params){return new Promise(function(res,rej){
  var cb='cb'+Date.now()+Math.floor(Math.random()*1e6);
  var s=document.createElement('script');
@@ -86,9 +87,11 @@ function giris(ad,pw,errEl){
  }).catch(function(){if(errEl)errEl.textContent='Bağlantı hatası, tekrar deneyin.';return false;});
 }
 document.getElementById('lf').addEventListener('submit',function(e){e.preventDefault();
- var ad=document.getElementById('lad').value,pw=document.getElementById('lpw').value.trim().toUpperCase();
+ var u=norm(document.getElementById('lad').value),pw=document.getElementById('lpw').value.trim().toUpperCase();
  var err=document.getElementById('lerr');
- if(!ad){err.textContent='Önce adını seç.';return;} if(!pw){err.textContent='Şifreni gir.';return;}
+ if(!u){err.textContent='Kullanıcı adını gir.';return;} if(!pw){err.textContent='Şifreni gir.';return;}
+ var ad=null;for(var i=0;i<ROSTER.length;i++){if(norm(ROSTER[i])===u){ad=ROSTER[i];break;}}
+ if(!ad){err.textContent='Kullanıcı adı veya şifre hatalı.';return;}
  giris(ad,pw,err);
 });
 (function(){try{var raw=sessionStorage.getItem('tb_ogr');if(raw){var o=JSON.parse(raw);if(o&&o.ad&&o.pw)giris(o.ad,o.pw,null);}}catch(e){}})();
