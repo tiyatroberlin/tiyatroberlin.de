@@ -170,54 +170,106 @@
   subtitle: Reji, kuram ve seyir atölyesi · Her salı
   image: oyun/atolye.jpg
   facts:
-    - [Gün ve saat, "Salı, 19:00–21:00"]
+    - [Gün ve saat, "Salı, 18:45–21:00 (kapı 18:30)"]
     - [Dönem, "12 Ocak – 30 Mart 2027"]
-    - [Ders sayısı, "11 ders, toplam 22 saat"]
+    - [Ders sayısı, "11 ders"]
     - [Yer, Daha sonra duyurulacak]
     - [Dil, Türkçe]
-    - [Düzey, Ön bilgi gerekmez]
+    - [Düzey, "Ön bilgi gerekmez"]
     - [Yaş, 18 yaş ve üstü]
     - [Ücret, "Aylık 80 €, havale ile, fatura karşılığı"]
   sections:
     - id: hakkinda
       h: Kurs hakkında
       md: |
-        Bir gösterinin seyirciyi neden yakaladığını, bir metnin sahnede nasıl başka bir şeye dönüştüğünü, bir rejinin hangi kararlarla kurulduğunu birlikte soran bu atölye, tiyatroya sahnenin hem önünden hem arkasından bakmak isteyenler için kuruldu. On bir ders boyunca reji anlayışları ve tiyatro kuramları konuşuluyor, oyun metinleri satır satır çözümleniyor, oyunlar birlikte izlenip ardından tartışılıyor.
+        Tiyatroyu Okumak, tiyatroyu izlemekten bir adım ileri gitmek isteyenler için on bir haftalık bir okuma ve yazı atölyesi. Oyunlar birlikte izleniyor, metin ve sahneleme adım adım çözümleniyor, aynı oyun farklı kuramların gözünden okunuyor ve görülenler yazıya dökülüyor. On bir haftanın sonunda oyun, izlenip geçilen bir şey olmaktan çıkıyor; çözülebilecek bir bulmacaya dönüşüyor.
 
-        Atölyenin ufkunda iyi bir seyirci olmak var: gördüğünü okuyabilen, bir gösterinin nasıl kurulduğunu fark eden ve üzerine söz alabilen bir seyirci.
+        Atölye dramaturjiyle sosyolojiyi yan yana getiriyor: sahnede olana hem kurgusu hem de doğduğu toplumsal bağlam açısından bakılıyor. Tiyatro burada yalnızca sahnede olup biten bir şey sayılmıyor, toplumsal bir olgu olarak da ele alınıyor: kim, kime, hangi koşullarda, ne söylüyor?
+
+        Atölyenin ufkundaki seyirci her şeyi bilen biri olmak zorunda değil; iyi soru sorabilen biri. Oyunu nasıl buldun sorusuna beğendim ya da beğenmedim demek yerine, oyunda ne gördüğünü ve neden öyle düşündüğünü anlatabilen bir seyirci.
+
+        Atölye, Tiyatro Berlin'in sanatsal pratiğinin bir uzantısı: seyirciyle tiyatro üzerine birlikte düşünmenin ve konuşmanın bir yolu.
     - id: kimler-icin
       h: Kimler için
       md: |
-        - Tiyatroyu daha derinden izlemek ve anlamak isteyen seyirciler
-        - Yönetmenliğe, yazarlığa, dramaturjiye ya da eleştiriye merak duyanlar
-        - Oyunculuk Atölyesi'ne katılan ve sahnenin düşünce tarafını da öğrenmek isteyenler
+        - Tiyatroyu seven ve nasıl okunur diye merak eden seyirciler
+        - Oyunculuk Atölyesi'ne katılanlar ya da katılmayı düşünenler
+        - Oyun yazmak, eleştiri yazmak ya da dramaturjiyle ilgilenenler
+        - Tiyatro üzerine düşünürken kendine bir yol arayan öğrenciler ve meraklılar
+        - Berlin'de Türkçe üretilen bir sanat ortamının izleyicisi ve düşünce ortağı olmak isteyenler
+
+        Ön bilgi gerekmiyor; tek şart merak. Kavramlar sırayla, birlikte inceleniyor.
     - id: kazanimlar
       h: Kurs sonunda neler kazanılır
       md: |
-        - Bir oyun metnini yapısı, karakterleri ve alt metniyle çözümleyebilmek
-        - Bir gösterinin reji kararlarını okuyabilmek: mekân, oyunculuk, ritim, ışık, ses
-        - 20\. yüzyılın belli başlı tiyatro kuramlarını ve akımlarını tanımak
-        - Türkiye tiyatrosunun dönüşümünü tarihsel bir çerçevede görebilmek
-        - İzlediği bir gösteri üzerine kısa bir eleştiri metni yazabilmek
+        - Bir oyun metnine yapı, karakter, dil ve alt metin üzerinden bakabilmek
+        - Sahnede yazarın, yönetmenin ve sahnenin ne dediğini birbirinden ayırabilmek
+        - Aynı oyunu toplumsal cinsiyet, sınıf, psikanaliz ve göstergebilim gibi farklı bakışlarla okuyabilmek
+        - Karakter ve beat analizinin temel araçlarını kullanabilmek
+        - Betimlemeyle yorumu, kişisel beğeniyle gerekçeli yargıyı ayırabilmek
+        - Tiyatro tarihini ve Türkiye tiyatrosunun dönüşümünü ana hatlarıyla tanımak
+        - Kısa bir eleştiri yazısı ya da deneme yazmış olmak
     - id: mufredat
-      h: Müfredat
+      h: Akış
       md: |
-        - Reji anlayışları ve tiyatro kuramları
-        - Oyun metni çözümleme
-        - Birlikte oyun izleme ve tartışma
-        - Türkiye ve dünya tiyatro tarihi
-        - Eleştiri yazımı
+        Dönem, her biri bir oyun etrafında dönen dört bölümden oluşuyor.
 
-        Haftalık okuma listesi ve izlenecek oyunlar ilk derste paylaşılır.
+        **Tiyatroyu nasıl okuruz? · 1–2. hafta**
+
+        - Dramaturji nedir, dramaturg ne yapar
+        - Özet, yorum ve çözümleme arasındaki fark
+        - Dramatik yapı: Aristotelesçi, epik ve parçalı yapılar
+
+        **Metin ve karakter · 3–5. hafta**
+
+        - Birinci oyun üzerinde metin okuması: yapı, zaman, mekân, dil, alt metin
+        - Karakter analizi: süper hedef, hedef, engel, eylem
+        - Beat analizi: bir sahneyi anlam ve niyet değişimlerine bölmek
+        - Ortak izleme ve izleme sonrası konuşma
+
+        **Kuramlarla okumak · 6–8. hafta**
+
+        - İkinci oyun üzerinde farklı okumalar: toplumsal cinsiyet ve feminist eleştiri, sosyolojik ve Marksist eleştiri, psikanalitik okuma, göstergebilim, alımlama estetiği
+        - Aynı oyuna başka bir bakışla bakınca neyin görünür, neyin görünmez olduğu
+        - Yazar ne istedi, yönetmen ne istedi, sahnede ne görüldü?
+
+        **Yazmak · 9–11. hafta**
+
+        - Eleştiri, deneme ve çözümleme yazısının farkları
+        - İyi bir eleştirinin anatomisi; eleştiri gibi görünen ama eleştiri olmayan yazılar
+        - Üçüncü oyun ve katılımcıların kendi yazıları: birlikte okuma, karşılıklı geri bildirim
+        - Dönemin birlikte değerlendirilmesi
+
+        **Dönem boyunca süren hat: tiyatro tarihi ve Türkiye tiyatrosu**
+
+        Her akşamın bir bölümü tiyatronun tarihine ve düşüncesine ayrılıyor: Antik Yunan'dan Lessing'e ve Brecht'e, oradan postdramatik tiyatroya ve dijital sanata; meddah, Karagöz ve ortaoyunundan Tanzimat'a, Cumhuriyet dönemine, devlet ve şehir tiyatrolarından bugünün alternatif sahnelerine. Tiyatronun toplumla, kurumla ve seyirciyle ilişkisi sosyolojik bir gözle ele alınıyor.
+
+        Yol arkadaşları arasında Aristoteles, Lessing, Brecht, Stanislavski, Judith Butler, Hans-Thies Lehmann ve Patrice Pavis var.
+    - id: izleme
+      h: Birlikte oyun izleme
+      md: |
+        - Yaklaşık dört beş haftada bir, katılımcılarla birlikte seçilen bir oyun izleniyor; katılım isteğe bağlı.
+        - İzlemeden önce derste yazar, dönem ve yönetmenin önceki işleri konuşuluyor; katılımcı oyuna bu hazırlıkla gidiyor.
+        - İzlemeden sonra önce akılda ne kaldığı konuşuluyor, ardından niyetle sonuç arasındaki boşluklara bakılıyor: yazar ne istemiş, yönetmen ne söylemiş, sahnede ne görüldü, bu oyun başka nasıl sahnelenirdi?
+        - Oyuna gidemeyen katılımcılar metin ve tartışma üzerinden atölyeye katılıyor.
+    - id: calisma-bicimi
+      h: Çalışma biçimi
+      md: |
+        - Tek bir doğru okuma yok; her okuma gerekçesiyle savunuluyor. Bir oyun psikanalitik bir bakışla da, toplumsal cinsiyet rolleri üzerinden de okunabiliyor.
+        - Atölye katılımcıya tek bir bakış öğretmiyor, bir alet çantası veriyor: betimleme, çözümleme ve yorumlama araçları.
+        - Bilgi tek yönlü aktarılmıyor; eğitmen bildiğini anlatıyor, tartışma herkesin birlikte öğrendiği bir alan açıyor.
+        - Katılımcılar küçük dramaturji alıştırmaları yapıyor: bir sahneyi beat'lere bölüyor, karakterin hedef ve engellerini çıkarıyor, ben olsam nasıl sahnelerdim sorusuyla reji notları yazıyor.
     - id: ders-aksami
-      h: Bir ders akşamı nasıl geçer
+      h: Bir akşam nasıl geçer
       md: |
         | Saat | Bölüm |
         | --- | --- |
-        | 19:00 | Haftanın konusu: kuram ya da reji anlayışı |
-        | 19:50 | Ara |
-        | 20:00 | Metin çözümleme ya da izlenen oyun üzerine tartışma |
-        | 20:50 | Gelecek haftanın okuması |
+        | 18:30 | Kapı açılır, kısa sohbet |
+        | 18:45 | Kısa giriş: ayın kavramı ya da kuramı |
+        | 19:15 | Metni birlikte okuma ve çözümleme |
+        | 19:45 | Ara |
+        | 19:55 | Tartışma ve uygulama: beat bölme, karakter analizi, sahne okuması |
+        | 20:40 | Gelecek haftaya hazırlık ve yazılara geri bildirim |
         | 21:00 | Kapanış |
     - id: egitmenler
       h: Eğitmen
@@ -250,33 +302,37 @@
     - id: ilk-ders
       h: İlk ders günü
       md: |
-        - 18:45'te mekânda olun; ilk akşam tanışma, okuma listesi ve sözleşmeyle başlıyor.
+        - 18:30'da mekânda olun; ilk akşam tanışma ve sözleşmeyle başlıyor.
         - Yanınızda defter ve kalem olsun.
     - id: ilkeler
       h: Birlikte çalışma ilkeleri
       md: |
-        - Haftalık okumalar derse hazırlıklı gelmek için; tartışmanın zemini onlar.
+        - Her dersin sonunda gelecek haftanın metni ve kavramları belirlenir; tartışmanın zemini bu hazırlık.
         - Farklı görüşler atölyenin malzemesi; her görüş dinlenir.
         - Telefonlar ders süresince sessizdedir.
     - id: donem-sonu
       h: Dönem sonu
       md: |
-        - Katılımcılar dönem boyunca izlenen oyunlardan biri üzerine kısa bir eleştiri metni yazar; metinler son derste okunur.
+        - Her katılımcı izlediği oyunlardan biri üzerine kısa bir eleştiri yazısı ya da deneme yazar; yazılar dönem içinde birlikte okunur ve değerlendirilir.
+        - İsteyen, dönem boyunca yazdıklarını bir dosyada toplayabilir.
+        - İsteyen kısa bir sahne yazabilir ve sonrasında geliştirebilir.
         - Her katılımcıya katılım belgesi verilir.
     - id: mekan
       h: Mekân ve ulaşım
       md: |
         Atölyenin yapılacağı mekân daha sonra duyurulacak; kayıt olanlara ayrıca bildirilir.
   faq:
-    - ["Tiyatro hakkında hiç bilgim yok, katılabilir miyim?", Evet. Atölye ön bilgi gerektirmiyor.]
-    - ["Oyunculuk Atölyesi'ne de devam ediyorum, ikisine birden katılabilir miyim?", "Evet; iki kurs farklı günlerde ve birbirini tamamlıyor."]
-    - [Oyun biletleri ne kadar tutar?, Biletler mekâna göre değişiyor ve kurs ücretine dahil değil.]
+    - ["Hiç bilgim yok, katılabilir miyim?", "Evet. Ön bilgi gerekmiyor; merak ve katılım yeterli."]
+    - ["Oyunlara mutlaka gitmem gerekiyor mu?", "Hayır. Oyuna gitmeyenler de sınıftaki çözümlemelere ve tartışmalara katılabiliyor."]
+    - ["Oyunculuk Atölyesi'ne de devam ediyorum, bu atölye bana ne katar?", "Rolün ötesinde oyunun bütününü okumayı: karakterin engellerini, öteki karakterlerle, zamanla ve metinle ilişkisini. İki atölye farklı günlerde ve birbirini besliyor."]
+    - ["Oyun biletleri ne kadar tutar?", "Biletler mekâna göre değişiyor ve kurs ücretine dahil değil."]
   teachers:
     - person: egemen-kalyon
       title: Dramaturg
       cv: |
-        - **Eğitim:** İstanbul Üniversitesi
-        - Mekan Artı yıllarından bu yana aynı ekiple çalışıyor
-        - **Tiyatro Berlin'de dramaturji:** Kozalar, 80'lerde Lubunya Olmak, Pride '93, Avzer, Üftade, Yeni Bir Hayat İçin, Sen İstanbul'dan Daha Güzelsin, O'ndan Sonra, Nested, Uzak
-        - **2026:** Zwei Städte, Ein Körper; metin, konsept ve reji (Proud Haram Festivali, Ballhaus Prinzenallee)
-        - 2024'ten beri Berlin'de
+        - **Eğitim:** İstanbul Üniversitesi, tiyatro eleştirmenliği ve dramaturji lisans (2017); Mimar Sinan Güzel Sanatlar Üniversitesi, sosyoloji yüksek lisans (2022), toplumsal damgalanma üzerine
+        - **2014–2023:** Mekan Artı, İstanbul; dramaturg. Kalem ve 90'larda Lubunya Olmak (2014), Jean Genet'den uyarlanan Balkon, Unutmak: Bir Hatırlama Projesi, Üftade ve diğer yapımlar
+        - **2021'den beri:** Tiyatro Berlin'de dramaturg. Kozalar, 80'lerde Lubunya Olmak, Pride '93, Avzer, Üftade, Yeni Bir Hayat İçin, Sen İstanbul'dan Daha Güzelsin, O'ndan Sonra, Nested, Uzak
+        - **2025:** Proud Haram Festivali'nde Damga Üzerine: Toplumsal Dışlanmanın Tarihi ve Bugünü konuşması
+        - **2026:** Zwei Städte, Ein Körper (mekâna özgü ses yürüyüşü); metin, konsept ve reji
+        - **Çalışma alanları:** dramaturji, mekâna özgü performans, sözlü tarih ve kuir arşiv projeleri, video mapping ve projeksiyon temelli sahne tasarımı, postdramatik tiyatro
